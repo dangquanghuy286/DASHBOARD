@@ -243,6 +243,7 @@
                 "bookingDate": "2023-11-01",
                 "status": "Confirmed",
                 "paymentMethod": "Credit Card",
+                "extraData": "extraData",
                 "totalPrice": 1200,
                 "location": "domestic"
             },
