@@ -1,1 +1,683 @@
-{}
+{
+    "dashboard": {
+        "total_active_tours": 25,
+        "total_bookings": 1500,
+        "total_users": 5000,
+        "total_revenue": 750000.00,
+        "destination_statistics": {
+            "domestic": [
+                {
+                    "region": "Miền Bắc",
+                    "percentage": 30
+                },
+                {
+                    "region": "Miền Trung",
+                    "percentage": 35
+                },
+                {
+                    "region": "Miền Nam",
+                    "percentage": 25
+                },
+                {
+                    "region": "Khác (Việt Nam)",
+                    "percentage": 10
+                },
+                {
+                    "region": "Laos",
+                    "percentage": 20
+                },
+                {
+                    "region": "Cambodia",
+                    "percentage": 15
+                },
+                {
+                    "region": "Myanmar",
+                    "percentage": 10
+                },
+                {
+                    "region": "Indonesia",
+                    "percentage": 8
+                },
+                {
+                    "region": "Others (Domestic)",
+                    "percentage": 5
+                }
+            ],
+            "international": {
+                "Thailand": 25,
+                "Japan": 20,
+                "France": 15,
+                "Italy": 10,
+                "USA": 10,
+                "Australia": 8,
+                "Others": 20
+            }
+        },
+        "booking_payments": [
+            {
+                "method": "Credit Card",
+                "percentage": 60
+            },
+            {
+                "method": "PayPal",
+                "percentage": 25
+            },
+            {
+                "method": "Bank Transfer",
+                "percentage": 10
+            },
+            {
+                "method": "Cash",
+                "percentage": 5
+            },
+            {
+                "method": "Momo",
+                "percentage": 40
+            },
+            {
+                "method": "Thanh toán tại văn phòng",
+                "percentage": 20
+            },
+            {
+                "method": "Chuyển khoản ngân hàng",
+                "percentage": 10
+            }
+        ],
+        "top_booked_tours": {
+            "domestic": [
+                {
+                    "id": 192,
+                    "name": "Châu Đốc - Miếu Bà Chúa Xứ - Rừng Tràm Trà Sư - Hà Tiên - Rạch Giá - Cần Thơ",
+                    "seats_booked": 10,
+                    "seats_available": 20,
+                    "price": 1500000,
+                    "rating": 4.5,
+                    "duration": "3 ngày 2 đêm"
+                },
+                {
+                    "id": 177,
+                    "name": "MIỀN TRUNG 3N2Đ | ĐÀ NẴNG - CÙ LAO CHÀM - HỘI AN - BÀ NÀ (TẾT ẤM LỊCH 2025)",
+                    "seats_booked": 8,
+                    "seats_available": 40,
+                    "price": 2000000,
+                    "rating": 4.7,
+                    "duration": "3 ngày 2 đêm"
+                },
+                {
+                    "id": 200,
+                    "name": "HÀ NỘI - SAPA - FANSIPAN",
+                    "seats_booked": 5,
+                    "seats_available": 15,
+                    "price": 1800000,
+                    "rating": 4.8,
+                    "duration": "4 ngày 3 đêm"
+                },
+                {
+                    "tourId": "tour001",
+                    "tourName": "Amazing Vietnam Tour",
+                    "bookings": 300,
+                    "price": 1200,
+                    "rating": 4.8,
+                    "duration": "7 days",
+                    "destination": "Vietnam"
+                },
+                {
+                    "tourId": "tour004",
+                    "tourName": "Northern Vietnam Adventure",
+                    "bookings": 220,
+                    "price": 1100,
+                    "rating": 4.6,
+                    "duration": "5 days",
+                    "destination": "Vietnam"
+                },
+                {
+                    "tourId": "tour005",
+                    "tourName": "Southern Vietnam Escape",
+                    "bookings": 180,
+                    "price": 1000,
+                    "rating": 4.5,
+                    "duration": "4 days",
+                    "destination": "Vietnam"
+                },
+                {
+                    "tourId": "tour006",
+                    "tourName": "Laos Cultural Tour",
+                    "bookings": 150,
+                    "price": 900,
+                    "rating": 4.4,
+                    "duration": "6 days",
+                    "destination": "Laos"
+                },
+                {
+                    "tourId": "tour009",
+                    "tourName": "Cambodia Heritage Journey",
+                    "bookings": 130,
+                    "price": 850,
+                    "rating": 4.3,
+                    "duration": "5 days",
+                    "destination": "Cambodia"
+                }
+            ],
+            "international": [
+                {
+                    "tourId": "tour002",
+                    "tourName": "Thailand Adventure",
+                    "bookings": 250,
+                    "price": 950,
+                    "rating": 4.7,
+                    "duration": "6 days",
+                    "destination": "Thailand"
+                },
+                {
+                    "tourId": "tour003",
+                    "tourName": "Japan Discovery",
+                    "bookings": 200,
+                    "price": 1500,
+                    "rating": 4.9,
+                    "duration": "10 days",
+                    "destination": "Japan"
+                },
+                {
+                    "tourId": "tour007",
+                    "tourName": "France Wine Tour",
+                    "bookings": 170,
+                    "price": 2000,
+                    "rating": 4.8,
+                    "duration": "8 days",
+                    "destination": "France"
+                },
+                {
+                    "tourId": "tour008",
+                    "tourName": "Italy Art Tour",
+                    "bookings": 160,
+                    "price": 1800,
+                    "rating": 4.7,
+                    "duration": "7 days",
+                    "destination": "Italy"
+                },
+                {
+                    "tourId": "tour010",
+                    "tourName": "USA West Coast Road Trip",
+                    "bookings": 140,
+                    "price": 2200,
+                    "rating": 4.6,
+                    "duration": "12 days",
+                    "destination": "USA"
+                }
+            ]
+        },
+        "recent_bookings": [
+            {
+                "id": 42,
+                "customer_name": "Nguyễn Minh Điện",
+                "tour_name": "MIỀN TRUNG 4N3Đ | ĐÀ NẴNG - HỘI AN - BÀ NÀ - HUẾ",
+                "total_price": 6080000,
+                "status": "Chưa xác nhận",
+                "payment_method": "Momo",
+                "location": "Miền Trung"
+            },
+            {
+                "id": 41,
+                "customer_name": "Gabimaru",
+                "tour_name": "MIỀN BẮC 6N5Đ | HÀ NỘI – NINH BÌNH – HẠ LONG – YÊN TỬ – SAPA",
+                "total_price": 23350000,
+                "status": "Chưa xác nhận",
+                "payment_method": "Paypal",
+                "location": "Miền Bắc"
+            },
+            {
+                "id": 43,
+                "customer_name": "Trần Thị C",
+                "tour_name": "CẦN THƠ - CHÂU ĐỐC",
+                "total_price": 3500000,
+                "status": "Đã xác nhận",
+                "payment_method": "Thanh toán tại văn phòng",
+                "location": "Miền Nam"
+            },
+            {
+                "bookingId": "booking001",
+                "userName": "John Doe",
+                "userEmail": "john.doe@example.com",
+                "userPhone": "+123456789",
+                "tourName": "Amazing Vietnam Tour",
+                "bookingDate": "2023-11-01",
+                "status": "Confirmed",
+                "paymentMethod": "Credit Card",
+                "totalPrice": 1200,
+                "location": "domestic"
+            },
+            {
+                "bookingId": "booking002",
+                "userName": "Jane Smith",
+                "userEmail": "jane.smith@example.com",
+                "userPhone": "+987654321",
+                "tourName": "Thailand Adventure",
+                "bookingDate": "2023-11-02",
+                "status": "Pending",
+                "paymentMethod": "PayPal",
+                "totalPrice": 950,
+                "location": "international"
+            },
+            {
+                "bookingId": "booking003",
+                "userName": "Alice Johnson",
+                "userEmail": "alice.johnson@example.com",
+                "userPhone": "+1122334455",
+                "tourName": "Japan Discovery",
+                "bookingDate": "2023-11-03",
+                "status": "Confirmed",
+                "paymentMethod": "Bank Transfer",
+                "totalPrice": 1500,
+                "location": "international"
+            },
+            {
+                "bookingId": "booking004",
+                "userName": "Bob Brown",
+                "userEmail": "bob.brown@example.com",
+                "userPhone": "+9988776655",
+                "tourName": "Northern Vietnam Adventure",
+                "bookingDate": "2023-11-04",
+                "status": "Cancelled",
+                "paymentMethod": "Cash",
+                "totalPrice": 1100,
+                "location": "domestic"
+            },
+            {
+                "bookingId": "booking005",
+                "userName": "Emma Taylor",
+                "userEmail": "emma.taylor@example.com",
+                "userPhone": "+5566778899",
+                "tourName": "Cambodia Heritage Journey",
+                "bookingDate": "2023-11-05",
+                "status": "Confirmed",
+                "paymentMethod": "Credit Card",
+                "totalPrice": 850,
+                "location": "domestic"
+            }
+        ]
+    },
+    "monthlyRevenue": {
+        "domestic": [
+            {
+                "month": "January",
+                "revenue": 30000
+            },
+            {
+                "month": "February",
+                "revenue": 35000
+            },
+            {
+                "month": "March",
+                "revenue": 28000
+            },
+            {
+                "month": "April",
+                "revenue": 32000
+            },
+            {
+                "month": "May",
+                "revenue": 40000
+            },
+            {
+                "month": "June",
+                "revenue": 38000
+            },
+            {
+                "month": "July",
+                "revenue": 42000
+            },
+            {
+                "month": "August",
+                "revenue": 45000
+            },
+            {
+                "month": "September",
+                "revenue": 41000
+            },
+            {
+                "month": "October",
+                "revenue": 43000
+            },
+            {
+                "month": "November",
+                "revenue": 46000
+            },
+            {
+                "month": "December",
+                "revenue": 48000
+            }
+        ],
+        "international": [
+            {
+                "month": "January",
+                "revenue": 20000
+            },
+            {
+                "month": "February",
+                "revenue": 25000
+            },
+            {
+                "month": "March",
+                "revenue": 22000
+            },
+            {
+                "month": "April",
+                "revenue": 27000
+            },
+            {
+                "month": "May",
+                "revenue": 35000
+            },
+            {
+                "month": "June",
+                "revenue": 34000
+            },
+            {
+                "month": "July",
+                "revenue": 37000
+            },
+            {
+                "month": "August",
+                "revenue": 39000
+            },
+            {
+                "month": "September",
+                "revenue": 36000
+            },
+            {
+                "month": "October",
+                "revenue": 38000
+            },
+            {
+                "month": "November",
+                "revenue": 40000
+            },
+            {
+                "month": "December",
+                "revenue": 42000
+            }
+        ]
+    },
+    "customerFeedback": {
+        "domestic": [
+            {
+                "userName": "Emily Brown",
+                "tourName": "Amazing Vietnam Tour",
+                "rating": 5,
+                "comment": "It was an amazing experience! Highly recommended!"
+            },
+            {
+                "userName": "David Wilson",
+                "tourName": "Northern Vietnam Adventure",
+                "rating": 4.5,
+                "comment": "Great tour, but the itinerary was a bit rushed."
+            },
+            {
+                "userName": "Sophie Clark",
+                "tourName": "Cambodia Heritage Journey",
+                "rating": 4.4,
+                "comment": "Loved the temples, very insightful tour."
+            }
+        ],
+        "international": [
+            {
+                "userName": "Michael Lee",
+                "tourName": "Thailand Adventure",
+                "rating": 4.5,
+                "comment": "Great tour, but the weather was a bit hot."
+            },
+            {
+                "userName": "Sarah Davis",
+                "tourName": "Japan Discovery",
+                "rating": 5,
+                "comment": "Absolutely loved it! The guide was fantastic."
+            },
+            {
+                "userName": "James Miller",
+                "tourName": "USA West Coast Road Trip",
+                "rating": 4.6,
+                "comment": "Scenic views were breathtaking!"
+            }
+        ]
+    },
+    "adminManagement": {
+        "admins": [
+            {
+                "adminId": "admin001",
+                "name": "Admin One",
+                "email": "admin1@example.com",
+                "role": "Super Admin"
+            },
+            {
+                "adminId": "admin002",
+                "name": "Admin Two",
+                "email": "admin2@example.com",
+                "role": "Tour Manager"
+            },
+            {
+                "adminId": "admin003",
+                "name": "Admin Three",
+                "email": "admin3@example.com",
+                "role": "Booking Manager"
+            },
+            {
+                "adminId": "admin004",
+                "name": "Admin Four",
+                "email": "admin4@example.com",
+                "role": "Customer Support"
+            },
+            {
+                "adminId": "admin005",
+                "name": "Admin Five",
+                "email": "admin5@example.com",
+                "role": "Marketing Manager"
+            }
+        ]
+    },
+    "userManagement": {
+        "users": [
+            {
+                "userId": "user001",
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "phone": "+123456789",
+                "status": "Active"
+            },
+            {
+                "userId": "user002",
+                "name": "Jane Smith",
+                "email": "jane.smith@example.com",
+                "phone": "+987654321",
+                "status": "Inactive"
+            },
+            {
+                "userId": "user003",
+                "name": "Alice Johnson",
+                "email": "alice.johnson@example.com",
+                "phone": "+1122334455",
+                "status": "Active"
+            },
+            {
+                "userId": "user004",
+                "name": "Bob Brown",
+                "email": "bob.brown@example.com",
+                "phone": "+9988776655",
+                "status": "Active"
+            },
+            {
+                "userId": "user005",
+                "name": "Emma Taylor",
+                "email": "emma.taylor@example.com",
+                "phone": "+5566778899",
+                "status": "Active"
+            }
+        ]
+    },
+    "tourManagement": {
+        "tours": [
+            {
+                "tourId": "tour001",
+                "tourName": "Amazing Vietnam Tour",
+                "destination": "Vietnam",
+                "price": 1200,
+                "duration": "7 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour002",
+                "tourName": "Thailand Adventure",
+                "destination": "Thailand",
+                "price": 950,
+                "duration": "6 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour003",
+                "tourName": "Japan Discovery",
+                "destination": "Japan",
+                "price": 1500,
+                "duration": "10 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour004",
+                "tourName": "Northern Vietnam Adventure",
+                "destination": "Vietnam",
+                "price": 1100,
+                "duration": "5 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour005",
+                "tourName": "Southern Vietnam Escape",
+                "destination": "Vietnam",
+                "price": 1000,
+                "duration": "4 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour006",
+                "tourName": "Laos Cultural Tour",
+                "destination": "Laos",
+                "price": 900,
+                "duration": "6 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour007",
+                "tourName": "France Wine Tour",
+                "destination": "France",
+                "price": 2000,
+                "duration": "8 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour008",
+                "tourName": "Italy Art Tour",
+                "destination": "Italy",
+                "price": 1800,
+                "duration": "7 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour009",
+                "tourName": "Cambodia Heritage Journey",
+                "destination": "Cambodia",
+                "price": 850,
+                "duration": "5 days",
+                "status": "Active"
+            },
+            {
+                "tourId": "tour010",
+                "tourName": "USA West Coast Road Trip",
+                "destination": "USA",
+                "price": 2200,
+                "duration": "12 days",
+                "status": "Active"
+            }
+        ],
+        "actions": [
+            "Add",
+            "Edit",
+            "Delete"
+        ]
+    },
+    "bookingManagement": {
+        "bookings": [
+            {
+                "bookingId": "booking001",
+                "userId": "user001",
+                "tourId": "tour001",
+                "bookingDate": "2023-11-01",
+                "status": "Confirmed"
+            },
+            {
+                "bookingId": "booking002",
+                "userId": "user002",
+                "tourId": "tour002",
+                "bookingDate": "2023-11-02",
+                "status": "Pending"
+            },
+            {
+                "bookingId": "booking003",
+                "userId": "user003",
+                "tourId": "tour003",
+                "bookingDate": "2023-11-03",
+                "status": "Confirmed"
+            },
+            {
+                "bookingId": "booking004",
+                "userId": "user004",
+                "tourId": "tour004",
+                "bookingDate": "2023-11-04",
+                "status": "Cancelled"
+            },
+            {
+                "bookingId": "booking005",
+                "userId": "user005",
+                "tourId": "tour009",
+                "bookingDate": "2023-11-05",
+                "status": "Confirmed"
+            }
+        ]
+    },
+    "contactManagement": {
+        "contacts": [
+            {
+                "contactId": "contact001",
+                "name": "Alice Johnson",
+                "email": "alice@example.com",
+                "message": "I have a question about the tour.",
+                "status": "Unread"
+            },
+            {
+                "contactId": "contact002",
+                "name": "Bob Brown",
+                "email": "bob@example.com",
+                "message": "Can I get a discount?",
+                "status": "Replied"
+            },
+            {
+                "contactId": "contact003",
+                "name": "Charlie Davis",
+                "email": "charlie@example.com",
+                "message": "I'd like to know more about the itinerary.",
+                "status": "Unread"
+            },
+            {
+                "contactId": "contact004",
+                "name": "Diana Evans",
+                "email": "diana@example.com",
+                "message": "Is there a group discount available?",
+                "status": "Replied"
+            },
+            {
+                "contactId": "contact005",
+                "name": "Emma Taylor",
+                "email": "emma@example.com",
+                "message": "Can you send me the tour details?",
+                "status": "Unread"
+            }
+        ]
+    }
+}
