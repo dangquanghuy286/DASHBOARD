@@ -1,4 +1,4 @@
 function Report() {
     return <></>;
 }
-export default Report();
+export default Report;

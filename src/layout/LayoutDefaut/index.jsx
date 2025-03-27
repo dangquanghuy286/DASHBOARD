@@ -14,4 +14,4 @@ function LayoutDefault() {
         </>
     );
 }
-export default LayoutDefault();
+export default LayoutDefault;

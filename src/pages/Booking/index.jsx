@@ -1,4 +1,4 @@
 function Booking() {
     return <></>;
 }
-export default Booking();
+export default Booking;

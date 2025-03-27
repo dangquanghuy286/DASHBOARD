@@ -1,4 +1,4 @@
 function Tour() {
     return <></>;
 }
-export default Tour();
+export default Tour;

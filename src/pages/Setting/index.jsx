@@ -1,4 +1,4 @@
 function Setting() {
     return <></>;
 }
-export default Setting();
+export default Setting;

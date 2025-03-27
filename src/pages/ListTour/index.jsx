@@ -1,4 +1,4 @@
 function ListTour() {
     return <></>;
 }
-export default ListTour();
+export default ListTour;

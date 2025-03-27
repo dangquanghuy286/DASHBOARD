@@ -1,4 +1,4 @@
 function Admin() {
     return <></>;
 }
-export default Admin();
+export default Admin;

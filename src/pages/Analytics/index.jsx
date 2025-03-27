@@ -1,4 +1,4 @@
 function Analytics() {
     return <></>;
 }
-export default Analytics();
+export default Analytics;
