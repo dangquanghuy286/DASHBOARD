@@ -1,10 +1,12 @@
-import "./App.css";
+import { ThemeProvider } from "../src/context/theme";
+import AllRoute from "./components/AllRoute";
+
 function App() {
-  return (
-    <>
-      <div>Huy</div>
-    </>
-  );
+    return (
+        <ThemeProvider storageKey="theme">
+            <AllRoute />
+        </ThemeProvider>
+    );
 }
 
 export default App;
