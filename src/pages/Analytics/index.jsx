@@ -1,4 +1,4 @@
 function Analytics() {
-    return <></>;
+    return <>Analytics</>;
 }
 export default Analytics;

@@ -18,7 +18,6 @@ export const routes = [
         children: [
             {
                 index: true,
-
                 element: <Home />,
             },
             {
@@ -27,20 +26,20 @@ export const routes = [
             },
 
             {
-                path: "report",
+                path: "/report",
                 element: <Report />,
             },
             {
-                path: "admin",
+                path: "/admin",
                 element: <Admin />,
             },
             {
-                path: "customer",
+                path: "/customer",
                 element: <Customer />,
             },
 
             {
-                path: "tour",
+                path: "/tour",
                 element: <Tour />,
                 children: [
                     {
@@ -48,27 +47,27 @@ export const routes = [
                         element: <Tour />,
                     },
                     {
-                        path: "create_tour",
+                        path: "/create_tour",
                         element: <CreateTour />,
                     },
                     {
-                        path: "list_tour",
+                        path: "/list_tour",
                         element: <ListTour />,
                     },
                 ],
             },
 
             {
-                path: "booking",
+                path: "/booking",
                 element: <Booking />,
             },
 
             {
-                path: "contact",
+                path: "/contact",
                 element: <Contact />,
             },
             {
-                path: "setting",
+                path: "/setting",
                 element: <Setting />,
             },
         ],
