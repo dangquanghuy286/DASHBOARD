@@ -8,38 +8,37 @@ import Tour from "../pages/Tour";
 import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
 import Setting from "../pages/Setting";
-import LayoutDefaut from "../layout/LayoutDefaut";
+
 import Home from "../pages/Home";
+import LayoutDefault from "../layout/LayoutDefaut";
 
 export const routes = [
     {
         path: "/",
-        element: <LayoutDefaut />,
+        element: <LayoutDefault />,
         children: [
             {
                 index: true,
                 element: <Home />,
             },
             {
-                path: "/analytics",
+                path: "analytics",
                 element: <Analytics />,
             },
-
             {
-                path: "/report",
+                path: "report",
                 element: <Report />,
             },
             {
-                path: "/admin",
+                path: "admin",
                 element: <Admin />,
             },
             {
-                path: "/customer",
+                path: "customer",
                 element: <Customer />,
             },
-
             {
-                path: "/tour",
+                path: "tour",
                 element: <Tour />,
                 children: [
                     {
@@ -47,27 +46,25 @@ export const routes = [
                         element: <Tour />,
                     },
                     {
-                        path: "/create_tour",
+                        path: "create_tour",
                         element: <CreateTour />,
                     },
                     {
-                        path: "/list_tour",
+                        path: "list_tour",
                         element: <ListTour />,
                     },
                 ],
             },
-
             {
-                path: "/booking",
+                path: "booking",
                 element: <Booking />,
             },
-
             {
-                path: "/contact",
+                path: "contact",
                 element: <Contact />,
             },
             {
-                path: "/setting",
+                path: "setting",
                 element: <Setting />,
             },
         ],
