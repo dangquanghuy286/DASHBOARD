@@ -6,7 +6,9 @@ import Header from "./Header";
 import SideBarLeft from "./SideBarLeft";
 
 function LayoutDefault() {
+    // eslint-disable-next-line no-unused-vars
     const isDesktopDevice = useMediaQuery("(min-width:768px)");
+    // eslint-disable-next-line no-unused-vars
     const [collapsed, setCollapsed] = useState(false);
 
     const sidebarRef = useRef(null);

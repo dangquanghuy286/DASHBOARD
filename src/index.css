@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer base {
+    body {
+        @apply [scrollbar-color:_#cbd5e1_transparent] dark:[scrollbar-color:_#334155_transparent];
+    }
+}
