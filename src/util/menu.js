@@ -54,7 +54,7 @@ export const menu = [
         link: [
             {
                 path: "/customer",
-                text: "Quản lý người dùng",
+                text: "Quản lý khách hàng",
                 icon: FaUserAlt,
             },
         ],
@@ -85,7 +85,7 @@ export const menu = [
         link: [
             {
                 path: "/booking",
-                text: "Đặt chỗ",
+                text: "Quản lý booking",
                 icon: TbBrandBooking,
             },
         ],

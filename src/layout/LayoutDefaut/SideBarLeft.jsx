@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { forwardRef } from "react";
+import React, { useState, forwardRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { cn } from "../../util/cn"; // Giả định bạn có utility cn
+import { cn } from "../../util/cn";
 import logoDark from "../../assets/Img/dashboard_Dark.svg";
 import logoLight from "../../assets/Img/dashboard_Light.svg";
 import PropTypes from "prop-types";
@@ -10,13 +9,21 @@ import icons from "../../util/icon";
 
 const { FaChevronDown, FaChevronUp } = icons;
 
+// Các class CSS cho trạng thái menu đang được chọn hoặc chưa được chọn
 const notActiveStyle = "text-[#e9e8ea] text-[14px]";
 const activeStyle = "text-[#ffffff] text-[14px] font-bold";
 
+// Component Sidebar (Thanh điều hướng bên trái)
 const SideBarLeft = forwardRef(({ collapsed }, ref) => {
+    // State để kiểm soát submenu nào đang mở
     const [openSubMenu, setOpenSubMenu] = useState(null);
+    // Hook lấy thông tin URL hiện tại
     const location = useLocation();
 
+    /**
+     * Hàm xử lý mở/đóng submenu khi người dùng nhấn vào menu cha
+     * @param {string} index - Chỉ số của menu cha trong danh sách
+     */
     const toggleSubMenu = (index) => {
         setOpenSubMenu(openSubMenu === index ? null : index);
     };
@@ -25,10 +32,11 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
         <aside
             ref={ref}
             className={cn(
-                "fixed z-[100] flex h-full w-[240px] flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
+                "fixed z-[100] flex h-full flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
+                "max-md:hidden", // Ẩn hoàn toàn khi màn hình nhỏ hơn 768px
+                collapsed ? "md:w-[70px] md:items-center" : "md:w-[240px]",
             )}
         >
-            {/* Logo */}
             <div className="flex h-[50px] w-[50px] gap-x-3 p-3">
                 <img
                     src={logoLight}
@@ -40,10 +48,11 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                     alt="LogoDark"
                     className="hidden dark:block"
                 />
-                {!collapsed && <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>}
+                {collapsed === false && window.innerWidth >= 1024 && (
+                    <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>
+                )}
             </div>
 
-            {/* Menu Sidebar */}
             <div className="flex w-full flex-col gap-y-4 overflow-y-auto p-3">
                 <div className="flex flex-col py-3 text-left font-medium">
                     {menu.map((group, groupIndex) =>
@@ -56,7 +65,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                 >
                                     <NavLink
                                         to={item.children ? "#" : item.path}
-                                        end={!item.children} // Chỉ yêu cầu khớp chính xác cho mục không có children
+                                        end={!item.children}
                                         className="w-full"
                                         onClick={() => item.children && toggleSubMenu(`${groupIndex}-${index}`)}
                                     >
@@ -77,8 +86,10 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                                             color="#fff"
                                                         />
                                                     </div>
-                                                    <span className={isActiveOrOpen ? activeStyle : notActiveStyle}>{item.text}</span>
-                                                    {item.children && (
+                                                    {collapsed === false && window.innerWidth >= 1024 && (
+                                                        <span className={isActiveOrOpen ? activeStyle : notActiveStyle}>{item.text}</span>
+                                                    )}
+                                                    {item.children && !collapsed && (
                                                         <div className="ml-auto">
                                                             {openSubMenu === `${groupIndex}-${index}` ? (
                                                                 <FaChevronUp
@@ -98,8 +109,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                         }}
                                     </NavLink>
 
-                                    {/* Submenu */}
-                                    {item.children && openSubMenu === `${groupIndex}-${index}` && (
+                                    {item.children && openSubMenu === `${groupIndex}-${index}` && !collapsed && (
                                         <div className="ml-6 flex flex-col gap-2">
                                             {item.children.map((child) => (
                                                 <NavLink
@@ -126,7 +136,8 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
 
 SideBarLeft.displayName = "Sidebar";
 
-SideBarLeft.propTypes = {
+// Định nghĩa kiểu dữ liệu cho props
+SideBarLeft.prototype = {
     collapsed: PropTypes.bool,
 };
 
