@@ -4,6 +4,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { cn } from "../../util/cn";
 import Header from "./Header";
 import SideBarLeft from "./SideBarLeft";
+import { useClickOutside } from "../../hooks/use_Click_outSize";
 
 function LayoutDefault() {
     // Kiểm tra xem có phải thiết bị có màn hình >= 768px không (tức là desktop hoặc tablet ngang)
@@ -19,6 +20,14 @@ function LayoutDefault() {
     useEffect(() => {
         setCollapsed(!isDesktopDevice);
     }, [isDesktopDevice]);
+
+    //Xử lý click outside
+    useClickOutside([sidebarRef], () => {
+        // Kiểm tra nếu không phải thiết bị Desktop và Sidebar đang mở
+        if (!isDesktopDevice && !collapsed) {
+            setCollapsed(true); // Đóng Sidebar
+        }
+    });
 
     return (
         <div className="min-h-screen bg-slate-100 transition-colors dark:bg-slate-950">
