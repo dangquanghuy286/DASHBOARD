@@ -45,10 +45,10 @@ function Header({ collapsed, setCollapsed }) {
                         className={theme === "dark" ? "text-yellow-400" : "hidden"}
                     />
                 </button>
-                <button className="btn-announcement size-12 rounded-full border border-b-blue-600">
+                <button className="btn-announcement size-12 rounded-full border border-blue-600">
                     <FaBell size={30} />
                 </button>
-                <button className="size-12 overflow-hidden rounded-full">
+                <button className="size-12 cursor-pointer overflow-hidden rounded-full">
                     <img
                         src={pFImg}
                         alt="img"

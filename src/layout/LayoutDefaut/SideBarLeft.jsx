@@ -148,7 +148,6 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                     )}
                 </div>
             </div>
-            ;
         </aside>
     );
 });
