@@ -29,11 +29,11 @@ function PaymentTours() {
 
                 {/* Kiểm tra dữ liệu trước khi render */}
                 {data.length > 0 ? (
-                    <div className="flex flex-col items-center gap-6 md:flex-row">
+                    <div className="flex flex-row items-center gap-6">
                         {/* Biểu đồ */}
-                        <div className="w-full md:w-1/2">
+                        <div className="flex w-1/2 flex-col items-center">
                             <ResponsiveContainer
-                                width="100%"
+                                width={300}
                                 height={300}
                             >
                                 <PieChart>
@@ -61,7 +61,7 @@ function PaymentTours() {
                         </div>
 
                         {/* Bảng dữ liệu */}
-                        <div className="w-full md:w-1/2">
+                        <div className="w-1/2">
                             <table className="w-full border-collapse text-left dark:text-amber-50">
                                 <thead>
                                     <tr className="border-b">
