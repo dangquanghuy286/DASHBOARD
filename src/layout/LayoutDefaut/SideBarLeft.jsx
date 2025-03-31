@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../util/cn";
 import logoDark from "../../assets/Img/dashboard_Dark.svg";
@@ -6,12 +6,9 @@ import logoLight from "../../assets/Img/dashboard_Light.svg";
 import PropTypes from "prop-types";
 import { menu } from "../../util/menu";
 import icons from "../../util/icon";
+import { useClickOutside } from "../../hooks/use_Click_outSize";
 
 const { FaChevronDown, FaChevronUp } = icons;
-
-// Các class CSS cho trạng thái menu đang được chọn hoặc chưa được chọn
-const notActiveStyle = "text-[#e9e8ea] text-[14px]";
-const activeStyle = "text-[#ffffff] text-[14px] font-bold";
 
 // Component Sidebar (Thanh điều hướng bên trái)
 const SideBarLeft = forwardRef(({ collapsed }, ref) => {
@@ -19,6 +16,16 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
     const [openSubMenu, setOpenSubMenu] = useState(null);
     // Hook lấy thông tin URL hiện tại
     const location = useLocation();
+
+    const sidebarRef = useRef(null);
+    const wrapperRef = useRef(null);
+
+    // Close sidebar when clicking outside
+    useClickOutside([sidebarRef, wrapperRef], () => {
+        if (!collapsed) {
+            setOpenSubMenu(null); // Close all submenus
+        }
+    });
 
     /**
      * Hàm xử lý mở/đóng submenu khi người dùng nhấn vào menu cha
@@ -30,7 +37,10 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
 
     return (
         <aside
-            ref={ref}
+            ref={(node) => {
+                sidebarRef.current = node;
+                if (ref) ref.current = node;
+            }}
             className={cn(
                 "fixed z-[100] flex h-full flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
                 "max-md:hidden", // Ẩn hoàn toàn khi màn hình nhỏ hơn 768px
@@ -52,7 +62,6 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                     <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>
                 )}
             </div>
-
             <div className="flex w-full flex-col gap-y-4 overflow-y-auto p-3">
                 <div className="flex flex-col py-3 text-left font-medium">
                     {menu.map((group, groupIndex) =>
@@ -83,22 +92,28 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                                     <div className="flex w-[18px] items-center justify-center">
                                                         <item.icon
                                                             size={18}
-                                                            color="#fff"
+                                                            className="text-black dark:text-white"
                                                         />
                                                     </div>
                                                     {collapsed === false && window.innerWidth >= 1024 && (
-                                                        <span className={isActiveOrOpen ? activeStyle : notActiveStyle}>{item.text}</span>
+                                                        <span
+                                                            className={`${
+                                                                isActiveOrOpen ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-300"
+                                                            }`}
+                                                        >
+                                                            {item.text}
+                                                        </span>
                                                     )}
                                                     {item.children && !collapsed && (
                                                         <div className="ml-auto">
                                                             {openSubMenu === `${groupIndex}-${index}` ? (
                                                                 <FaChevronUp
-                                                                    color="#fff"
+                                                                    className="text-black dark:text-white"
                                                                     size={14}
                                                                 />
                                                             ) : (
                                                                 <FaChevronDown
-                                                                    color="#fff"
+                                                                    className="text-black dark:text-white"
                                                                     size={14}
                                                                 />
                                                             )}
@@ -116,9 +131,12 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                                     key={child.path}
                                                     to={`${item.path}/${child.path}`}
                                                     end
-                                                    className="flex h-[40px] items-center gap-3 px-4 text-gray-400 hover:text-white"
+                                                    className="flex h-[40px] items-center gap-3 px-4 text-black hover:text-black dark:text-white dark:hover:text-white"
                                                 >
-                                                    <child.icon size={16} />
+                                                    <child.icon
+                                                        size={16}
+                                                        className="text-black dark:text-white"
+                                                    />
                                                     <span>{child.text}</span>
                                                 </NavLink>
                                             ))}
@@ -130,6 +148,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                     )}
                 </div>
             </div>
+            ;
         </aside>
     );
 });

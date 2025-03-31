@@ -7,7 +7,7 @@ const initialState = {
     setTheme: () => null,
 };
 
-const ThemeProviderContext = createContext(initialState);
+export const ThemeProviderContext = createContext(initialState);
 
 export function ThemeProvider({ children, defaultTheme = "system", storageKey = "vite-ui-theme", ...props }) {
     const [theme, setTheme] = useState(() => localStorage.getItem(storageKey) || defaultTheme);
@@ -19,12 +19,10 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
 
         if (theme === "system") {
             const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
             root.classList.add(systemTheme);
-            return;
+        } else {
+            root.classList.add(theme);
         }
-
-        root.classList.add(theme);
     }, [theme]);
 
     const value = {

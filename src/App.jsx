@@ -1,9 +1,12 @@
-import { ThemeProvider } from "../src/context/theme";
+import { ThemeProvider } from "./context/theme";
 import AllRoute from "./components/AllRoute";
 
 function App() {
     return (
-        <ThemeProvider storageKey="theme">
+        <ThemeProvider
+            storageKey="theme"
+            defaultTheme="light"
+        >
             <AllRoute />
         </ThemeProvider>
     );

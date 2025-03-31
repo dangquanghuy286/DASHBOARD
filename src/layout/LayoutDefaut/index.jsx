@@ -25,7 +25,7 @@ function LayoutDefault() {
     useClickOutside([sidebarRef], () => {
         // Kiểm tra nếu không phải thiết bị Desktop và Sidebar đang mở
         if (!isDesktopDevice && !collapsed) {
-            setCollapsed(true); // Đóng Sidebar
+            setCollapsed(true);
         }
     });
 
