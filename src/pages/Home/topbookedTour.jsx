@@ -28,9 +28,9 @@ function TopbookedTour() {
                 </div>
                 <div className="card-body flex gap-4 p-4">
                     <h2 className="card-title mb-4t mt-8">🏞️ Top Booked Domestic Tours</h2>
-                    <table className="min-w-full table-auto border-collapse dark:text-amber-50">
+                    <table className="w-full table-auto border-collapse dark:text-amber-50">
                         <thead>
-                            <tr>
+                            <tr className="bg-blue-100 text-black">
                                 <th className="border border-gray-300 px-4 py-2">ID</th>
                                 <th className="border border-gray-300 px-4 py-2">Tên Tour</th>
                                 <th className="border border-gray-300 px-4 py-2">Chỗ Đã Đặt</th>
@@ -59,9 +59,9 @@ function TopbookedTour() {
                     </table>
 
                     <h2 className="card-title mt-8 mb-4">✈️ Top Booked International Tours</h2>
-                    <table className="min-w-full table-auto border-collapse dark:text-amber-50">
+                    <table className="w-fit min-w-full table-auto border-collapse md:w-1 dark:text-amber-50">
                         <thead>
-                            <tr>
+                            <tr className="bg-blue-100 text-black">
                                 <th className="border border-gray-300 px-4 py-2">ID</th>
                                 <th className="border border-gray-300 px-4 py-2">Tên Tour</th>
                                 <th className="border border-gray-300 px-4 py-2">Lượt Đặt Chỗ</th>
