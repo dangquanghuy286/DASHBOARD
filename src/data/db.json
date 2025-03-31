@@ -1,8 +1,30 @@
 {
-    "total_active_tours": 25,
-    "total_bookings": 1500,
-    "total_users": 5000,
-    "total_revenue": 750000.00,
+    "dashboard_summary": {
+        "total_active_tours": {
+            "previous": 22,
+            "current": 25,
+            "change": 3,
+            "percentage_change": 13.64
+        },
+        "total_bookings": {
+            "previous": 1600,
+            "current": 1500,
+            "change": -100,
+            "percentage_change": -6.25
+        },
+        "total_users": {
+            "previous": 4800,
+            "current": 5000,
+            "change": 200,
+            "percentage_change": 4.17
+        },
+        "total_revenue": {
+            "previous": 770000.00,
+            "current": 750000.00,
+            "change": -20000.00,
+            "percentage_change": -2.60
+        }
+    },
     "destination_statistics": {
         "domestic": [
             {

@@ -1,4 +1,4 @@
-import { MdDashboard, MdTour, MdContactPhone, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence } from "react-icons/md";
+import { MdDashboard, MdTour, MdContactPhone, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, MdTrendingDown } from "react-icons/md";
 import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
 import { GrUserAdmin } from "react-icons/gr";
@@ -48,5 +48,6 @@ const icons = {
     FaFire,
     FaRocket,
     FaChartBar,
+    MdTrendingDown,
 };
 export default icons;
