@@ -1,8 +1,18 @@
+import { useEffect, useState } from "react";
 import icons from "../../util/icon";
-import { AreaChart, ResponsiveContainer } from "recharts";
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { getDataMonths } from "../../services/chartMonthSevice";
 const { GoPackage, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers, FaMap, FaMapMarkedAlt, FaFire, FaRocket, FaChartBar } =
     icons;
 function Home() {
+    const [dataChart, setDatachart] = useState([]);
+    useEffect(() => {
+        const FetchApi = async () => {
+            const res = await getDataMonths();
+            setDatachart(res);
+        };
+        FetchApi();
+    }, []);
     return (
         <div className="flex flex-col gap-y-4">
             <h1 className="title">Trang chủ</h1>
@@ -109,10 +119,47 @@ function Home() {
                         </div>
                         <p className="card-title">Doanh thu theo tháng</p>
                     </div>
-                    <div className="card-body p-0">
-                        <ResponsiveContainer>
-                            <AreaChart></AreaChart>
-                        </ResponsiveContainer>
+                    <div className="card-body flex gap-4 p-4">
+                        <div className="card-domestic rounded-lg p-4">
+                            <div className="title">Trong nước</div>
+                            <ResponsiveContainer
+                                width="100%"
+                                height={300}
+                            >
+                                <AreaChart data={dataChart.domestic}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="month" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Area
+                                        type="monotone"
+                                        dataKey="revenue"
+                                        stroke="#4CAF50"
+                                        fill="#A5D6A7"
+                                    />
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </div>
+                        <div className="card-word rounded-lg shadow-md">
+                            <div className="title">Ngoài nước</div>
+                            <ResponsiveContainer
+                                width="100%"
+                                height={300}
+                            >
+                                <AreaChart data={dataChart.international}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="month" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Area
+                                        type="monotone"
+                                        dataKey="revenue"
+                                        stroke="#FF9800"
+                                        fill="#FFCC80"
+                                    />
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </div>
                     </div>
                 </div>
             </div>
