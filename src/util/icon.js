@@ -2,7 +2,21 @@ import { MdDashboard, MdTour, MdContactPhone, MdTrendingUp, MdOnlinePrediction, 
 import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
 import { GrUserAdmin } from "react-icons/gr";
-import { FaUserAlt, FaClipboardList, FaChevronDown, FaChevronUp, FaChevronLeft, FaSearch, FaUsers } from "react-icons/fa";
+import {
+    FaUserAlt,
+    FaClipboardList,
+    FaChevronDown,
+    FaChevronUp,
+    FaChevronLeft,
+    FaSearch,
+    FaUsers,
+    FaBell,
+    FaMap,
+    FaMapMarkedAlt,
+    FaFire,
+    FaRocket,
+    FaChartBar,
+} from "react-icons/fa";
 import { TbBrandBooking } from "react-icons/tb";
 import { GoPackage } from "react-icons/go";
 const icons = {
@@ -28,5 +42,11 @@ const icons = {
     FaUsers,
     IoIosMoon,
     IoIosSunny,
+    FaBell,
+    FaMap,
+    FaMapMarkedAlt,
+    FaFire,
+    FaRocket,
+    FaChartBar,
 };
 export default icons;

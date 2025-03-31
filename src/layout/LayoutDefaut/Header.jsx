@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import icons from "../../util/icon";
 import { useTheme } from "../../hooks/use_theme";
-// Đúng tên file
 
-const { FaChevronLeft, FaSearch, IoIosSunny, IoIosMoon } = icons;
+import pFImg from "@/assets/Img/admin-1.jpg";
+const { FaChevronLeft, FaSearch, IoIosSunny, IoIosMoon, FaBell } = icons;
 
 function Header({ collapsed, setCollapsed }) {
     const { theme, setTheme } = useTheme();
@@ -43,6 +43,15 @@ function Header({ collapsed, setCollapsed }) {
                     <IoIosMoon
                         size={30}
                         className={theme === "dark" ? "text-yellow-400" : "hidden"}
+                    />
+                </button>
+                <button className="btn-announcement size-12 rounded-full border border-b-blue-600">
+                    <FaBell size={30} />
+                </button>
+                <button className="size-12 overflow-hidden rounded-full">
+                    <img
+                        src={pFImg}
+                        alt="img"
                     />
                 </button>
             </div>

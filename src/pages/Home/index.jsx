@@ -1,5 +1,7 @@
 import icons from "../../util/icon";
-const { GoPackage, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers } = icons;
+import { AreaChart, ResponsiveContainer } from "recharts";
+const { GoPackage, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers, FaMap, FaMapMarkedAlt, FaFire, FaRocket, FaChartBar } =
+    icons;
 function Home() {
     return (
         <div className="flex flex-col gap-y-4">
@@ -63,6 +65,54 @@ function Home() {
                             <MdTrendingUp size={20} />
                             <span>25 %</span>
                         </span>
+                    </div>
+                </div>
+            </div>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
+                <div className="card col-span-1 md:col-span-2 lg:col-span-5">
+                    <div className="card-header flex">
+                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                            <FaMap size={26} />
+                        </div>
+                        <p className="card-title">Điểm đến</p>
+                    </div>
+                </div>
+                <div className="card col-span-1 md:col-span-2 lg:col-span-3">
+                    <div className="card-header flex">
+                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                            <FaMapMarkedAlt size={26} />
+                        </div>
+                        <p className="card-title">Đặt Tour</p>
+                    </div>
+                </div>
+                <div className="card col-span-1 md:col-span-2 lg:col-span-4">
+                    <div className="card-header flex">
+                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                            <FaFire size={26} />
+                        </div>
+                        <p className="card-title">Tour được đăt nhiều nhất</p>
+                    </div>
+                    <div className="card-body p-0"></div>
+                </div>
+                <div className="card col-span-1 md:col-span-2 lg:col-span-4">
+                    <div className="card-header flex">
+                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                            <FaRocket size={26} />
+                        </div>
+                        <p className="card-title">Tour mới</p>
+                    </div>
+                </div>
+                <div className="card col-span-1 md:col-span-2 lg:col-span-8">
+                    <div className="card-header flex">
+                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                            <FaChartBar size={26} />
+                        </div>
+                        <p className="card-title">Doanh thu theo tháng</p>
+                    </div>
+                    <div className="card-body p-0">
+                        <ResponsiveContainer>
+                            <AreaChart></AreaChart>
+                        </ResponsiveContainer>
                     </div>
                 </div>
             </div>
