@@ -23,7 +23,7 @@ function DataChartMonth() {
                 </div>
                 <div className="card-body flex gap-4 p-4">
                     <div className="card-domestic rounded-lg p-4">
-                        <div className="title">Trong nước</div>
+                        <h2 className="card-title mt-8 mb-5">🏞️ Trong nước</h2>
                         <ResponsiveContainer
                             width="100%"
                             height={300}
@@ -42,8 +42,8 @@ function DataChartMonth() {
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className="card-word rounded-lg shadow-md">
-                        <div className="title">Ngoài nước</div>
+                    <div className="card-word rounded-lg p-4">
+                        <h2 className="card-title mt-8 mb-5">✈️ Ngoài nước</h2>
                         <ResponsiveContainer
                             width="100%"
                             height={300}

@@ -34,8 +34,8 @@ function TourStatistics() {
                         <div className="flex w-1/2 flex-col items-center">
                             <p className="mb-2 text-center font-semibold dark:text-amber-50">Trong nước</p>
                             <ResponsiveContainer
-                                width={250}
-                                height={250}
+                                width={300}
+                                height={300}
                             >
                                 <PieChart>
                                     <Pie

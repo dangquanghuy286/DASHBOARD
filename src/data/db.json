@@ -4,25 +4,25 @@
             "previous": 22,
             "current": 25,
             "change": 3,
-            "percentage_change": 13.64
+            "percentage_change": "13.64%"
         },
         "total_bookings": {
             "previous": 1600,
             "current": 1500,
             "change": -100,
-            "percentage_change": -6.25
+            "percentage_change": "-6.25%"
         },
         "total_users": {
             "previous": 4800,
             "current": 5000,
             "change": 200,
-            "percentage_change": 4.17
+            "percentage_change": "4.17%"
         },
         "total_revenue": {
-            "previous": 770000.00,
-            "current": 750000.00,
-            "change": -20000.00,
-            "percentage_change": -2.60
+            "previous": 770000,
+            "current": 750000,
+            "change": -20000,
+            "percentage_change": "-2.6%"
         }
     },
     "destination_statistics": {
@@ -34,29 +34,29 @@
             },
             {
                 "name": "Miền Trung",
-                "value": 35,
+                "value": 40,
                 "color": "#009688"
             },
             {
                 "name": "Miền Nam",
-                "value": 25,
+                "value": 30,
                 "color": "#9C27B0"
             }
         ],
         "international": [
             {
                 "name": "Thailand",
-                "value": 25,
+                "value": 26,
                 "color": "#FFEB3B"
             },
             {
                 "name": "Japan",
-                "value": 20,
+                "value": 21,
                 "color": "#3F51B5"
             },
             {
                 "name": "France",
-                "value": 15,
+                "value": 16,
                 "color": "#9C27B0"
             },
             {
@@ -71,12 +71,12 @@
             },
             {
                 "name": "Australia",
-                "value": 8,
+                "value": 7,
                 "color": "#FF9800"
             },
             {
                 "name": "Others",
-                "value": 20,
+                "value": 10,
                 "color": "#795548"
             }
         ]
@@ -84,27 +84,27 @@
     "booking_payments": [
         {
             "method": "Credit Card",
-            "percentage": 60,
+            "percentage": 39,
             "color": "#FF5733"
         },
         {
             "method": "PayPal",
-            "percentage": 25,
+            "percentage": 16,
             "color": "#33A8FF"
         },
         {
             "method": "Momo",
-            "percentage": 40,
+            "percentage": 26,
             "color": "#FF33E3"
         },
         {
             "method": "Thanh toán tại văn phòng",
-            "percentage": 20,
+            "percentage": 13,
             "color": "#FFC300"
         },
         {
             "method": "Chuyển khoản ngân hàng",
-            "percentage": 10,
+            "percentage": 6,
             "color": "#27AE60"
         }
     ],
@@ -117,8 +117,7 @@
                 "seats_available": 25,
                 "price": 1600000,
                 "rating": 4.6,
-                "duration": "3 ngày 2 đêm",
-                "destination": "Vietnam"
+                "duration": "3 ngày 2 đêm"
             },
             {
                 "id": 189,
@@ -127,8 +126,7 @@
                 "seats_available": 35,
                 "price": 2100000,
                 "rating": 4.8,
-                "duration": "4 ngày 3 đêm",
-                "destination": "Vietnam"
+                "duration": "4 ngày 3 đêm"
             },
             {
                 "id": 205,
@@ -137,8 +135,7 @@
                 "seats_available": 18,
                 "price": 1900000,
                 "rating": 4.7,
-                "duration": "3 ngày 2 đêm",
-                "destination": "Vietnam"
+                "duration": "3 ngày 2 đêm"
             },
             {
                 "id": 101,
@@ -147,8 +144,7 @@
                 "seats_available": 320,
                 "price": 31250000,
                 "rating": 4.7,
-                "duration": "6 ngày",
-                "destination": "Vietnam"
+                "duration": "6 ngày"
             },
             {
                 "id": 104,
@@ -157,8 +153,7 @@
                 "seats_available": 270,
                 "price": 28750000,
                 "rating": 4.5,
-                "duration": "5 ngày",
-                "destination": "Vietnam"
+                "duration": "5 ngày"
             },
             {
                 "id": 105,
@@ -167,8 +162,7 @@
                 "seats_available": 210,
                 "price": 26250000,
                 "rating": 4.6,
-                "duration": "4 ngày",
-                "destination": "Vietnam"
+                "duration": "4 ngày"
             }
         ],
         "international": [
@@ -425,19 +419,19 @@
                 "userName": "Emily Brown",
                 "tourName": "Amazing Vietnam Tour",
                 "rating": 5,
-                "comment": "It was an amazing experience! Highly recommended!"
+                "comment": "Amazing experience!"
             },
             {
                 "userName": "David Wilson",
                 "tourName": "Northern Vietnam Adventure",
                 "rating": 4.5,
-                "comment": "Great tour, but the itinerary was a bit rushed."
+                "comment": "Great but rushed."
             },
             {
                 "userName": "Sophie Clark",
                 "tourName": "Cambodia Heritage Journey",
                 "rating": 4.4,
-                "comment": "Loved the temples, very insightful tour."
+                "comment": "Loved the temples."
             }
         ],
         "international": [
@@ -445,19 +439,19 @@
                 "userName": "Michael Lee",
                 "tourName": "Thailand Adventure",
                 "rating": 4.5,
-                "comment": "Great tour, but the weather was a bit hot."
+                "comment": "Great but hot."
             },
             {
                 "userName": "Sarah Davis",
                 "tourName": "Japan Discovery",
                 "rating": 5,
-                "comment": "Absolutely loved it! The guide was fantastic."
+                "comment": "Fantastic guide!"
             },
             {
                 "userName": "James Miller",
                 "tourName": "USA West Coast Road Trip",
                 "rating": 4.6,
-                "comment": "Scenic views were breathtaking!"
+                "comment": "Breathtaking views!"
             }
         ]
     },
@@ -668,35 +662,35 @@
                 "contactId": "contact001",
                 "name": "Alice Johnson",
                 "email": "alice@example.com",
-                "message": "I have a question about the tour.",
-                "status": "Unread"
+                "message": "Tour question",
+                "status": "Unread .."
             },
             {
                 "contactId": "contact002",
                 "name": "Bob Brown",
                 "email": "bob@example.com",
-                "message": "Can I get a discount?",
+                "message": "Discount request",
                 "status": "Replied"
             },
             {
                 "contactId": "contact003",
                 "name": "Charlie Davis",
                 "email": "charlie@example.com",
-                "message": "I'd like to know more about the itinerary.",
+                "message": "Itinerary info",
                 "status": "Unread"
             },
             {
                 "contactId": "contact004",
                 "name": "Diana Evans",
                 "email": "diana@example.com",
-                "message": "Is there a group discount available?",
+                "message": "Group discount?",
                 "status": "Replied"
             },
             {
                 "contactId": "contact005",
                 "name": "Emma Taylor",
                 "email": "emma@example.com",
-                "message": "Can you send me the tour details?",
+                "message": "Tour details",
                 "status": "Unread"
             }
         ]

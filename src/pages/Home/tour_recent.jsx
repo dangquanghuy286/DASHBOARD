@@ -20,7 +20,7 @@ function TourRecent() {
     }, []);
 
     return (
-        <div className="card col-span-1 md:col-span-2 lg:col-span-4">
+        <div className="card col-span-1 min-w-[400px] md:col-span-2 lg:col-span-4">
             <div className="card-header flex">
                 <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 dark:bg-blue-600/20 dark:text-blue-600">
                     <FaRocket size={26} />
