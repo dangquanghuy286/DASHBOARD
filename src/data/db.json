@@ -62,31 +62,28 @@
     "booking_payments": [
         {
             "method": "Credit Card",
-            "percentage": 60
+            "percentage": 60,
+            "color": "#FF5733"
         },
         {
             "method": "PayPal",
-            "percentage": 25
-        },
-        {
-            "method": "Bank Transfer",
-            "percentage": 10
-        },
-        {
-            "method": "Cash",
-            "percentage": 5
+            "percentage": 25,
+            "color": "#33A8FF"
         },
         {
             "method": "Momo",
-            "percentage": 40
+            "percentage": 40,
+            "color": "#FF33E3"
         },
         {
             "method": "Thanh toán tại văn phòng",
-            "percentage": 20
+            "percentage": 20,
+            "color": "#FFC300"
         },
         {
             "method": "Chuyển khoản ngân hàng",
-            "percentage": 10
+            "percentage": 10,
+            "color": "#27AE60"
         }
     ],
     "top_booked_tours": {

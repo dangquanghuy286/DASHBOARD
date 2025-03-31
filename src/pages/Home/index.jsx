@@ -1,8 +1,9 @@
 import icons from "../../util/icon";
 import DataChartMonth from "./dataChartsMonth";
+import PaymentTours from "./paymentTour";
 import TourStatistics from "./tourStatistics";
 
-const { GoPackage, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers, FaMapMarkedAlt, FaFire, FaRocket } = icons;
+const { GoPackage, MdTrendingUp, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers, FaFire, FaRocket } = icons;
 function Home() {
     return (
         <div className="flex flex-col gap-y-4">
@@ -71,14 +72,7 @@ function Home() {
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
                 <TourStatistics />
-                <div className="card col-span-1 md:col-span-2 lg:col-span-3">
-                    <div className="card-header flex">
-                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
-                            <FaMapMarkedAlt size={26} />
-                        </div>
-                        <p className="card-title">Đặt Tour</p>
-                    </div>
-                </div>
+                <PaymentTours />
                 <div className="card col-span-1 md:col-span-2 lg:col-span-4">
                     <div className="card-header flex">
                         <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
