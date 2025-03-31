@@ -33,16 +33,16 @@ function Header({ collapsed, setCollapsed }) {
             </div>
             <div className="flex items-center gap-x-3">
                 <button
-                    className="btn-ghost size-10"
+                    className="btn-ghost size-12 rounded-full border border-amber-400"
                     onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 >
                     <IoIosSunny
-                        size={20}
-                        className={theme === "dark" ? "hidden" : ""}
+                        size={30}
+                        className={theme === "dark" ? "hidden" : "text-yellow-400"}
                     />
                     <IoIosMoon
-                        size={20}
-                        className={theme === "dark" ? "" : "hidden"}
+                        size={30}
+                        className={theme === "dark" ? "text-yellow-400" : "hidden"}
                     />
                 </button>
             </div>
