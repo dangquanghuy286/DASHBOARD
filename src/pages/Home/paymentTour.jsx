@@ -24,7 +24,7 @@ function PaymentTours() {
                 </div>
                 <p className="card-title">Dữ liệu thanh toán</p>
             </div>
-            <div className="card-body">
+            <div className="card-body flex gap-4 p-4">
                 <p className="title mb-4 text-center text-lg font-semibold">Phương thức thanh toán</p>
 
                 {/* Kiểm tra dữ liệu trước khi render */}

@@ -1,10 +1,11 @@
 import icons from "../../util/icon";
 import DataChartMonth from "./dataChartsMonth";
 import PaymentTours from "./paymentTour";
+import TopbookedTour from "./topbookedTour";
 import TotalAll from "./totalAll";
 import TourStatistics from "./tourStatistics";
 
-const { FaFire, FaRocket } = icons;
+const { FaRocket } = icons;
 function Home() {
     return (
         <div className="flex flex-col gap-y-4">
@@ -13,15 +14,7 @@ function Home() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
                 <TourStatistics />
                 <PaymentTours />
-                <div className="card col-span-1 md:col-span-2 lg:col-span-4">
-                    <div className="card-header flex">
-                        <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
-                            <FaFire size={26} />
-                        </div>
-                        <p className="card-title">Tour được đặt nhiều nhất</p>
-                    </div>
-                    <div className="card-body p-0"></div>
-                </div>
+                <TopbookedTour />
                 <div className="card col-span-1 md:col-span-2 lg:col-span-4">
                     <div className="card-header flex">
                         <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">

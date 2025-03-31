@@ -111,123 +111,111 @@
     "top_booked_tours": {
         "domestic": [
             {
-                "id": 192,
-                "name": "Châu Đốc - Miếu Bà Chúa Xứ - Rừng Tràm Trà Sư - Hà Tiên - Rạch Giá - Cần Thơ",
-                "seats_booked": 10,
-                "seats_available": 20,
-                "price": 1500000,
-                "rating": 4.5,
-                "duration": "3 ngày 2 đêm"
-            },
-            {
-                "id": 177,
-                "name": "MIỀN TRUNG 3N2Đ | ĐÀ NẴNG - CÙ LAO CHÀM - HỘI AN - BÀ NÀ (TẾT ẤM LỊCH 2025)",
-                "seats_booked": 8,
-                "seats_available": 40,
-                "price": 2000000,
-                "rating": 4.7,
-                "duration": "3 ngày 2 đêm"
-            },
-            {
-                "id": 200,
-                "name": "HÀ NỘI - SAPA - FANSIPAN",
-                "seats_booked": 5,
-                "seats_available": 15,
-                "price": 1800000,
-                "rating": 4.8,
-                "duration": "4 ngày 3 đêm"
-            },
-            {
-                "tourId": "tour001",
-                "tourName": "Amazing Vietnam Tour",
-                "bookings": 300,
-                "price": 1200,
-                "rating": 4.8,
-                "duration": "7 days",
-                "destination": "Vietnam"
-            },
-            {
-                "tourId": "tour004",
-                "tourName": "Northern Vietnam Adventure",
-                "bookings": 220,
-                "price": 1100,
+                "id": 201,
+                "name": "Đà Lạt - Thành Phố Ngàn Hoa",
+                "seats_booked": 12,
+                "seats_available": 25,
+                "price": 1600000,
                 "rating": 4.6,
-                "duration": "5 days",
+                "duration": "3 ngày 2 đêm",
                 "destination": "Vietnam"
             },
             {
-                "tourId": "tour005",
-                "tourName": "Southern Vietnam Escape",
-                "bookings": 180,
-                "price": 1000,
+                "id": 189,
+                "name": "Phú Quốc - Thiên Đường Nghỉ Dưỡng",
+                "seats_booked": 9,
+                "seats_available": 35,
+                "price": 2100000,
+                "rating": 4.8,
+                "duration": "4 ngày 3 đêm",
+                "destination": "Vietnam"
+            },
+            {
+                "id": 205,
+                "name": "Hà Giang - Cao Nguyên Đá Đồng Văn",
+                "seats_booked": 7,
+                "seats_available": 18,
+                "price": 1900000,
+                "rating": 4.7,
+                "duration": "3 ngày 2 đêm",
+                "destination": "Vietnam"
+            },
+            {
+                "id": 101,
+                "name": "Phố cổ Hội An",
+                "seats_booked": 280,
+                "seats_available": 320,
+                "price": 31250000,
+                "rating": 4.7,
+                "duration": "6 ngày",
+                "destination": "Vietnam"
+            },
+            {
+                "id": 104,
+                "name": "Thánh địa Mỹ Sơn",
+                "seats_booked": 230,
+                "seats_available": 270,
+                "price": 28750000,
                 "rating": 4.5,
-                "duration": "4 days",
+                "duration": "5 ngày",
                 "destination": "Vietnam"
             },
             {
-                "tourId": "tour006",
-                "tourName": "Laos Cultural Tour",
-                "bookings": 150,
-                "price": 900,
-                "rating": 4.4,
-                "duration": "6 days",
-                "destination": "Laos"
-            },
-            {
-                "tourId": "tour009",
-                "tourName": "Cambodia Heritage Journey",
-                "bookings": 130,
-                "price": 850,
-                "rating": 4.3,
-                "duration": "5 days",
-                "destination": "Cambodia"
+                "id": 105,
+                "name": "Hà Nội",
+                "seats_booked": 190,
+                "seats_available": 210,
+                "price": 26250000,
+                "rating": 4.6,
+                "duration": "4 ngày",
+                "destination": "Vietnam"
             }
         ],
         "international": [
             {
-                "tourId": "tour002",
-                "tourName": "Thailand Adventure",
-                "bookings": 250,
-                "price": 950,
-                "rating": 4.7,
-                "duration": "6 days",
-                "destination": "Thailand"
-            },
-            {
-                "tourId": "tour003",
-                "tourName": "Japan Discovery",
-                "bookings": 200,
-                "price": 1500,
-                "rating": 4.9,
-                "duration": "10 days",
-                "destination": "Japan"
-            },
-            {
-                "tourId": "tour007",
-                "tourName": "France Wine Tour",
-                "bookings": 170,
-                "price": 2000,
+                "tourId": "tour102",
+                "tourName": "Bali Paradise Getaway",
+                "bookings": 260,
+                "price": 980,
                 "rating": 4.8,
-                "duration": "8 days",
-                "destination": "France"
-            },
-            {
-                "tourId": "tour008",
-                "tourName": "Italy Art Tour",
-                "bookings": 160,
-                "price": 1800,
-                "rating": 4.7,
                 "duration": "7 days",
-                "destination": "Italy"
+                "destination": "Indonesia"
             },
             {
-                "tourId": "tour010",
-                "tourName": "USA West Coast Road Trip",
-                "bookings": 140,
-                "price": 2200,
+                "tourId": "tour103",
+                "tourName": "Korea Cherry Blossom Tour",
+                "bookings": 210,
+                "price": 1550,
+                "rating": 4.9,
+                "duration": "9 days",
+                "destination": "South Korea"
+            },
+            {
+                "tourId": "tour107",
+                "tourName": "Spain Flamenco & Food Tour",
+                "bookings": 180,
+                "price": 2050,
+                "rating": 4.7,
+                "duration": "8 days",
+                "destination": "Spain"
+            },
+            {
+                "tourId": "tour108",
+                "tourName": "Greece Island Hopping",
+                "bookings": 170,
+                "price": 1850,
                 "rating": 4.6,
-                "duration": "12 days",
-                "destination": "USA"
+                "duration": "7 days",
+                "destination": "Greece"
+            },
+            {
+                "tourId": "tour110",
+                "tourName": "Canadian Rockies Explorer",
+                "bookings": 150,
+                "price": 2250,
+                "rating": 4.7,
+                "duration": "10 days",
+                "destination": "Canada"
             }
         ]
     },
@@ -325,101 +313,101 @@
         "domestic": [
             {
                 "month": "January",
-                "revenue": 30000
-            },
-            {
-                "month": "February",
-                "revenue": 35000
-            },
-            {
-                "month": "March",
                 "revenue": 28000
             },
             {
+                "month": "February",
+                "revenue": 37000
+            },
+            {
+                "month": "March",
+                "revenue": 31000
+            },
+            {
                 "month": "April",
-                "revenue": 32000
+                "revenue": 33000
             },
             {
                 "month": "May",
-                "revenue": 40000
+                "revenue": 39000
             },
             {
                 "month": "June",
-                "revenue": 38000
+                "revenue": 36000
             },
             {
                 "month": "July",
-                "revenue": 42000
+                "revenue": 44000
             },
             {
                 "month": "August",
-                "revenue": 45000
-            },
-            {
-                "month": "September",
-                "revenue": 41000
-            },
-            {
-                "month": "October",
-                "revenue": 43000
-            },
-            {
-                "month": "November",
                 "revenue": 46000
             },
             {
+                "month": "September",
+                "revenue": 40000
+            },
+            {
+                "month": "October",
+                "revenue": 42000
+            },
+            {
+                "month": "November",
+                "revenue": 47000
+            },
+            {
                 "month": "December",
-                "revenue": 48000
+                "revenue": 49000
             }
         ],
         "international": [
             {
                 "month": "January",
-                "revenue": 20000
+                "revenue": 21000
             },
             {
                 "month": "February",
-                "revenue": 25000
+                "revenue": 26000
             },
             {
                 "month": "March",
-                "revenue": 22000
+                "revenue": 23000
             },
             {
                 "month": "April",
-                "revenue": 27000
+                "revenue": 28000
             },
             {
                 "month": "May",
-                "revenue": 35000
-            },
-            {
-                "month": "June",
                 "revenue": 34000
             },
             {
+                "month": "June",
+                "revenue": 33000
+            },
+            {
                 "month": "July",
-                "revenue": 37000
-            },
-            {
-                "month": "August",
-                "revenue": 39000
-            },
-            {
-                "month": "September",
-                "revenue": 36000
-            },
-            {
-                "month": "October",
                 "revenue": 38000
             },
             {
-                "month": "November",
+                "month": "August",
                 "revenue": 40000
             },
             {
+                "month": "September",
+                "revenue": 35000
+            },
+            {
+                "month": "October",
+                "revenue": 37000
+            },
+            {
+                "month": "November",
+                "revenue": 41000
+            },
+            {
                 "month": "December",
-                "revenue": 42000
+                "revenue": 43000
             }
         ]
     },
