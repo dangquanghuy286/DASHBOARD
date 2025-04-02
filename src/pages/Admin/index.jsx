@@ -1,7 +1,7 @@
 import { useState } from "react";
 import photo from "@/assets/Img/admin-1.jpg"; // Ảnh mặc định
 import icons from "../../util/icon";
-const { FaEye, FaEyeSlash } = icons;
+const { FaEye, FaEyeSlash, MdOutlineAttachFile } = icons;
 function Admin() {
     // State lưu ảnh tạm (khi chọn nhưng chưa cập nhật)
     const [tempImage, setTempImage] = useState(null);
@@ -39,8 +39,8 @@ function Admin() {
     return (
         <div className="min-h-screen bg-white px-4 font-sans dark:bg-slate-900 dark:text-white">
             {/* Phần tiêu đề */}
-            <div className="flex items-center justify-between bg-gray-200 p-4">
-                <h1 className="text-xl font-semibold text-gray-800">Thông tin admin</h1>
+            <div className="flex items-center justify-center rounded-2xl bg-gray-200 p-6 shadow-md dark:bg-slate-700">
+                <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Thông tin ADMIN</h1>
             </div>
 
             {/* Nội dung chính */}
@@ -64,9 +64,9 @@ function Admin() {
                     {/* Button để mở chọn ảnh */}
                     <label
                         htmlFor="fileInput"
-                        className="lbl_title mb-6 cursor-pointer rounded-md bg-teal-500 px-6 py-2 text-white transition hover:bg-teal-600"
+                        className="mb-4 flex cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-5 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
                     >
-                        Chọn ảnh mới
+                        <MdOutlineAttachFile className="mr-2 text-lg" /> Chọn ảnh mới
                     </label>
                 </div>
 
@@ -77,29 +77,36 @@ function Admin() {
                         className="space-y-6"
                     >
                         <div>
-                            <label className="lbl_title block font-medium">
-                                Tên admin <span className="text-red-500">*</span>
+                            <label className="lbl_title block">
+                                Tên Admin <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                required
+                                onInvalid={(e) => e.target.setCustomValidity("Vui lòng nhập tên của bạn!")}
+                                onInput={(e) => e.target.setCustomValidity("")}
                             />
                         </div>
                         <div>
-                            <label className="lbl_title block font-medium">
+                            <label className="lbl_title block">
                                 Mật khẩu <span className="text-red-500">*</span>
                             </label>
                             <div className="relative">
                                 <input
-                                    type={showPassword ? "text" : "password"}
+                                    type="password"
                                     name="password"
                                     value={formData.password}
                                     onChange={handleInputChange}
-                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Vui lòng nhập mật khẩu!")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
+
                                 <span
                                     className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
                                     onClick={() => setShowPassword(!showPassword)}
@@ -109,29 +116,29 @@ function Admin() {
                             </div>
                         </div>
                         <div>
-                            <label className="lbl_title block font-medium">Email</label>
+                            <label className="lbl_title block">Email</label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
                             />
                         </div>
                         <div>
-                            <label className="lbl_title block font-medium">Địa chỉ</label>
+                            <label className="lbl_title block">Địa chỉ</label>
                             <input
                                 type="text"
                                 name="address"
                                 value={formData.address}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
                             />
                         </div>
                         <div className="flex items-center">
                             <button
                                 type="submit"
-                                className="rounded-md bg-green-500 px-6 py-2 text-white transition hover:bg-green-600"
+                                className="rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
                             >
                                 Cập nhật
                             </button>
