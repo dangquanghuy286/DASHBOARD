@@ -32,7 +32,7 @@ function TopbookedTour() {
                 </div>
                 <div className="card-body flex gap-4 p-4">
                     {/* Domestic Tours */}
-                    <h2 className="card-title mt-8">🏞️ Top Booked Domestic Tours</h2>
+                    <h2 className="card-title mt-8">🏞️ Top Trong Nước</h2>
 
                     <div className="overflow-x-auto">
                         <table className="w-full table-auto border-collapse dark:text-amber-50">
@@ -66,7 +66,7 @@ function TopbookedTour() {
                         </table>
                     </div>
                     {/* International Tours */}
-                    <h2 className="card-title mt-8 mb-4">✈️ Top Booked International Tours</h2>
+                    <h2 className="card-title mt-8 mb-4">✈️ Top Ngoài Nước</h2>
 
                     <div className="overflow-x-hidden">
                         <table className="w-fit min-w-full table-auto border-collapse md:w-1 dark:text-amber-50">

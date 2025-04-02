@@ -78,7 +78,7 @@ function Card({ icon, title, value, percentage, valueClass = "text-slate-900 dar
                 <p className={`text-3xl font-bold ${valueClass}`}>{value}</p>
                 <span className="flex w-fit items-center gap-x-2 rounded-full border border-blue-500 px-2 py-1 font-medium text-blue-500 dark:border-blue-600 dark:text-blue-600">
                     <TrendIcon size={20} />
-                    <span>{percentage}</span>
+                    <span>{percentage}%</span>
                 </span>
             </div>
         </div>

@@ -4,43 +4,48 @@
             "previous": 22,
             "current": 25,
             "change": 3,
-            "percentage_change": "13.64%"
+            "percentage_change": 13.64
         },
         "total_bookings": {
             "previous": 1600,
             "current": 1500,
             "change": -100,
-            "percentage_change": "-6.25%"
+            "percentage_change": -6.25
         },
         "total_users": {
             "previous": 4800,
             "current": 5000,
             "change": 200,
-            "percentage_change": "4.17%"
+            "percentage_change": 4.17
         },
         "total_revenue": {
             "previous": 770000,
             "current": 750000,
             "change": -20000,
-            "percentage_change": "-2.6%"
+            "percentage_change": -2.6
         }
     },
     "destination_statistics": {
         "domestic": [
             {
                 "name": "Miền Bắc",
-                "value": 30,
+                "value": 90,
                 "color": "#F44336"
             },
             {
                 "name": "Miền Trung",
-                "value": 40,
+                "value": 30,
                 "color": "#009688"
             },
             {
                 "name": "Miền Nam",
-                "value": 30,
+                "value": 100,
                 "color": "#9C27B0"
+            },
+            {
+                "name": "Others",
+                "value": 10,
+                "color": "#795548"
             }
         ],
         "international": [
@@ -73,20 +78,10 @@
                 "name": "Australia",
                 "value": 7,
                 "color": "#FF9800"
-            },
-            {
-                "name": "Others",
-                "value": 10,
-                "color": "#795548"
             }
         ]
     },
     "booking_payments": [
-        {
-            "method": "Credit Card",
-            "percentage": 39,
-            "color": "#FF5733"
-        },
         {
             "method": "PayPal",
             "percentage": 16,
