@@ -42,7 +42,7 @@ function DataChartMonth() {
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className="card-word rounded-lg p-4">
+                    {/* <div className="card-word rounded-lg p-4">
                         <h2 className="card-title mt-8 mb-5">✈️ Ngoài nước</h2>
                         <ResponsiveContainer
                             width="100%"
@@ -61,7 +61,7 @@ function DataChartMonth() {
                                 />
                             </AreaChart>
                         </ResponsiveContainer>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

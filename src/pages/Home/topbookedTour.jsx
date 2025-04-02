@@ -6,14 +6,14 @@ const { FaFire } = icons;
 
 function TopbookedTour() {
     const [domesticData, setDomesticData] = useState([]);
-    const [internationalData, setInternationalData] = useState([]);
+    // const [internationalData, setInternationalData] = useState([]);
 
     useEffect(() => {
         const fetchApi = async () => {
             try {
                 const res = await getTopBooked();
                 setDomesticData(res?.domestic || []);
-                setInternationalData(res?.international || []);
+                // setInternationalData(res?.international || []);
             } catch (error) {
                 console.error("Lỗi khi lấy dữ liệu thống kê:", error);
             }
@@ -66,7 +66,7 @@ function TopbookedTour() {
                         </table>
                     </div>
                     {/* International Tours */}
-                    <h2 className="card-title mt-8 mb-4">✈️ Top Ngoài Nước</h2>
+                    {/* <h2 className="card-title mt-8 mb-4">✈️ Top Ngoài Nước</h2>
 
                     <div className="overflow-x-hidden">
                         <table className="w-fit min-w-full table-auto border-collapse md:w-1 dark:text-amber-50">
@@ -96,7 +96,7 @@ function TopbookedTour() {
                                 ))}
                             </tbody>
                         </table>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

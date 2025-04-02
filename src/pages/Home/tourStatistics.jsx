@@ -7,14 +7,14 @@ const { FaMap } = icons;
 
 function TourStatistics() {
     const [domesticData, setDomesticData] = useState([]);
-    const [internationalData, setInternationalData] = useState([]);
+    // const [internationalData, setInternationalData] = useState([]);
 
     useEffect(() => {
         const fetchApi = async () => {
             try {
                 const res = await getTourStatistics();
                 setDomesticData(res?.domestic || []);
-                setInternationalData(res?.international || []);
+                // setInternationalData(res?.international || []);
             } catch (error) {
                 console.error("Lỗi khi lấy dữ liệu thống kê:", error);
             }
@@ -98,7 +98,7 @@ function TourStatistics() {
                 </div>
 
                 {/* Biểu đồ Quốc tế */}
-                <div className="flex flex-row items-center gap-6">
+                {/* <div className="flex flex-row items-center gap-6">
                     <div className="flex w-1/2 flex-col items-center">
                         <p className="mb-2 text-center font-semibold dark:text-amber-50">Quốc tế</p>
                         <ResponsiveContainer
@@ -159,7 +159,7 @@ function TourStatistics() {
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

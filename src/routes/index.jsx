@@ -1,7 +1,7 @@
 import Admin from "../pages/Admin";
 import Analytics from "../pages/Analytics";
 import CreateTour from "../pages/CreateTour";
-import Customer from "../pages/Customer";
+
 import ListTour from "../pages/ListTour";
 import Report from "../pages/Report";
 import Tour from "../pages/Tour";
@@ -11,6 +11,7 @@ import Setting from "../pages/Setting";
 
 import Home from "../pages/Home";
 import LayoutDefault from "../layout/LayoutDefaut";
+import Customer from "../pages/Users";
 
 export const routes = [
     {

@@ -41,11 +41,6 @@
                 "name": "Miền Nam",
                 "value": 100,
                 "color": "#9C27B0"
-            },
-            {
-                "name": "Others",
-                "value": 10,
-                "color": "#795548"
             }
         ],
         "international": [
