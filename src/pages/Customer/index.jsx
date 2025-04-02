@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDataCustomer } from "../../services/customerSevice";
 import icons from "../../util/icon";
-const { MdDelete, IoMdCreate, IoIosAdd } = icons;
+const { MdDelete, IoMdCreate, IoIosAdd, FaSearch } = icons;
 function Customer() {
     const [data, setData] = useState([]);
 
@@ -27,18 +27,26 @@ function Customer() {
             </div>
             {/* Thêm Sản Phẩm và Input Tìm Kiếm */}
             <div className="my-6 ml-6 flex items-center justify-between">
-                <div className="flex space-x-4">
+                <div className="flex space-x-2">
                     {/* Nút Thêm Sản Phẩm */}
-                    <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-6 py-3 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none">
+                    <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none">
                         <IoIosAdd className="text-xl" /> Thêm người dùng
                     </button>
 
                     {/* Input Tìm Kiếm */}
-                    <input
-                        type="text"
-                        className="w-[500px] rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none dark:border-gray-600 dark:bg-slate-700 dark:text-white"
-                        placeholder="Tìm kiếm người dùng..."
-                    />
+                    <div className="input">
+                        <FaSearch
+                            size={20}
+                            className="cursor-pointer text-slate-300"
+                        />
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Tìm kiếm"
+                            id="search"
+                            className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
+                        />
+                    </div>
                 </div>
             </div>
             {/* Nội dung chính */}

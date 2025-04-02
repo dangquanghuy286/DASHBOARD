@@ -3,7 +3,7 @@ import icons from "../../util/icon";
 import { useTheme } from "../../hooks/use_theme";
 
 import pFImg from "@/assets/Img/admin-1.jpg";
-const { FaChevronLeft, FaSearch, IoIosSunny, IoIosMoon, FaBell } = icons;
+const { BiSolidChevronsRight, IoIosSunny, IoIosMoon, FaBell } = icons;
 
 function Header({ collapsed, setCollapsed }) {
     const { theme, setTheme } = useTheme();
@@ -15,21 +15,8 @@ function Header({ collapsed, setCollapsed }) {
                     className="btn-ghost size-10"
                     onClick={() => setCollapsed(!collapsed)}
                 >
-                    <FaChevronLeft className={collapsed ? "rotate-180" : ""} />
+                    <BiSolidChevronsRight className={collapsed ? "rotate-180" : ""} />
                 </button>
-                <div className="input">
-                    <FaSearch
-                        size={20}
-                        className="text-slate-300"
-                    />
-                    <input
-                        type="text"
-                        name="search"
-                        placeholder="Tìm kiếm"
-                        id="search"
-                        className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
-                    />
-                </div>
             </div>
             <div className="flex items-center gap-x-3">
                 <button

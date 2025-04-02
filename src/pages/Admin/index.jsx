@@ -2,6 +2,7 @@ import { useState } from "react";
 import photo from "@/assets/Img/admin-1.jpg"; // Ảnh mặc định
 import icons from "../../util/icon";
 const { FaEye, FaEyeSlash, MdOutlineAttachFile } = icons;
+
 function Admin() {
     // State lưu ảnh tạm (khi chọn nhưng chưa cập nhật)
     const [tempImage, setTempImage] = useState(null);
@@ -9,6 +10,7 @@ function Admin() {
     // State lưu ảnh chính thức (chỉ thay đổi khi nhấn "Cập nhật")
     const [selectedImage, setSelectedImage] = useState(photo);
     const [showPassword, setShowPassword] = useState(false);
+
     // State lưu thông tin admin
     const [formData, setFormData] = useState({
         name: "QuangHuy",
@@ -48,7 +50,7 @@ function Admin() {
                 {/* Cột trái với ảnh đại diện */}
                 <div className="flex w-full flex-col items-center justify-center p-8 md:w-1/2">
                     <div
-                        className="mb-5 h-48 w-48 rounded-full border border-gray-300 bg-cover bg-center md:h-60 md:w-60"
+                        className="mb-5 h-48 w-48 rounded-full border border-amber-300 bg-cover bg-center md:h-60 md:w-60"
                         style={{ backgroundImage: `url(${tempImage || selectedImage})` }}
                     ></div>
 
@@ -57,7 +59,7 @@ function Admin() {
                         type="file"
                         accept="image/*"
                         onChange={handleImageChange}
-                        className="hidden"
+                        className="hidden border"
                         id="fileInput"
                     />
 
@@ -97,7 +99,7 @@ function Admin() {
                             </label>
                             <div className="relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"} // Thay đổi kiểu input khi ẩn/hiện mật khẩu
                                     name="password"
                                     value={formData.password}
                                     onChange={handleInputChange}
@@ -109,7 +111,7 @@ function Admin() {
 
                                 <span
                                     className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
-                                    onClick={() => setShowPassword(!showPassword)}
+                                    onClick={() => setShowPassword(!showPassword)} // Thay đổi trạng thái ẩn/hiện mật khẩu
                                 >
                                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </span>

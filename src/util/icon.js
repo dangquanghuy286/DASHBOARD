@@ -30,6 +30,7 @@ import {
     FaEye,
     FaEyeSlash,
 } from "react-icons/fa";
+import { BiSolidChevronsRight } from "react-icons/bi";
 import { TbBrandBooking } from "react-icons/tb";
 import { GoPackage } from "react-icons/go";
 const icons = {
@@ -69,5 +70,6 @@ const icons = {
     MdDelete,
     IoMdCreate,
     IoIosAdd,
+    BiSolidChevronsRight,
 };
 export default icons;
