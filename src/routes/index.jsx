@@ -34,7 +34,7 @@ export const routes = [
                 element: <Admin />,
             },
             {
-                path: "customer",
+                path: "user",
                 element: <Customer />,
             },
             {

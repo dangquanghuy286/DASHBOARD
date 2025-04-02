@@ -492,7 +492,8 @@
             "phone": "+123456789",
             "status": "Active",
             "avatar": "https://files.idyllic.app/files/static/3674716?width=384&optimizer=image",
-            "address": "12 Đường Nguyễn Trãi, Quận 1, TP.HCM"
+            "address": "12 Đường Nguyễn Trãi, Quận 1, TP.HCM",
+            "role": "Admin"
         },
         {
             "userId": "user002",
@@ -501,7 +502,8 @@
             "phone": "+987654321",
             "status": "Inactive",
             "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPdb9rnEWhhYbheswXTOsQkzTLUeGiG37DipG837pGW1PuBuPP",
-            "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng"
+            "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng",
+            "role": "User"
         },
         {
             "userId": "user003",
@@ -510,7 +512,8 @@
             "phone": "+1122334455",
             "status": "Active",
             "avatar": "https://files.plugger.ai/2af1eaf2-0c50-48d7-9f1c-2bc7aa4f37e0.jpg",
-            "address": "99 Đường Lê Lợi, Quận Ngô Quyền, Hải Phòng"
+            "address": "99 Đường Lê Lợi, Quận Ngô Quyền, Hải Phòng",
+            "role": "User"
         },
         {
             "userId": "user004",
@@ -519,7 +522,8 @@
             "phone": "+9988776655",
             "status": "Active",
             "address": "20 Đường Trần Hưng Đạo, Quận Hoàn Kiếm, Hà Nội",
-            "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg"
+            "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg",
+            "role": "Admin"
         },
         {
             "userId": "user005",
@@ -528,7 +532,8 @@
             "phone": "+5566778899",
             "status": "Active",
             "address": "76 Đường Phan Chu Trinh, TP. Vũng Tàu",
-            "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg"
+            "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
+            "role": "User"
         }
     ],
     "tourManagement": {

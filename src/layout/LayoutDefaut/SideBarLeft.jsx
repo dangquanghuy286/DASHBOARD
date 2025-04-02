@@ -44,7 +44,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
             className={cn(
                 "fixed z-[100] flex h-full flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
                 "max-md:hidden", // Ẩn hoàn toàn khi màn hình nhỏ hơn 768px
-                collapsed ? "md:w-[70px] md:items-center" : "md:w-[240px]",
+                collapsed ? "md:w-[80px] md:items-center" : "md:w-[250px]",
             )}
         >
             <div className="flex h-[50px] w-[50px] gap-x-3 p-3">
