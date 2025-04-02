@@ -54,7 +54,7 @@ export const menu = [
         link: [
             {
                 path: "/customer",
-                text: "Quản lý khách hàng",
+                text: "Quản lý người dùng",
                 icon: FaUserAlt,
             },
         ],
