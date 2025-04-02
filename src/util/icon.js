@@ -16,6 +16,8 @@ import {
     FaFire,
     FaRocket,
     FaChartBar,
+    FaEye,
+    FaEyeSlash,
 } from "react-icons/fa";
 import { TbBrandBooking } from "react-icons/tb";
 import { GoPackage } from "react-icons/go";
@@ -49,5 +51,7 @@ const icons = {
     FaRocket,
     FaChartBar,
     MdTrendingDown,
+    FaEye,
+    FaEyeSlash,
 };
 export default icons;

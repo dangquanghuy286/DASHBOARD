@@ -1,19 +1,20 @@
 import { useState } from "react";
 import photo from "@/assets/Img/admin-1.jpg"; // Ảnh mặc định
-
+import icons from "../../util/icon";
+const { FaEye, FaEyeSlash } = icons;
 function Admin() {
     // State lưu ảnh tạm (khi chọn nhưng chưa cập nhật)
     const [tempImage, setTempImage] = useState(null);
 
     // State lưu ảnh chính thức (chỉ thay đổi khi nhấn "Cập nhật")
     const [selectedImage, setSelectedImage] = useState(photo);
-
+    const [showPassword, setShowPassword] = useState(false);
     // State lưu thông tin admin
     const [formData, setFormData] = useState({
         name: "QuangHuy",
         email: "huydang2806@gmail.com",
         address: "Điện Bàn, Quảng Nam",
-        password: "************",
+        password: "1234",
     });
 
     // Khi chọn ảnh mới
@@ -36,7 +37,7 @@ function Admin() {
     };
 
     return (
-        <div className="min-h-screen bg-white px-4 font-sans">
+        <div className="min-h-screen bg-white px-4 font-sans dark:bg-slate-900 dark:text-white">
             {/* Phần tiêu đề */}
             <div className="flex items-center justify-between bg-gray-200 p-4">
                 <h1 className="text-xl font-semibold text-gray-800">Thông tin admin</h1>
@@ -63,7 +64,7 @@ function Admin() {
                     {/* Button để mở chọn ảnh */}
                     <label
                         htmlFor="fileInput"
-                        className="mb-6 cursor-pointer rounded-md bg-teal-500 px-6 py-2 text-white transition hover:bg-teal-600"
+                        className="lbl_title mb-6 cursor-pointer rounded-md bg-teal-500 px-6 py-2 text-white transition hover:bg-teal-600"
                     >
                         Chọn ảnh mới
                     </label>
@@ -76,7 +77,7 @@ function Admin() {
                         className="space-y-6"
                     >
                         <div>
-                            <label className="block font-medium text-gray-700">
+                            <label className="lbl_title block font-medium">
                                 Tên admin <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -88,19 +89,27 @@ function Admin() {
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-700">
+                            <label className="lbl_title block font-medium">
                                 Mật khẩu <span className="text-red-500">*</span>
                             </label>
-                            <input
-                                type="password"
-                                name="password"
-                                value={formData.password}
-                                onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                            />
+                            <div className="relative">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                />
+                                <span
+                                    className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </span>
+                            </div>
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-700">Email</label>
+                            <label className="lbl_title block font-medium">Email</label>
                             <input
                                 type="email"
                                 name="email"
@@ -110,7 +119,7 @@ function Admin() {
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-700">Địa chỉ</label>
+                            <label className="lbl_title block font-medium">Địa chỉ</label>
                             <input
                                 type="text"
                                 name="address"
