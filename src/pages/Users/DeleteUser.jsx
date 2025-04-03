@@ -40,8 +40,8 @@ function DeleteUser(props) {
     return (
         <>
             <button
-                className="flex h-12 w-full items-center justify-center rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-400 focus:outline-none"
-                onClick={handleDelete} // Thay handleDelete bằng hàm xóa của bạn
+                className="flex h-12 w-full items-center justify-center rounded-lg bg-gradient-to-r from-[hsla(350,93%,61%,1)] to-[hsla(8,98%,59%,1)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:from-[hsla(350,93%,55%,1)] hover:to-[hsla(8,98%,50%,1)] focus:ring-2 focus:ring-red-400 focus:outline-none"
+                onClick={handleDelete}
             >
                 <MdDelete className="mr-2 text-lg" /> Xóa
             </button>

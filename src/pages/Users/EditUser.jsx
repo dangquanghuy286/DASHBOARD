@@ -130,11 +130,12 @@ function EditUser(props) {
                 <div className="">
                     {/* Nút Thêm Sản Phẩm */}
                     <button
-                        className="flex h-12 w-full items-center justify-center rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:outline-none"
+                        className="flex h-12 w-full items-center justify-center rounded-lg bg-gradient-to-r from-[hsla(211,96%,62%,1)] to-[hsla(295,94%,76%,1)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:from-[hsla(211,96%,55%,1)] hover:to-[hsla(295,94%,65%,1)] focus:ring-2 focus:ring-purple-300 focus:outline-none"
                         onClick={openModal}
                     >
                         <IoMdCreate className="mr-2 text-lg" /> Sửa
                     </button>
+
                     <Modal
                         isOpen={showModal}
                         onRequestClose={closeModal}
