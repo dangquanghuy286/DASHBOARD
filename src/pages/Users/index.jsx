@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getDataCustomer } from "../../services/customerSevice";
 import icons from "../../util/icon";
-const { MdDelete, IoMdCreate, IoIosAdd, FaSearch } = icons;
+import CreateUser from "./CreateUsers";
+const { MdDelete, IoMdCreate } = icons;
 function Customer() {
     const [data, setData] = useState([]);
 
@@ -26,29 +27,7 @@ function Customer() {
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Quản lý người dùng</h1>
             </div>
             {/* Thêm Sản Phẩm và Input Tìm Kiếm */}
-            <div className="my-6 ml-6 flex items-center justify-between">
-                <div className="flex space-x-2">
-                    {/* Nút Thêm Sản Phẩm */}
-                    <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none">
-                        <IoIosAdd className="text-xl" /> Thêm người dùng
-                    </button>
-
-                    {/* Input Tìm Kiếm */}
-                    <div className="input">
-                        <FaSearch
-                            size={20}
-                            className="cursor-pointer text-slate-300"
-                        />
-                        <input
-                            type="text"
-                            name="search"
-                            placeholder="Tìm kiếm"
-                            id="search"
-                            className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
-                        />
-                    </div>
-                </div>
-            </div>
+            <CreateUser />
             {/* Nội dung chính */}
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
                 {data.length > 0 ? (
@@ -69,9 +48,7 @@ function Customer() {
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">Phone:</span> {user.phone || "N/A"}
                                 </p>
-                                <p className="text-gray-700 dark:text-gray-300">
-                                    <span className="font-semibold">Status:</span> {user.status}
-                                </p>
+
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">Vai trò:</span> {user.role}
                                 </p>
