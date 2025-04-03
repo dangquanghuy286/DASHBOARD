@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import Modal from "react-modal";
+import { getRoles } from "../../services/rolesService";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
+import { createDataCustomer } from "../../services/customerSevice";
 const { IoIosAdd, FaSearch } = icons;
 
 function CreateUser() {
     const [showModal, setShowModal] = useState(false);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
+    const [dataCategory, setDataCategory] = useState([]);
+    const [reload, setReload] = useState(false);
+
+    useEffect(() => {
+        const fetchAPI = async () => {
+            const res = await getRoles();
+            setDataCategory(res);
+        };
+        fetchAPI();
+    }, []);
+    const handleReload = () => {
+        setReload(!reload);
+    };
     // const [avatarPreview, setAvatarPreview] = useState(null); // Trạng thái lưu ảnh preview
     const customStyles = {
         content: {
@@ -40,9 +58,21 @@ function CreateUser() {
         setShowModal(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(data);
+        const ketqua = await createDataCustomer(data);
+
+        if (ketqua) {
+            setShowModal(false);
+            handleReload();
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Tạo mới thành công!",
+                showConfirmButton: false,
+                timer: 3000,
+            });
+        }
     };
 
     const handleChange = (e) => {
@@ -122,19 +152,29 @@ function CreateUser() {
                                             />
                                         </td>
                                     </tr>
-                                    <tr className="flex items-center py-3">
-                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Vai trò</td>
-                                        <td className="w-3/4">
-                                            <select
-                                                name="role"
-                                                className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                                onChange={handleChange}
-                                            >
-                                                <option value="User">User</option>
-                                                <option value="Admin">Admin</option>
-                                            </select>
-                                        </td>
-                                    </tr>
+                                    {dataCategory.length > 0 && (
+                                        <tr className="flex items-center py-3">
+                                            <td className="w-1/4 py-2 font-semibold text-gray-700">Vai trò</td>
+                                            <td className="w-3/4">
+                                                <select
+                                                    name="role"
+                                                    className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                                    onChange={handleChange}
+                                                >
+                                                    <option value="">Chọn vai trò</option>
+                                                    {dataCategory.map((item, index) => (
+                                                        <option
+                                                            key={index}
+                                                            value={item.name}
+                                                        >
+                                                            {item.name}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    )}
+
                                     <tr className="flex items-start py-3">
                                         <td className="w-1/4 py-2 font-semibold text-gray-700">Mô tả</td>
                                         <td className="w-3/4">
@@ -148,12 +188,25 @@ function CreateUser() {
                                         </td>
                                     </tr>
                                     <tr className="flex items-center py-3">
-                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Khác</td>
+                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Email</td>
                                         <td className="w-3/4">
                                             <input
                                                 type="text"
-                                                name="other"
-                                                placeholder="Khác"
+                                                name="email"
+                                                placeholder="Email"
+                                                className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                                required
+                                                onChange={handleChange}
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr className="flex items-center py-3">
+                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Số điện thoại</td>
+                                        <td className="w-3/4">
+                                            <input
+                                                type="text"
+                                                name="phone"
+                                                placeholder="Số điện thoại"
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}

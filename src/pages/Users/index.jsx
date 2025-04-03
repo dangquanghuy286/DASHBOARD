@@ -10,9 +10,8 @@ function Customer() {
         const fetchApi = async () => {
             try {
                 const res = await getDataCustomer();
-                console.log(res);
 
-                setData(res || []); // Đảm bảo data luôn là mảng tránh lỗi .map()
+                setData(res.reverse() || []); // Đảm bảo data luôn là mảng tránh lỗi .map()
             } catch (error) {
                 console.error("Lỗi khi tải dữ liệu:", error);
             }
@@ -37,7 +36,7 @@ function Customer() {
                             className="flex items-center justify-between rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-200 hover:shadow-lg dark:border-gray-700 dark:bg-slate-800"
                         >
                             {/* Nội dung người dùng */}
-                            <div className="flex-2 pr-3">
+                            <div className="mt-0 flex-2 pr-3">
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">{user.name}</h3>
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">About:</span> {user.about || "Chưa có thông tin"}
@@ -45,10 +44,13 @@ function Customer() {
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">Address:</span> {user.address || "N/A"}
                                 </p>
+
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">Phone:</span> {user.phone || "N/A"}
                                 </p>
-
+                                <p className="text-gray-700 dark:text-gray-300">
+                                    <span className="font-semibold">Email:</span> {user.email || "N/A"}
+                                </p>
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <span className="font-semibold">Vai trò:</span> {user.role}
                                 </p>

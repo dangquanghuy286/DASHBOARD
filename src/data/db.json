@@ -28,11 +28,11 @@
             "previous": 50,
             "current": 60,
             "change": 10,
-            "percentage_change": 20.0
+            "percentage_change": 20
         },
         "average_booking_value": {
             "previous": 481.25,
-            "current": 500.00,
+            "current": 500,
             "change": 18.75,
             "percentage_change": 3.9
         }
@@ -547,6 +547,16 @@
             "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
             "address": "76 Đường Phan Chu Trinh, Quận Liên Chiểu, Đà Nẵng",
             "role": "User"
+        }
+    ],
+    "roles": [
+        {
+            "id": "admin",
+            "name": "Admin"
+        },
+        {
+            "id": "user",
+            "name": "User"
         }
     ],
     "tourManagement": {
