@@ -5,12 +5,13 @@ import { getRoles } from "../../services/rolesService";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-import { createDataCustomer } from "../../services/customerSevice";
-const { IoIosAdd, FaSearch } = icons;
+import { editUser } from "../../services/customerSevice";
+const { IoMdCreate } = icons;
 
-function CreateUser() {
+function EditUser(props) {
+    const { user } = props;
     const [showModal, setShowModal] = useState(false);
-    const [data, setData] = useState({});
+    const [data, setData] = useState(user);
     const [dataCategory, setDataCategory] = useState([]);
     const [reload, setReload] = useState(false);
 
@@ -51,6 +52,8 @@ function CreateUser() {
     };
 
     const openModal = () => {
+        console.log(user);
+
         setShowModal(true);
     };
 
@@ -60,18 +63,34 @@ function CreateUser() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const ketqua = await createDataCustomer(data);
+        const confirmResult = await Swal.fire({
+            title: "BẠN CÓ MUỐN CẬP NHẬT THÔNG TIN?",
+            icon: "question",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "LƯU",
+            denyButtonText: "KHÔNG LƯU",
+        });
+        if (confirmResult.isConfirmed) {
+            // Nếu người dùng xác nhận, tiến hành cập nhật
+            const ketqua = await editUser(user.id, data);
+            if (ketqua) {
+                // Cập nhật thành công, đóng modal
+                setShowModal(false);
+                handleReload(); // Làm mới danh sách sản phẩm
 
-        if (ketqua) {
-            setShowModal(false);
-            handleReload();
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Tạo mới thành công!",
-                showConfirmButton: false,
-                timer: 5000,
-            });
+                Swal.fire({
+                    title: "CẬP NHẬT THÀNH CÔNG",
+                    icon: "success",
+                });
+            } else {
+                Swal.fire({
+                    title: "CẬP NHẬT THẤT BẠI",
+                    icon: "error",
+                });
+            }
+        } else if (confirmResult.isDenied) {
+            Swal.fire("KHÔNG LƯU THAY ĐỔI", "", "info");
         }
     };
 
@@ -102,16 +121,17 @@ function CreateUser() {
     //         });
     //     }
     // };
+
     return (
         <>
             <div className="my-6 ml-6 flex items-center justify-between">
                 <div className="flex space-x-2">
                     {/* Nút Thêm Sản Phẩm */}
                     <button
-                        className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
+                        className="flex cursor-pointer items-center justify-center rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:outline-none"
                         onClick={openModal}
                     >
-                        <IoIosAdd className="text-xl" /> Thêm người dùng
+                        <IoMdCreate className="mr-2 text-lg" /> Sửa
                     </button>
                     <Modal
                         isOpen={showModal}
@@ -135,6 +155,7 @@ function CreateUser() {
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}
+                                                value={data.name}
                                             />
                                         </td>
                                     </tr>
@@ -149,6 +170,7 @@ function CreateUser() {
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}
+                                                value={data.address}
                                             />
                                         </td>
                                     </tr>
@@ -160,6 +182,7 @@ function CreateUser() {
                                                     name="role"
                                                     className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                     onChange={handleChange}
+                                                    value={data.role}
                                                 >
                                                     <option value="">Chọn vai trò</option>
                                                     {dataCategory.map((item, index) => (
@@ -184,6 +207,7 @@ function CreateUser() {
                                                 className="focus:ring-opacity-50 min-h-[100px] w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}
+                                                value={data.about}
                                             />
                                         </td>
                                     </tr>
@@ -197,6 +221,7 @@ function CreateUser() {
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}
+                                                value={data.email}
                                             />
                                         </td>
                                     </tr>
@@ -210,6 +235,7 @@ function CreateUser() {
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 required
                                                 onChange={handleChange}
+                                                value={data.phone}
                                             />
                                         </td>
                                     </tr>
@@ -222,8 +248,9 @@ function CreateUser() {
                                                 placeholder="Ảnh đại diện URL"
                                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                                 onChange={handleChange}
+                                                value={data.avatar}
                                             />
-                                            <label className="flex-shrink-0">
+                                            {/* <label className="flex-shrink-0">
                                                 <input
                                                     type="file"
                                                     name="avatarFile"
@@ -231,10 +258,10 @@ function CreateUser() {
                                                     className="hidden"
                                                     onChange={handleChange} // Gọi hàm khi chọn ảnh
                                                 />
-                                                {/* <span className="focus:ring-opacity-50 inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2.5 font-medium text-white transition duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                                <span className="focus:ring-opacity-50 inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2.5 font-medium text-white transition duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
                                                     Chọn ảnh
-                                                </span> */}
-                                            </label>
+                                                </span>
+                                            </label> */}
                                         </td>
                                     </tr>
 
@@ -274,23 +301,10 @@ function CreateUser() {
                     </Modal>
 
                     {/* Input Tìm Kiếm */}
-                    <div className="input">
-                        <FaSearch
-                            size={20}
-                            className="cursor-pointer text-slate-300"
-                        />
-                        <input
-                            type="text"
-                            name="search"
-                            placeholder="Tìm kiếm"
-                            id="search"
-                            className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
-                        />
-                    </div>
                 </div>
             </div>
         </>
     );
 }
 
-export default CreateUser;
+export default EditUser;

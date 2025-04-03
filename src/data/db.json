@@ -1,720 +1,730 @@
 {
-    "dashboard_summary": {
-        "total_active_tours": {
-            "previous": 22,
-            "current": 25,
-            "change": 3,
-            "percentage_change": 13.64
-        },
-        "total_bookings": {
-            "previous": 1600,
-            "current": 1500,
-            "change": -100,
-            "percentage_change": -6.25
-        },
-        "total_users": {
-            "previous": 4800,
-            "current": 5000,
-            "change": 200,
-            "percentage_change": 4.17
-        },
-        "total_revenue": {
-            "previous": 770000,
-            "current": 750000,
-            "change": -20000,
-            "percentage_change": -2.6
-        },
-        "total_cancellations": {
-            "previous": 50,
-            "current": 60,
-            "change": 10,
-            "percentage_change": 20
-        },
-        "average_booking_value": {
-            "previous": 481.25,
-            "current": 500,
-            "change": 18.75,
-            "percentage_change": 3.9
-        }
+  "dashboard_summary": {
+    "total_active_tours": {
+      "previous": 22,
+      "current": 25,
+      "change": 3,
+      "percentage_change": 13.64
     },
-    "destination_statistics": {
-        "domestic": [
-            {
-                "name": "Miền Bắc",
-                "value": 90,
-                "color": "#F44336"
-            },
-            {
-                "name": "Miền Trung",
-                "value": 30,
-                "color": "#009688"
-            },
-            {
-                "name": "Miền Nam",
-                "value": 100,
-                "color": "#9C27B0"
-            }
-        ],
-        "international": [
-            {
-                "name": "Thailand",
-                "value": 26,
-                "color": "#FFEB3B"
-            },
-            {
-                "name": "Japan",
-                "value": 21,
-                "color": "#3F51B5"
-            },
-            {
-                "name": "France",
-                "value": 16,
-                "color": "#9C27B0"
-            },
-            {
-                "name": "Italy",
-                "value": 10,
-                "color": "#E91E63"
-            },
-            {
-                "name": "USA",
-                "value": 10,
-                "color": "#009688"
-            },
-            {
-                "name": "Australia",
-                "value": 7,
-                "color": "#FF9800"
-            }
-        ]
+    "total_bookings": {
+      "previous": 1600,
+      "current": 1500,
+      "change": -100,
+      "percentage_change": -6.25
     },
-    "tourTypeDistribution": {
-        "data": [
-            {
-                "name": "Trong nước",
-                "value": 60,
-                "color": "#4CAF50"
-            },
-            {
-                "name": "Ngoài nước",
-                "value": 40,
-                "color": "#FF9800"
-            }
-        ]
+    "total_users": {
+      "previous": 4800,
+      "current": 5000,
+      "change": 200,
+      "percentage_change": 4.17
     },
-    "customerSourceDistribution": {
-        "data": [
-            {
-                "name": "Online",
-                "value": 70,
-                "color": "#2196F3"
-            },
-            {
-                "name": "Offline",
-                "value": 30,
-                "color": "#FFC107"
-            }
-        ]
+    "total_revenue": {
+      "previous": 770000,
+      "current": 750000,
+      "change": -20000,
+      "percentage_change": -2.6
     },
-    "booking_payments": [
-        {
-            "method": "PayPal",
-            "percentage": 16,
-            "color": "#33A8FF"
-        },
-        {
-            "method": "Momo",
-            "percentage": 26,
-            "color": "#FF33E3"
-        },
-        {
-            "method": "Thanh toán tại văn phòng",
-            "percentage": 13,
-            "color": "#FFC300"
-        },
-        {
-            "method": "Chuyển khoản ngân hàng",
-            "percentage": 6,
-            "color": "#27AE60"
-        },
-        {
-            "method": "Credit Card",
-            "percentage": 30,
-            "color": "#FF5722"
-        },
-        {
-            "method": "Tiền mặt",
-            "percentage": 9,
-            "color": "#4CAF50"
-        }
-    ],
-    "top_booked_tours": {
-        "domestic": [
-            {
-                "id": 201,
-                "name": "Đà Lạt - Thành Phố Ngàn Hoa",
-                "seats_booked": 12,
-                "seats_available": 25,
-                "price": 1600000,
-                "rating": 4.6,
-                "duration": "3 ngày 2 đêm"
-            },
-            {
-                "id": 189,
-                "name": "Phú Quốc - Thiên Đường Nghỉ Dưỡng",
-                "seats_booked": 9,
-                "seats_available": 35,
-                "price": 2100000,
-                "rating": 4.8,
-                "duration": "4 ngày 3 đêm"
-            },
-            {
-                "id": 205,
-                "name": "Hà Giang - Cao Nguyên Đá Đồng Văn",
-                "seats_booked": 7,
-                "seats_available": 18,
-                "price": 1900000,
-                "rating": 4.7,
-                "duration": "3 ngày 2 đêm"
-            },
-            {
-                "id": 101,
-                "name": "Phố cổ Hội An",
-                "seats_booked": 280,
-                "seats_available": 320,
-                "price": 31250000,
-                "rating": 4.7,
-                "duration": "6 ngày"
-            },
-            {
-                "id": 104,
-                "name": "Thánh địa Mỹ Sơn",
-                "seats_booked": 230,
-                "seats_available": 270,
-                "price": 28750000,
-                "rating": 4.5,
-                "duration": "5 ngày"
-            },
-            {
-                "id": 105,
-                "name": "Hà Nội",
-                "seats_booked": 190,
-                "seats_available": 210,
-                "price": 26250000,
-                "rating": 4.6,
-                "duration": "4 ngày"
-            }
-        ],
-        "international": [
-            {
-                "tourId": "tour102",
-                "tourName": "Bali Paradise Getaway",
-                "bookings": 260,
-                "price": 980,
-                "rating": 4.8,
-                "duration": "7 days",
-                "destination": "Indonesia"
-            },
-            {
-                "tourId": "tour103",
-                "tourName": "Korea Cherry Blossom Tour",
-                "bookings": 210,
-                "price": 1550,
-                "rating": 4.9,
-                "duration": "9 days",
-                "destination": "South Korea"
-            },
-            {
-                "tourId": "tour107",
-                "tourName": "Spain Flamenco & Food Tour",
-                "bookings": 180,
-                "price": 2050,
-                "rating": 4.7,
-                "duration": "8 days",
-                "destination": "Spain"
-            },
-            {
-                "tourId": "tour108",
-                "tourName": "Greece Island Hopping",
-                "bookings": 170,
-                "price": 1850,
-                "rating": 4.6,
-                "duration": "7 days",
-                "destination": "Greece"
-            },
-            {
-                "tourId": "tour110",
-                "tourName": "Canadian Rockies Explorer",
-                "bookings": 150,
-                "price": 2250,
-                "rating": 4.7,
-                "duration": "10 days",
-                "destination": "Canada"
-            }
-        ],
-        "combined": [
-            {
-                "name": "Tour A",
-                "bookings": 150,
-                "revenue": "300000000",
-                "rating": 4.8,
-                "departureDate": "2025-04-12"
-            },
-            {
-                "name": "Tour B",
-                "bookings": 120,
-                "revenue": "250000000",
-                "rating": 4.5,
-                "departureDate": "2025-04-15"
-            }
-        ]
+    "total_cancellations": {
+      "previous": 50,
+      "current": 60,
+      "change": 10,
+      "percentage_change": 20
     },
-    "recent_bookings": [
-        {
-            "id": "booking001",
-            "customer_name": "Lê Văn Hùng",
-            "tour_name": "MIỀN TRUNG 4N3Đ | ĐÀ NẴNG - HỘI AN - BÀ NÀ - HUẾ",
-            "total_price": 6080000,
-            "status": "Chưa xác nhận",
-            "payment_method": "Momo",
-            "location": "Miền Trung",
-            "booking_date": "2025-03-30",
-            "user_email": "levanhung@example.com",
-            "user_phone": "+84987654321"
-        },
-        {
-            "id": "booking002",
-            "customer_name": "Phạm Thị Lan",
-            "tour_name": "MIỀN BẮC 6N5Đ | HÀ NỘI – NINH BÌNH – HẠ LONG – YÊN TỬ – SAPA",
-            "total_price": 23350000,
-            "status": "Chưa xác nhận",
-            "payment_method": "Paypal",
-            "location": "Miền Bắc",
-            "booking_date": "2025-03-29",
-            "user_email": "phamthilan@example.com",
-            "user_phone": "+84912345678"
-        },
-        {
-            "id": "booking003",
-            "customer_name": "Ngô Đình Bảo",
-            "tour_name": "CẦN THƠ - CHÂU ĐỐC",
-            "total_price": "3500000",
-            "status": "Đã xác nhận",
-            "payment_method": "Thanh toán tại văn phòng",
-            "location": "Miền Nam",
-            "booking_date": "2025-03-28",
-            "user_email": "ngodinhbao@example.com",
-            "user_phone": "+84905556677"
-        }
-    ],
-    "dailyPerformance": [
-        {
-            "date": "2025-04-01",
-            "revenue": 5000000,
-            "bookings": 150
-        },
-        {
-            "date": "2025-04-02",
-            "revenue": 7000000,
-            "bookings": 200
-        },
-        {
-            "date": "2025-04-03",
-            "revenue": 6000000,
-            "bookings": 180
-        }
-    ],
-    "monthlyRevenue": {
-        "domestic": [
-            {
-                "month": "January",
-                "revenue": 28000
-            },
-            {
-                "month": "February",
-                "revenue": 37000
-            },
-            {
-                "month": "March",
-                "revenue": 31000
-            },
-            {
-                "month": "April",
-                "revenue": 33000
-            },
-            {
-                "month": "May",
-                "revenue": 39000
-            },
-            {
-                "month": "June",
-                "revenue": 36000
-            },
-            {
-                "month": "July",
-                "revenue": 44000
-            },
-            {
-                "month": "August",
-                "revenue": 46000
-            },
-            {
-                "month": "September",
-                "revenue": 40000
-            },
-            {
-                "month": "October",
-                "revenue": 42000
-            },
-            {
-                "month": "November",
-                "revenue": 47000
-            },
-            {
-                "month": "December",
-                "revenue": 49000
-            }
-        ],
-        "international": [
-            {
-                "month": "January",
-                "revenue": 21000
-            },
-            {
-                "month": "February",
-                "revenue": 26000
-            },
-            {
-                "month": "March",
-                "revenue": 23000
-            },
-            {
-                "month": "April",
-                "revenue": 28000
-            },
-            {
-                "month": "May",
-                "revenue": 34000
-            },
-            {
-                "month": "June",
-                "revenue": 33000
-            },
-            {
-                "month": "July",
-                "revenue": 38000
-            },
-            {
-                "month": "August",
-                "revenue": 40000
-            },
-            {
-                "month": "September",
-                "revenue": 35000
-            },
-            {
-                "month": "October",
-                "revenue": 37000
-            },
-            {
-                "month": "November",
-                "revenue": 41000
-            },
-            {
-                "month": "December",
-                "revenue": 43000
-            }
-        ]
-    },
-    "customerFeedback": {
-        "domestic": [
-            {
-                "userName": "Emily Brown",
-                "tourName": "Amazing Vietnam Tour",
-                "rating": 5,
-                "comment": "Amazing experience!"
-            },
-            {
-                "userName": "David Wilson",
-                "tourName": "Northern Vietnam Adventure",
-                "rating": 4.5,
-                "comment": "Great but rushed."
-            },
-            {
-                "userName": "Sophie Clark",
-                "tourName": "Cambodia Heritage Journey",
-                "rating": 4.4,
-                "comment": "Loved the temples."
-            }
-        ],
-        "international": [
-            {
-                "userName": "Michael Lee",
-                "tourName": "Thailand Adventure",
-                "rating": 4.5,
-                "comment": "Great but hot."
-            },
-            {
-                "userName": "Sarah Davis",
-                "tourName": "Japan Discovery",
-                "rating": 5,
-                "comment": "Fantastic guide!"
-            },
-            {
-                "userName": "James Miller",
-                "tourName": "USA West Coast Road Trip",
-                "rating": 4.6,
-                "comment": "Breathtaking views!"
-            }
-        ]
-    },
-    "adminManagement": {
-        "admins": [
-            {
-                "adminId": "admin001",
-                "name": "Admin One",
-                "email": "admin1@example.com",
-                "role": "Super Admin"
-            },
-            {
-                "adminId": "admin002",
-                "name": "Admin Two",
-                "email": "admin2@example.com",
-                "role": "Tour Manager"
-            },
-            {
-                "adminId": "admin003",
-                "name": "Admin Three",
-                "email": "admin3@example.com",
-                "role": "Booking Manager"
-            },
-            {
-                "adminId": "admin004",
-                "name": "Admin Four",
-                "email": "admin4@example.com",
-                "role": "Customer Support"
-            },
-            {
-                "adminId": "admin005",
-                "name": "Admin Five",
-                "email": "admin5@example.com",
-                "role": "Marketing Manager"
-            }
-        ]
-    },
-    "userManagement": [
-        {
-            "userId": "user001",
-            "name": "NGUYỄN SỶ KHẢI",
-            "email": "nguyensykhai@email.com",
-            "phone": "+84987654321",
-            "avatar": "https://files.idyllic.app/files/static/3674716?width=384&optimizer=image",
-            "address": "12 Đường Nguyễn Trãi, Quận Hải Châu, Đà Nẵng",
-            "role": "Admin"
-        },
-        {
-            "userId": "user002",
-            "name": "PHAN VĂN THANH",
-            "email": "phanvanthanh@email.com",
-            "phone": "+84987654321",
-            "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPdb9rnEWhhYbheswXTOsQkzTLUeGiG37DipG837pGW1PuBuPP",
-            "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng",
-            "role": "User"
-        },
-        {
-            "userId": "user003",
-            "name": "NGUYỄN MINH TIỀN PHONG",
-            "email": "nguyenminhtienphong@email.com",
-            "phone": "+84987654322",
-            "avatar": "https://files.plugger.ai/2af1eaf2-0c50-48d7-9f1c-2bc7aa4f37e0.jpg",
-            "address": "99 Đường Lê Lợi, Quận Sơn Trà, Đà Nẵng",
-            "role": "User"
-        },
-        {
-            "userId": "user004",
-            "name": "PHẠM THỊ THANH THÚY",
-            "email": "phamthithanhthuy@email.com",
-            "phone": "+84987654323",
-            "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg",
-            "address": "20 Đường Trần Hưng Đạo, Quận Thanh Khê, Đà Nẵng",
-            "role": "Admin"
-        },
-        {
-            "userId": "user005",
-            "name": "ĐẶNG HỮU QUANG HUY",
-            "email": "danghuuquanghuy@email.com",
-            "phone": "+84987654324",
-            "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
-            "address": "76 Đường Phan Chu Trinh, Quận Liên Chiểu, Đà Nẵng",
-            "role": "User"
-        }
-    ],
-    "roles": [
-        {
-            "id": "admin",
-            "name": "Admin"
-        },
-        {
-            "id": "user",
-            "name": "User"
-        }
-    ],
-    "tourManagement": {
-        "tours": [
-            {
-                "tourId": "tour001",
-                "tourName": "Amazing Vietnam Tour",
-                "destination": "Vietnam",
-                "price": 1200,
-                "duration": "7 days",
-                "status": "Active"
-            },
-            {
-                "tourId": "tour002",
-                "tourName": "Thailand Adventure",
-                "destination": "Thailand",
-                "price": 950,
-                "duration": "6 days",
-                "status": "Active"
-            },
-            {
-                "tourId": "tour003",
-                "tourName": "Japan Discovery",
-                "destination": "Japan",
-                "price": 1500,
-                "duration": "10 days",
-                "status": "Active"
-            },
-            {
-                "tourId": "tour004",
-                "tourName": "Northern Vietnam Adventure",
-                "destination": "Vietnam",
-                "price": 1100,
-                "duration": "5 days",
-                "status": "Active"
-            },
-            {
-                "tourId": "tour005",
-                "tourName": "Southern Vietnam Escape",
-                "destination": "Vietnam",
-                "price": 1000,
-                "duration": "4 days",
-                "status": "Active"
-            }
-        ],
-        "actions": [
-            "Add",
-            "Edit",
-            "Delete"
-        ]
-    },
-    "bookingManagement": {
-        "bookings": [
-            {
-                "bookingId": "booking001",
-                "userId": "user001",
-                "tourId": "tour001",
-                "bookingDate": "2023-11-01",
-                "status": "Confirmed"
-            },
-            {
-                "bookingId": "booking002",
-                "userId": "user002",
-                "tourId": "tour002",
-                "bookingDate": "2023-11-02",
-                "status": "Pending"
-            },
-            {
-                "bookingId": "booking003",
-                "userId": "user003",
-                "tourId": "tour003",
-                "bookingDate": "2023-11-03",
-                "status": "Confirmed"
-            },
-            {
-                "bookingId": "booking004",
-                "userId": "user004",
-                "tourId": "tour004",
-                "bookingDate": "2023-11-04",
-                "status": "Cancelled"
-            },
-            {
-                "bookingId": "booking005",
-                "userId": "user005",
-                "tourId": "tour005",
-                "bookingDate": "2023-11-05",
-                "status": "Confirmed"
-            }
-        ]
-    },
-    "contactManagement": {
-        "contacts": [
-            {
-                "contactId": "contact001",
-                "name": "Alice Johnson",
-                "email": "alice@example.com",
-                "message": "Tour question",
-                "status": "Unread"
-            },
-            {
-                "contactId": "contact002",
-                "name": "Bob Brown",
-                "email": "bob@example.com",
-                "message": "Discount request",
-                "status": "Replied"
-            },
-            {
-                "contactId": "contact003",
-                "name": "Charlie Davis",
-                "email": "charlie@example.com",
-                "message": "Itinerary info",
-                "status": "Unread"
-            }
-        ]
-    },
-    "promotions": {
-        "active": [
-            {
-                "promoId": "promo001",
-                "name": "Summer Sale",
-                "discount": 15,
-                "startDate": "2025-06-01",
-                "endDate": "2025-08-31",
-                "applicableTours": [
-                    "tour001",
-                    "tour002",
-                    "tour004"
-                ]
-            },
-            {
-                "promoId": "promo002",
-                "name": "Early Bird 2025",
-                "discount": 10,
-                "startDate": "2025-01-01",
-                "endDate": "2025-03-31",
-                "applicableTours": [
-                    "tour003",
-                    "tour005"
-                ]
-            }
-        ],
-        "expired": [
-            {
-                "promoId": "promo003",
-                "name": "Winter Discount",
-                "discount": 20,
-                "startDate": "2024-12-01",
-                "endDate": "2024-12-31",
-                "applicableTours": [
-                    "tour005"
-                ]
-            }
-        ]
-    },
-    "systemMetrics": {
-        "serverUptime": "99.98%",
-        "averageResponseTime": "150ms",
-        "activeSessions": 1200,
-        "lastBackup": "2025-04-02T23:00:00Z"
+    "average_booking_value": {
+      "previous": 481.25,
+      "current": 500,
+      "change": 18.75,
+      "percentage_change": 3.9
     }
+  },
+  "destination_statistics": {
+    "domestic": [
+      {
+        "name": "Miền Bắc",
+        "value": 90,
+        "color": "#F44336"
+      },
+      {
+        "name": "Miền Trung",
+        "value": 30,
+        "color": "#009688"
+      },
+      {
+        "name": "Miền Nam",
+        "value": 100,
+        "color": "#9C27B0"
+      }
+    ],
+    "international": [
+      {
+        "name": "Thailand",
+        "value": 26,
+        "color": "#FFEB3B"
+      },
+      {
+        "name": "Japan",
+        "value": 21,
+        "color": "#3F51B5"
+      },
+      {
+        "name": "France",
+        "value": 16,
+        "color": "#9C27B0"
+      },
+      {
+        "name": "Italy",
+        "value": 10,
+        "color": "#E91E63"
+      },
+      {
+        "name": "USA",
+        "value": 10,
+        "color": "#009688"
+      },
+      {
+        "name": "Australia",
+        "value": 7,
+        "color": "#FF9800"
+      }
+    ]
+  },
+  "tourTypeDistribution": {
+    "data": [
+      {
+        "name": "Trong nước",
+        "value": 60,
+        "color": "#4CAF50"
+      },
+      {
+        "name": "Ngoài nước",
+        "value": 40,
+        "color": "#FF9800"
+      }
+    ]
+  },
+  "customerSourceDistribution": {
+    "data": [
+      {
+        "name": "Online",
+        "value": 70,
+        "color": "#2196F3"
+      },
+      {
+        "name": "Offline",
+        "value": 30,
+        "color": "#FFC107"
+      }
+    ]
+  },
+  "booking_payments": [
+    {
+      "method": "PayPal",
+      "percentage": 16,
+      "color": "#33A8FF"
+    },
+    {
+      "method": "Momo",
+      "percentage": 26,
+      "color": "#FF33E3"
+    },
+    {
+      "method": "Thanh toán tại văn phòng",
+      "percentage": 13,
+      "color": "#FFC300"
+    },
+    {
+      "method": "Chuyển khoản ngân hàng",
+      "percentage": 6,
+      "color": "#27AE60"
+    },
+    {
+      "method": "Credit Card",
+      "percentage": 30,
+      "color": "#FF5722"
+    },
+    {
+      "method": "Tiền mặt",
+      "percentage": 9,
+      "color": "#4CAF50"
+    }
+  ],
+  "top_booked_tours": {
+    "domestic": [
+      {
+        "id": 201,
+        "name": "Đà Lạt - Thành Phố Ngàn Hoa",
+        "seats_booked": 12,
+        "seats_available": 25,
+        "price": 1600000,
+        "rating": 4.6,
+        "duration": "3 ngày 2 đêm"
+      },
+      {
+        "id": 189,
+        "name": "Phú Quốc - Thiên Đường Nghỉ Dưỡng",
+        "seats_booked": 9,
+        "seats_available": 35,
+        "price": 2100000,
+        "rating": 4.8,
+        "duration": "4 ngày 3 đêm"
+      },
+      {
+        "id": 205,
+        "name": "Hà Giang - Cao Nguyên Đá Đồng Văn",
+        "seats_booked": 7,
+        "seats_available": 18,
+        "price": 1900000,
+        "rating": 4.7,
+        "duration": "3 ngày 2 đêm"
+      },
+      {
+        "id": 101,
+        "name": "Phố cổ Hội An",
+        "seats_booked": 280,
+        "seats_available": 320,
+        "price": 31250000,
+        "rating": 4.7,
+        "duration": "6 ngày"
+      },
+      {
+        "id": 104,
+        "name": "Thánh địa Mỹ Sơn",
+        "seats_booked": 230,
+        "seats_available": 270,
+        "price": 28750000,
+        "rating": 4.5,
+        "duration": "5 ngày"
+      },
+      {
+        "id": 105,
+        "name": "Hà Nội",
+        "seats_booked": 190,
+        "seats_available": 210,
+        "price": 26250000,
+        "rating": 4.6,
+        "duration": "4 ngày"
+      }
+    ],
+    "international": [
+      {
+        "tourId": "tour102",
+        "tourName": "Bali Paradise Getaway",
+        "bookings": 260,
+        "price": 980,
+        "rating": 4.8,
+        "duration": "7 days",
+        "destination": "Indonesia"
+      },
+      {
+        "tourId": "tour103",
+        "tourName": "Korea Cherry Blossom Tour",
+        "bookings": 210,
+        "price": 1550,
+        "rating": 4.9,
+        "duration": "9 days",
+        "destination": "South Korea"
+      },
+      {
+        "tourId": "tour107",
+        "tourName": "Spain Flamenco & Food Tour",
+        "bookings": 180,
+        "price": 2050,
+        "rating": 4.7,
+        "duration": "8 days",
+        "destination": "Spain"
+      },
+      {
+        "tourId": "tour108",
+        "tourName": "Greece Island Hopping",
+        "bookings": 170,
+        "price": 1850,
+        "rating": 4.6,
+        "duration": "7 days",
+        "destination": "Greece"
+      },
+      {
+        "tourId": "tour110",
+        "tourName": "Canadian Rockies Explorer",
+        "bookings": 150,
+        "price": 2250,
+        "rating": 4.7,
+        "duration": "10 days",
+        "destination": "Canada"
+      }
+    ],
+    "combined": [
+      {
+        "name": "Tour A",
+        "bookings": 150,
+        "revenue": "300000000",
+        "rating": 4.8,
+        "departureDate": "2025-04-12"
+      },
+      {
+        "name": "Tour B",
+        "bookings": 120,
+        "revenue": "250000000",
+        "rating": 4.5,
+        "departureDate": "2025-04-15"
+      }
+    ]
+  },
+  "recent_bookings": [
+    {
+      "id": "booking001",
+      "customer_name": "Lê Văn Hùng",
+      "tour_name": "MIỀN TRUNG 4N3Đ | ĐÀ NẴNG - HỘI AN - BÀ NÀ - HUẾ",
+      "total_price": 6080000,
+      "status": "Chưa xác nhận",
+      "payment_method": "Momo",
+      "location": "Miền Trung",
+      "booking_date": "2025-03-30",
+      "user_email": "levanhung@example.com",
+      "user_phone": "+84987654321"
+    },
+    {
+      "id": "booking002",
+      "customer_name": "Phạm Thị Lan",
+      "tour_name": "MIỀN BẮC 6N5Đ | HÀ NỘI – NINH BÌNH – HẠ LONG – YÊN TỬ – SAPA",
+      "total_price": 23350000,
+      "status": "Chưa xác nhận",
+      "payment_method": "Paypal",
+      "location": "Miền Bắc",
+      "booking_date": "2025-03-29",
+      "user_email": "phamthilan@example.com",
+      "user_phone": "+84912345678"
+    },
+    {
+      "id": "booking003",
+      "customer_name": "Ngô Đình Bảo",
+      "tour_name": "CẦN THƠ - CHÂU ĐỐC",
+      "total_price": "3500000",
+      "status": "Đã xác nhận",
+      "payment_method": "Thanh toán tại văn phòng",
+      "location": "Miền Nam",
+      "booking_date": "2025-03-28",
+      "user_email": "ngodinhbao@example.com",
+      "user_phone": "+84905556677"
+    }
+  ],
+  "dailyPerformance": [
+    {
+      "date": "2025-04-01",
+      "revenue": 5000000,
+      "bookings": 150
+    },
+    {
+      "date": "2025-04-02",
+      "revenue": 7000000,
+      "bookings": 200
+    },
+    {
+      "date": "2025-04-03",
+      "revenue": 6000000,
+      "bookings": 180
+    }
+  ],
+  "monthlyRevenue": {
+    "domestic": [
+      {
+        "month": "January",
+        "revenue": 28000
+      },
+      {
+        "month": "February",
+        "revenue": 37000
+      },
+      {
+        "month": "March",
+        "revenue": 31000
+      },
+      {
+        "month": "April",
+        "revenue": 33000
+      },
+      {
+        "month": "May",
+        "revenue": 39000
+      },
+      {
+        "month": "June",
+        "revenue": 36000
+      },
+      {
+        "month": "July",
+        "revenue": 44000
+      },
+      {
+        "month": "August",
+        "revenue": 46000
+      },
+      {
+        "month": "September",
+        "revenue": 40000
+      },
+      {
+        "month": "October",
+        "revenue": 42000
+      },
+      {
+        "month": "November",
+        "revenue": 47000
+      },
+      {
+        "month": "December",
+        "revenue": 49000
+      }
+    ],
+    "international": [
+      {
+        "month": "January",
+        "revenue": 21000
+      },
+      {
+        "month": "February",
+        "revenue": 26000
+      },
+      {
+        "month": "March",
+        "revenue": 23000
+      },
+      {
+        "month": "April",
+        "revenue": 28000
+      },
+      {
+        "month": "May",
+        "revenue": 34000
+      },
+      {
+        "month": "June",
+        "revenue": 33000
+      },
+      {
+        "month": "July",
+        "revenue": 38000
+      },
+      {
+        "month": "August",
+        "revenue": 40000
+      },
+      {
+        "month": "September",
+        "revenue": 35000
+      },
+      {
+        "month": "October",
+        "revenue": 37000
+      },
+      {
+        "month": "November",
+        "revenue": 41000
+      },
+      {
+        "month": "December",
+        "revenue": 43000
+      }
+    ]
+  },
+  "customerFeedback": {
+    "domestic": [
+      {
+        "userName": "Emily Brown",
+        "tourName": "Amazing Vietnam Tour",
+        "rating": 5,
+        "comment": "Amazing experience!"
+      },
+      {
+        "userName": "David Wilson",
+        "tourName": "Northern Vietnam Adventure",
+        "rating": 4.5,
+        "comment": "Great but rushed."
+      },
+      {
+        "userName": "Sophie Clark",
+        "tourName": "Cambodia Heritage Journey",
+        "rating": 4.4,
+        "comment": "Loved the temples."
+      }
+    ],
+    "international": [
+      {
+        "userName": "Michael Lee",
+        "tourName": "Thailand Adventure",
+        "rating": 4.5,
+        "comment": "Great but hot."
+      },
+      {
+        "userName": "Sarah Davis",
+        "tourName": "Japan Discovery",
+        "rating": 5,
+        "comment": "Fantastic guide!"
+      },
+      {
+        "userName": "James Miller",
+        "tourName": "USA West Coast Road Trip",
+        "rating": 4.6,
+        "comment": "Breathtaking views!"
+      }
+    ]
+  },
+  "adminManagement": {
+    "admins": [
+      {
+        "adminId": "admin001",
+        "name": "Admin One",
+        "email": "admin1@example.com",
+        "role": "Super Admin"
+      },
+      {
+        "adminId": "admin002",
+        "name": "Admin Two",
+        "email": "admin2@example.com",
+        "role": "Tour Manager"
+      },
+      {
+        "adminId": "admin003",
+        "name": "Admin Three",
+        "email": "admin3@example.com",
+        "role": "Booking Manager"
+      },
+      {
+        "adminId": "admin004",
+        "name": "Admin Four",
+        "email": "admin4@example.com",
+        "role": "Customer Support"
+      },
+      {
+        "adminId": "admin005",
+        "name": "Admin Five",
+        "email": "admin5@example.com",
+        "role": "Marketing Manager"
+      }
+    ]
+  },
+  "userManagement": [
+    {
+      "userId": "user001",
+      "name": "NGUYỄN SỶ KHẢI",
+      "email": "nguyensykhai@email.com",
+      "phone": "+84987654321",
+      "avatar": "https://files.idyllic.app/files/static/3674716?width=384&optimizer=image",
+      "address": "12 Đường Nguyễn Trãi, Quận Hải Châu, Đà Nẵng",
+      "role": "Admin"
+    },
+    {
+      "userId": "user002",
+      "name": "PHAN VĂN THANH",
+      "email": "phanvanthanh@email.com",
+      "phone": "+84987654321",
+      "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPdb9rnEWhhYbheswXTOsQkzTLUeGiG37DipG837pGW1PuBuPP",
+      "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng",
+      "role": "User"
+    },
+    {
+      "userId": "user003",
+      "name": "NGUYỄN MINH TIỀN PHONG",
+      "email": "nguyenminhtienphong@email.com",
+      "phone": "+84987654322",
+      "avatar": "https://files.plugger.ai/2af1eaf2-0c50-48d7-9f1c-2bc7aa4f37e0.jpg",
+      "address": "99 Đường Lê Lợi, Quận Sơn Trà, Đà Nẵng",
+      "role": "User"
+    },
+    {
+      "userId": "user004",
+      "name": "PHẠM THỊ THANH THÚY",
+      "email": "phamthithanhthuy@email.com",
+      "phone": "+84987654323",
+      "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg",
+      "address": "20 Đường Trần Hưng Đạo, Quận Thanh Khê, Đà Nẵng",
+      "role": "Admin"
+    },
+    {
+      "userId": "user005",
+      "name": "ĐẶNG HỮU QUANG HUY",
+      "email": "danghuuquanghuy@email.com",
+      "phone": "+84987654324",
+      "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
+      "address": "76 Đường Phan Chu Trinh, Quận Liên Chiểu, Đà Nẵng",
+      "role": "User"
+    },
+    {
+      "id": "87cc",
+      "name": "ĐẶNG TRẦN NHẬT HOÀNG",
+      "address": "ĐÀ NẴNG",
+      "role": "User",
+      "about": "14",
+      "email": "huyd44643@gmail.com",
+      "phone": "0905920794",
+      "avatar": "https://media-cdn-v2.laodong.vn/storage/newsportal/2025/2/4/1458351/Ronaldo-1.jpg"
+    }
+  ],
+  "roles": [
+    {
+      "id": "admin",
+      "name": "Admin"
+    },
+    {
+      "id": "user",
+      "name": "User"
+    }
+  ],
+  "tourManagement": {
+    "tours": [
+      {
+        "tourId": "tour001",
+        "tourName": "Amazing Vietnam Tour",
+        "destination": "Vietnam",
+        "price": 1200,
+        "duration": "7 days",
+        "status": "Active"
+      },
+      {
+        "tourId": "tour002",
+        "tourName": "Thailand Adventure",
+        "destination": "Thailand",
+        "price": 950,
+        "duration": "6 days",
+        "status": "Active"
+      },
+      {
+        "tourId": "tour003",
+        "tourName": "Japan Discovery",
+        "destination": "Japan",
+        "price": 1500,
+        "duration": "10 days",
+        "status": "Active"
+      },
+      {
+        "tourId": "tour004",
+        "tourName": "Northern Vietnam Adventure",
+        "destination": "Vietnam",
+        "price": 1100,
+        "duration": "5 days",
+        "status": "Active"
+      },
+      {
+        "tourId": "tour005",
+        "tourName": "Southern Vietnam Escape",
+        "destination": "Vietnam",
+        "price": 1000,
+        "duration": "4 days",
+        "status": "Active"
+      }
+    ],
+    "actions": [
+      "Add",
+      "Edit",
+      "Delete"
+    ]
+  },
+  "bookingManagement": {
+    "bookings": [
+      {
+        "bookingId": "booking001",
+        "userId": "user001",
+        "tourId": "tour001",
+        "bookingDate": "2023-11-01",
+        "status": "Confirmed"
+      },
+      {
+        "bookingId": "booking002",
+        "userId": "user002",
+        "tourId": "tour002",
+        "bookingDate": "2023-11-02",
+        "status": "Pending"
+      },
+      {
+        "bookingId": "booking003",
+        "userId": "user003",
+        "tourId": "tour003",
+        "bookingDate": "2023-11-03",
+        "status": "Confirmed"
+      },
+      {
+        "bookingId": "booking004",
+        "userId": "user004",
+        "tourId": "tour004",
+        "bookingDate": "2023-11-04",
+        "status": "Cancelled"
+      },
+      {
+        "bookingId": "booking005",
+        "userId": "user005",
+        "tourId": "tour005",
+        "bookingDate": "2023-11-05",
+        "status": "Confirmed"
+      }
+    ]
+  },
+  "contactManagement": {
+    "contacts": [
+      {
+        "contactId": "contact001",
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "message": "Tour question",
+        "status": "Unread"
+      },
+      {
+        "contactId": "contact002",
+        "name": "Bob Brown",
+        "email": "bob@example.com",
+        "message": "Discount request",
+        "status": "Replied"
+      },
+      {
+        "contactId": "contact003",
+        "name": "Charlie Davis",
+        "email": "charlie@example.com",
+        "message": "Itinerary info",
+        "status": "Unread"
+      }
+    ]
+  },
+  "promotions": {
+    "active": [
+      {
+        "promoId": "promo001",
+        "name": "Summer Sale",
+        "discount": 15,
+        "startDate": "2025-06-01",
+        "endDate": "2025-08-31",
+        "applicableTours": [
+          "tour001",
+          "tour002",
+          "tour004"
+        ]
+      },
+      {
+        "promoId": "promo002",
+        "name": "Early Bird 2025",
+        "discount": 10,
+        "startDate": "2025-01-01",
+        "endDate": "2025-03-31",
+        "applicableTours": [
+          "tour003",
+          "tour005"
+        ]
+      }
+    ],
+    "expired": [
+      {
+        "promoId": "promo003",
+        "name": "Winter Discount",
+        "discount": 20,
+        "startDate": "2024-12-01",
+        "endDate": "2024-12-31",
+        "applicableTours": [
+          "tour005"
+        ]
+      }
+    ]
+  },
+  "systemMetrics": {
+    "serverUptime": "99.98%",
+    "averageResponseTime": "150ms",
+    "activeSessions": 1200,
+    "lastBackup": "2025-04-02T23:00:00Z"
+  }
 }
