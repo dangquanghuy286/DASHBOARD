@@ -1,4 +1,4 @@
-import { edit, get, post } from "../util/request";
+import { del, edit, get, post } from "../util/request";
 
 export const getDataCustomer = async () => {
     const result = await get("userManagement");
@@ -10,5 +10,9 @@ export const createDataCustomer = async (data) => {
 };
 export const editUser = async (id, option) => {
     const result = await edit(`userManagement/${id}`, option);
+    return result;
+};
+export const deleteUser = async (id) => {
+    const result = await del(`userManagement/${id}`);
     return result;
 };

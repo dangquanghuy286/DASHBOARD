@@ -3,7 +3,8 @@ import { getDataCustomer } from "../../services/customerSevice";
 import icons from "../../util/icon";
 import CreateUser from "./CreateUsers";
 import EditUser from "./EditUser";
-const { MdDelete } = icons;
+import DeleteUser from "./DeleteUser";
+
 function Customer() {
     const [data, setData] = useState([]);
 
@@ -56,14 +57,6 @@ function Customer() {
                                         <p className="text-sm text-gray-700 dark:text-gray-300">
                                             <span className="font-semibold">Vai trò:</span> {user.role}
                                         </p>
-                                    </div>
-                                    <div className="mt-4 flex gap-4">
-                                        {" "}
-                                        {/* Added mt-4 for spacing */}
-                                        <EditUser user={user} />
-                                        <button className="flex cursor-pointer items-center justify-center rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-400 focus:outline-none">
-                                            <MdDelete className="mr-2 text-lg" /> Xóa
-                                        </button>
                                     </div>
                                 </div>
                             </div>

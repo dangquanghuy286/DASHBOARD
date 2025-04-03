@@ -124,11 +124,11 @@ function EditUser(props) {
 
     return (
         <>
-            <div className="my-6 ml-6 flex items-center justify-between">
-                <div className="flex space-x-2">
+            <div className="my-6 ml-6 flex items-center">
+                <div className="">
                     {/* Nút Thêm Sản Phẩm */}
                     <button
-                        className="flex cursor-pointer items-center justify-center rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:outline-none"
+                        className="flex h-12 w-full items-center justify-center rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:outline-none"
                         onClick={openModal}
                     >
                         <IoMdCreate className="mr-2 text-lg" /> Sửa
