@@ -82,11 +82,13 @@ function EditUser(props) {
                 Swal.fire({
                     title: "CẬP NHẬT THÀNH CÔNG",
                     icon: "success",
+                    timer: 5000,
                 });
             } else {
                 Swal.fire({
                     title: "CẬP NHẬT THẤT BẠI",
                     icon: "error",
+                    timer: 5000,
                 });
             }
         } else if (confirmResult.isDenied) {

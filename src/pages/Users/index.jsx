@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDataCustomer } from "../../services/customerSevice";
-import icons from "../../util/icon";
+
 import CreateUser from "./CreateUsers";
 import EditUser from "./EditUser";
 import DeleteUser from "./DeleteUser";
@@ -59,10 +59,18 @@ function Customer() {
                                         </p>
                                     </div>
                                 </div>
+                                <div className="mt-4 flex gap-4">
+                                    {/* Wrap buttons in a flex container */}
+                                    <div className="flex items-center space-x-4">
+                                        <EditUser user={user} />
+                                        <DeleteUser user={user} />
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Avatar */}
-                            <div className="flex w-full items-center justify-center sm:w-1/2">
+                            <div className="flex w-full items-start justify-center sm:w-1/2">
+                                {/* Đã thay items-center thành items-start */}
                                 <div className="flex flex-1 items-center justify-center">
                                     <div className="h-50 w-50 overflow-hidden rounded-full border border-gray-300 dark:border-gray-600">
                                         <img

@@ -32,6 +32,7 @@ function DeleteUser(props) {
                     title: "Đã xóa thành công!",
                     text: "Sản phẩm đã được xóa.",
                     icon: "success",
+                    timer: 5000,
                 });
             }
         }
