@@ -3,6 +3,7 @@ import EditUser from "./EditUser";
 
 function UserPr(props) {
     const { user } = props;
+
     return (
         <>
             <div className="mt-0 flex rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-200 hover:shadow-lg dark:border-gray-700 dark:bg-slate-800">
