@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import CreateTour from "./CreateTour";
+
 import icons from "../../util/icon";
 import { getDataTour } from "../../services/tourService";
 import EditTour from "./EditTour";
 import DeleteTour from "./DeleteTour";
+import CreateTour from "./CreateTour";
 
 const { FaSearch, MdBlock } = icons;
 
@@ -85,7 +86,6 @@ function ShowTour() {
 
                 <div className="my-6 ml-6 flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <CreateTour />
                         <form
                             className="inline"
                             onSubmit={handleSubmit(onSearch)}

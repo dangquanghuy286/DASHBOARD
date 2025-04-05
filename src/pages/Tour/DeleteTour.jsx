@@ -1,8 +1,9 @@
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import icons from "../../util/icon";
-import { deleteUser } from "../../services/customerSevice";
+
 import { useState } from "react";
+import { deleteTour } from "../../services/tourService";
 const { MdDelete } = icons;
 function DeleteTour(props) {
     const { item } = props;
@@ -25,7 +26,7 @@ function DeleteTour(props) {
 
         // Kiểm tra nếu người dùng xác nhận xóa
         if (result.isConfirmed) {
-            const data = await deleteUser(item.id);
+            const data = await deleteTour(item.id);
             if (data) {
                 handleReload(); // Reload lại danh sách sau khi xóa thành công
                 Swal.fire({

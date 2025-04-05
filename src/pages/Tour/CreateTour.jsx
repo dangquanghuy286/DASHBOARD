@@ -1,46 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import Modal from "react-modal";
+import { getRoles } from "../../services/rolesService";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-// Giả sử bạn có API để tạo tour
-import { createDataTour } from "../../services/tourService"; // Cần tạo API này
-
+import { createDataCustomer } from "../../services/customerSevice";
 const { IoIosAdd } = icons;
 
 function CreateTour() {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
-    const [imagePreviews, setImagePreviews] = useState([]); // Mảng để lưu URL preview của ảnh
+    const [dataCategory, setDataCategory] = useState([]);
     const [reload, setReload] = useState(false);
 
+    useEffect(() => {
+        const fetchAPI = async () => {
+            const res = await getRoles();
+            setDataCategory(res);
+        };
+        fetchAPI();
+    }, []);
     const handleReload = () => {
         setReload(!reload);
     };
-
+    // const [avatarPreview, setAvatarPreview] = useState(null); // Trạng thái lưu ảnh preview
     const customStyles = {
         content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-            width: "90%",
-            maxWidth: "600px",
-            maxHeight: "80vh",
-            padding: "24px",
-            background: "#ffffff",
-            borderRadius: "12px",
-            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-            border: "none",
-            overflowY: "auto",
-            fontFamily: "'Inter', sans-serif",
+            top: "50%", // Đặt modal ở vị trí 50% chiều cao của màn hình
+            left: "50%", // Đặt modal ở vị trí 50% chiều rộng của màn hình
+            right: "auto", // Không điều chỉnh vị trí bên phải
+            bottom: "auto", // Không điều chỉnh vị trí phía dưới
+            marginRight: "-50%", // Giữ việc căn giữa theo chiều ngang
+            transform: "translate(-50%, -50%)", // Căn giữa modal
+            width: "90%", // Chiều rộng modal linh hoạt theo kích thước màn hình
+            maxWidth: "600px", // Giới hạn chiều rộng của modal trên các màn hình lớn
+            maxHeight: "80vh", // Giới hạn chiều cao của modal không vượt quá 80% chiều cao viewport
+            padding: "24px", // Thêm không gian bên trong modal để tạo cảm giác thoải mái
+            background: "#ffffff", // Nền trắng sạch sẽ
+            borderRadius: "12px", // Góc mềm mại, hiện đại
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)", // Áp dụng bóng đổ nhẹ cho modal để tạo chiều sâu
+            border: "none", // Loại bỏ đường viền mặc định của modal để tạo phong cách sạch sẽ
+            overflowY: "auto", // Cho phép cuộn dọc nếu nội dung vượt quá chiều cao modal
+            fontFamily: "'Inter', sans-serif", // Font chữ hiện đại, dễ đọc (tuỳ chọn, đảm bảo font được tải)
         },
         overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 1000,
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // Màu nền tối, bán trong suốt cho lớp phủ
+            zIndex: 1000, // Đảm bảo modal luôn hiển thị trên các nội dung khác
         },
     };
 
@@ -50,44 +56,11 @@ function CreateTour() {
 
     const closeModal = () => {
         setShowModal(false);
-        // Reset form khi đóng modal
-        setData({
-            tourName: "",
-            duration: "",
-            description: "",
-            quantity: "",
-            priceAdult: "",
-            priceChild: "",
-            highlights: [""],
-            available: true,
-            startDate: "",
-            endDate: "",
-            images: [],
-        });
-        setImagePreviews([]);
     };
 
     const handleCreate = async (e) => {
         e.preventDefault();
-        // Chuẩn bị dữ liệu để gửi lên API
-        const formData = new FormData();
-        formData.append("tourName", data.tourName);
-        formData.append("duration", data.duration);
-        formData.append("description", data.description);
-        formData.append("quantity", data.quantity);
-        formData.append("priceAdult", data.priceAdult);
-        formData.append("priceChild", data.priceChild);
-        formData.append("highlights", JSON.stringify(data.highlights));
-        formData.append("available", data.available);
-        formData.append("startDate", data.startDate);
-        formData.append("endDate", data.endDate);
-
-        // Thêm từng file ảnh vào FormData
-        data.images.forEach((image, index) => {
-            formData.append(`images[${index}]`, image);
-        });
-
-        const ketqua = await createDataTour(formData); // Gọi API tạo tour
+        const ketqua = await createDataCustomer(data);
 
         if (ketqua) {
             setShowModal(false);
@@ -95,15 +68,7 @@ function CreateTour() {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Tạo tour thành công!",
-                showConfirmButton: false,
-                timer: 5000,
-            });
-        } else {
-            Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "Tạo tour thất bại!",
+                title: "Tạo mới thành công!",
                 showConfirmButton: false,
                 timer: 5000,
             });
@@ -112,67 +77,31 @@ function CreateTour() {
 
     const handleChange = (e) => {
         const name = e.target.name;
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        const value = e.target.value;
 
         setData({
             ...data,
             [name]: value,
         });
+        // if (name === "avatar" && value) {
+        //     setAvatarPreview(value); // Lưu URL ảnh để hiển thị preview
+        // }
     };
+    // Hàm xử lý khi người dùng chọn ảnh từ thư mục
+    // const handleImageChange = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file) {
+    //         // Tạo URL cho ảnh và cập nhật preview
+    //         const fileURL = URL.createObjectURL(file);
+    //         setAvatarPreview(fileURL);
 
-    // Xử lý thay đổi cho highlights
-    const handleHighlightChange = (index, value) => {
-        const newHighlights = [...data.highlights];
-        newHighlights[index] = value;
-        setData({
-            ...data,
-            highlights: newHighlights,
-        });
-    };
-
-    // Thêm một highlight mới
-    const addHighlight = () => {
-        setData({
-            ...data,
-            highlights: [...data.highlights, ""],
-        });
-    };
-
-    // Xóa một highlight
-    const removeHighlight = (index) => {
-        const newHighlights = data.highlights.filter((_, i) => i !== index);
-        setData({
-            ...data,
-            highlights: newHighlights,
-        });
-    };
-
-    // Xử lý khi người dùng chọn nhiều ảnh
-    const handleImageChange = (e) => {
-        const files = Array.from(e.target.files);
-        if (files.length > 0) {
-            // Tạo URL preview cho các ảnh
-            const newPreviews = files.map((file) => URL.createObjectURL(file));
-            setImagePreviews([...imagePreviews, ...newPreviews]);
-
-            // Lưu file ảnh vào state
-            setData({
-                ...data,
-                images: [...data.images, ...files],
-            });
-        }
-    };
-
-    // Xóa một ảnh khỏi danh sách
-    const removeImage = (index) => {
-        const newImages = data.images.filter((_, i) => i !== index);
-        const newPreviews = imagePreviews.filter((_, i) => i !== index);
-        setData({
-            ...data,
-            images: newImages,
-        });
-        setImagePreviews(newPreviews);
-    };
+    //         // Lưu ảnh vào trường avatar trong state (nếu cần thiết)
+    //         setData({
+    //             ...data,
+    //             avatarFile: file,
+    //         });
+    //     }
+    // };
 
     return (
         <>
@@ -180,13 +109,13 @@ function CreateTour() {
                 className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
                 onClick={openModal}
             >
-                <IoIosAdd className="text-xl" /> Thêm Tour
+                <IoIosAdd className="text-xl" /> Thêm người dùng
             </button>
             <Modal
                 isOpen={showModal}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Thêm Tour"
+                contentLabel="Example Modal"
             >
                 <form
                     className="mx-auto max-w-4xl space-y-6 rounded-lg bg-white p-6"
@@ -195,221 +124,133 @@ function CreateTour() {
                     <table className="w-full table-auto border-collapse">
                         <tbody>
                             <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Tên tour</td>
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">Tên</td>
                                 <td className="w-3/4">
                                     <input
                                         type="text"
-                                        name="tourName"
-                                        placeholder="Tên tour"
+                                        name="name"
+                                        placeholder="Họ và Tên"
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                         required
                                         onChange={handleChange}
-                                        value={data.tourName}
                                     />
                                 </td>
                             </tr>
 
                             <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Thời gian</td>
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">Địa chỉ</td>
                                 <td className="w-3/4">
                                     <input
                                         type="text"
-                                        name="duration"
-                                        placeholder="Thời gian (ví dụ: 7 ngày)"
+                                        name="address"
+                                        placeholder="Địa chỉ"
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                         required
                                         onChange={handleChange}
-                                        value={data.duration}
                                     />
                                 </td>
                             </tr>
+                            {dataCategory.length > 0 && (
+                                <tr className="flex items-center py-3">
+                                    <td className="w-1/4 py-2 font-semibold text-gray-700">Vai trò</td>
+                                    <td className="w-3/4">
+                                        <select
+                                            name="role"
+                                            className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                            onChange={handleChange}
+                                        >
+                                            <option value="">Chọn vai trò</option>
+                                            {dataCategory.map((item, index) => (
+                                                <option
+                                                    key={index}
+                                                    value={item.name}
+                                                >
+                                                    {item.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </td>
+                                </tr>
+                            )}
 
                             <tr className="flex items-start py-3">
                                 <td className="w-1/4 py-2 font-semibold text-gray-700">Mô tả</td>
                                 <td className="w-3/4">
                                     <textarea
-                                        name="description"
-                                        placeholder="Mô tả tour"
+                                        name="about"
+                                        placeholder="Mô tả"
                                         className="focus:ring-opacity-50 min-h-[100px] w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                         required
                                         onChange={handleChange}
-                                        value={data.description}
                                     />
                                 </td>
                             </tr>
-
                             <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Số lượng người</td>
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">Email</td>
                                 <td className="w-3/4">
                                     <input
-                                        type="number"
-                                        name="quantity"
-                                        placeholder="Số lượng người tối đa"
+                                        type="text"
+                                        name="email"
+                                        placeholder="Email"
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                         required
                                         onChange={handleChange}
-                                        value={data.quantity}
                                     />
                                 </td>
                             </tr>
-
                             <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Giá người lớn</td>
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">Số điện thoại</td>
                                 <td className="w-3/4">
                                     <input
-                                        type="number"
-                                        name="priceAdult"
-                                        placeholder="Giá người lớn (USD)"
+                                        type="text"
+                                        name="phone"
+                                        placeholder="Số điện thoại"
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                         required
                                         onChange={handleChange}
-                                        value={data.priceAdult}
                                     />
                                 </td>
                             </tr>
-
                             <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Giá trẻ em</td>
-                                <td className="w-3/4">
-                                    <input
-                                        type="number"
-                                        name="priceChild"
-                                        placeholder="Giá trẻ em (USD)"
-                                        className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                        required
-                                        onChange={handleChange}
-                                        value={data.priceChild}
-                                    />
-                                </td>
-                            </tr>
-
-                            <tr className="flex items-start py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Điểm nổi bật</td>
-                                <td className="w-3/4 space-y-2">
-                                    {data.highlights.map((highlight, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center space-x-2"
-                                        >
-                                            <input
-                                                type="text"
-                                                placeholder={`Điểm nổi bật ${index + 1}`}
-                                                className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                                value={highlight}
-                                                onChange={(e) => handleHighlightChange(index, e.target.value)}
-                                            />
-                                            {data.highlights.length > 1 && (
-                                                <button
-                                                    type="button"
-                                                    className="text-red-500 hover:text-red-700"
-                                                    onClick={() => removeHighlight(index)}
-                                                >
-                                                    Xóa
-                                                </button>
-                                            )}
-                                        </div>
-                                    ))}
-                                    <button
-                                        type="button"
-                                        className="mt-2 text-blue-500 hover:text-blue-700"
-                                        onClick={addHighlight}
-                                    >
-                                        + Thêm điểm nổi bật
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Khả dụng</td>
-                                <td className="w-3/4">
-                                    <input
-                                        type="checkbox"
-                                        name="available"
-                                        className="h-5 w-5"
-                                        checked={data.available}
-                                        onChange={handleChange}
-                                    />
-                                </td>
-                            </tr>
-
-                            <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Ngày bắt đầu</td>
-                                <td className="w-3/4">
-                                    <input
-                                        type="date"
-                                        name="startDate"
-                                        className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                        required
-                                        onChange={handleChange}
-                                        value={data.startDate}
-                                    />
-                                </td>
-                            </tr>
-
-                            <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Ngày kết thúc</td>
-                                <td className="w-3/4">
-                                    <input
-                                        type="date"
-                                        name="endDate"
-                                        className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                        required
-                                        onChange={handleChange}
-                                        value={data.endDate}
-                                    />
-                                </td>
-                            </tr>
-
-                            <tr className="flex items-center py-3">
-                                <td className="w-1/4 py-2 font-semibold text-gray-700">Hình ảnh</td>
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">Link ảnh</td>
                                 <td className="flex w-3/4 items-center space-x-3">
+                                    <input
+                                        type="text"
+                                        name="avatar"
+                                        placeholder="Ảnh đại diện URL"
+                                        className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                        onChange={handleChange}
+                                    />
                                     <label className="flex-shrink-0">
                                         <input
                                             type="file"
-                                            name="images"
-                                            accept="image/*"
-                                            multiple // Cho phép chọn nhiều ảnh
+                                            name="avatarFile"
+                                            // accept="image/*"
                                             className="hidden"
-                                            onChange={handleImageChange}
+                                            onChange={handleChange} // Gọi hàm khi chọn ảnh
                                         />
-                                        <span className="focus:ring-opacity-50 inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2.5 font-medium text-white transition duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                                            Chọn ảnh
-                                        </span>
+                                        {/* <span className="focus:ring-opacity-50 inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2.5 font-medium text-white transition duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                                    Chọn ảnh
+                                                </span> */}
                                     </label>
                                 </td>
                             </tr>
 
-                            {/* Hiển thị preview các ảnh */}
-                            {imagePreviews.length > 0 && (
-                                <tr>
-                                    <td
-                                        colSpan="2"
-                                        className="py-4"
-                                    >
-                                        <div className="flex flex-wrap gap-4">
-                                            {imagePreviews.map((preview, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="relative"
-                                                >
-                                                    <img
-                                                        src={preview}
-                                                        alt={`Preview ${index}`}
-                                                        className="h-[100px] w-[100px] rounded-md object-cover"
-                                                    />
-                                                    <button
-                                                        type="button"
-                                                        className="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white"
-                                                        onClick={() => removeImage(index)}
-                                                    >
-                                                        X
-                                                    </button>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </td>
-                                </tr>
-                            )}
+                            {/* Hiển thị ảnh preview
+                                    {avatarPreview && (
+                                        <tr>
+                                            <td
+                                                colSpan="2"
+                                                className="py-4 text-center"
+                                            >
+                                                <img
+                                                    src={avatarPreview}
+                                                    alt="Preview"
+                                                    className="h-[50px] max-w-full rounded-md"
+                                                />
+                                            </td>
+                                        </tr>
+                                    )} */}
                         </tbody>
                     </table>
                     <div className="flex justify-end space-x-4 py-4">

@@ -601,7 +601,8 @@
         "➡️ Tham quan các ngôi chùa cổ ở Hà Nội",
         "➡️ Du thuyền trên Vịnh Hạ Long",
         "➡️ Trải nghiệm cuộc sống về đêm sôi động ở TP. Hồ Chí Minh"
-      ]
+      ],
+      "id": "13f6"
     },
     {
       "tourId": "tour004",
@@ -620,7 +621,8 @@
         "➡️ Khám phá ruộng bậc thang ở Sa Pa",
         "➡️ Tham quan thành phố cổ Huế",
         "➡️ Chèo thuyền trên dòng nước yên bình của Tam Cốc"
-      ]
+      ],
+      "id": "157f"
     },
     {
       "tourId": "tour005",
@@ -639,7 +641,8 @@
         "➡️ Thư giãn trên bãi biển Phú Quốc",
         "➡️ Tham quan chợ nổi trên sông Mekong",
         "➡️ Thưởng thức hải sản tươi ngon ở Nha Trang"
-      ]
+      ],
+      "id": "69ca"
     },
     {
       "tourId": "tour006",
@@ -658,7 +661,8 @@
         "➡️ Tham quan phố cổ Hội An",
         "➡️ Khám phá hang động Phong Nha",
         "➡️ Tắm biển tại bãi biển Mỹ Khê, Đà Nẵng"
-      ]
+      ],
+      "id": "3675"
     },
     {
       "tourId": "tour007",
@@ -677,26 +681,8 @@
         "➡️ Tham quan thác Dray Nur hùng vĩ",
         "➡️ Khám phá văn hóa cồng chiêng ở Buôn Ma Thuột",
         "➡️ Thưởng thức cà phê nguyên chất Tây Nguyên"
-      ]
-    },
-    {
-      "tourId": "tour008",
-      "tourName": "Du Lịch Vịnh Hạ Long",
-      "destination": "Việt Nam",
-      "duration": "3 ngày",
-      "description": "Thưởng ngoạn kỳ quan thiên nhiên thế giới tại Vịnh Hạ Long.",
-      "quantity": 40,
-      "priceAdult": 800,
-      "priceChild": 400,
-      "available": true,
-      "startDate": "2025-02-01",
-      "endDate": "2025-02-04",
-      "status": "Hoạt động",
-      "highlights": [
-        "➡️ Du thuyền qua các đảo đá vôi",
-        "➡️ Tham quan hang Sửng Sốt",
-        "➡️ Chèo kayak trên vịnh"
-      ]
+      ],
+      "id": "708c"
     },
     {
       "tourId": "tour009",
@@ -715,7 +701,8 @@
         "➡️ Tham quan hồ Xuân Hương",
         "➡️ Khám phá thung lũng Tình Yêu",
         "➡️ Thưởng thức trà và cà phê Đà Lạt"
-      ]
+      ],
+      "id": "7069"
     },
     {
       "tourId": "tour010",
@@ -734,7 +721,8 @@
         "➡️ Tắm biển tại bãi Đầm Trầu",
         "➡️ Tham quan nhà tù Côn Đảo",
         "➡️ Ngắm rùa biển đẻ trứng"
-      ]
+      ],
+      "id": "6220"
     },
     {
       "tourId": "tour011",
@@ -753,7 +741,8 @@
         "➡️ Tham quan Kinh thành Huế",
         "➡️ Du thuyền trên sông Hương",
         "➡️ Thưởng thức bánh bèo và cơm hến"
-      ]
+      ],
+      "id": "2b66"
     },
     {
       "tourId": "tour012",
@@ -772,7 +761,8 @@
         "➡️ Tham quan Gành Đá Đĩa",
         "➡️ Tắm biển tại Bãi Xép",
         "➡️ Thưởng thức hải sản tươi sống"
-      ]
+      ],
+      "id": "53e3"
     },
     {
       "tourId": "tour013",
@@ -791,7 +781,8 @@
         "➡️ Chinh phục đèo Mã Pí Lèng",
         "➡️ Tham quan cao nguyên đá Đồng Văn",
         "➡️ Ngắm hoa tam giác mạch"
-      ]
+      ],
+      "id": "9553"
     },
     {
       "tourId": "tour014",
@@ -810,7 +801,8 @@
         "➡️ Tắm biển tại Kỳ Co",
         "➡️ Tham quan Eo Gió",
         "➡️ Thưởng thức bánh xèo tôm nhảy"
-      ]
+      ],
+      "id": "8e89"
     },
     {
       "tourId": "tour015",
@@ -829,7 +821,8 @@
         "➡️ Tham quan chợ Đông Kinh",
         "➡️ Khám phá động Tam Thanh",
         "➡️ Ngắm cảnh núi Tô Thị"
-      ]
+      ],
+      "id": "a242"
     },
     {
       "tourId": "tour016",
@@ -848,7 +841,8 @@
         "➡️ Chèo thuyền ở Tràng An",
         "➡️ Tham quan chùa Bái Đính",
         "➡️ Khám phá hang Múa"
-      ]
+      ],
+      "id": "333a"
     },
     {
       "tourId": "tour017",
@@ -867,7 +861,8 @@
         "➡️ Tắm biển tại Bãi Sau",
         "➡️ Tham quan tượng Chúa Kitô",
         "➡️ Thưởng thức hải sản tươi sống"
-      ]
+      ],
+      "id": "fccf"
     },
     {
       "tourId": "tour018",
@@ -886,7 +881,8 @@
         "➡️ Tham quan Mũi Cà Mau",
         "➡️ Khám phá rừng U Minh Hạ",
         "➡️ Thưởng thức cua Cà Mau"
-      ]
+      ],
+      "id": "04af"
     },
     {
       "tourId": "tour019",
@@ -905,7 +901,8 @@
         "➡️ Tham quan đồi A1",
         "➡️ Khám phá bảo tàng Điện Biên",
         "➡️ Ngắm cảnh thung lũng Mường Thanh"
-      ]
+      ],
+      "id": "80a0"
     },
     {
       "tourId": "tour020",
@@ -924,7 +921,8 @@
         "➡️ Tham quan cổng Tò Vò",
         "➡️ Ngắm núi Thới Lới",
         "➡️ Thưởng thức tỏi Lý Sơn"
-      ]
+      ],
+      "id": "f2c2"
     },
     {
       "tourId": "tour021",
@@ -943,7 +941,8 @@
         "➡️ Tham quan nhà tù Sơn La",
         "➡️ Khám phá cao nguyên Mộc Châu",
         "➡️ Thưởng thức chè Shan Tuyết"
-      ]
+      ],
+      "id": "e24c"
     },
     {
       "tourId": "tour022",
@@ -962,7 +961,8 @@
         "➡️ Tham quan chợ nổi Cái Răng",
         "➡️ Khám phá vườn cò Bằng Lăng",
         "➡️ Thưởng thức bánh xèo miền Tây"
-      ]
+      ],
+      "id": "9846"
     },
     {
       "tourId": "tour023",
@@ -981,7 +981,8 @@
         "➡️ Ngắm ruộng bậc thang Mù Cang Chải",
         "➡️ Tham quan suối nước nóng Trạm Tấu",
         "➡️ Khám phá văn hóa dân tộc Mường"
-      ]
+      ],
+      "id": "e7bc"
     },
     {
       "tourId": "tour024",
@@ -1000,26 +1001,8 @@
         "➡️ Tham quan chùa Phổ Minh",
         "➡️ Khám phá làng nghề truyền thống",
         "➡️ Thưởng thức phở Nam Định"
-      ]
-    },
-    {
-      "tourId": "tour025",
-      "tourName": "Khám Phá Bình Thuận Nắng Gió",
-      "destination": "Việt Nam",
-      "duration": "4 ngày",
-      "description": "Trải nghiệm vùng đất biển đầy nắng và gió của Bình Thuận.",
-      "quantity": 25,
-      "priceAdult": 900,
-      "priceChild": 450,
-      "available": true,
-      "startDate": "2025-12-20",
-      "endDate": "2025-12-24",
-      "status": "Hoạt động",
-      "highlights": [
-        "➡️ Tham quan đồi cát Mũi Né",
-        "➡️ Tắm biển tại bãi Rạng",
-        "➡️ Thưởng thức nước mắm Phan Thiết"
-      ]
+      ],
+      "id": "a713"
     }
   ],
   "bookingManagement": {
