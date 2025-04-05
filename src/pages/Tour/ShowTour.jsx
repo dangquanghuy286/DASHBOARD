@@ -94,6 +94,30 @@ function ShowTour() {
         });
     };
 
+    // Hàm xử lý khi người dùng nhấn nút in
+    const handlePrint = () => {
+        // Lưu lại các cột chứa nút "Sửa" và "Xóa"
+        const editColumns = document.querySelectorAll(".edit-column");
+        const deleteColumns = document.querySelectorAll(".delete-column");
+
+        // Ẩn các cột chứa nút "Sửa" và "Xóa"
+        editColumns.forEach((col) => (col.style.display = "none"));
+        deleteColumns.forEach((col) => (col.style.display = "none"));
+
+        // Tạo cửa sổ in
+        const printWindow = window.open("", "", "width=800,height=600"); // Mở một cửa sổ mới với kích thước 800x600
+        printWindow.document.write("<html><head><title>CÔNG TY MTV </title></head><body>"); //Tiêu đề
+        printWindow.document.write("<h1 style='text-align: center;'>DANH SÁCH TOUR</h1>"); // Thêm tiêu đề "DANH SÁCH TOUR" vào giữa trang in
+        printWindow.document.write(document.querySelector("table").outerHTML); // Lấy và chèn toàn bộ nội dung bảng vào cửa sổ in
+        printWindow.document.write("<style>body { font-family: Arial, sans-serif; }</style>"); // Đặt phông chữ trang in là Arial
+        printWindow.document.close(); // Đóng cửa sổ tài liệu sau khi hoàn thành việc viết nội dung
+        printWindow.print(); // Gọi lệnh in trên cửa sổ mới
+
+        // Khôi phục lại các cột đã ẩn
+        editColumns.forEach((col) => (col.style.display = "")); // Hiển thị lại các cột "Sửa" bằng cách đặt display về giá trị mặc định
+        deleteColumns.forEach((col) => (col.style.display = "")); // Hiển thị lại các cột "Xóa" bằng cách đặt display về giá trị mặc định
+    };
+
     //
     return (
         <>
@@ -123,7 +147,7 @@ function ShowTour() {
                             PDF
                         </button>
                         <button
-                            // onClick={handlePrint}
+                            onClick={handlePrint}
                             className="rounded bg-gray-500 px-3 py-1 text-sm text-white"
                         >
                             Print
@@ -188,8 +212,8 @@ function ShowTour() {
                                     <th className="border px-4 py-2">Khả dụng</th>
                                     <th className="border px-4 py-2">Ngày bắt đầu</th>
                                     <th className="border px-4 py-2">Ngày kết thúc</th>
-                                    <th className="border px-4 py-2 text-center">Sửa</th>
-                                    <th className="border px-4 py-2 text-center">Xóa</th>
+                                    <th className="edit-column border px-4 py-2 text-center">Sửa</th>
+                                    <th className="delete-column border px-4 py-2 text-center">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -211,13 +235,13 @@ function ShowTour() {
                                         <td className="items-center border px-4 py-2">{item.available ? "1" : <MdBlock />} </td>
                                         <td className="border px-4 py-2">{item.startDate}</td>
                                         <td className="border px-4 py-2">{item.endDate}</td>
-                                        <td className="border px-4 py-2">
+                                        <td className="edit-column border px-4 py-2">
                                             <EditTour
                                                 item={item}
                                                 key={index}
                                             />
                                         </td>
-                                        <td className="border px-4 py-2">
+                                        <td className="delete-column border px-4 py-2">
                                             <DeleteTour
                                                 item={item}
                                                 key={index}
