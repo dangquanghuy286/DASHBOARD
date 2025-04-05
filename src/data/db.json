@@ -1,16 +1,16 @@
 {
   "dashboard_summary": {
     "total_active_tours": {
-      "previous": 22,
-      "current": 25,
-      "change": 3,
-      "percentage_change": 13.64
+      "previous": 15,
+      "current": 17,
+      "change": 2,
+      "percentage_change": 13.33
     },
     "total_bookings": {
-      "previous": 1600,
-      "current": 1500,
-      "change": -100,
-      "percentage_change": -6.25
+      "previous": 50,
+      "current": 53,
+      "change": 3,
+      "percentage_change": 6
     },
     "total_users": {
       "previous": 4800,
@@ -19,85 +19,59 @@
       "percentage_change": 4.17
     },
     "total_revenue": {
-      "previous": 770000,
-      "current": 750000,
-      "change": -20000,
-      "percentage_change": -2.6
+      "previous": 1350000000,
+      "current": 1417500000,
+      "change": 67500000,
+      "percentage_change": 5
     },
     "total_cancellations": {
-      "previous": 50,
-      "current": 60,
-      "change": 10,
-      "percentage_change": 20
+      "previous": 2,
+      "current": 3,
+      "change": 1,
+      "percentage_change": 50
     },
     "average_booking_value": {
-      "previous": 481.25,
-      "current": 500,
-      "change": 18.75,
-      "percentage_change": 3.9
+      "previous": 27000000,
+      "current": 26745283,
+      "change": -254717,
+      "percentage_change": -0.94
     }
   },
   "destination_statistics": {
     "domestic": [
       {
         "name": "Miền Bắc",
-        "value": 90,
+        "value": 9,
         "color": "#F44336"
       },
       {
         "name": "Miền Trung",
-        "value": 30,
+        "value": 6,
         "color": "#009688"
       },
       {
         "name": "Miền Nam",
-        "value": 100,
-        "color": "#9C27B0"
-      }
-    ],
-    "international": [
-      {
-        "name": "Thailand",
-        "value": 26,
-        "color": "#FFEB3B"
-      },
-      {
-        "name": "Japan",
-        "value": 21,
-        "color": "#3F51B5"
-      },
-      {
-        "name": "France",
-        "value": 16,
-        "color": "#9C27B0"
-      },
-      {
-        "name": "Italy",
-        "value": 10,
-        "color": "#E91E63"
-      },
-      {
-        "name": "USA",
-        "value": 10,
-        "color": "#009688"
-      },
-      {
-        "name": "Australia",
         "value": 7,
+        "color": "#9C27B0"
+      },
+      {
+        "name": "Tây Nguyên",
+        "value": 2,
         "color": "#FF9800"
       }
-    ]
+    ],
+    "international": []
   },
   "tourTypeDistribution": {
     "data": [
       {
         "name": "Trong nước",
-        "value": 60,
+        "value": 24,
         "color": "#4CAF50"
       },
       {
         "name": "Ngoài nước",
-        "value": 40,
+        "value": 0,
         "color": "#FF9800"
       }
     ]
@@ -106,12 +80,12 @@
     "data": [
       {
         "name": "Online",
-        "value": 70,
+        "value": 67,
         "color": "#2196F3"
       },
       {
         "name": "Offline",
-        "value": 30,
+        "value": 33,
         "color": "#FFC107"
       }
     ]
@@ -119,159 +93,86 @@
   "booking_payments": [
     {
       "method": "PayPal",
-      "percentage": 16,
+      "percentage": 33,
       "color": "#33A8FF",
       "id": "2e10"
     },
     {
       "method": "Momo",
-      "percentage": 26,
+      "percentage": 33,
       "color": "#FF33E3",
       "id": "7246"
     },
     {
       "method": "Thanh toán tại văn phòng",
-      "percentage": 13,
+      "percentage": 34,
       "color": "#FFC300",
       "id": "72a1"
-    },
-    {
-      "method": "Chuyển khoản ngân hàng",
-      "percentage": 6,
-      "color": "#27AE60",
-      "id": "b0b7"
-    },
-    {
-      "method": "Credit Card",
-      "percentage": 30,
-      "color": "#FF5722",
-      "id": "1a98"
-    },
-    {
-      "method": "Tiền mặt",
-      "percentage": 9,
-      "color": "#4CAF50",
-      "id": "5bf5"
     }
   ],
   "top_booked_tours": {
     "domestic": [
       {
-        "id": 201,
-        "name": "Đà Lạt - Thành Phố Ngàn Hoa",
-        "seats_booked": 12,
-        "seats_available": 25,
-        "price": 1600000,
-        "rating": 4.6,
-        "duration": "3 ngày 2 đêm"
-      },
-      {
-        "id": 189,
-        "name": "Phú Quốc - Thiên Đường Nghỉ Dưỡng",
-        "seats_booked": 9,
-        "seats_available": 35,
-        "price": 2100000,
-        "rating": 4.8,
-        "duration": "4 ngày 3 đêm"
-      },
-      {
-        "id": 205,
-        "name": "Hà Giang - Cao Nguyên Đá Đồng Văn",
-        "seats_booked": 7,
-        "seats_available": 18,
-        "price": 1900000,
+        "id": "13f6",
+        "name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+        "seats_booked": 25,
+        "seats_available": 30,
+        "price": 30000000,
         "rating": 4.7,
-        "duration": "3 ngày 2 đêm"
+        "duration": "7 ngày"
       },
       {
-        "id": 101,
-        "name": "Phố cổ Hội An",
-        "seats_booked": 280,
-        "seats_available": 320,
-        "price": 31250000,
-        "rating": 4.7,
-        "duration": "6 ngày"
-      },
-      {
-        "id": 104,
-        "name": "Thánh địa Mỹ Sơn",
-        "seats_booked": 230,
-        "seats_available": 270,
-        "price": 28750000,
+        "id": "fccf",
+        "name": "Thư Giãn Tại Vũng Tàu",
+        "seats_booked": 35,
+        "seats_available": 40,
+        "price": 15000000,
         "rating": 4.5,
+        "duration": "2 ngày"
+      },
+      {
+        "id": "333a",
+        "name": "Hành Trình Đến Ninh Bình Cổ Kính",
+        "seats_booked": 20,
+        "seats_available": 30,
+        "price": 20000000,
+        "rating": 4.6,
+        "duration": "3 ngày"
+      },
+      {
+        "id": "157f",
+        "name": "Phiêu Lưu Miền Bắc Việt Nam",
+        "seats_booked": 18,
+        "seats_available": 25,
+        "price": 27500000,
+        "rating": 4.8,
         "duration": "5 ngày"
       },
       {
-        "id": 105,
-        "name": "Hà Nội",
-        "seats_booked": 190,
-        "seats_available": 210,
-        "price": 26250000,
-        "rating": 4.6,
-        "duration": "4 ngày"
-      }
-    ],
-    "international": [
-      {
-        "tourId": "tour102",
-        "tourName": "Bali Paradise Getaway",
-        "bookings": 260,
-        "price": 980,
-        "rating": 4.8,
-        "duration": "7 days",
-        "destination": "Indonesia"
-      },
-      {
-        "tourId": "tour103",
-        "tourName": "Korea Cherry Blossom Tour",
-        "bookings": 210,
-        "price": 1550,
+        "id": "9553",
+        "name": "Hành Trình Đến Hà Giang Hùng Vĩ",
+        "seats_booked": 12,
+        "seats_available": 15,
+        "price": 30000000,
         "rating": 4.9,
-        "duration": "9 days",
-        "destination": "South Korea"
-      },
-      {
-        "tourId": "tour107",
-        "tourName": "Spain Flamenco & Food Tour",
-        "bookings": 180,
-        "price": 2050,
-        "rating": 4.7,
-        "duration": "8 days",
-        "destination": "Spain"
-      },
-      {
-        "tourId": "tour108",
-        "tourName": "Greece Island Hopping",
-        "bookings": 170,
-        "price": 1850,
-        "rating": 4.6,
-        "duration": "7 days",
-        "destination": "Greece"
-      },
-      {
-        "tourId": "tour110",
-        "tourName": "Canadian Rockies Explorer",
-        "bookings": 150,
-        "price": 2250,
-        "rating": 4.7,
-        "duration": "10 days",
-        "destination": "Canada"
+        "duration": "6 ngày"
       }
     ],
+    "international": [],
     "combined": [
       {
-        "name": "Tour A",
-        "bookings": 150,
-        "revenue": "300000000",
-        "rating": 4.8,
-        "departureDate": "2025-04-12"
+        "name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+        "bookings": 25,
+        "revenue": "750000000",
+        "rating": 4.7,
+        "departureDate": "2025-01-10"
       },
       {
-        "name": "Tour B",
-        "bookings": 120,
-        "revenue": "250000000",
+        "name": "Thư Giãn Tại Vũng Tàu",
+        "bookings": 35,
+        "revenue": "525000000",
         "rating": 4.5,
-        "departureDate": "2025-04-15"
+        "departureDate": "2025-04-20"
       }
     ]
   },
@@ -279,36 +180,36 @@
     {
       "id": "booking001",
       "customer_name": "Lê Văn Hùng",
-      "tour_name": "MIỀN TRUNG 4N3Đ | ĐÀ NẴNG - HỘI AN - BÀ NÀ - HUẾ",
-      "total_price": 6080000,
+      "tour_name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+      "total_price": 30000000,
       "status": "Chưa xác nhận",
       "payment_method": "Momo",
-      "location": "Miền Trung",
-      "booking_date": "2025-03-30",
+      "location": "Việt Nam",
+      "booking_date": "2025-04-01",
       "user_email": "levanhung@example.com",
       "user_phone": "+84987654321"
     },
     {
       "id": "booking002",
       "customer_name": "Phạm Thị Lan",
-      "tour_name": "MIỀN BẮC 6N5Đ | HÀ NỘI – NINH BÌNH – HẠ LONG – YÊN TỬ – SAPA",
-      "total_price": 23350000,
-      "status": "Chưa xác nhận",
+      "tour_name": "Phiêu Lưu Miền Bắc Việt Nam",
+      "total_price": 27500000,
+      "status": "Đã xác nhận",
       "payment_method": "Paypal",
-      "location": "Miền Bắc",
-      "booking_date": "2025-03-29",
+      "location": "Việt Nam",
+      "booking_date": "2025-04-02",
       "user_email": "phamthilan@example.com",
       "user_phone": "+84912345678"
     },
     {
       "id": "booking003",
       "customer_name": "Ngô Đình Bảo",
-      "tour_name": "CẦN THƠ - CHÂU ĐỐC",
-      "total_price": "3500000",
+      "tour_name": "Thư Giãn Tại Vũng Tàu",
+      "total_price": 15000000,
       "status": "Đã xác nhận",
       "payment_method": "Thanh toán tại văn phòng",
-      "location": "Miền Nam",
-      "booking_date": "2025-03-28",
+      "location": "Việt Nam",
+      "booking_date": "2025-04-03",
       "user_email": "ngodinhbao@example.com",
       "user_phone": "+84905556677"
     }
@@ -316,20 +217,20 @@
   "dailyPerformance": [
     {
       "date": "2025-04-01",
-      "revenue": 5000000,
-      "bookings": 150,
+      "revenue": 30000000,
+      "bookings": 1,
       "id": "5d19"
     },
     {
       "date": "2025-04-02",
-      "revenue": 7000000,
-      "bookings": 200,
+      "revenue": 27500000,
+      "bookings": 1,
       "id": "9609"
     },
     {
       "date": "2025-04-03",
-      "revenue": 6000000,
-      "bookings": 180,
+      "revenue": 15000000,
+      "bookings": 1,
       "id": "c071"
     }
   ],
@@ -337,145 +238,77 @@
     "domestic": [
       {
         "month": "January",
-        "revenue": 28000
+        "revenue": 750000000
       },
       {
         "month": "February",
-        "revenue": 37000
+        "revenue": 0
       },
       {
         "month": "March",
-        "revenue": 31000
+        "revenue": 200000000
       },
       {
         "month": "April",
-        "revenue": 33000
+        "revenue": 1275000000
       },
       {
         "month": "May",
-        "revenue": 39000
+        "revenue": 200000000
       },
       {
         "month": "June",
-        "revenue": 36000
+        "revenue": 365000000
       },
       {
         "month": "July",
-        "revenue": 44000
+        "revenue": 372500000
       },
       {
         "month": "August",
-        "revenue": 46000
+        "revenue": 14250000
       },
       {
         "month": "September",
-        "revenue": 40000
+        "revenue": 350000000
       },
       {
         "month": "October",
-        "revenue": 42000
+        "revenue": 165000000
       },
       {
         "month": "November",
-        "revenue": 47000
+        "revenue": 180000000
       },
       {
         "month": "December",
-        "revenue": 49000
+        "revenue": 22500000
       }
     ],
-    "international": [
-      {
-        "month": "January",
-        "revenue": 21000
-      },
-      {
-        "month": "February",
-        "revenue": 26000
-      },
-      {
-        "month": "March",
-        "revenue": 23000
-      },
-      {
-        "month": "April",
-        "revenue": 28000
-      },
-      {
-        "month": "May",
-        "revenue": 34000
-      },
-      {
-        "month": "June",
-        "revenue": 33000
-      },
-      {
-        "month": "July",
-        "revenue": 38000
-      },
-      {
-        "month": "August",
-        "revenue": 40000
-      },
-      {
-        "month": "September",
-        "revenue": 35000
-      },
-      {
-        "month": "October",
-        "revenue": 37000
-      },
-      {
-        "month": "November",
-        "revenue": 41000
-      },
-      {
-        "month": "December",
-        "revenue": 43000
-      }
-    ]
+    "international": []
   },
   "customerFeedback": {
     "domestic": [
       {
-        "userName": "Emily Brown",
-        "tourName": "Amazing Vietnam Tour",
-        "rating": 5,
-        "comment": "Amazing experience!"
+        "userName": "Lê Văn Hùng",
+        "tourName": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+        "rating": 4.7,
+        "comment": "Trải nghiệm tuyệt vời, rất đáng tiền!"
       },
       {
-        "userName": "David Wilson",
-        "tourName": "Northern Vietnam Adventure",
+        "userName": "Phạm Thị Lan",
+        "tourName": "Phiêu Lưu Miền Bắc Việt Nam",
+        "rating": 4.8,
+        "comment": "Phong cảnh đẹp, hướng dẫn viên nhiệt tình."
+      },
+      {
+        "userName": "Ngô Đình Bảo",
+        "tourName": "Thư Giãn Tại Vũng Tàu",
         "rating": 4.5,
-        "comment": "Great but rushed."
-      },
-      {
-        "userName": "Sophie Clark",
-        "tourName": "Cambodia Heritage Journey",
-        "rating": 4.4,
-        "comment": "Loved the temples."
+        "comment": "Thư giãn, nhưng thời gian hơi ngắn."
       }
     ],
-    "international": [
-      {
-        "userName": "Michael Lee",
-        "tourName": "Thailand Adventure",
-        "rating": 4.5,
-        "comment": "Great but hot."
-      },
-      {
-        "userName": "Sarah Davis",
-        "tourName": "Japan Discovery",
-        "rating": 5,
-        "comment": "Fantastic guide!"
-      },
-      {
-        "userName": "James Miller",
-        "tourName": "USA West Coast Road Trip",
-        "rating": 4.6,
-        "comment": "Breathtaking views!"
-      }
-    ]
+    "international": []
   },
   "adminManagement": {
     "admins": [
@@ -591,8 +424,8 @@
       "duration": "7 ngày",
       "description": "Khám phá vẻ đẹp tuyệt vời của Việt Nam, từ Hà Nội đến TP. Hồ Chí Minh.",
       "quantity": 30,
-      "priceAdult": 1200,
-      "priceChild": 600,
+      "priceAdult": 30000000,
+      "priceChild": 15000000,
       "available": true,
       "startDate": "2025-01-10",
       "endDate": "2025-01-17",
@@ -611,8 +444,8 @@
       "duration": "5 ngày",
       "description": "Khám phá văn hóa sôi động và cảnh quan tuyệt đẹp của miền Bắc Việt Nam.",
       "quantity": 25,
-      "priceAdult": 1100,
-      "priceChild": 550,
+      "priceAdult": 27500000,
+      "priceChild": 13750000,
       "available": true,
       "startDate": "2025-04-10",
       "endDate": "2025-04-15",
@@ -631,8 +464,8 @@
       "duration": "4 ngày",
       "description": "Thư giãn và tận hưởng vẻ đẹp nhiệt đới và sự quyến rũ của miền Nam Việt Nam.",
       "quantity": 20,
-      "priceAdult": 1000,
-      "priceChild": 500,
+      "priceAdult": 25000000,
+      "priceChild": 12500000,
       "available": true,
       "startDate": "2025-05-01",
       "endDate": "2025-05-05",
@@ -651,8 +484,8 @@
       "duration": "6 ngày",
       "description": "Trải nghiệm vẻ đẹp thiên nhiên và di sản văn hóa của miền Trung Việt Nam.",
       "quantity": 20,
-      "priceAdult": 1300,
-      "priceChild": 650,
+      "priceAdult": 32500000,
+      "priceChild": 16250000,
       "available": true,
       "startDate": "2025-06-15",
       "endDate": "2025-06-21",
@@ -671,8 +504,8 @@
       "duration": "5 ngày",
       "description": "Khám phá vùng đất cao nguyên đầy bí ẩn và hoang sơ của Việt Nam.",
       "quantity": 15,
-      "priceAdult": 1150,
-      "priceChild": 575,
+      "priceAdult": 28750000,
+      "priceChild": 14375000,
       "available": true,
       "startDate": "2025-07-10",
       "endDate": "2025-07-15",
@@ -691,8 +524,8 @@
       "duration": "4 ngày",
       "description": "Khám phá thành phố ngàn hoa với khí hậu mát mẻ quanh năm.",
       "quantity": 25,
-      "priceAdult": 900,
-      "priceChild": 450,
+      "priceAdult": 22500000,
+      "priceChild": 11250000,
       "available": false,
       "startDate": "2025-03-15",
       "endDate": "2025-03-19",
@@ -711,8 +544,8 @@
       "duration": "3 ngày",
       "description": "Trải nghiệm vẻ đẹp hoang sơ và lịch sử của Côn Đảo.",
       "quantity": 15,
-      "priceAdult": 950,
-      "priceChild": 475,
+      "priceAdult": 23750000,
+      "priceChild": 11875000,
       "available": true,
       "startDate": "2025-08-01",
       "endDate": "2025-08-04",
@@ -731,8 +564,8 @@
       "duration": "4 ngày",
       "description": "Khám phá cố đô Huế với những di sản văn hóa và ẩm thực độc đáo.",
       "quantity": 20,
-      "priceAdult": 850,
-      "priceChild": 425,
+      "priceAdult": 21250000,
+      "priceChild": 10625000,
       "available": true,
       "startDate": "2025-09-10",
       "endDate": "2025-09-14",
@@ -751,8 +584,8 @@
       "duration": "5 ngày",
       "description": "Trải nghiệm vẻ đẹp thiên nhiên và văn hóa của Phú Yên.",
       "quantity": 20,
-      "priceAdult": 1000,
-      "priceChild": 500,
+      "priceAdult": 25000000,
+      "priceChild": 12500000,
       "available": false,
       "startDate": "2025-10-05",
       "endDate": "2025-10-10",
@@ -771,8 +604,8 @@
       "duration": "6 ngày",
       "description": "Khám phá vùng đất địa đầu Tổ quốc với cảnh quan núi non hùng vĩ.",
       "quantity": 15,
-      "priceAdult": 1200,
-      "priceChild": 600,
+      "priceAdult": 30000000,
+      "priceChild": 15000000,
       "available": true,
       "startDate": "2025-11-01",
       "endDate": "2025-11-07",
@@ -791,8 +624,8 @@
       "duration": "4 ngày",
       "description": "Thư giãn tại thành phố biển Quy Nhơn với những bãi biển tuyệt đẹp.",
       "quantity": 25,
-      "priceAdult": 900,
-      "priceChild": 450,
+      "priceAdult": 22500000,
+      "priceChild": 11250000,
       "available": true,
       "startDate": "2025-12-10",
       "endDate": "2025-12-14",
@@ -811,8 +644,8 @@
       "duration": "3 ngày",
       "description": "Trải nghiệm vùng đất biên giới với văn hóa và thiên nhiên độc đáo.",
       "quantity": 20,
-      "priceAdult": 750,
-      "priceChild": 375,
+      "priceAdult": 18750000,
+      "priceChild": 9375000,
       "available": false,
       "startDate": "2025-02-15",
       "endDate": "2025-02-18",
@@ -831,8 +664,8 @@
       "duration": "3 ngày",
       "description": "Khám phá vùng đất cố đô với cảnh quan thiên nhiên tuyệt đẹp.",
       "quantity": 30,
-      "priceAdult": 800,
-      "priceChild": 400,
+      "priceAdult": 20000000,
+      "priceChild": 10000000,
       "available": true,
       "startDate": "2025-03-20",
       "endDate": "2025-03-23",
@@ -851,8 +684,8 @@
       "duration": "2 ngày",
       "description": "Thư giãn cuối tuần tại thành phố biển gần TP. Hồ Chí Minh.",
       "quantity": 40,
-      "priceAdult": 600,
-      "priceChild": 300,
+      "priceAdult": 15000000,
+      "priceChild": 7500000,
       "available": true,
       "startDate": "2025-04-20",
       "endDate": "2025-04-22",
@@ -871,8 +704,8 @@
       "duration": "4 ngày",
       "description": "Khám phá vùng đất cực Nam Tổ quốc với rừng ngập mặn độc đáo.",
       "quantity": 20,
-      "priceAdult": 950,
-      "priceChild": 475,
+      "priceAdult": 23750000,
+      "priceChild": 11875000,
       "available": false,
       "startDate": "2025-05-15",
       "endDate": "2025-05-19",
@@ -891,8 +724,8 @@
       "duration": "5 ngày",
       "description": "Khám phá vùng đất lịch sử với chiến thắng Điện Biên Phủ.",
       "quantity": 15,
-      "priceAdult": 1100,
-      "priceChild": 550,
+      "priceAdult": 27500000,
+      "priceChild": 13750000,
       "available": true,
       "startDate": "2025-06-01",
       "endDate": "2025-06-06",
@@ -911,8 +744,8 @@
       "duration": "3 ngày",
       "description": "Trải nghiệm vẻ đẹp hoang sơ của đảo Lý Sơn.",
       "quantity": 20,
-      "priceAdult": 850,
-      "priceChild": 425,
+      "priceAdult": 21250000,
+      "priceChild": 10625000,
       "available": true,
       "startDate": "2025-07-20",
       "endDate": "2025-07-23",
@@ -931,8 +764,8 @@
       "duration": "4 ngày",
       "description": "Khám phá vùng đất Tây Bắc với thiên nhiên và văn hóa đa dạng.",
       "quantity": 15,
-      "priceAdult": 1000,
-      "priceChild": 500,
+      "priceAdult": 25000000,
+      "priceChild": 12500000,
       "available": false,
       "startDate": "2025-08-15",
       "endDate": "2025-08-19",
@@ -951,8 +784,8 @@
       "duration": "3 ngày",
       "description": "Trải nghiệm cuộc sống miền Tây sông nước tại Cần Thơ.",
       "quantity": 25,
-      "priceAdult": 700,
-      "priceChild": 350,
+      "priceAdult": 17500000,
+      "priceChild": 8750000,
       "available": true,
       "startDate": "2025-09-01",
       "endDate": "2025-09-04",
@@ -971,8 +804,8 @@
       "duration": "5 ngày",
       "description": "Khám phá vùng đất Tây Bắc với cảnh quan ruộng bậc thang tuyệt đẹp.",
       "quantity": 15,
-      "priceAdult": 1100,
-      "priceChild": 550,
+      "priceAdult": 27500000,
+      "priceChild": 13750000,
       "available": true,
       "startDate": "2025-10-10",
       "endDate": "2025-10-15",
@@ -991,8 +824,8 @@
       "duration": "3 ngày",
       "description": "Khám phá vùng đất đồng bằng Bắc Bộ với văn hóa và kiến trúc độc đáo.",
       "quantity": 20,
-      "priceAdult": 650,
-      "priceChild": 325,
+      "priceAdult": 16250000,
+      "priceChild": 8125000,
       "available": false,
       "startDate": "2025-11-15",
       "endDate": "2025-11-18",
@@ -1011,35 +844,21 @@
         "bookingId": "booking001",
         "userId": "user001",
         "tourId": "tour001",
-        "bookingDate": "2023-11-01",
-        "status": "Confirmed"
+        "bookingDate": "2025-04-01",
+        "status": "Pending"
       },
       {
         "bookingId": "booking002",
         "userId": "user002",
-        "tourId": "tour002",
-        "bookingDate": "2023-11-02",
-        "status": "Pending"
+        "tourId": "tour004",
+        "bookingDate": "2025-04-02",
+        "status": "Confirmed"
       },
       {
         "bookingId": "booking003",
         "userId": "user003",
-        "tourId": "tour003",
-        "bookingDate": "2023-11-03",
-        "status": "Confirmed"
-      },
-      {
-        "bookingId": "booking004",
-        "userId": "user004",
-        "tourId": "tour004",
-        "bookingDate": "2023-11-04",
-        "status": "Cancelled"
-      },
-      {
-        "bookingId": "booking005",
-        "userId": "user005",
-        "tourId": "tour005",
-        "bookingDate": "2023-11-05",
+        "tourId": "tour017",
+        "bookingDate": "2025-04-03",
         "status": "Confirmed"
       }
     ]
@@ -1079,8 +898,8 @@
         "endDate": "2025-08-31",
         "applicableTours": [
           "tour001",
-          "tour002",
-          "tour004"
+          "tour004",
+          "tour017"
         ]
       },
       {
@@ -1090,8 +909,8 @@
         "startDate": "2025-01-01",
         "endDate": "2025-03-31",
         "applicableTours": [
-          "tour003",
-          "tour005"
+          "tour005",
+          "tour006"
         ]
       }
     ],

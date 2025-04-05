@@ -30,22 +30,45 @@ function ShowTour() {
         fetchApi();
     }, []);
 
+    // Hàm loại bỏ dấu tiếng Việt
+    const removeDiacritics = (str) => {
+        // Kiểm tra nếu không có chuỗi đầu vào hoặc không phải chuỗi thì trả về chuỗi rỗng
+        if (!str || typeof str !== "string") return "";
+
+        return str
+            .normalize("NFD") // Chuẩn hóa Unicode: tách ký tự và dấu ra riêng (ví dụ: "ắ" -> "a" + "́")
+            .replace(/[\u0300-\u036f]/g, "") // Xóa các ký tự dấu (các mã Unicode từ 0300 đến 036F)
+            .replace(/đ/g, "d") // Thay "đ" thường bằng "d"
+            .replace(/Đ/g, "D"); // Thay "Đ" hoa bằng "D"
+    };
+
+    // Hàm xử lý khi người dùng thực hiện tìm kiếm
     const onSearch = (formData) => {
+        // Lấy từ khóa tìm kiếm từ formData, chuyển thành chữ thường và loại bỏ khoảng trắng 2 đầu
         const searchTerm = formData.name?.toLowerCase().trim() || "";
 
-        // Reset về dữ liệu gốc nếu không có từ khóa tìm kiếm
+        // Nếu không có từ khóa tìm kiếm => reset lại dữ liệu gốc
         if (!searchTerm) {
             setData(originalData);
             return;
         }
 
-        // Lọc dữ liệu dựa trên tourName (hoặc các trường khác nếu cần)
+        // Chuyển từ khóa tìm kiếm thành không dấu để hỗ trợ tìm không phân biệt dấu
+        const searchTermNoDiacritics = removeDiacritics(searchTerm);
+
+        // Lọc danh sách tour dựa theo tên
         const filteredData = originalData.filter((tour) => {
-            // Kiểm tra tourName tồn tại và là chuỗi trước khi lọc
+            // Kiểm tra tourName có tồn tại và là chuỗi, nếu có thì chuyển sang chữ thường
             const tourName = tour.tourName && typeof tour.tourName === "string" ? tour.tourName.toLowerCase() : "";
-            return tourName.includes(searchTerm);
+
+            // Tạo phiên bản không dấu của tourName
+            const tourNameNoDiacritics = removeDiacritics(tourName);
+
+            // Trả về true nếu tourName chứa từ khóa (có dấu) hoặc tourName không dấu chứa từ khóa không dấu
+            return tourName.includes(searchTerm) || tourNameNoDiacritics.includes(searchTermNoDiacritics);
         });
 
+        // Cập nhật dữ liệu hiển thị bằng danh sách đã lọc
         setData(filteredData);
     };
 

@@ -30,10 +30,21 @@ function Customer() {
         };
         fetchApi();
     }, []); // Dependency array rỗng để chỉ chạy 1 lần khi mount
+    // Hàm loại bỏ dấu tiếng Việt
+    const removeDiacritics = (str) => {
+        // Kiểm tra nếu không có chuỗi đầu vào hoặc không phải chuỗi thì trả về chuỗi rỗng
+        if (!str || typeof str !== "string") return "";
+
+        return str
+            .normalize("NFD") // Chuẩn hóa Unicode: tách ký tự và dấu ra riêng (ví dụ: "ắ" -> "a" + "́")
+            .replace(/[\u0300-\u036f]/g, "") // Xóa các ký tự dấu (các mã Unicode từ 0300 đến 036F)
+            .replace(/đ/g, "d") // Thay "đ" thường bằng "d"
+            .replace(/Đ/g, "D"); // Thay "Đ" hoa bằng "D"
+    };
 
     // Hàm xử lý khi submit form search
     const onSearch = (formData) => {
-        // Lấy giá trị search từ form, chuyển thành lowercase và xóa khoảng trắng thừa Ascendingly được gọi là trim()
+        // Lấy giá trị search từ form, chuyển thành lowercase và xóa khoảng trắng thừa
         const searchTerm = formData.name?.toLowerCase().trim() || "";
 
         // Nếu không nhập gì (search rỗng), reset về dữ liệu gốc
@@ -42,14 +53,21 @@ function Customer() {
             return;
         }
 
+        // Chuyển searchTerm thành không dấu
+        const searchTermNoDiacritics = removeDiacritics(searchTerm);
+
         // Lọc dữ liệu gốc dựa trên từ khóa tìm kiếm
-        const filteredData = originalData.filter((user) =>
-            // Kiểm tra xem tên user có chứa searchTerm không (không phân biệt hoa/thường)
-            user.name?.toLowerCase().includes(searchTerm),
-        );
+        const filteredData = originalData.filter((user) => {
+            // Kiểm tra xem name tồn tại và là chuỗi trước khi lọc
+            const userName = user.name && typeof user.name === "string" ? user.name.toLowerCase() : "";
+            const userNameNoDiacritics = removeDiacritics(userName);
+
+            // So sánh cả chuỗi có dấu và không dấu
+            return userName.includes(searchTerm) || userNameNoDiacritics.includes(searchTermNoDiacritics);
+        });
+
         setData(filteredData); // Cập nhật state với dữ liệu đã lọc
     };
-
     return (
         <div className="min-h-screen bg-white px-4 font-sans dark:bg-slate-900 dark:text-white">
             {/* Header */}
