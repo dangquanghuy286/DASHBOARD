@@ -6,7 +6,8 @@ import { getDataTour } from "../../services/tourService";
 import EditTour from "./EditTour";
 import DeleteTour from "./DeleteTour";
 import CreateTour from "./CreateTour";
-
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 const { FaSearch, MdBlock } = icons;
 
 function ShowTour() {
@@ -72,6 +73,28 @@ function ShowTour() {
         setData(filteredData);
     };
 
+    // Hàm xử lý khi người dùng nhấn nút sao chép
+    const handleCopy = () => {
+        // Tạo một chuỗi chứa thông tin của tất cả các tour
+        const content = data
+            .map(
+                (t) =>
+                    `Tên: ${t.tourName}, Thời gian: ${t.duration}, Mô tả: ${t.description}, Số lượng người còn trống: ${t.quantity}, Giá người lớn: ${t.priceAdult}, Giá trẻ em: ${t.priceChild}, Điểm đến: ${t.highlights.join(", ")}, Khả dụng: ${t.available ? "1" : "0"}, Ngày bắt đầu: ${t.startDate}, Ngày kết thúc: ${t.endDate}`,
+            )
+            .join("\n"); // Kết nối tất cả các chuỗi thông tin tour lại với nhau, mỗi tour cách nhau bằng một dấu xuống dòng (\n)
+
+        // Sao chép chuỗi thông tin vào clipboard
+        navigator.clipboard.writeText(content);
+
+        // Hiển thị thông báo cho người dùng
+        Swal.fire({
+            title: "Sao chép thành công!",
+            icon: "success",
+            draggable: true,
+        });
+    };
+
+    //
     return (
         <>
             <div className="min-h-screen bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
@@ -81,11 +104,30 @@ function ShowTour() {
 
                 <div className="mb-4 flex items-center justify-between">
                     <div className="space-x-2">
-                        <button className="rounded bg-blue-500 px-3 py-1 text-sm text-white">Copy</button>
-                        <button className="rounded bg-green-500 px-3 py-1 text-sm text-white">CSV</button>
-                        <button className="rounded bg-yellow-500 px-3 py-1 text-sm text-white">Excel</button>
-                        <button className="rounded bg-red-500 px-3 py-1 text-sm text-white">PDF</button>
-                        <button className="rounded bg-gray-500 px-3 py-1 text-sm text-white">Print</button>
+                        <button
+                            onClick={handleCopy}
+                            className="rounded bg-blue-500 px-3 py-1 text-sm text-white"
+                        >
+                            Copy
+                        </button>
+                        <button
+                            // onClick={handleExcel}
+                            className="rounded bg-green-500 px-3 py-1 text-sm text-white"
+                        >
+                            Excel
+                        </button>
+                        <button
+                            // onClick={handletoPdf}
+                            className="rounded bg-red-500 px-3 py-1 text-sm text-white"
+                        >
+                            PDF
+                        </button>
+                        <button
+                            // onClick={handlePrint}
+                            className="rounded bg-gray-500 px-3 py-1 text-sm text-white"
+                        >
+                            Print
+                        </button>
                     </div>
 
                     <div className="flex items-center gap-2">
