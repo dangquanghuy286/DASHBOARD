@@ -4,7 +4,7 @@ import CreateTour from "./CreateTour";
 import icons from "../../util/icon";
 import { getDataTour } from "../../services/tourService";
 
-const { FaSearch } = icons;
+const { FaSearch, MdBlock } = icons;
 
 function ShowTour() {
     const [data, setData] = useState([]);
@@ -71,7 +71,7 @@ function ShowTour() {
                         </label>
                         <select
                             id="entries"
-                            className="rounded border px-2 py-1 text-sm text-black"
+                            className="rounded border px-2 py-1 text-sm text-black dark:text-blue-400"
                         >
                             <option>10</option>
                             <option>25</option>
@@ -134,8 +134,14 @@ function ShowTour() {
                                         <td className="border px-4 py-2">{item.quantity}</td>
                                         <td className="border px-4 py-2">{item.priceAdult}</td>
                                         <td className="border px-4 py-2">{item.priceChild}</td>
-                                        <td className="border px-4 py-2">{item.highlights}</td>
-                                        <td className="border px-4 py-2">{item.available ? "1" : "🚫"} </td>
+                                        <td className="border px-4 py-2">
+                                            <ul>
+                                                {item.highlights.map((highlight, index) => (
+                                                    <li key={index}>{highlight}</li>
+                                                ))}
+                                            </ul>
+                                        </td>
+                                        <td className="border px-4 py-2">{item.available ? "1" : <MdBlock />} </td>
                                         <td className="border px-4 py-2">{item.startDate}</td>
                                         <td className="border px-4 py-2">{item.endDate}</td>
                                         <td></td>

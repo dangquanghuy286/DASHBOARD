@@ -24,16 +24,16 @@ function Header({ collapsed, setCollapsed }) {
                     onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 >
                     <IoIosSunny
-                        size={30}
+                        size={20}
                         className={theme === "dark" ? "hidden" : "text-yellow-400"}
                     />
                     <IoIosMoon
-                        size={30}
+                        size={20}
                         className={theme === "dark" ? "text-yellow-400" : "hidden"}
                     />
                 </button>
                 <button className="btn-announcement size-12 rounded-full border border-blue-600">
-                    <FaBell size={30} />
+                    <FaBell size={20} />
                 </button>
                 <button className="size-12 cursor-pointer overflow-hidden rounded-full">
                     <img
