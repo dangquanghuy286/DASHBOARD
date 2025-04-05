@@ -1,6 +1,10 @@
-import { get } from "../util/request";
+import { get, post } from "../util/request";
 
 export const getDataTour = async () => {
     const result = await get("tourManagement");
+    return result;
+};
+export const createDataTour = async (data) => {
+    const result = await post("tourManagement", data);
     return result;
 };

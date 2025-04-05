@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import CreateTour from "./CreateTour";
 import icons from "../../util/icon";
 import { getDataTour } from "../../services/tourService";
+import EditTour from "./EditTour";
+import DeleteTour from "./DeleteTour";
 
 const { FaSearch, MdBlock } = icons;
 
@@ -15,7 +17,7 @@ function ShowTour() {
         const fetchApi = async () => {
             try {
                 const res = await getDataTour();
-                const dataArray = res.tours?.reverse() || [];
+                const dataArray = res.reverse() || [];
                 setData(dataArray);
                 setOriginalData(dataArray);
             } catch (error) {
@@ -134,18 +136,28 @@ function ShowTour() {
                                         <td className="border px-4 py-2">{item.quantity}</td>
                                         <td className="border px-4 py-2">{item.priceAdult}</td>
                                         <td className="border px-4 py-2">{item.priceChild}</td>
-                                        <td className="border px-4 py-2">
+                                        <td className="items-center border px-4 py-2">
                                             <ul>
                                                 {item.highlights.map((highlight, index) => (
                                                     <li key={index}>{highlight}</li>
                                                 ))}
                                             </ul>
                                         </td>
-                                        <td className="border px-4 py-2">{item.available ? "1" : <MdBlock />} </td>
+                                        <td className="items-center border px-4 py-2">{item.available ? "1" : <MdBlock />} </td>
                                         <td className="border px-4 py-2">{item.startDate}</td>
                                         <td className="border px-4 py-2">{item.endDate}</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td className="border px-4 py-2">
+                                            <EditTour
+                                                item={item}
+                                                key={index}
+                                            />
+                                        </td>
+                                        <td className="border px-4 py-2">
+                                            <DeleteTour
+                                                item={item}
+                                                key={index}
+                                            />
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>

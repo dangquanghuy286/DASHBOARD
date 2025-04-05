@@ -6,7 +6,7 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 import { createDataCustomer } from "../../services/customerSevice";
-const { IoIosAdd, FaSearch } = icons;
+const { IoIosAdd } = icons;
 
 function CreateUser() {
     const [showModal, setShowModal] = useState(false);
