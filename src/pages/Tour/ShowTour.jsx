@@ -8,6 +8,7 @@ import DeleteTour from "./DeleteTour";
 import CreateTour from "./CreateTour";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
+import CopyPrintComponent from "../../components/Tool";
 const { FaSearch, MdBlock } = icons;
 
 function ShowTour() {
@@ -73,51 +74,6 @@ function ShowTour() {
         setData(filteredData);
     };
 
-    // Hàm xử lý khi người dùng nhấn nút sao chép
-    const handleCopy = () => {
-        // Tạo một chuỗi chứa thông tin của tất cả các tour
-        const content = data
-            .map(
-                (t) =>
-                    `Tên: ${t.tourName}, Thời gian: ${t.duration}, Mô tả: ${t.description}, Số lượng người còn trống: ${t.quantity}, Giá người lớn: ${t.priceAdult}, Giá trẻ em: ${t.priceChild}, Điểm đến: ${t.highlights.join(", ")}, Khả dụng: ${t.available ? "1" : "0"}, Ngày bắt đầu: ${t.startDate}, Ngày kết thúc: ${t.endDate}`,
-            )
-            .join("\n"); // Kết nối tất cả các chuỗi thông tin tour lại với nhau, mỗi tour cách nhau bằng một dấu xuống dòng (\n)
-
-        // Sao chép chuỗi thông tin vào clipboard
-        navigator.clipboard.writeText(content);
-
-        // Hiển thị thông báo cho người dùng
-        Swal.fire({
-            title: "Sao chép thành công!",
-            icon: "success",
-            draggable: true,
-        });
-    };
-
-    // Hàm xử lý khi người dùng nhấn nút in
-    const handlePrint = () => {
-        // Lưu lại các cột chứa nút "Sửa" và "Xóa"
-        const editColumns = document.querySelectorAll(".edit-column");
-        const deleteColumns = document.querySelectorAll(".delete-column");
-
-        // Ẩn các cột chứa nút "Sửa" và "Xóa"
-        editColumns.forEach((col) => (col.style.display = "none"));
-        deleteColumns.forEach((col) => (col.style.display = "none"));
-
-        // Tạo cửa sổ in
-        const printWindow = window.open("", "", "width=800,height=600"); // Mở một cửa sổ mới với kích thước 800x600
-        printWindow.document.write("<html><head><title>CÔNG TY MTV </title></head><body>"); //Tiêu đề
-        printWindow.document.write("<h1 style='text-align: center;'>DANH SÁCH TOUR</h1>"); // Thêm tiêu đề "DANH SÁCH TOUR" vào giữa trang in
-        printWindow.document.write(document.querySelector("table").outerHTML); // Lấy và chèn toàn bộ nội dung bảng vào cửa sổ in
-        printWindow.document.write("<style>body { font-family: Arial, sans-serif; }</style>"); // Đặt phông chữ trang in là Arial
-        printWindow.document.close(); // Đóng cửa sổ tài liệu sau khi hoàn thành việc viết nội dung
-        printWindow.print(); // Gọi lệnh in trên cửa sổ mới
-
-        // Khôi phục lại các cột đã ẩn
-        editColumns.forEach((col) => (col.style.display = "")); // Hiển thị lại các cột "Sửa" bằng cách đặt display về giá trị mặc định
-        deleteColumns.forEach((col) => (col.style.display = "")); // Hiển thị lại các cột "Xóa" bằng cách đặt display về giá trị mặc định
-    };
-
     //
     return (
         <>
@@ -126,50 +82,26 @@ function ShowTour() {
                     <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Tour</h1>
                 </div>
 
-                <div className="mb-4 flex items-center justify-between">
-                    <div className="space-x-2">
-                        <button
-                            onClick={handleCopy}
-                            className="rounded bg-blue-500 px-3 py-1 text-sm text-white"
-                        >
-                            Copy
-                        </button>
-                        <button
-                            // onClick={handleExcel}
-                            className="rounded bg-green-500 px-3 py-1 text-sm text-white"
-                        >
-                            Excel
-                        </button>
-                        <button
-                            // onClick={handletoPdf}
-                            className="rounded bg-red-500 px-3 py-1 text-sm text-white"
-                        >
-                            PDF
-                        </button>
-                        <button
-                            onClick={handlePrint}
-                            className="rounded bg-gray-500 px-3 py-1 text-sm text-white"
-                        >
-                            Print
-                        </button>
-                    </div>
-
+                <div className="mb-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    {/* Button Group */}
+                    <CopyPrintComponent data={data} />
+                    {/* Entries Selector */}
                     <div className="flex items-center gap-2">
                         <label
                             htmlFor="entries"
-                            className="text-sm"
+                            className="text-sm font-medium text-gray-700 dark:text-gray-300"
                         >
                             Show
                         </label>
                         <select
                             id="entries"
-                            className="rounded border px-2 py-1 text-sm text-black dark:text-blue-400"
+                            className="rounded border border-gray-300 px-2 py-1 text-sm text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-slate-700 dark:text-white"
                         >
-                            <option>10</option>
-                            <option>25</option>
-                            <option>50</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
                         </select>
-                        <span className="text-sm">entries</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">entries</span>
                     </div>
                 </div>
 
@@ -199,7 +131,7 @@ function ShowTour() {
 
                 {data.length > 0 ? (
                     <div className="overflow-x-auto">
-                        <table className="min-w-full border text-sm text-black dark:text-white">
+                        <table className="mb-5 min-w-full border text-sm text-black dark:text-white">
                             <thead className="bg-gray-100 text-left dark:bg-slate-800">
                                 <tr>
                                     <th className="border px-4 py-2">Tên</th>

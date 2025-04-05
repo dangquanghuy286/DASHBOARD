@@ -29,7 +29,12 @@ import {
     FaChartBar,
     FaEye,
     FaEyeSlash,
+    FaCopy,
+    FaFileExcel,
+    FaFilePdf,
+    FaPrint,
 } from "react-icons/fa";
+
 import { BiSolidChevronsRight } from "react-icons/bi";
 import { TbBrandBooking } from "react-icons/tb";
 import { GoPackage } from "react-icons/go";
@@ -71,5 +76,9 @@ const icons = {
     IoMdCreate,
     IoIosAdd,
     BiSolidChevronsRight,
+    FaCopy,
+    FaFileExcel,
+    FaFilePdf,
+    FaPrint,
 };
 export default icons;
