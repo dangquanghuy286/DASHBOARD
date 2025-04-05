@@ -65,18 +65,6 @@ export const menu = [
                 path: "/tour",
                 text: "Tour",
                 icon: MdTour,
-                children: [
-                    {
-                        path: "create_tour",
-                        text: "Tạo Tour",
-                        icon: IoIosCreate,
-                    },
-                    {
-                        path: "list_tour",
-                        text: "Danh sách Tour",
-                        icon: FaClipboardList,
-                    },
-                ],
             },
         ],
     },
@@ -87,24 +75,6 @@ export const menu = [
                 path: "/booking",
                 text: "Quản lý booking",
                 icon: TbBrandBooking,
-            },
-        ],
-    },
-    {
-        link: [
-            {
-                path: "/contact",
-                text: "Liên hệ",
-                icon: MdContactPhone,
-            },
-        ],
-    },
-    {
-        link: [
-            {
-                path: "/setting",
-                text: "Cài đặt",
-                icon: IoIosSettings,
             },
         ],
     },

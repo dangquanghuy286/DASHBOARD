@@ -120,32 +120,38 @@
     {
       "method": "PayPal",
       "percentage": 16,
-      "color": "#33A8FF"
+      "color": "#33A8FF",
+      "id": "2e10"
     },
     {
       "method": "Momo",
       "percentage": 26,
-      "color": "#FF33E3"
+      "color": "#FF33E3",
+      "id": "7246"
     },
     {
       "method": "Thanh toán tại văn phòng",
       "percentage": 13,
-      "color": "#FFC300"
+      "color": "#FFC300",
+      "id": "72a1"
     },
     {
       "method": "Chuyển khoản ngân hàng",
       "percentage": 6,
-      "color": "#27AE60"
+      "color": "#27AE60",
+      "id": "b0b7"
     },
     {
       "method": "Credit Card",
       "percentage": 30,
-      "color": "#FF5722"
+      "color": "#FF5722",
+      "id": "1a98"
     },
     {
       "method": "Tiền mặt",
       "percentage": 9,
-      "color": "#4CAF50"
+      "color": "#4CAF50",
+      "id": "5bf5"
     }
   ],
   "top_booked_tours": {
@@ -311,17 +317,20 @@
     {
       "date": "2025-04-01",
       "revenue": 5000000,
-      "bookings": 150
+      "bookings": 150,
+      "id": "5d19"
     },
     {
       "date": "2025-04-02",
       "revenue": 7000000,
-      "bookings": 200
+      "bookings": 200,
+      "id": "9609"
     },
     {
       "date": "2025-04-03",
       "revenue": 6000000,
-      "bookings": 180
+      "bookings": 180,
+      "id": "c071"
     }
   ],
   "monthlyRevenue": {
@@ -510,7 +519,8 @@
       "phone": "+84987654321",
       "avatar": "https://files.idyllic.app/files/static/3674716?width=384&optimizer=image",
       "address": "12 Đường Nguyễn Trãi, Quận Hải Châu, Đà Nẵng",
-      "role": "Admin"
+      "role": "Admin",
+      "id": "3f6f"
     },
     {
       "userId": "user002",
@@ -519,7 +529,8 @@
       "phone": "+84987654321",
       "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPdb9rnEWhhYbheswXTOsQkzTLUeGiG37DipG837pGW1PuBuPP",
       "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng",
-      "role": "User"
+      "role": "Admin",
+      "id": "da6d"
     },
     {
       "userId": "user003",
@@ -528,7 +539,8 @@
       "phone": "+84987654322",
       "avatar": "https://files.plugger.ai/2af1eaf2-0c50-48d7-9f1c-2bc7aa4f37e0.jpg",
       "address": "99 Đường Lê Lợi, Quận Sơn Trà, Đà Nẵng",
-      "role": "User"
+      "role": "Admin",
+      "id": "56c0"
     },
     {
       "userId": "user004",
@@ -537,7 +549,8 @@
       "phone": "+84987654323",
       "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg",
       "address": "20 Đường Trần Hưng Đạo, Quận Thanh Khê, Đà Nẵng",
-      "role": "Admin"
+      "role": "Admin",
+      "id": "40d9"
     },
     {
       "userId": "user005",
@@ -546,7 +559,18 @@
       "phone": "+84987654324",
       "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
       "address": "76 Đường Phan Chu Trinh, Quận Liên Chiểu, Đà Nẵng",
-      "role": "User"
+      "role": "Admin",
+      "id": "b8dc"
+    },
+    {
+      "id": "5c03",
+      "name": "HUY DANG",
+      "address": "viet nam",
+      "phone": "0905920794",
+      "role": "User",
+      "about": "Đẹp trai",
+      "email": "huydang.280603@gmail.com",
+      "avatar": "https://file3.qdnd.vn/data/images/0/2023/02/26/trungthanh_tv/ronaldo%201.jpeg?dpi=150&quality=100&w=870"
     }
   ],
   "roles": [

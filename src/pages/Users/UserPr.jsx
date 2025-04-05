@@ -42,7 +42,7 @@ function UserPr(props) {
                 <div className="flex w-full items-start justify-center sm:w-1/2">
                     {/* Đã thay items-center thành items-start */}
                     <div className="flex flex-1 items-center justify-center">
-                        <div className="h-50 w-50 overflow-hidden rounded-full border border-gray-300 dark:border-gray-600">
+                        <div className="h-50 w-50 overflow-hidden rounded-full border border-amber-300">
                             <img
                                 src={user.avatar || "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png"}
                                 alt={user.name}
