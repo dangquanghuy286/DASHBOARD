@@ -18,14 +18,14 @@ export const routes = [
                 index: true,
                 element: <Home />,
             },
-            {
-                path: "analytics",
-                element: <Analytics />,
-            },
-            {
-                path: "report",
-                element: <Report />,
-            },
+            // {
+            //     path: "analytics",
+            //     element: <Analytics />,
+            // },
+            // {
+            //     path: "report",
+            //     element: <Report />,
+            // },
             {
                 path: "admin",
                 element: <Admin />,

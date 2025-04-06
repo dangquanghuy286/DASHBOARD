@@ -14,35 +14,63 @@ function DataChartMonth() {
     }, []);
     return (
         <>
-            <div className="card col-span-1 md:col-span-2 lg:col-span-8">
-                <div className="card-header flex">
-                    <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
-                        <FaChartBar size={26} />
+            <div className="card col-span-1 rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-lg md:col-span-2 lg:col-span-8 dark:bg-slate-800">
+                {/* Card Header */}
+                <div className="card-header flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20 text-blue-500 transition-colors hover:bg-blue-500/30 dark:bg-blue-600/20 dark:text-blue-600 dark:hover:bg-blue-600/30">
+                        <FaChartBar size={24} />
                     </div>
-                    <p className="card-title">Doanh thu theo tháng</p>
+                    <p className="card-title text-xl font-semibold text-gray-800 dark:text-white">Doanh thu theo tháng</p>
                 </div>
-                <div className="card-body flex gap-4 p-4">
-                    <div className="card-domestic rounded-lg p-4">
-                        <h2 className="card-title mt-8 mb-5">🏞️ Trong nước</h2>
+
+                {/* Card Body */}
+                <div className="card-body p-6">
+                    <div className="card-domestic rounded-lg bg-[#f1f5f9] p-6 dark:bg-slate-950">
+                        <h2 className="card-title mb-6 text-lg font-bold text-gray-900 dark:text-white">🏞️ Trong nước</h2>
                         <ResponsiveContainer
                             width="100%"
                             height={300}
                         >
                             <AreaChart data={dataChart.domestic}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="month" />
-                                <YAxis />
-                                <Tooltip />
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    stroke="#ccc"
+                                />
+                                <XAxis
+                                    dataKey="month"
+                                    stroke="#A5D6A7"
+                                    fontSize={12}
+                                    tickLine={false}
+                                    axisLine={{ stroke: "#ccc" }}
+                                />
+                                <YAxis
+                                    stroke="#A5D6A7"
+                                    fontSize={12}
+                                    tickLine={false}
+                                    axisLine={{ stroke: "#ccc" }}
+                                />
+                                <Tooltip
+                                    contentStyle={{
+                                        backgroundColor: "#fff",
+                                        borderRadius: "8px",
+                                        border: "1px solid #ddd",
+                                    }}
+                                />
                                 <Area
                                     type="monotone"
                                     dataKey="revenue"
                                     stroke="#4CAF50"
+                                    strokeWidth={2}
                                     fill="#A5D6A7"
+                                    fillOpacity={0.6}
+                                    activeDot={{ r: 6, fill: "#4CAF50", stroke: "#fff", strokeWidth: 2 }}
                                 />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
-                    {/* <div className="card-word rounded-lg p-4">
+                </div>
+            </div>
+            {/* <div className="card-word rounded-lg p-4">
                         <h2 className="card-title mt-8 mb-5">✈️ Ngoài nước</h2>
                         <ResponsiveContainer
                             width="100%"
@@ -62,8 +90,6 @@ function DataChartMonth() {
                             </AreaChart>
                         </ResponsiveContainer>
                     </div> */}
-                </div>
-            </div>
         </>
     );
 }

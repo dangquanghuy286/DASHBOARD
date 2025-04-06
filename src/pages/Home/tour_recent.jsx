@@ -50,7 +50,7 @@ function TourRecent() {
                                 data.map((tour) => (
                                     <tr
                                         key={tour.id}
-                                        className="text-center hover:bg-gray-50"
+                                        className="text-center"
                                     >
                                         <td className="border border-gray-300 px-4 py-2">{tour.id}</td>
                                         <td className="max-w-[120px] truncate border border-gray-300 px-4 py-2">{tour.customer_name}</td>

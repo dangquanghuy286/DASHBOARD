@@ -33,6 +33,7 @@ import {
     FaFileExcel,
     FaFilePdf,
     FaPrint,
+    FaFileCsv,
 } from "react-icons/fa";
 
 import { BiSolidChevronsRight } from "react-icons/bi";
@@ -80,5 +81,6 @@ const icons = {
     FaFileExcel,
     FaFilePdf,
     FaPrint,
+    FaFileCsv,
 };
 export default icons;

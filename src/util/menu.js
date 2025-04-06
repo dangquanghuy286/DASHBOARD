@@ -23,24 +23,24 @@ export const menu = [
             },
         ],
     },
-    {
-        link: [
-            {
-                path: "/analytics",
-                text: "Dữ liệu phân tích",
-                icon: IoMdAnalytics,
-            },
-        ],
-    },
-    {
-        link: [
-            {
-                path: "/report",
-                text: "Báo cáo",
-                icon: HiDocumentReport,
-            },
-        ],
-    },
+    // {
+    //     link: [
+    //         {
+    //             path: "/analytics",
+    //             text: "Dữ liệu phân tích",
+    //             icon: IoMdAnalytics,
+    //         },
+    //     ],
+    // },
+    // {
+    //     link: [
+    //         {
+    //             path: "/report",
+    //             text: "Báo cáo",
+    //             icon: HiDocumentReport,
+    //         },
+    //     ],
+    // },
     {
         link: [
             {

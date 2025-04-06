@@ -54,7 +54,7 @@ function TotalAll() {
             <Card
                 icon={<GoPackage size={26} />}
                 title="Tổng doanh thu"
-                value={dashboardSummary.total_revenue?.current ? `${dashboardSummary.total_revenue.current} VNĐ` : "No data"}
+                value={dashboardSummary.total_revenue?.current ? `${dashboardSummary.total_revenue.current.toLocaleString()} VNĐ` : "No data"}
                 percentage={dashboardSummary.total_revenue?.percentage_change || "N/A"}
                 valueClass="text-red-400"
             />

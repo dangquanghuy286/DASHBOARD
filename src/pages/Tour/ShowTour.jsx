@@ -137,7 +137,7 @@ function ShowTour() {
                                     <th className="border px-4 py-2">Tên</th>
                                     <th className="border px-4 py-2">Thời gian</th>
                                     <th className="border px-4 py-2">Mô tả</th>
-                                    <th className="border px-4 py-2">Số lượng người còn trống</th>
+                                    <th className="border px-4 py-2">Số lượng</th>
                                     <th className="border px-4 py-2">Giá người lớn</th>
                                     <th className="border px-4 py-2">Giá trẻ em</th>
                                     <th className="border px-4 py-2">Điểm đến</th>
