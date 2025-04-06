@@ -353,6 +353,9 @@
       "avatar": "https://files.idyllic.app/files/static/3674716?width=384&optimizer=image",
       "address": "12 Đường Nguyễn Trãi, Quận Hải Châu, Đà Nẵng",
       "role": "Admin",
+      "username": "nguyensykhai001",
+      "password": "hashedPass123!",
+      "token": "aB9kP2mN7xQ4rT5vY8zC3wJ6",
       "id": "3f6f"
     },
     {
@@ -363,6 +366,9 @@
       "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRPdb9rnEWhhYbheswXTOsQkzTLUeGiG37DipG837pGW1PuBuPP",
       "address": "45 Đường Hoàng Diệu, Quận Hải Châu, Đà Nẵng",
       "role": "Admin",
+      "username": "phanvanthanh002",
+      "password": "hashedPass456@",
+      "token": "xK4nL8pQ2rT6vY9zC3wJ5mB7",
       "id": "da6d"
     },
     {
@@ -373,6 +379,9 @@
       "avatar": "https://files.plugger.ai/2af1eaf2-0c50-48d7-9f1c-2bc7aa4f37e0.jpg",
       "address": "99 Đường Lê Lợi, Quận Sơn Trà, Đà Nẵng",
       "role": "Admin",
+      "username": "nguyenminhtienphong003",
+      "password": "hashedPass789#",
+      "token": "pM7qR3tV9yZ2cW5jB8kN4xL6",
       "id": "56c0"
     },
     {
@@ -383,6 +392,9 @@
       "avatar": "https://static.vecteezy.com/system/resources/thumbnails/056/158/308/small/cheerful-teacher-stands-before-chalkboard-colorful-diagram-students-in-background-eagerly-raise-their-hands-creating-energetic-classroom-atmosphere-photo.jpeg",
       "address": "20 Đường Trần Hưng Đạo, Quận Thanh Khê, Đà Nẵng",
       "role": "Admin",
+      "username": "phamthithanhthuy004",
+      "password": "hashedPass101$",
+      "token": "rT5vY8zC3wJ6aB9kP2mN7xQ4",
       "id": "40d9"
     },
     {
@@ -393,17 +405,10 @@
       "avatar": "https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/c80b2cb59d3adbb446f930ba5caf4865-1704699959945/5984dab4-15ef-4762-8ed2-183cf80c6f1d.jpg",
       "address": "76 Đường Phan Chu Trinh, Quận Liên Chiểu, Đà Nẵng",
       "role": "Admin",
+      "username": "danghuuquanghuy005",
+      "password": "hashedPass202&",
+      "token": "yZ2cW5jB8kN4xL6pM7qR3tV9",
       "id": "b8dc"
-    },
-    {
-      "id": "5c03",
-      "name": "HUY DANG",
-      "address": "viet nam",
-      "phone": "0905920794",
-      "role": "User",
-      "about": "Đẹp trai",
-      "email": "huydang.280603@gmail.com",
-      "avatar": "https://file3.qdnd.vn/data/images/0/2023/02/26/trungthanh_tv/ronaldo%201.jpeg?dpi=150&quality=100&w=870"
     }
   ],
   "roles": [
@@ -426,7 +431,7 @@
       "quantity": 30,
       "priceAdult": 30000000,
       "priceChild": 15000000,
-      "available": true,
+      "available": false,
       "startDate": "2025-01-10",
       "endDate": "2025-01-17",
       "status": "Hoạt động",
@@ -586,7 +591,7 @@
       "quantity": 20,
       "priceAdult": 25000000,
       "priceChild": 12500000,
-      "available": false,
+      "available": true,
       "startDate": "2025-10-05",
       "endDate": "2025-10-10",
       "status": "Hoạt động",
@@ -666,7 +671,7 @@
       "quantity": 30,
       "priceAdult": 20000000,
       "priceChild": 10000000,
-      "available": true,
+      "available": false,
       "startDate": "2025-03-20",
       "endDate": "2025-03-23",
       "status": "Hoạt động",
@@ -706,7 +711,7 @@
       "quantity": 20,
       "priceAdult": 23750000,
       "priceChild": 11875000,
-      "available": false,
+      "available": true,
       "startDate": "2025-05-15",
       "endDate": "2025-05-19",
       "status": "Hoạt động",
@@ -766,7 +771,7 @@
       "quantity": 15,
       "priceAdult": 25000000,
       "priceChild": 12500000,
-      "available": false,
+      "available": true,
       "startDate": "2025-08-15",
       "endDate": "2025-08-19",
       "status": "Hoạt động",
@@ -826,7 +831,7 @@
       "quantity": 20,
       "priceAdult": 16250000,
       "priceChild": 8125000,
-      "available": false,
+      "available": true,
       "startDate": "2025-11-15",
       "endDate": "2025-11-18",
       "status": "Hoạt động",
@@ -836,6 +841,406 @@
         "➡️ Thưởng thức phở Nam Định"
       ],
       "id": "a713"
+    },
+    {
+      "tourId": "tour025",
+      "tourName": "Hành Trình Đến Quảng Ninh Huyền Bí",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Khám phá vẻ đẹp kỳ vĩ của Vịnh Hạ Long và văn hóa vùng Đông Bắc.",
+      "quantity": 25,
+      "priceAdult": 26000000,
+      "priceChild": 13000000,
+      "available": true,
+      "startDate": "2025-04-25",
+      "endDate": "2025-04-29",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Du thuyền trên Vịnh Hạ Long",
+        "➡️ Tham quan hang Sửng Sốt",
+        "➡️ Thưởng thức chả mực Hạ Long"
+      ],
+      "id": "b12c"
+    },
+    {
+      "tourId": "tour026",
+      "tourName": "Thư Giãn Tại Sầm Sơn Thanh Hóa",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Thư giãn tại bãi biển nổi tiếng Sầm Sơn với không khí trong lành.",
+      "quantity": 30,
+      "priceAdult": 18000000,
+      "priceChild": 9000000,
+      "available": true,
+      "startDate": "2025-05-10",
+      "endDate": "2025-05-13",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tắm biển Sầm Sơn",
+        "➡️ Tham quan đền Độc Cước",
+        "➡️ Thưởng thức nem chua Thanh Hóa"
+      ],
+      "id": "c45d"
+    },
+    {
+      "tourId": "tour027",
+      "tourName": "Khám Phá Tây Bắc Huyền Thoại",
+      "destination": "Việt Nam",
+      "duration": "7 ngày",
+      "description": "Hành trình khám phá núi rừng Tây Bắc hùng vĩ và văn hóa dân tộc độc đáo.",
+      "quantity": 20,
+      "priceAdult": 32000000,
+      "priceChild": 16000000,
+      "available": true,
+      "startDate": "2025-06-20",
+      "endDate": "2025-06-27",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Chinh phục đỉnh Fansipan",
+        "➡️ Tham quan chợ phiên Bắc Hà",
+        "➡️ Ngắm thung lũng hoa Sa Pa"
+      ],
+      "id": "d78e"
+    },
+    {
+      "tourId": "tour028",
+      "tourName": "Hành Trình Đến Bình Thuận Nắng Vàng",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Thư giãn tại vùng đất biển xanh, cát trắng, nắng vàng của Bình Thuận.",
+      "quantity": 25,
+      "priceAdult": 23000000,
+      "priceChild": 11500000,
+      "available": true,
+      "startDate": "2025-07-15",
+      "endDate": "2025-07-19",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tắm biển Mũi Né",
+        "➡️ Trượt cát trên đồi cát Bàu Trắng",
+        "➡️ Thưởng thức nước mắm Phan Thiết"
+      ],
+      "id": "e91f"
+    },
+    {
+      "tourId": "tour029",
+      "tourName": "Khám Phá An Giang Miền Tây",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Trải nghiệm vùng đất miền Tây với văn hóa Chăm và thiên nhiên độc đáo.",
+      "quantity": 20,
+      "priceAdult": 24500000,
+      "priceChild": 12250000,
+      "available": true,
+      "startDate": "2025-08-10",
+      "endDate": "2025-08-15",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan rừng tràm Trà Sư",
+        "➡️ Khám phá làng Chăm Châu Đốc",
+        "➡️ Ngắm cảnh núi Cấm"
+      ],
+      "id": "f12g"
+    },
+    {
+      "tourId": "tour030",
+      "tourName": "Hành Trình Đến Quảng Bình Hoang Sơ",
+      "destination": "Việt Nam",
+      "duration": "6 ngày",
+      "description": "Khám phá hệ thống hang động kỳ vĩ và bãi biển tuyệt đẹp của Quảng Bình.",
+      "quantity": 15,
+      "priceAdult": 31000000,
+      "priceChild": 15500000,
+      "available": true,
+      "startDate": "2025-09-15",
+      "endDate": "2025-09-21",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan động Thiên Đường",
+        "➡️ Khám phá sông Chày - hang Tối",
+        "➡️ Tắm biển Nhật Lệ"
+      ],
+      "id": "g34h"
+    },
+    {
+      "tourId": "tour031",
+      "tourName": "Thư Giãn Tại Bà Rịa - Vũng Tàu",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Thư giãn tại vùng biển gần gũi với thiên nhiên và không khí trong lành.",
+      "quantity": 30,
+      "priceAdult": 17000000,
+      "priceChild": 8500000,
+      "available": true,
+      "startDate": "2025-10-20",
+      "endDate": "2025-10-23",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tắm biển Hồ Tràm",
+        "➡️ Tham quan suối nước nóng Bình Châu",
+        "➡️ Thưởng thức bánh bông lan trứng muối"
+      ],
+      "id": "h56i"
+    },
+    {
+      "tourId": "tour032",
+      "tourName": "Khám Phá Tuyên Quang Lịch Sử",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Hành trình đến vùng đất lịch sử với thiên nhiên và văn hóa đặc sắc.",
+      "quantity": 20,
+      "priceAdult": 22000000,
+      "priceChild": 11000000,
+      "available": true,
+      "startDate": "2025-11-10",
+      "endDate": "2025-11-14",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan khu di tích Tân Trào",
+        "➡️ Khám phá thác Bản Ba",
+        "➡️ Thưởng thức chè Tuyên Quang"
+      ],
+      "id": "i78j"
+    },
+    {
+      "tourId": "tour033",
+      "tourName": "Hành Trình Đến Kiên Giang Biển Đảo",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Khám phá vẻ đẹp biển đảo và văn hóa miền Tây Nam Bộ.",
+      "quantity": 25,
+      "priceAdult": 28000000,
+      "priceChild": 14000000,
+      "available": true,
+      "startDate": "2025-12-15",
+      "endDate": "2025-12-20",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan đảo Nam Du",
+        "➡️ Tắm biển Hà Tiên",
+        "➡️ Thưởng thức gỏi cá trích"
+      ],
+      "id": "j90k"
+    },
+    {
+      "tourId": "tour034",
+      "tourName": "Khám Phá Cao Bằng Hùng Vĩ",
+      "destination": "Việt Nam",
+      "duration": "6 ngày",
+      "description": "Trải nghiệm vùng đất Đông Bắc với thác nước và núi non hùng vĩ.",
+      "quantity": 15,
+      "priceAdult": 29500000,
+      "priceChild": 14750000,
+      "available": false,
+      "startDate": "2025-03-01",
+      "endDate": "2025-03-07",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan thác Bản Giốc",
+        "➡️ Khám phá động Ngườm Ngao",
+        "➡️ Ngắm cảnh hồ Thang Hen"
+      ],
+      "id": "k12l"
+    },
+    {
+      "tourId": "tour035",
+      "tourName": "Thư Giãn Tại Đà Nẵng Hiện Đại",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Thư giãn tại thành phố biển hiện đại với cầu Vàng nổi tiếng.",
+      "quantity": 30,
+      "priceAdult": 24000000,
+      "priceChild": 12000000,
+      "available": true,
+      "startDate": "2025-04-15",
+      "endDate": "2025-04-19",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan cầu Vàng Bà Nà Hills",
+        "➡️ Tắm biển Mỹ Khê",
+        "➡️ Thưởng thức mì Quảng"
+      ],
+      "id": "l34m"
+    },
+    {
+      "tourId": "tour036",
+      "tourName": "Hành Trình Đến Lai Châu Hoang Sơ",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Khám phá vùng đất Tây Bắc với thiên nhiên hoang sơ và văn hóa độc đáo.",
+      "quantity": 15,
+      "priceAdult": 27000000,
+      "priceChild": 13500000,
+      "available": true,
+      "startDate": "2025-05-20",
+      "endDate": "2025-05-25",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan đèo Ô Quy Hồ",
+        "➡️ Khám phá bản Sin Suối Hồ",
+        "➡️ Ngắm hoa đỗ quyên"
+      ],
+      "id": "m56n"
+    },
+    {
+      "tourId": "tour037",
+      "tourName": "Khám Phá Bạc Liêu Công Tử",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Trải nghiệm vùng đất miền Tây với lịch sử và văn hóa đặc sắc.",
+      "quantity": 20,
+      "priceAdult": 19000000,
+      "priceChild": 9500000,
+      "available": true,
+      "startDate": "2025-06-10",
+      "endDate": "2025-6-13",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan nhà Công Tử Bạc Liêu",
+        "➡️ Khám phá vườn chim Bạc Liêu",
+        "➡️ Thưởng thức bánh pía"
+      ],
+      "id": "n78o"
+    },
+    {
+      "tourId": "tour038",
+      "tourName": "Hành Trình Đến Quảng Trị Lịch Sử",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Khám phá vùng đất miền Trung với những di tích lịch sử hào hùng.",
+      "quantity": 20,
+      "priceAdult": 21500000,
+      "priceChild": 10750000,
+      "available": true,
+      "startDate": "2025-07-25",
+      "endDate": "2025-07-29",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan Thành cổ Quảng Trị",
+        "➡️ Khám phá địa đạo Vĩnh Nghiêm",
+        "➡️ Ngắm cầu Hiền Lương"
+      ],
+      "id": "o90p"
+    },
+    {
+      "tourId": "tour039",
+      "tourName": "Thư Giãn Tại Cát Bà Hải Phòng",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Thư giãn tại đảo Cát Bà với biển xanh và rừng nguyên sinh.",
+      "quantity": 25,
+      "priceAdult": 20000000,
+      "priceChild": 10000000,
+      "available": true,
+      "startDate": "2025-08-20",
+      "endDate": "2025-08-23",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tắm biển Cát Cò",
+        "➡️ Khám phá Vườn Quốc gia Cát Bà",
+        "➡️ Thưởng thức hải sản tươi sống"
+      ],
+      "id": "p12q"
+    },
+    {
+      "tourId": "tour040",
+      "tourName": "Khám Phá Kon Tum Cao Nguyên",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Trải nghiệm vùng đất Tây Nguyên với văn hóa và thiên nhiên độc đáo.",
+      "quantity": 15,
+      "priceAdult": 26500000,
+      "priceChild": 13250000,
+      "available": true,
+      "startDate": "2025-09-20",
+      "endDate": "2025-09-25",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan nhà rông Kon Tum",
+        "➡️ Khám phá thác Yaly",
+        "➡️ Thưởng thức rượu cần"
+      ],
+      "id": "q34r"
+    },
+    {
+      "tourId": "tour041",
+      "tourName": "Hành Trình Đến Thái Nguyên Xanh",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Khám phá vùng đất chè xanh mướt và văn hóa Đông Bắc.",
+      "quantity": 20,
+      "priceAdult": 18500000,
+      "priceChild": 9250000,
+      "available": true,
+      "startDate": "2025-10-25",
+      "endDate": "2025-10-28",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan đồi chè Tân Cương",
+        "➡️ Khám phá hồ Núi Cốc",
+        "➡️ Thưởng thức chè Thái Nguyên"
+      ],
+      "id": "r56s"
+    },
+    {
+      "tourId": "tour042",
+      "tourName": "Thư Giãn Tại Hạ Long Kỳ Thú",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Thư giãn tại Vịnh Hạ Long với cảnh quan được UNESCO công nhận.",
+      "quantity": 30,
+      "priceAdult": 25500000,
+      "priceChild": 12750000,
+      "available": true,
+      "startDate": "2025-11-20",
+      "endDate": "2025-11-24",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Du thuyền trên Vịnh Hạ Long",
+        "➡️ Tham quan làng chài Cửa Vạn",
+        "➡️ Thưởng thức hải sản Hạ Long"
+      ],
+      "id": "s78t"
+    },
+    {
+      "tourId": "tour043",
+      "tourName": "Khám Phá Gia Lai Hoang Dã",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Trải nghiệm vùng đất Tây Nguyên với thiên nhiên hoang dã và văn hóa đặc sắc.",
+      "quantity": 15,
+      "priceAdult": 27500000,
+      "priceChild": 13750000,
+      "available": true,
+      "startDate": "2025-12-20",
+      "endDate": "2025-12-25",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan biển hồ Pleiku",
+        "➡️ Khám phá núi lửa Chư Đăng Ya",
+        "➡️ Thưởng thức phở khô Gia Lai"
+      ],
+      "id": "t90u"
+    },
+    {
+      "tourId": "tour044",
+      "tourName": "Hành Trình Đến Hòa Bình Thủy Điện",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Khám phá vùng đất Tây Bắc với thiên nhiên và công trình thủy điện nổi tiếng.",
+      "quantity": 20,
+      "priceAdult": 19500000,
+      "priceChild": 9750000,
+      "available": false,
+      "startDate": "2025-02-20",
+      "endDate": "2025-02-23",
+      "status": "Hoạt động",
+      "highlights": [
+        "➡️ Tham quan nhà máy thủy điện Hòa Bình",
+        "➡️ Khám phá thung lũng Mai Châu",
+        "➡️ Thưởng thức cơm lam"
+      ],
+      "id": "u12v"
     }
   ],
   "bookingManagement": {
