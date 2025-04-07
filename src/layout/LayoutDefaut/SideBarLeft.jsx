@@ -5,9 +5,6 @@ import logoDark from "../../assets/Img/dashboard_Dark.svg";
 import logoLight from "../../assets/Img/dashboard_Light.svg";
 import PropTypes from "prop-types";
 import { menu } from "../../util/menu";
-import icons from "../../util/icon";
-
-const { FaChevronDown, FaChevronUp } = icons;
 
 const SideBarLeft = forwardRef(({ collapsed }, ref) => {
     const [openSubMenu, setOpenSubMenu] = useState(null);

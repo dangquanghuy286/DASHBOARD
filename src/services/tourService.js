@@ -12,3 +12,7 @@ export const deleteTour = async (id) => {
     const result = await del(`tourManagement/${id}`);
     return result;
 };
+export const updateTour = async (id, data) => {
+    const result = await post(`tourManagement/${id}`, data);
+    return result;
+};
