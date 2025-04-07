@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useRef } from "react";
+import React, { useState, forwardRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../util/cn";
 import logoDark from "../../assets/Img/dashboard_Dark.svg";
@@ -6,21 +6,12 @@ import logoLight from "../../assets/Img/dashboard_Light.svg";
 import PropTypes from "prop-types";
 import { menu } from "../../util/menu";
 import icons from "../../util/icon";
-import { useClickOutside } from "../../hooks/use_Click_outSize";
 
 const { FaChevronDown, FaChevronUp } = icons;
 
 const SideBarLeft = forwardRef(({ collapsed }, ref) => {
     const [openSubMenu, setOpenSubMenu] = useState(null);
     const location = useLocation();
-    const sidebarRef = useRef(null);
-    const wrapperRef = useRef(null);
-
-    useClickOutside([sidebarRef, wrapperRef], () => {
-        if (!collapsed) {
-            setOpenSubMenu(null);
-        }
-    });
 
     const toggleSubMenu = (index) => {
         setOpenSubMenu(openSubMenu === index ? null : index);
@@ -28,14 +19,12 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
 
     return (
         <aside
-            ref={(node) => {
-                sidebarRef.current = node;
-                if (ref) ref.current = node;
-            }}
+            ref={ref}
             className={cn(
                 "fixed z-[100] flex h-full flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
-                "max-md:hidden",
                 collapsed ? "md:w-[80px] md:items-center" : "md:w-[250px]",
+                // Hiển thị trên mobile khi không collapsed
+                collapsed && "max-md:hidden",
             )}
         >
             <div className="flex h-[50px] w-[50px] gap-x-3 p-3">
@@ -111,7 +100,6 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
 });
 
 SideBarLeft.displayName = "Sidebar";
-
 SideBarLeft.propTypes = {
     collapsed: PropTypes.bool,
 };
