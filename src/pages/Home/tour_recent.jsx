@@ -21,8 +21,8 @@ function TourRecent() {
 
     return (
         <div className="card col-span-1 min-w-[300px] md:col-span-2 lg:col-span-4">
-            <div className="card-header flex items-center gap-3 p-4">
-                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 dark:bg-blue-600/20 dark:text-blue-600">
+            <div className="card-header flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
+                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
                     <FaRocket size={26} />
                 </div>
                 <p className="card-title text-lg font-semibold">Tour mới</p>

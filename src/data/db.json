@@ -2,9 +2,9 @@
   "dashboard_summary": {
     "total_active_tours": {
       "previous": 15,
-      "current": 36,
-      "change": 21,
-      "percentage_change": 140
+      "current": 47,
+      "change": 32,
+      "percentage_change": 213.33
     },
     "total_bookings": {
       "previous": 50,
@@ -20,9 +20,9 @@
     },
     "total_revenue": {
       "previous": 1350000000,
-      "current": 1417500000,
-      "change": 67500000,
-      "percentage_change": 5
+      "current": 2225000000,
+      "change": 875000000,
+      "percentage_change": 64.81
     },
     "total_cancellations": {
       "previous": 2,
@@ -32,9 +32,9 @@
     },
     "average_booking_value": {
       "previous": 27000000,
-      "current": 26745283,
-      "change": -254717,
-      "percentage_change": -0.94
+      "current": 41981132,
+      "change": 14981132,
+      "percentage_change": 55.49
     }
   },
   "destination_statistics": {
@@ -42,22 +42,22 @@
       {
         "name": "Miền Bắc",
         "value": 23,
-        "color": "#F44336"
+        "color": "#E57373"
       },
       {
         "name": "Miền Trung",
-        "value": 11,
-        "color": "#009688"
+        "value": 14,
+        "color": "#4DB6AC"
       },
       {
         "name": "Miền Nam",
-        "value": 7,
-        "color": "#9C27B0"
+        "value": 12,
+        "color": "#BA68C8"
       },
       {
         "name": "Tây Nguyên",
-        "value": 3,
-        "color": "#FF9800"
+        "value": 5,
+        "color": "#FFB74D"
       }
     ],
     "international": []
@@ -66,7 +66,7 @@
     "data": [
       {
         "name": "Trong nước",
-        "value": 44,
+        "value": 54,
         "color": "#4CAF50"
       },
       {
@@ -92,7 +92,7 @@
   },
   "booking_payments": [
     {
-      "method": "PayPal",
+      "method": "Zalo Pay",
       "percentage": 33,
       "color": "#33A8FF",
       "id": "2e10"
