@@ -16,3 +16,7 @@ export const updateTour = async (id, data) => {
     const result = await post(`tourManagement/${id}`, data);
     return result;
 };
+export const getDataRegion = async () => {
+    const result = await get("regions");
+    return result;
+};

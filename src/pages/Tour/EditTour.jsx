@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import { updateTour } from "../../services/tourService"; // Giả định API cập nhật tour
+import { getDataRegion, updateTour } from "../../services/tourService"; // Giả định API cập nhật tour
 import { IoMdCreate } from "react-icons/io";
 function EditTour({ item }) {
     const [showModal, setShowModal] = useState(false);
-    const [data, setData] = useState(item || {});
 
+    const [data, setData] = useState(item || {});
+    const [dataRegion, setDataRegion] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await getDataRegion(); // Giả định API lấy danh sách khu vực
+            setDataRegion(result);
+        };
+        fetchData();
+    }, []);
     // Cấu hình style cho modal
     const customStyles = {
         content: {
@@ -149,6 +158,26 @@ function EditTour({ item }) {
                             className="w-full border bg-gray-100 p-2"
                         />
                     </div>
+                    <div>
+                        <label>Khu vực</label>
+                        <select
+                            name="region"
+                            className="focus:ring-opacity-50 w-full rounded-md border p-3 transition duration-200"
+                            onChange={handleChange}
+                            value={data.region || ""}
+                        >
+                            <option value="">Chọn vai trò</option>
+                            {dataRegion.map((item, index) => (
+                                <option
+                                    key={index}
+                                    value={item.regionName}
+                                >
+                                    {item.regionName}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     <div>
                         <label>Mô tả</label>
                         <textarea

@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import icons from "../../util/icon";
-import { getDataTour } from "../../services/tourService";
+// import { getDataRegion, getDataTour } from "../../services/tourService";
 import EditTour from "./EditTour";
 import DeleteTour from "./DeleteTour";
 import CreateTour from "./CreateTour";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import CopyPrintComponent from "../../components/Tool";
+import { getDataTour } from "../../services/tourService";
 const { FaSearch, MdBlock } = icons;
 
 function ShowTour() {
     const [data, setData] = useState([]);
+
     const [originalData, setOriginalData] = useState([]);
     const { register, handleSubmit } = useForm();
 
@@ -20,6 +22,7 @@ function ShowTour() {
         const fetchApi = async () => {
             try {
                 const res = await getDataTour();
+
                 const dataArray = res.reverse() || [];
                 setData(dataArray);
                 setOriginalData(dataArray);

@@ -441,7 +441,7 @@
         "➡️ Trải nghiệm cuộc sống về đêm sôi động ở TP. Hồ Chí Minh"
       ],
       "id": "13f6",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour004",
@@ -462,7 +462,7 @@
         "➡️ Chèo thuyền trên dòng nước yên bình của Tam Cốc"
       ],
       "id": "157f",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour005",
@@ -483,7 +483,7 @@
         "➡️ Thưởng thức hải sản tươi ngon ở Nha Trang"
       ],
       "id": "69ca",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour006",
@@ -504,7 +504,7 @@
         "➡️ Tắm biển tại bãi biển Mỹ Khê, Đà Nẵng"
       ],
       "id": "3675",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour007",
@@ -525,7 +525,7 @@
         "➡️ Thưởng thức cà phê nguyên chất Tây Nguyên"
       ],
       "id": "708c",
-      "khu vực": "Tây Nguyên"
+      "region": "Tây Nguyên"
     },
     {
       "tourId": "tour009",
@@ -546,7 +546,7 @@
         "➡️ Thưởng thức trà và cà phê Đà Lạt"
       ],
       "id": "7069",
-      "khu vực": "Tây Nguyên"
+      "region": "Tây Nguyên"
     },
     {
       "tourId": "tour010",
@@ -567,7 +567,7 @@
         "➡️ Ngắm rùa biển đẻ trứng"
       ],
       "id": "6220",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour011",
@@ -588,7 +588,7 @@
         "➡️ Thưởng thức bánh bèo và cơm hến"
       ],
       "id": "2b66",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour012",
@@ -609,7 +609,7 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "53e3",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour013",
@@ -630,7 +630,7 @@
         "➡️ Ngắm hoa tam giác mạch"
       ],
       "id": "9553",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour014",
@@ -651,7 +651,7 @@
         "➡️ Thưởng thức bánh xèo tôm nhảy"
       ],
       "id": "8e89",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour015",
@@ -672,7 +672,7 @@
         "➡️ Ngắm cảnh núi Tô Thị"
       ],
       "id": "a242",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour016",
@@ -693,7 +693,7 @@
         "➡️ Khám phá hang Múa"
       ],
       "id": "333a",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour017",
@@ -714,7 +714,7 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "fccf",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour018",
@@ -735,7 +735,7 @@
         "➡️ Thưởng thức cua Cà Mau"
       ],
       "id": "04af",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour019",
@@ -756,7 +756,7 @@
         "➡️ Ngắm cảnh thung lũng Mường Thanh"
       ],
       "id": "80a0",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour020",
@@ -777,7 +777,7 @@
         "➡️ Thưởng thức tỏi Lý Sơn"
       ],
       "id": "f2c2",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour021",
@@ -798,7 +798,7 @@
         "➡️ Thưởng thức chè Shan Tuyết"
       ],
       "id": "e24c",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour022",
@@ -819,7 +819,7 @@
         "➡️ Thưởng thức bánh xèo miền Tây"
       ],
       "id": "9846",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour023",
@@ -840,7 +840,7 @@
         "➡️ Khám phá văn hóa dân tộc Mường"
       ],
       "id": "e7bc",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour024",
@@ -861,7 +861,7 @@
         "➡️ Thưởng thức phở Nam Định"
       ],
       "id": "a713",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour025",
@@ -882,7 +882,7 @@
         "➡️ Thưởng thức chả mực Hạ Long"
       ],
       "id": "b12c",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour026",
@@ -903,7 +903,7 @@
         "➡️ Thưởng thức nem chua Thanh Hóa"
       ],
       "id": "c45d",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour027",
@@ -924,7 +924,7 @@
         "➡️ Ngắm thung lũng hoa Sa Pa"
       ],
       "id": "d78e",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour028",
@@ -945,7 +945,7 @@
         "➡️ Thưởng thức nước mắm Phan Thiết"
       ],
       "id": "e91f",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour029",
@@ -966,7 +966,7 @@
         "➡️ Ngắm cảnh núi Cấm"
       ],
       "id": "f12g",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour030",
@@ -987,7 +987,7 @@
         "➡️ Tắm biển Nhật Lệ"
       ],
       "id": "g34h",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour031",
@@ -1008,7 +1008,7 @@
         "➡️ Thưởng thức bánh bông lan trứng muối"
       ],
       "id": "h56i",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour032",
@@ -1029,7 +1029,7 @@
         "➡️ Thưởng thức chè Tuyên Quang"
       ],
       "id": "i78j",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour033",
@@ -1050,7 +1050,7 @@
         "➡️ Thưởng thức gỏi cá trích"
       ],
       "id": "j90k",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour034",
@@ -1071,7 +1071,7 @@
         "➡️ Ngắm cảnh hồ Thang Hen"
       ],
       "id": "k12l",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour035",
@@ -1092,7 +1092,7 @@
         "➡️ Thưởng thức mì Quảng"
       ],
       "id": "l34m",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour036",
@@ -1113,7 +1113,7 @@
         "➡️ Ngắm hoa đỗ quyên"
       ],
       "id": "m56n",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour037",
@@ -1134,7 +1134,7 @@
         "➡️ Thưởng thức bánh pía"
       ],
       "id": "n78o",
-      "khu vực": "Miền Nam"
+      "region": "Miền Nam"
     },
     {
       "tourId": "tour038",
@@ -1155,7 +1155,7 @@
         "➡️ Ngắm cầu Hiền Lương"
       ],
       "id": "o90p",
-      "khu vực": "Miền Trung"
+      "region": "Miền Trung"
     },
     {
       "tourId": "tour039",
@@ -1176,7 +1176,7 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "p12q",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour040",
@@ -1197,7 +1197,7 @@
         "➡️ Thưởng thức rượu cần"
       ],
       "id": "q34r",
-      "khu vực": "Tây Nguyên"
+      "region": "Tây Nguyên"
     },
     {
       "tourId": "tour041",
@@ -1218,7 +1218,7 @@
         "➡️ Thưởng thức chè Thái Nguyên"
       ],
       "id": "r56s",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour042",
@@ -1239,7 +1239,7 @@
         "➡️ Thưởng thức hải sản Hạ Long"
       ],
       "id": "s78t",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
     },
     {
       "tourId": "tour043",
@@ -1260,7 +1260,7 @@
         "➡️ Thưởng thức phở khô Gia Lai"
       ],
       "id": "t90u",
-      "khu vực": "Tây Nguyên"
+      "region": "Tây Nguyên"
     },
     {
       "tourId": "tour044",
@@ -1281,7 +1281,25 @@
         "➡️ Thưởng thức cơm lam"
       ],
       "id": "u12v",
-      "khu vực": "Miền Bắc"
+      "region": "Miền Bắc"
+    }
+  ],
+  "regions": [
+    {
+      "regionId": "north",
+      "regionName": "Miền Bắc"
+    },
+    {
+      "regionId": "central",
+      "regionName": "Miền Trung"
+    },
+    {
+      "regionId": "south",
+      "regionName": "Miền Nam"
+    },
+    {
+      "regionId": "highland",
+      "regionName": "Tây Nguyên"
     }
   ],
   "bookingManagement": {
