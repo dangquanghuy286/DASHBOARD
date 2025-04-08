@@ -77,16 +77,24 @@ function EditTour({ item }) {
         const { name, value } = e.target;
         let updatedData = { ...data, [name]: value };
 
-        // Nếu người dùng thay đổi ngày bắt đầu hoặc ngày kết thúc, tính lại số ngày
+        // Nếu người dùng thay đổi ngày bắt đầu hoặc ngày kết thúc
         if (name === "startDate" || name === "endDate") {
+            // Tạo đối tượng Date từ ngày bắt đầu và ngày kết thúc
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
 
+            // Kiểm tra cả hai ngày đều hợp lệ và ngày kết thúc phải sau hoặc bằng ngày bắt đầu
             if (!isNaN(start) && !isNaN(end) && end >= start) {
+                // Tính số mili-giây giữa hai ngày
                 const diffTime = Math.abs(end - start);
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; // +1 để tính cả ngày bắt đầu và kết thúc
+
+                // Chuyển mili-giây sang số ngày (làm tròn lên) và cộng thêm 1 để tính cả ngày bắt đầu và kết thúc
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+                // Gán giá trị số ngày vào thuộc tính duration với đơn vị là "ngày"
                 updatedData.duration = `${diffDays} ngày`;
             } else {
+                // Nếu ngày không hợp lệ hoặc ngày kết thúc nhỏ hơn ngày bắt đầu thì để trống
                 updatedData.duration = "";
             }
         }

@@ -2,9 +2,9 @@
   "dashboard_summary": {
     "total_active_tours": {
       "previous": 15,
-      "current": 17,
-      "change": 2,
-      "percentage_change": 13.33
+      "current": 36,
+      "change": 21,
+      "percentage_change": 140
     },
     "total_bookings": {
       "previous": 50,
@@ -41,12 +41,12 @@
     "domestic": [
       {
         "name": "Miền Bắc",
-        "value": 9,
+        "value": 23,
         "color": "#F44336"
       },
       {
         "name": "Miền Trung",
-        "value": 6,
+        "value": 11,
         "color": "#009688"
       },
       {
@@ -56,7 +56,7 @@
       },
       {
         "name": "Tây Nguyên",
-        "value": 2,
+        "value": 3,
         "color": "#FF9800"
       }
     ],
@@ -66,7 +66,7 @@
     "data": [
       {
         "name": "Trong nước",
-        "value": 24,
+        "value": 44,
         "color": "#4CAF50"
       },
       {
@@ -440,7 +440,8 @@
         "➡️ Du thuyền trên Vịnh Hạ Long",
         "➡️ Trải nghiệm cuộc sống về đêm sôi động ở TP. Hồ Chí Minh"
       ],
-      "id": "13f6"
+      "id": "13f6",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour004",
@@ -460,7 +461,8 @@
         "➡️ Tham quan thành phố cổ Huế",
         "➡️ Chèo thuyền trên dòng nước yên bình của Tam Cốc"
       ],
-      "id": "157f"
+      "id": "157f",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour005",
@@ -480,7 +482,8 @@
         "➡️ Tham quan chợ nổi trên sông Mekong",
         "➡️ Thưởng thức hải sản tươi ngon ở Nha Trang"
       ],
-      "id": "69ca"
+      "id": "69ca",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour006",
@@ -500,7 +503,8 @@
         "➡️ Khám phá hang động Phong Nha",
         "➡️ Tắm biển tại bãi biển Mỹ Khê, Đà Nẵng"
       ],
-      "id": "3675"
+      "id": "3675",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour007",
@@ -520,7 +524,8 @@
         "➡️ Khám phá văn hóa cồng chiêng ở Buôn Ma Thuột",
         "➡️ Thưởng thức cà phê nguyên chất Tây Nguyên"
       ],
-      "id": "708c"
+      "id": "708c",
+      "khu vực": "Tây Nguyên"
     },
     {
       "tourId": "tour009",
@@ -540,7 +545,8 @@
         "➡️ Khám phá thung lũng Tình Yêu",
         "➡️ Thưởng thức trà và cà phê Đà Lạt"
       ],
-      "id": "7069"
+      "id": "7069",
+      "khu vực": "Tây Nguyên"
     },
     {
       "tourId": "tour010",
@@ -560,7 +566,8 @@
         "➡️ Tham quan nhà tù Côn Đảo",
         "➡️ Ngắm rùa biển đẻ trứng"
       ],
-      "id": "6220"
+      "id": "6220",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour011",
@@ -580,7 +587,8 @@
         "➡️ Du thuyền trên sông Hương",
         "➡️ Thưởng thức bánh bèo và cơm hến"
       ],
-      "id": "2b66"
+      "id": "2b66",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour012",
@@ -600,7 +608,8 @@
         "➡️ Tắm biển tại Bãi Xép",
         "➡️ Thưởng thức hải sản tươi sống"
       ],
-      "id": "53e3"
+      "id": "53e3",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour013",
@@ -620,7 +629,8 @@
         "➡️ Tham quan cao nguyên đá Đồng Văn",
         "➡️ Ngắm hoa tam giác mạch"
       ],
-      "id": "9553"
+      "id": "9553",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour014",
@@ -640,7 +650,8 @@
         "➡️ Tham quan Eo Gió",
         "➡️ Thưởng thức bánh xèo tôm nhảy"
       ],
-      "id": "8e89"
+      "id": "8e89",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour015",
@@ -660,7 +671,8 @@
         "➡️ Khám phá động Tam Thanh",
         "➡️ Ngắm cảnh núi Tô Thị"
       ],
-      "id": "a242"
+      "id": "a242",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour016",
@@ -680,7 +692,8 @@
         "➡️ Tham quan chùa Bái Đính",
         "➡️ Khám phá hang Múa"
       ],
-      "id": "333a"
+      "id": "333a",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour017",
@@ -700,7 +713,8 @@
         "➡️ Tham quan tượng Chúa Kitô",
         "➡️ Thưởng thức hải sản tươi sống"
       ],
-      "id": "fccf"
+      "id": "fccf",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour018",
@@ -720,7 +734,8 @@
         "➡️ Khám phá rừng U Minh Hạ",
         "➡️ Thưởng thức cua Cà Mau"
       ],
-      "id": "04af"
+      "id": "04af",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour019",
@@ -740,7 +755,8 @@
         "➡️ Khám phá bảo tàng Điện Biên",
         "➡️ Ngắm cảnh thung lũng Mường Thanh"
       ],
-      "id": "80a0"
+      "id": "80a0",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour020",
@@ -760,7 +776,8 @@
         "➡️ Ngắm núi Thới Lới",
         "➡️ Thưởng thức tỏi Lý Sơn"
       ],
-      "id": "f2c2"
+      "id": "f2c2",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour021",
@@ -780,7 +797,8 @@
         "➡️ Khám phá cao nguyên Mộc Châu",
         "➡️ Thưởng thức chè Shan Tuyết"
       ],
-      "id": "e24c"
+      "id": "e24c",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour022",
@@ -800,7 +818,8 @@
         "➡️ Khám phá vườn cò Bằng Lăng",
         "➡️ Thưởng thức bánh xèo miền Tây"
       ],
-      "id": "9846"
+      "id": "9846",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour023",
@@ -820,7 +839,8 @@
         "➡️ Tham quan suối nước nóng Trạm Tấu",
         "➡️ Khám phá văn hóa dân tộc Mường"
       ],
-      "id": "e7bc"
+      "id": "e7bc",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour024",
@@ -840,7 +860,8 @@
         "➡️ Khám phá làng nghề truyền thống",
         "➡️ Thưởng thức phở Nam Định"
       ],
-      "id": "a713"
+      "id": "a713",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour025",
@@ -860,7 +881,8 @@
         "➡️ Tham quan hang Sửng Sốt",
         "➡️ Thưởng thức chả mực Hạ Long"
       ],
-      "id": "b12c"
+      "id": "b12c",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour026",
@@ -880,7 +902,8 @@
         "➡️ Tham quan đền Độc Cước",
         "➡️ Thưởng thức nem chua Thanh Hóa"
       ],
-      "id": "c45d"
+      "id": "c45d",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour027",
@@ -900,7 +923,8 @@
         "➡️ Tham quan chợ phiên Bắc Hà",
         "➡️ Ngắm thung lũng hoa Sa Pa"
       ],
-      "id": "d78e"
+      "id": "d78e",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour028",
@@ -920,7 +944,8 @@
         "➡️ Trượt cát trên đồi cát Bàu Trắng",
         "➡️ Thưởng thức nước mắm Phan Thiết"
       ],
-      "id": "e91f"
+      "id": "e91f",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour029",
@@ -940,7 +965,8 @@
         "➡️ Khám phá làng Chăm Châu Đốc",
         "➡️ Ngắm cảnh núi Cấm"
       ],
-      "id": "f12g"
+      "id": "f12g",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour030",
@@ -960,7 +986,8 @@
         "➡️ Khám phá sông Chày - hang Tối",
         "➡️ Tắm biển Nhật Lệ"
       ],
-      "id": "g34h"
+      "id": "g34h",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour031",
@@ -980,7 +1007,8 @@
         "➡️ Tham quan suối nước nóng Bình Châu",
         "➡️ Thưởng thức bánh bông lan trứng muối"
       ],
-      "id": "h56i"
+      "id": "h56i",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour032",
@@ -1000,7 +1028,8 @@
         "➡️ Khám phá thác Bản Ba",
         "➡️ Thưởng thức chè Tuyên Quang"
       ],
-      "id": "i78j"
+      "id": "i78j",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour033",
@@ -1020,7 +1049,8 @@
         "➡️ Tắm biển Hà Tiên",
         "➡️ Thưởng thức gỏi cá trích"
       ],
-      "id": "j90k"
+      "id": "j90k",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour034",
@@ -1040,7 +1070,8 @@
         "➡️ Khám phá động Ngườm Ngao",
         "➡️ Ngắm cảnh hồ Thang Hen"
       ],
-      "id": "k12l"
+      "id": "k12l",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour035",
@@ -1060,7 +1091,8 @@
         "➡️ Tắm biển Mỹ Khê",
         "➡️ Thưởng thức mì Quảng"
       ],
-      "id": "l34m"
+      "id": "l34m",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour036",
@@ -1080,7 +1112,8 @@
         "➡️ Khám phá bản Sin Suối Hồ",
         "➡️ Ngắm hoa đỗ quyên"
       ],
-      "id": "m56n"
+      "id": "m56n",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour037",
@@ -1093,14 +1126,15 @@
       "priceChild": 9500000,
       "available": true,
       "startDate": "2025-06-10",
-      "endDate": "2025-6-13",
+      "endDate": "2025-06-13",
       "status": "Hoạt động",
       "highlights": [
         "➡️ Tham quan nhà Công Tử Bạc Liêu",
         "➡️ Khám phá vườn chim Bạc Liêu",
         "➡️ Thưởng thức bánh pía"
       ],
-      "id": "n78o"
+      "id": "n78o",
+      "khu vực": "Miền Nam"
     },
     {
       "tourId": "tour038",
@@ -1120,7 +1154,8 @@
         "➡️ Khám phá địa đạo Vĩnh Nghiêm",
         "➡️ Ngắm cầu Hiền Lương"
       ],
-      "id": "o90p"
+      "id": "o90p",
+      "khu vực": "Miền Trung"
     },
     {
       "tourId": "tour039",
@@ -1140,7 +1175,8 @@
         "➡️ Khám phá Vườn Quốc gia Cát Bà",
         "➡️ Thưởng thức hải sản tươi sống"
       ],
-      "id": "p12q"
+      "id": "p12q",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour040",
@@ -1160,7 +1196,8 @@
         "➡️ Khám phá thác Yaly",
         "➡️ Thưởng thức rượu cần"
       ],
-      "id": "q34r"
+      "id": "q34r",
+      "khu vực": "Tây Nguyên"
     },
     {
       "tourId": "tour041",
@@ -1180,7 +1217,8 @@
         "➡️ Khám phá hồ Núi Cốc",
         "➡️ Thưởng thức chè Thái Nguyên"
       ],
-      "id": "r56s"
+      "id": "r56s",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour042",
@@ -1200,7 +1238,8 @@
         "➡️ Tham quan làng chài Cửa Vạn",
         "➡️ Thưởng thức hải sản Hạ Long"
       ],
-      "id": "s78t"
+      "id": "s78t",
+      "khu vực": "Miền Bắc"
     },
     {
       "tourId": "tour043",
@@ -1220,7 +1259,8 @@
         "➡️ Khám phá núi lửa Chư Đăng Ya",
         "➡️ Thưởng thức phở khô Gia Lai"
       ],
-      "id": "t90u"
+      "id": "t90u",
+      "khu vực": "Tây Nguyên"
     },
     {
       "tourId": "tour044",
@@ -1240,7 +1280,8 @@
         "➡️ Khám phá thung lũng Mai Châu",
         "➡️ Thưởng thức cơm lam"
       ],
-      "id": "u12v"
+      "id": "u12v",
+      "khu vực": "Miền Bắc"
     }
   ],
   "bookingManagement": {
