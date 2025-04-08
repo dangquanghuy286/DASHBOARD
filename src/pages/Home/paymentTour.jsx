@@ -25,7 +25,7 @@ const PaymentDataCard = () => {
                 <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
                     <FaMapMarkedAlt size={26} />
                 </div>
-                <h2 className="card-title text-xl font-semibold text-gray-800 dark:text-gray-200">Dữ liệu thanh toán</h2>
+                <p className="card-title">Dữ liệu thanh toán</p>
             </div>
             <div className="card-body p-4">
                 <h3 className="title mb-4 text-center text-lg font-semibold text-gray-700 dark:text-gray-300">Phương thức thanh toán</h3>

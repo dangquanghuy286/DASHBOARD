@@ -26,11 +26,11 @@ function TourStatistics() {
 
     return (
         <div className="card col-span-1 md:col-span-2 lg:col-span-5">
-            <div className="card-header flex">
-                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+            <div className="card-header flex items-center gap-3 p-4">
+                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 dark:bg-blue-600/20 dark:text-blue-600">
                     <FaMap size={26} />
                 </div>
-                <p className="card-title">Điểm đến</p>
+                <p className="card-title text-lg font-semibold">Điểm đến</p>
             </div>
             <div className="card-body flex gap-4 p-4">
                 {/* Biểu đồ Trong nước */}

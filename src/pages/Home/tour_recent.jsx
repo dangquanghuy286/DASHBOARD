@@ -28,7 +28,7 @@ function TourRecent() {
                 <p className="card-title text-lg font-semibold">Tour mới</p>
             </div>
             <div className="card-body p-4">
-                <h2 className="card-title mb-4 text-sm font-bold">📋 Thông Tin Đặt Tour</h2>
+                <h2 className="card-title text-sm font-bold">📋 Thông Tin Đặt Tour</h2>
                 <div className="w-full overflow-x-auto">
                     <table className="w-full table-auto border-collapse border border-gray-300 text-sm dark:text-amber-50">
                         <thead>
