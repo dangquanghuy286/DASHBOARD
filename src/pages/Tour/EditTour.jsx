@@ -4,20 +4,21 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import { getDataRegion, updateTour } from "../../services/tourService"; // Giả định API cập nhật tour
 import { IoMdCreate } from "react-icons/io";
+
 function EditTour({ item }) {
     const [showModal, setShowModal] = useState(false);
-
     const [data, setData] = useState(item || {});
     const [dataRegion, setDataRegion] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getDataRegion(); // Giả định API lấy danh sách khu vực
+            const result = await getDataRegion(); // Lấy danh sách khu vực
             setDataRegion(result);
         };
         fetchData();
     }, []);
-    // Cấu hình style cho modal
+
+    // Style modal
     const customStyles = {
         content: {
             top: "50%",
@@ -43,6 +44,20 @@ function EditTour({ item }) {
     };
 
     const openModal = () => {
+        const today = new Date();
+        const startDate = new Date(item.startDate + "T00:00:00");
+
+        if (!item.available || startDate <= today) {
+            Swal.fire({
+                position: "CENTER",
+                icon: "warning",
+                title: "KHÔNG THỂ SỬA KHI TOUR ĐÃ BẮT ĐẦU HOẶC KHÔNG CÓ SẴN",
+                showConfirmButton: true,
+                timer: 5000,
+            });
+            return;
+        }
+
         setShowModal(true);
     };
 
@@ -86,24 +101,15 @@ function EditTour({ item }) {
         const { name, value } = e.target;
         let updatedData = { ...data, [name]: value };
 
-        // Nếu người dùng thay đổi ngày bắt đầu hoặc ngày kết thúc
         if (name === "startDate" || name === "endDate") {
-            // Tạo đối tượng Date từ ngày bắt đầu và ngày kết thúc
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
 
-            // Kiểm tra cả hai ngày đều hợp lệ và ngày kết thúc phải sau hoặc bằng ngày bắt đầu
             if (!isNaN(start) && !isNaN(end) && end >= start) {
-                // Tính số mili-giây giữa hai ngày
                 const diffTime = Math.abs(end - start);
-
-                // Chuyển mili-giây sang số ngày (làm tròn lên) và cộng thêm 1 để tính cả ngày bắt đầu và kết thúc
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-
-                // Gán giá trị số ngày vào thuộc tính duration với đơn vị là "ngày"
                 updatedData.duration = `${diffDays} ngày`;
             } else {
-                // Nếu ngày không hợp lệ hoặc ngày kết thúc nhỏ hơn ngày bắt đầu thì để trống
                 updatedData.duration = "";
             }
         }
@@ -119,6 +125,7 @@ function EditTour({ item }) {
             >
                 <IoMdCreate className="text-xl" />
             </button>
+
             <Modal
                 isOpen={showModal}
                 onRequestClose={closeModal}
@@ -162,11 +169,11 @@ function EditTour({ item }) {
                         <label>Khu vực</label>
                         <select
                             name="region"
-                            className="focus:ring-opacity-50 w-full rounded-md border p-3 transition duration-200"
+                            className="w-full border p-3"
                             onChange={handleChange}
                             value={data.region || ""}
                         >
-                            <option value="">Chọn vai trò</option>
+                            <option value="">Chọn khu vực</option>
                             {dataRegion.map((item, index) => (
                                 <option
                                     key={index}
@@ -177,7 +184,6 @@ function EditTour({ item }) {
                             ))}
                         </select>
                     </div>
-
                     <div>
                         <label>Mô tả</label>
                         <textarea

@@ -1282,6 +1282,216 @@
       ],
       "id": "u12v",
       "region": "Miền Bắc"
+    },
+    {
+      "tourId": "tour045",
+      "tourName": "Khám Phá Vịnh Hạ Long",
+      "destination": "Việt Nam",
+      "duration": "2 ngày",
+      "description": "Hành trình tuyệt đẹp giữa hàng nghìn hòn đảo đá vôi kỳ vĩ.",
+      "quantity": 30,
+      "priceAdult": 22000000,
+      "priceChild": 11000000,
+      "available": true,
+      "startDate": "2025-03-05",
+      "endDate": "2025-03-07",
+      "status": "Hoạt động",
+      "highlights": [
+        "🛥️ Du thuyền ngủ đêm trên Vịnh",
+        "🌅 Ngắm bình minh trên biển",
+        "🏞️ Thăm hang Sửng Sốt"
+      ],
+      "id": "v01",
+      "region": "Miền Bắc"
+    },
+    {
+      "tourId": "tour046",
+      "tourName": "Chinh Phục Đỉnh Fansipan",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Trải nghiệm leo núi và ngắm tuyết rơi tại đỉnh cao nhất Đông Dương.",
+      "quantity": 15,
+      "priceAdult": 18000000,
+      "priceChild": 9000000,
+      "available": true,
+      "startDate": "2025-03-10",
+      "endDate": "2025-03-13",
+      "status": "Hoạt động",
+      "highlights": [
+        "🚡 Cáp treo Fansipan Legend",
+        "🌄 Ngắm toàn cảnh Sapa từ đỉnh núi",
+        "🔥 Đốt lửa trại đêm"
+      ],
+      "id": "v02",
+      "region": "Miền Bắc"
+    },
+    {
+      "tourId": "tour047",
+      "tourName": "Du Ngoạn Hội An Cổ Kính",
+      "destination": "Việt Nam",
+      "duration": "2 ngày",
+      "description": "Khám phá phố cổ với những con đường đèn lồng và món ăn đường phố đặc sắc.",
+      "quantity": 25,
+      "priceAdult": 16500000,
+      "priceChild": 8250000,
+      "available": true,
+      "startDate": "2025-03-15",
+      "endDate": "2025-03-17",
+      "status": "Hoạt động",
+      "highlights": [
+        "🏮 Dạo phố cổ về đêm",
+        "🍜 Thưởng thức cao lầu",
+        "🚲 Đạp xe ven sông Thu Bồn"
+      ],
+      "id": "v03",
+      "region": "Miền Trung"
+    },
+    {
+      "tourId": "tour048",
+      "tourName": "Nha Trang Biển Gọi",
+      "destination": "Việt Nam",
+      "duration": "4 ngày",
+      "description": "Thiên đường nghỉ dưỡng với biển xanh và nắng vàng.",
+      "quantity": 35,
+      "priceAdult": 21000000,
+      "priceChild": 10500000,
+      "available": true,
+      "startDate": "2025-04-01",
+      "endDate": "2025-04-05",
+      "status": "Hoạt động",
+      "highlights": [
+        "🏖️ Tắm biển tại Bãi Dài",
+        "🐠 Lặn ngắm san hô",
+        "🛥️ Tham quan đảo Yến"
+      ],
+      "id": "v04",
+      "region": "Miền Trung"
+    },
+    {
+      "tourId": "tour049",
+      "tourName": "Khám Phá Đà Lạt Mộng Mơ",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Thành phố hoa với khí hậu mát mẻ quanh năm.",
+      "quantity": 20,
+      "priceAdult": 18500000,
+      "priceChild": 9250000,
+      "available": true,
+      "startDate": "2025-04-10",
+      "endDate": "2025-04-13",
+      "status": "Hoạt động",
+      "highlights": [
+        "🌸 Thung lũng Tình Yêu",
+        "🚡 Đồi chè Cầu Đất",
+        "🍓 Hái dâu tại vườn"
+      ],
+      "id": "v05",
+      "region": "Tây Nguyên"
+    },
+    {
+      "tourId": "tour050",
+      "tourName": "Về Miền Tây Sông Nước",
+      "destination": "Việt Nam",
+      "duration": "2 ngày",
+      "description": "Trải nghiệm cuộc sống miền sông nước Cửu Long.",
+      "quantity": 25,
+      "priceAdult": 15000000,
+      "priceChild": 7500000,
+      "available": true,
+      "startDate": "2025-04-20",
+      "endDate": "2025-04-22",
+      "status": "Hoạt động",
+      "highlights": [
+        "🚤 Chợ nổi Cái Răng",
+        "🍍 Thưởng thức trái cây miệt vườn",
+        "🎶 Đờn ca tài tử"
+      ],
+      "id": "v06",
+      "region": "Miền Nam"
+    },
+    {
+      "tourId": "tour051",
+      "tourName": "Khám Phá Phú Quốc",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Hòn đảo ngọc với thiên nhiên hoang sơ và biển xanh mát lạnh.",
+      "quantity": 30,
+      "priceAdult": 24000000,
+      "priceChild": 12000000,
+      "available": true,
+      "startDate": "2025-05-01",
+      "endDate": "2025-05-04",
+      "status": "Hoạt động",
+      "highlights": [
+        "🌊 Lặn ngắm san hô",
+        "🐠 Công viên san hô Seaworld",
+        "🏝️ VinWonders Phú Quốc"
+      ],
+      "id": "v07",
+      "region": "Miền Nam"
+    },
+    {
+      "tourId": "tour052",
+      "tourName": "Hành Trình Côn Đảo Lịch Sử",
+      "destination": "Việt Nam",
+      "duration": "3 ngày",
+      "description": "Ghé thăm địa ngục trần gian và dâng hương tại nghĩa trang Hàng Dương.",
+      "quantity": 20,
+      "priceAdult": 20000000,
+      "priceChild": 10000000,
+      "available": true,
+      "startDate": "2025-05-10",
+      "endDate": "2025-05-13",
+      "status": "Hoạt động",
+      "highlights": [
+        "⛓️ Nhà tù Côn Đảo",
+        "🕯️ Viếng mộ chị Võ Thị Sáu",
+        "⛱️ Bãi Đầm Trầu"
+      ],
+      "id": "v08",
+      "region": "Miền Nam"
+    },
+    {
+      "tourId": "tour053",
+      "tourName": "Khám Phá Cố Đô Huế",
+      "destination": "Việt Nam",
+      "duration": "2 ngày",
+      "description": "Hành trình khám phá kinh thành cổ kính với di sản văn hóa thế giới.",
+      "quantity": 30,
+      "priceAdult": 17500000,
+      "priceChild": 8750000,
+      "available": true,
+      "startDate": "2025-06-01",
+      "endDate": "2025-06-03",
+      "status": "Hoạt động",
+      "highlights": [
+        "🏯 Đại Nội Huế",
+        "🎭 Ca Huế trên sông Hương",
+        "🕌 Lăng Khải Định"
+      ],
+      "id": "v09",
+      "region": "Miền Trung"
+    },
+    {
+      "tourId": "tour054",
+      "tourName": "Thám Hiểm Hang Sơn Đoòng",
+      "destination": "Việt Nam",
+      "duration": "5 ngày",
+      "description": "Trải nghiệm khám phá hang động lớn nhất thế giới.",
+      "quantity": 10,
+      "priceAdult": 95000000,
+      "priceChild": 0,
+      "available": false,
+      "startDate": "2025-06-15",
+      "endDate": "2025-06-20",
+      "status": "Đóng",
+      "highlights": [
+        "🗺️ Khám phá địa chất kỳ vĩ",
+        "🔥 Cắm trại trong hang",
+        "🧗‍♂️ Leo vách đá tự nhiên"
+      ],
+      "id": "v10",
+      "region": "Miền Trung"
     }
   ],
   "regions": [
