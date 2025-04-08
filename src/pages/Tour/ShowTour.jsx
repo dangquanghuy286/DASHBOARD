@@ -5,6 +5,7 @@ import CopyPrintComponent from "../../components/Tool";
 import { getDataTour } from "../../services/tourService";
 import EntriesFilter from "../../components/Pagination";
 import TourTable from "./TourTable";
+import CreateTour from "./CreateTour";
 
 const { FaSearch } = icons;
 
@@ -65,23 +66,27 @@ function ShowTour() {
                 <CopyPrintComponent data={data} />
             </div>
 
-            <div className="my-6 ml-6 flex items-center justify-between">
+            <div className="my-6 flex items-center gap-2.5">
+                <CreateTour />
                 <form
                     className="inline"
                     onSubmit={handleSubmit(onSearch)}
                 >
                     <div className="input flex items-center">
-                        <button type="submit">
+                        <button
+                            type="submit"
+                            className="cursor-pointer"
+                        >
                             <FaSearch
                                 size={20}
-                                className="cursor-pointer text-slate-300"
+                                className="text-slate-300"
                             />
                         </button>
                         <input
                             {...register("name")}
                             type="text"
                             placeholder="Tìm kiếm theo tên tour"
-                            className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
+                            className="*dark:placeholder:text-slate-400 w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
                         />
                     </div>
                 </form>
