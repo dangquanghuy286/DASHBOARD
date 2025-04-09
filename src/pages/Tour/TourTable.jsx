@@ -27,7 +27,10 @@ function TourTable({ currentEntries }) {
                 </thead>
                 <tbody>
                     {currentEntries.map((item, index) => (
-                        <tr key={index}>
+                        <tr
+                            key={index}
+                            className="transition hover:bg-gray-100 dark:hover:bg-slate-700"
+                        >
                             <td className="border px-4 py-2">
                                 <Link>{item.tourName}</Link>
                             </td>

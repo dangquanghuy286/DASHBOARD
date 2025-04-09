@@ -2,40 +2,40 @@
   "dashboard_summary": {
     "total_active_tours": {
       "previous": 15,
-      "current": 47,
-      "change": 32,
-      "percentage_change": 213.33
+      "current": 54,
+      "change": 39,
+      "percentage_change": 260
     },
     "total_bookings": {
       "previous": 50,
-      "current": 53,
-      "change": 3,
-      "percentage_change": 6
+      "current": 7,
+      "change": -43,
+      "percentage_change": -86
     },
     "total_users": {
       "previous": 4800,
-      "current": 5000,
-      "change": 200,
-      "percentage_change": 4.17
+      "current": 5007,
+      "change": 207,
+      "percentage_change": 4.31
     },
     "total_revenue": {
       "previous": 1350000000,
-      "current": 2225000000,
-      "change": 875000000,
-      "percentage_change": 64.81
+      "current": 400250000,
+      "change": -949750000,
+      "percentage_change": -70.35
     },
     "total_cancellations": {
       "previous": 2,
-      "current": 3,
-      "change": 1,
-      "percentage_change": 50
-    },
-    "average_booking_value": {
-      "previous": 27000000,
-      "current": 41981132,
-      "change": 14981132,
-      "percentage_change": 55.49
+      "current": 0,
+      "change": -2,
+      "percentage_change": -100
     }
+  },
+  "average_booking_value": {
+    "previous": 27000000,
+    "current": 57178571,
+    "change": 30178571,
+    "percentage_change": 111.77
   },
   "destination_statistics": {
     "domestic": [
@@ -80,12 +80,12 @@
     "data": [
       {
         "name": "Online",
-        "value": 67,
+        "value": 70,
         "color": "#2196F3"
       },
       {
         "name": "Offline",
-        "value": 33,
+        "value": 30,
         "color": "#FFC107"
       }
     ]
@@ -93,19 +93,19 @@
   "booking_payments": [
     {
       "method": "Zalo Pay",
-      "percentage": 33,
+      "percentage": 57,
       "color": "#33A8FF",
       "id": "2e10"
     },
     {
       "method": "Momo",
-      "percentage": 33,
+      "percentage": 43,
       "color": "#FF33E3",
       "id": "7246"
     },
     {
       "method": "Thanh toán tại văn phòng",
-      "percentage": 34,
+      "percentage": 0,
       "color": "#FFC300",
       "id": "72a1"
     }
@@ -113,132 +113,132 @@
   "top_booked_tours": {
     "domestic": [
       {
-        "id": "13f6",
+        "id": "tour001",
         "name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
-        "seats_booked": 25,
+        "seats_booked": 3,
         "seats_available": 30,
         "price": 30000000,
         "rating": 4.7,
         "duration": "7 ngày"
       },
       {
-        "id": "fccf",
+        "id": "tour017",
         "name": "Thư Giãn Tại Vũng Tàu",
-        "seats_booked": 35,
+        "seats_booked": 2,
         "seats_available": 40,
         "price": 15000000,
         "rating": 4.5,
         "duration": "2 ngày"
       },
       {
-        "id": "333a",
-        "name": "Hành Trình Đến Ninh Bình Cổ Kính",
-        "seats_booked": 20,
-        "seats_available": 30,
-        "price": 20000000,
-        "rating": 4.6,
-        "duration": "3 ngày"
-      },
-      {
-        "id": "157f",
+        "id": "tour004",
         "name": "Phiêu Lưu Miền Bắc Việt Nam",
-        "seats_booked": 18,
+        "seats_booked": 3,
         "seats_available": 25,
         "price": 27500000,
         "rating": 4.8,
         "duration": "5 ngày"
       },
       {
-        "id": "9553",
-        "name": "Hành Trình Đến Hà Giang Hùng Vĩ",
-        "seats_booked": 12,
+        "id": "tour005",
+        "name": "Thoát Khỏi Miền Nam Việt Nam",
+        "seats_booked": 3,
+        "seats_available": 20,
+        "price": 25000000,
+        "rating": 4.6,
+        "duration": "4 ngày"
+      },
+      {
+        "id": "tour010",
+        "name": "Khám Phá Côn Đảo Hoang Sơ",
+        "seats_booked": 4,
         "seats_available": 15,
-        "price": 30000000,
+        "price": 23750000,
         "rating": 4.9,
-        "duration": "6 ngày"
+        "duration": "3 ngày"
       }
     ],
     "international": [],
     "combined": [
       {
-        "name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
-        "bookings": 25,
-        "revenue": "750000000",
-        "rating": 4.7,
-        "departureDate": "2025-01-10"
+        "name": "Khám Phá Côn Đảo Hoang Sơ",
+        "bookings": 4,
+        "revenue": "71250000",
+        "rating": 4.9,
+        "departureDate": "2025-08-01"
       },
       {
-        "name": "Thư Giãn Tại Vũng Tàu",
-        "bookings": 35,
-        "revenue": "525000000",
-        "rating": 4.5,
-        "departureDate": "2025-04-20"
+        "name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+        "bookings": 3,
+        "revenue": "75000000",
+        "rating": 4.7,
+        "departureDate": "2025-01-10"
       }
     ]
   },
   "recent_bookings": [
     {
       "id": "booking001",
-      "customer_name": "Lê Văn Hùng",
+      "customer_name": "Trần Minh Hoàng",
       "tour_name": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
-      "total_price": 30000000,
+      "total_price": 75000000,
       "status": "Chưa xác nhận",
-      "payment_method": "Momo",
+      "payment_method": "Zalo Pay",
       "location": "Việt Nam",
-      "booking_date": "2025-04-01",
-      "user_email": "levanhung@example.com",
-      "user_phone": "+84987654321"
+      "booking_date": "2025-01-02",
+      "user_email": "minhhoang.dev@gmail.com",
+      "user_phone": "0123654789"
     },
     {
       "id": "booking002",
-      "customer_name": "Phạm Thị Lan",
+      "customer_name": "Lê Thị Hồng Nhung",
       "tour_name": "Phiêu Lưu Miền Bắc Việt Nam",
-      "total_price": 27500000,
-      "status": "Đã xác nhận",
-      "payment_method": "Paypal",
+      "total_price": 68750000,
+      "status": "Đã hoàn thành",
+      "payment_method": "Momo",
       "location": "Việt Nam",
-      "booking_date": "2025-04-02",
-      "user_email": "phamthilan@example.com",
-      "user_phone": "+84912345678"
+      "booking_date": "2024-12-25",
+      "user_email": "hongnhung678@gmail.com",
+      "user_phone": "0987654321"
     },
     {
-      "id": "booking003",
-      "customer_name": "Ngô Đình Bảo",
-      "tour_name": "Thư Giãn Tại Vũng Tàu",
-      "total_price": 15000000,
+      "id": "booking007",
+      "customer_name": "Bùi Quốc Hưng",
+      "tour_name": "Thư Giãn Tại Đà Nẵng Hiện Đại",
+      "total_price": 60000000,
       "status": "Đã xác nhận",
-      "payment_method": "Thanh toán tại văn phòng",
+      "payment_method": "Zalo Pay",
       "location": "Việt Nam",
-      "booking_date": "2025-04-03",
-      "user_email": "ngodinhbao@example.com",
-      "user_phone": "+84905556677"
+      "booking_date": "2025-04-10",
+      "user_email": "quochung.bui@gmail.com",
+      "user_phone": "0909123456"
     }
   ],
   "dailyPerformance": [
     {
-      "date": "2025-04-01",
-      "revenue": 30000000,
+      "date": "2024-12-23",
+      "revenue": 22500000,
       "bookings": 1,
-      "id": "5d19"
+      "id": "d001"
     },
     {
-      "date": "2025-04-02",
-      "revenue": 27500000,
+      "date": "2024-12-25",
+      "revenue": 68750000,
       "bookings": 1,
-      "id": "9609"
+      "id": "d002"
     },
     {
-      "date": "2025-04-03",
-      "revenue": 15000000,
+      "date": "2025-01-02",
+      "revenue": 75000000,
       "bookings": 1,
-      "id": "c071"
+      "id": "d003"
     }
   ],
   "monthlyRevenue": {
     "domestic": [
       {
         "month": "January",
-        "revenue": 750000000
+        "revenue": 75000000
       },
       {
         "month": "February",
@@ -246,43 +246,43 @@
       },
       {
         "month": "March",
-        "revenue": 200000000
+        "revenue": 0
       },
       {
         "month": "April",
-        "revenue": 1275000000
+        "revenue": 135000000
       },
       {
         "month": "May",
-        "revenue": 200000000
+        "revenue": 0
       },
       {
         "month": "June",
-        "revenue": 365000000
+        "revenue": 0
       },
       {
         "month": "July",
-        "revenue": 372500000
+        "revenue": 71250000
       },
       {
         "month": "August",
-        "revenue": 14250000
+        "revenue": 0
       },
       {
         "month": "September",
-        "revenue": 350000000
+        "revenue": 0
       },
       {
         "month": "October",
-        "revenue": 165000000
+        "revenue": 30000000
       },
       {
         "month": "November",
-        "revenue": 180000000
+        "revenue": 0
       },
       {
         "month": "December",
-        "revenue": 22500000
+        "revenue": 91250000
       }
     ],
     "international": []
@@ -2430,31 +2430,158 @@
       "id": "7688"
     }
   ],
-  "bookingManagement": {
-    "bookings": [
-      {
-        "bookingId": "booking001",
-        "userId": "user001",
-        "tourId": "tour001",
-        "bookingDate": "2025-04-01",
-        "status": "Pending"
-      },
-      {
-        "bookingId": "booking002",
-        "userId": "user002",
-        "tourId": "tour004",
-        "bookingDate": "2025-04-02",
-        "status": "Confirmed"
-      },
-      {
-        "bookingId": "booking003",
-        "userId": "user003",
-        "tourId": "tour017",
-        "bookingDate": "2025-04-03",
-        "status": "Confirmed"
-      }
-    ]
-  },
+  "bookingManagement": [
+    {
+      "bookingId": "booking001",
+      "userId": "user001",
+      "tourId": "tour001",
+      "tourName": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
+      "customerName": "Trần Minh Hoàng",
+      "email": "minhhoang.dev@gmail.com",
+      "phone": "0123654789",
+      "address": "470 Trần Đại Nghĩa, Đà Nẵng",
+      "bookingDate": "2025-01-02",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 75000000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xác nhận",
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking002",
+      "userId": "user002",
+      "tourId": "tour004",
+      "tourName": "Phiêu Lưu Miền Bắc Việt Nam",
+      "customerName": "Lê Thị Hồng Nhung",
+      "email": "hongnhung678@gmail.com",
+      "phone": "0987654321",
+      "address": "123 Lê Lợi, Hà Nội",
+      "bookingDate": "2024-12-25",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 68750000,
+      "bookingStatus": "Đã hoàn thành",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking003",
+      "userId": "user003",
+      "tourId": "tour017",
+      "tourName": "Thư Giãn Tại Vũng Tàu",
+      "customerName": "Phạm Văn Tuấn",
+      "email": "vantuan123@gmail.com",
+      "phone": "0133644544",
+      "address": "25 Nguyễn Huệ, TP. HCM",
+      "bookingDate": "2024-12-23",
+      "adults": 1,
+      "children": 1,
+      "totalPrice": 22500000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
+      "paymentMethodName": "Thanh toán tại văn phòng",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xác nhận",
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking004",
+      "userId": "user004",
+      "tourId": "tour005",
+      "tourName": "Thoát Khỏi Miền Nam Việt Nam",
+      "customerName": "Nguyễn Thị Lan Anh",
+      "email": "lananh.nguyen@gmail.com",
+      "phone": "0912345678",
+      "address": "78 Pasteur, TP. HCM",
+      "bookingDate": "2025-04-25",
+      "adults": 3,
+      "children": 0,
+      "totalPrice": 75000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking005",
+      "userId": "user005",
+      "tourId": "tour010",
+      "tourName": "Khám Phá Côn Đảo Hoang Sơ",
+      "customerName": "Hoàng Văn Nam",
+      "email": "namhoang85@gmail.com",
+      "phone": "0935678901",
+      "address": "15 Hùng Vương, Nha Trang",
+      "bookingDate": "2025-07-28",
+      "adults": 2,
+      "children": 2,
+      "totalPrice": 71250000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Chưa thanh toán",
+      "actions": [
+        "Xác nhận",
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking006",
+      "userId": "user006",
+      "tourId": "tour013",
+      "tourName": "Hành Trình Đến Hà Giang Hùng Vĩ",
+      "customerName": "Đỗ Thị Thu Hà",
+      "email": "thuha.do@gmail.com",
+      "phone": "0978123456",
+      "address": "56 Lý Thường Kiệt, Hà Nội",
+      "bookingDate": "2025-10-28",
+      "adults": 1,
+      "children": 0,
+      "totalPrice": 30000000,
+      "bookingStatus": "Đã hoàn thành",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xem chi tiết"
+      ]
+    },
+    {
+      "bookingId": "booking007",
+      "userId": "user007",
+      "tourId": "tour035",
+      "tourName": "Thư Giãn Tại Đà Nẵng Hiện Đại",
+      "customerName": "Bùi Quốc Hưng",
+      "email": "quochung.bui@gmail.com",
+      "phone": "0909123456",
+      "address": "32 Nguyễn Trãi, Đà Nẵng",
+      "bookingDate": "2025-04-10",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 60000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "actions": [
+        "Xem chi tiết"
+      ]
+    }
+  ],
   "contactManagement": {
     "contacts": [
       {

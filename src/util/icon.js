@@ -10,7 +10,7 @@ import {
     MdBlock,
     MdDelete,
 } from "react-icons/md";
-import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon, IoMdCreate, IoIosAdd } from "react-icons/io";
+import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon, IoMdCreate, IoIosAdd, IoIosArrowDropdownCircle } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
 import { GrUserAdmin } from "react-icons/gr";
 import {
@@ -82,5 +82,6 @@ const icons = {
     FaFilePdf,
     FaPrint,
     FaFileCsv,
+    IoIosArrowDropdownCircle,
 };
 export default icons;
