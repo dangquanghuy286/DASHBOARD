@@ -441,7 +441,37 @@
         "➡️ Trải nghiệm cuộc sống về đêm sôi động ở TP. Hồ Chí Minh"
       ],
       "id": "13f6",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Khởi hành từ Hà Nội",
+          "content": "Buổi sáng: Đón khách tại Hà Nội, tham quan Lăng Bác.\nBuổi chiều: Khám phá Văn Miếu Quốc Tử Giám."
+        },
+        {
+          "title": "Ngày 2: Hà Nội - Vịnh Hạ Long",
+          "content": "Buổi sáng: Di chuyển tới Vịnh Hạ Long.\nBuổi chiều: Du thuyền khám phá vịnh."
+        },
+        {
+          "title": "Ngày 3: Vịnh Hạ Long - Huế",
+          "content": "Buổi sáng: Tham quan hang Sửng Sốt.\nBuổi chiều: Bay đến Huế, tham quan cầu Trường Tiền."
+        },
+        {
+          "title": "Ngày 4: Huế - Đà Nẵng",
+          "content": "Buổi sáng: Tham quan Đại Nội.\nBuổi chiều: Di chuyển đến Đà Nẵng, ngắm cầu Rồng."
+        },
+        {
+          "title": "Ngày 5: Đà Nẵng - Hội An",
+          "content": "Buổi sáng: Tham quan Bà Nà Hills.\nBuổi chiều: Dạo phố cổ Hội An."
+        },
+        {
+          "title": "Ngày 6: Hội An - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Bay đến TP. Hồ Chí Minh, tham quan Dinh Độc Lập.\nBuổi chiều: Khám phá chợ Bến Thành."
+        },
+        {
+          "title": "Ngày 7: TP. Hồ Chí Minh - Kết thúc",
+          "content": "Buổi sáng: Tham quan địa đạo Củ Chi.\nBuổi chiều: Tự do mua sắm, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour004",
@@ -462,7 +492,29 @@
         "➡️ Chèo thuyền trên dòng nước yên bình của Tam Cốc"
       ],
       "id": "157f",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Sa Pa",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Sa Pa.\nBuổi chiều: Tham quan bản Cát Cát."
+        },
+        {
+          "title": "Ngày 2: Sa Pa",
+          "content": "Buổi sáng: Khám phá ruộng bậc thang và đỉnh Fansipan.\nBuổi chiều: Tham quan chợ đêm Sa Pa."
+        },
+        {
+          "title": "Ngày 3: Sa Pa - Ninh Bình",
+          "content": "Buổi sáng: Di chuyển đến Ninh Bình.\nBuổi chiều: Chèo thuyền khám phá Tam Cốc."
+        },
+        {
+          "title": "Ngày 4: Ninh Bình - Huế",
+          "content": "Buổi sáng: Tham quan chùa Bái Đính.\nBuổi chiều: Bay đến Huế, tham quan sông Hương."
+        },
+        {
+          "title": "Ngày 5: Huế - Hà Nội",
+          "content": "Buổi sáng: Tham quan thành phố cổ Huế.\nBuổi chiều: Bay về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour005",
@@ -483,7 +535,25 @@
         "➡️ Thưởng thức hải sản tươi ngon ở Nha Trang"
       ],
       "id": "69ca",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Cần Thơ",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Cần Thơ.\nBuổi chiều: Tham quan chợ nổi Cái Răng."
+        },
+        {
+          "title": "Ngày 2: Cần Thơ - Phú Quốc",
+          "content": "Buổi sáng: Di chuyển đến Phú Quốc.\nBuổi chiều: Thư giãn trên bãi biển Sao."
+        },
+        {
+          "title": "Ngày 3: Phú Quốc - Nha Trang",
+          "content": "Buổi sáng: Bay đến Nha Trang, tham quan Vinpearl Land.\nBuổi chiều: Thưởng thức hải sản tươi sống."
+        },
+        {
+          "title": "Ngày 4: Nha Trang - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tắm biển Dốc Lết.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour006",
@@ -504,7 +574,33 @@
         "➡️ Tắm biển tại bãi biển Mỹ Khê, Đà Nẵng"
       ],
       "id": "3675",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Đà Nẵng",
+          "content": "Buổi sáng: Đón khách tại Đà Nẵng, tham quan cầu Vàng.\nBuổi chiều: Tắm biển Mỹ Khê."
+        },
+        {
+          "title": "Ngày 2: Đà Nẵng - Hội An",
+          "content": "Buổi sáng: Tham quan Ngũ Hành Sơn.\nBuổi chiều: Dạo phố cổ Hội An."
+        },
+        {
+          "title": "Ngày 3: Hội An - Huế",
+          "content": "Buổi sáng: Di chuyển đến Huế.\nBuổi chiều: Tham quan Đại Nội."
+        },
+        {
+          "title": "Ngày 4: Huế - Quảng Bình",
+          "content": "Buổi sáng: Di chuyển đến Quảng Bình.\nBuổi chiều: Khám phá động Phong Nha."
+        },
+        {
+          "title": "Ngày 5: Quảng Bình - Đà Nẵng",
+          "content": "Buổi sáng: Tham quan động Thiên Đường.\nBuổi chiều: Trở về Đà Nẵng."
+        },
+        {
+          "title": "Ngày 6: Đà Nẵng - Kết thúc",
+          "content": "Buổi sáng: Tự do mua sắm tại chợ Hàn.\nBuổi chiều: Kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour007",
@@ -525,7 +621,29 @@
         "➡️ Thưởng thức cà phê nguyên chất Tây Nguyên"
       ],
       "id": "708c",
-      "region": "Tây Nguyên"
+      "region": "Tây Nguyên",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Buôn Ma Thuột",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Buôn Ma Thuột.\nBuổi chiều: Tham quan bảo tàng Đắk Lắk."
+        },
+        {
+          "title": "Ngày 2: Buôn Ma Thuột",
+          "content": "Buổi sáng: Tham quan thác Dray Nur.\nBuổi chiều: Khám phá buôn Đôn."
+        },
+        {
+          "title": "Ngày 3: Buôn Ma Thuột - Pleiku",
+          "content": "Buổi sáng: Di chuyển đến Pleiku.\nBuổi chiều: Tham quan biển hồ T’Nưng."
+        },
+        {
+          "title": "Ngày 4: Pleiku",
+          "content": "Buổi sáng: Khám phá núi lửa Chư Đăng Ya.\nBuổi chiều: Thưởng thức cà phê Tây Nguyên."
+        },
+        {
+          "title": "Ngày 5: Pleiku - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour009",
@@ -546,7 +664,25 @@
         "➡️ Thưởng thức trà và cà phê Đà Lạt"
       ],
       "id": "7069",
-      "region": "Tây Nguyên"
+      "region": "Tây Nguyên",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Đà Lạt",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Đà Lạt.\nBuổi chiều: Tham quan hồ Xuân Hương."
+        },
+        {
+          "title": "Ngày 2: Đà Lạt",
+          "content": "Buổi sáng: Khám phá thung lũng Tình Yêu.\nBuổi chiều: Tham quan đồi chè Cầu Đất."
+        },
+        {
+          "title": "Ngày 3: Đà Lạt",
+          "content": "Buổi sáng: Tham quan nhà ga Đà Lạt.\nBuổi chiều: Tự do khám phá chợ đêm."
+        },
+        {
+          "title": "Ngày 4: Đà Lạt - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Thưởng thức trà và cà phê Đà Lạt.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour010",
@@ -567,7 +703,21 @@
         "➡️ Ngắm rùa biển đẻ trứng"
       ],
       "id": "6220",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Côn Đảo",
+          "content": "Buổi sáng: Bay từ TP. Hồ Chí Minh đến Côn Đảo.\nBuổi chiều: Tham quan nhà tù Côn Đảo."
+        },
+        {
+          "title": "Ngày 2: Côn Đảo",
+          "content": "Buổi sáng: Tắm biển tại bãi Đầm Trầu.\nBuổi chiều: Tham quan nghĩa trang Hàng Dương."
+        },
+        {
+          "title": "Ngày 3: Côn Đảo - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Ngắm rùa biển đẻ trứng (nếu vào mùa).\nBuổi chiều: Bay về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour011",
@@ -588,7 +738,25 @@
         "➡️ Thưởng thức bánh bèo và cơm hến"
       ],
       "id": "2b66",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Đà Nẵng - Huế",
+          "content": "Buổi sáng: Khởi hành từ Đà Nẵng đến Huế.\nBuổi chiều: Tham quan cầu Trường Tiền."
+        },
+        {
+          "title": "Ngày 2: Huế",
+          "content": "Buổi sáng: Tham quan Kinh thành Huế.\nBuổi chiều: Du thuyền trên sông Hương."
+        },
+        {
+          "title": "Ngày 3: Huế",
+          "content": "Buổi sáng: Tham quan lăng Tự Đức.\nBuổi chiều: Thưởng thức bánh bèo và cơm hến."
+        },
+        {
+          "title": "Ngày 4: Huế - Đà Nẵng",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Đà Nẵng, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour012",
@@ -609,7 +777,29 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "53e3",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Nha Trang - Phú Yên",
+          "content": "Buổi sáng: Khởi hành từ Nha Trang đến Phú Yên.\nBuổi chiều: Tham quan Gành Đá Đĩa."
+        },
+        {
+          "title": "Ngày 2: Phú Yên",
+          "content": "Buổi sáng: Tắm biển tại Bãi Xép.\nBuổi chiều: Tham quan đầm Ô Loan."
+        },
+        {
+          "title": "Ngày 3: Phú Yên",
+          "content": "Buổi sáng: Khám phá tháp Nhạn.\nBuổi chiều: Thưởng thức hải sản tươi sống."
+        },
+        {
+          "title": "Ngày 4: Phú Yên - Quy Nhơn",
+          "content": "Buổi sáng: Di chuyển đến Quy Nhơn.\nBuổi chiều: Tham quan Eo Gió."
+        },
+        {
+          "title": "Ngày 5: Quy Nhơn - Nha Trang",
+          "content": "Buổi sáng: Tắm biển Kỳ Co.\nBuổi chiều: Trở về Nha Trang, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour013",
@@ -630,7 +820,33 @@
         "➡️ Ngắm hoa tam giác mạch"
       ],
       "id": "9553",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Hà Giang",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Hà Giang.\nBuổi chiều: Tham quan cột cờ Lũng Cú."
+        },
+        {
+          "title": "Ngày 2: Hà Giang",
+          "content": "Buổi sáng: Chinh phục đèo Mã Pí Lèng.\nBuổi chiều: Tham quan cao nguyên đá Đồng Văn."
+        },
+        {
+          "title": "Ngày 3: Hà Giang",
+          "content": "Buổi sáng: Ngắm hoa tam giác mạch.\nBuổi chiều: Tham quan chợ phiên Đồng Văn."
+        },
+        {
+          "title": "Ngày 4: Hà Giang - Yên Bái",
+          "content": "Buổi sáng: Di chuyển đến Yên Bái.\nBuổi chiều: Tham quan ruộng bậc thang Mù Cang Chải."
+        },
+        {
+          "title": "Ngày 5: Yên Bái",
+          "content": "Buổi sáng: Khám phá suối nước nóng Trạm Tấu.\nBuổi chiều: Tự do khám phá."
+        },
+        {
+          "title": "Ngày 6: Yên Bái - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour014",
@@ -651,7 +867,25 @@
         "➡️ Thưởng thức bánh xèo tôm nhảy"
       ],
       "id": "8e89",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Nha Trang - Quy Nhơn",
+          "content": "Buổi sáng: Khởi hành từ Nha Trang đến Quy Nhơn.\nBuổi chiều: Tham quan Eo Gió."
+        },
+        {
+          "title": "Ngày 2: Quy Nhơn",
+          "content": "Buổi sáng: Tắm biển tại Kỳ Co.\nBuổi chiều: Tham quan tháp Bánh Ít."
+        },
+        {
+          "title": "Ngày 3: Quy Nhơn",
+          "content": "Buổi sáng: Thưởng thức bánh xèo tôm nhảy.\nBuổi chiều: Tự do khám phá thành phố."
+        },
+        {
+          "title": "Ngày 4: Quy Nhơn - Nha Trang",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Nha Trang, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour015",
@@ -672,7 +906,21 @@
         "➡️ Ngắm cảnh núi Tô Thị"
       ],
       "id": "a242",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Lạng Sơn",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Lạng Sơn.\nBuổi chiều: Tham quan chợ Đông Kinh."
+        },
+        {
+          "title": "Ngày 2: Lạng Sơn",
+          "content": "Buổi sáng: Khám phá động Tam Thanh.\nBuổi chiều: Ngắm cảnh núi Tô Thị."
+        },
+        {
+          "title": "Ngày 3: Lạng Sơn - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour016",
@@ -693,7 +941,21 @@
         "➡️ Khám phá hang Múa"
       ],
       "id": "333a",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Ninh Bình",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Ninh Bình.\nBuổi chiều: Chèo thuyền ở Tràng An."
+        },
+        {
+          "title": "Ngày 2: Ninh Bình",
+          "content": "Buổi sáng: Tham quan chùa Bái Đính.\nBuổi chiều: Khám phá hang Múa."
+        },
+        {
+          "title": "Ngày 3: Ninh Bình - Hà Nội",
+          "content": "Buổi sáng: Tự do khám phá Hoa Lư.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour017",
@@ -714,7 +976,17 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "fccf",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Vũng Tàu",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Vũng Tàu.\nBuổi chiều: Tắm biển tại Bãi Sau."
+        },
+        {
+          "title": "Ngày 2: Vũng Tàu - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tham quan tượng Chúa Kitô.\nBuổi chiều: Thưởng thức hải sản, trở về TP. Hồ Chí Minh."
+        }
+      ]
     },
     {
       "tourId": "tour018",
@@ -735,7 +1007,25 @@
         "➡️ Thưởng thức cua Cà Mau"
       ],
       "id": "04af",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Cà Mau",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Cà Mau.\nBuổi chiều: Tham quan chợ nổi Cà Mau."
+        },
+        {
+          "title": "Ngày 2: Cà Mau",
+          "content": "Buổi sáng: Tham quan Mũi Cà Mau.\nBuổi chiều: Khám phá rừng U Minh Hạ."
+        },
+        {
+          "title": "Ngày 3: Cà Mau",
+          "content": "Buổi sáng: Thưởng thức cua Cà Mau.\nBuổi chiều: Tự do khám phá thành phố."
+        },
+        {
+          "title": "Ngày 4: Cà Mau - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour019",
@@ -756,7 +1046,29 @@
         "➡️ Ngắm cảnh thung lũng Mường Thanh"
       ],
       "id": "80a0",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Điện Biên",
+          "content": "Buổi sáng: Bay từ Hà Nội đến Điện Biên.\nBuổi chiều: Tham quan bảo tàng Điện Biên."
+        },
+        {
+          "title": "Ngày 2: Điện Biên",
+          "content": "Buổi sáng: Tham quan đồi A1.\nBuổi chiều: Khám phá hầm Đờ Cát."
+        },
+        {
+          "title": "Ngày 3: Điện Biên",
+          "content": "Buổi sáng: Ngắm cảnh thung lũng Mường Thanh.\nBuổi chiều: Tham quan cầu Mường Thanh."
+        },
+        {
+          "title": "Ngày 4: Điện Biên - Sơn La",
+          "content": "Buổi sáng: Di chuyển đến Sơn La.\nBuổi chiều: Tham quan cao nguyên Mộc Châu."
+        },
+        {
+          "title": "Ngày 5: Sơn La - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour020",
@@ -777,7 +1089,21 @@
         "➡️ Thưởng thức tỏi Lý Sơn"
       ],
       "id": "f2c2",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Đà Nẵng - Lý Sơn",
+          "content": "Buổi sáng: Di chuyển từ Đà Nẵng đến cảng Sa Kỳ, lên tàu ra Lý Sơn.\nBuổi chiều: Tham quan cổng Tò Vò."
+        },
+        {
+          "title": "Ngày 2: Lý Sơn",
+          "content": "Buổi sáng: Ngắm núi Thới Lới.\nBuổi chiều: Tham quan chùa Hang."
+        },
+        {
+          "title": "Ngày 3: Lý Sơn - Đà Nẵng",
+          "content": "Buổi sáng: Thưởng thức tỏi Lý Sơn và mua sắm.\nBuổi chiều: Trở về Đà Nẵng, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour021",
@@ -798,7 +1124,25 @@
         "➡️ Thưởng thức chè Shan Tuyết"
       ],
       "id": "e24c",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Sơn La",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Sơn La.\nBuổi chiều: Tham quan nhà tù Sơn La."
+        },
+        {
+          "title": "Ngày 2: Sơn La - Mộc Châu",
+          "content": "Buổi sáng: Di chuyển đến Mộc Châu.\nBuổi chiều: Khám phá đồi chè Mộc Châu."
+        },
+        {
+          "title": "Ngày 3: Mộc Châu",
+          "content": "Buổi sáng: Tham quan thác Dải Yếm.\nBuổi chiều: Thưởng thức chè Shan Tuyết."
+        },
+        {
+          "title": "Ngày 4: Mộc Châu - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour022",
@@ -819,7 +1163,21 @@
         "➡️ Thưởng thức bánh xèo miền Tây"
       ],
       "id": "9846",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Cần Thơ",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Cần Thơ.\nBuổi chiều: Tham quan cầu Cần Thơ."
+        },
+        {
+          "title": "Ngày 2: Cần Thơ",
+          "content": "Buổi sáng: Tham quan chợ nổi Cái Răng.\nBuổi chiều: Khám phá vườn cò Bằng Lăng."
+        },
+        {
+          "title": "Ngày 3: Cần Thơ - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Thưởng thức bánh xèo miền Tây.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour023",
@@ -840,7 +1198,29 @@
         "➡️ Khám phá văn hóa dân tộc Mường"
       ],
       "id": "e7bc",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Yên Bái",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Yên Bái.\nBuổi chiều: Tham quan ruộng bậc thang Mù Cang Chải."
+        },
+        {
+          "title": "Ngày 2: Yên Bái",
+          "content": "Buổi sáng: Khám phá đèo Khau Phạ.\nBuổi chiều: Tự do chụp ảnh ruộng bậc thang."
+        },
+        {
+          "title": "Ngày 3: Yên Bái",
+          "content": "Buổi sáng: Tham quan suối nước nóng Trạm Tấu.\nBuổi chiều: Khám phá bản Lìm Mông."
+        },
+        {
+          "title": "Ngày 4: Yên Bái",
+          "content": "Buổi sáng: Khám phá văn hóa dân tộc Mường.\nBuổi chiều: Tham quan chợ địa phương."
+        },
+        {
+          "title": "Ngày 5: Yên Bái - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour024",
@@ -861,7 +1241,21 @@
         "➡️ Thưởng thức phở Nam Định"
       ],
       "id": "a713",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Nam Định",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Nam Định.\nBuổi chiều: Tham quan chùa Phổ Minh."
+        },
+        {
+          "title": "Ngày 2: Nam Định",
+          "content": "Buổi sáng: Khám phá làng nghề truyền thống.\nBuổi chiều: Tham quan nhà thờ Phú Nhai."
+        },
+        {
+          "title": "Ngày 3: Nam Định - Hà Nội",
+          "content": "Buổi sáng: Thưởng thức phở Nam Định.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour025",
@@ -882,7 +1276,25 @@
         "➡️ Thưởng thức chả mực Hạ Long"
       ],
       "id": "b12c",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Quảng Ninh",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Quảng Ninh.\nBuổi chiều: Tham quan bảo tàng Quảng Ninh."
+        },
+        {
+          "title": "Ngày 2: Quảng Ninh",
+          "content": "Buổi sáng: Du thuyền trên Vịnh Hạ Long.\nBuổi chiều: Tham quan hang Sửng Sốt."
+        },
+        {
+          "title": "Ngày 3: Quảng Ninh",
+          "content": "Buổi sáng: Tham quan đảo Ti Tốp.\nBuổi chiều: Thưởng thức chả mực Hạ Long."
+        },
+        {
+          "title": "Ngày 4: Quảng Ninh - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour026",
@@ -903,7 +1315,21 @@
         "➡️ Thưởng thức nem chua Thanh Hóa"
       ],
       "id": "c45d",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Sầm Sơn",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Sầm Sơn.\nBuổi chiều: Tắm biển Sầm Sơn."
+        },
+        {
+          "title": "Ngày 2: Sầm Sơn",
+          "content": "Buổi sáng: Tham quan đền Độc Cước.\nBuổi chiều: Tham quan núi Trường Lệ."
+        },
+        {
+          "title": "Ngày 3: Sầm Sơn - Hà Nội",
+          "content": "Buổi sáng: Thưởng thức nem chua Thanh Hóa.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour027",
@@ -924,7 +1350,37 @@
         "➡️ Ngắm thung lũng hoa Sa Pa"
       ],
       "id": "d78e",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Sa Pa",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Sa Pa.\nBuổi chiều: Tham quan bản Cát Cát."
+        },
+        {
+          "title": "Ngày 2: Sa Pa",
+          "content": "Buổi sáng: Chinh phục đỉnh Fansipan.\nBuổi chiều: Ngắm thung lũng hoa Sa Pa."
+        },
+        {
+          "title": "Ngày 3: Sa Pa - Bắc Hà",
+          "content": "Buổi sáng: Di chuyển đến Bắc Hà.\nBuổi chiều: Tham quan chợ phiên Bắc Hà."
+        },
+        {
+          "title": "Ngày 4: Bắc Hà - Hà Giang",
+          "content": "Buổi sáng: Di chuyển đến Hà Giang.\nBuổi chiều: Tham quan cột cờ Lũng Cú."
+        },
+        {
+          "title": "Ngày 5: Hà Giang",
+          "content": "Buổi sáng: Chinh phục đèo Mã Pí Lèng.\nBuổi chiều: Tham quan cao nguyên đá Đồng Văn."
+        },
+        {
+          "title": "Ngày 6: Hà Giang - Yên Bái",
+          "content": "Buổi sáng: Di chuyển đến Yên Bái.\nBuổi chiều: Tham quan ruộng bậc thang Mù Cang Chải."
+        },
+        {
+          "title": "Ngày 7: Yên Bái - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour028",
@@ -945,7 +1401,25 @@
         "➡️ Thưởng thức nước mắm Phan Thiết"
       ],
       "id": "e91f",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Bình Thuận",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Bình Thuận.\nBuổi chiều: Tắm biển Mũi Né."
+        },
+        {
+          "title": "Ngày 2: Bình Thuận",
+          "content": "Buổi sáng: Trượt cát trên đồi cát Bàu Trắng.\nBuổi chiều: Tham quan suối Tiên."
+        },
+        {
+          "title": "Ngày 3: Bình Thuận",
+          "content": "Buổi sáng: Thưởng thức nước mắm Phan Thiết.\nBuổi chiều: Tham quan tháp Chăm Poshanư."
+        },
+        {
+          "title": "Ngày 4: Bình Thuận - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour029",
@@ -966,7 +1440,29 @@
         "➡️ Ngắm cảnh núi Cấm"
       ],
       "id": "f12g",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - An Giang",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến An Giang.\nBuổi chiều: Tham quan chợ Châu Đốc."
+        },
+        {
+          "title": "Ngày 2: An Giang",
+          "content": "Buổi sáng: Tham quan rừng tràm Trà Sư.\nBuổi chiều: Khám phá làng Chăm Châu Đốc."
+        },
+        {
+          "title": "Ngày 3: An Giang",
+          "content": "Buổi sáng: Ngắm cảnh núi Cấm.\nBuổi chiều: Tham quan chùa Bà Châu Đốc."
+        },
+        {
+          "title": "Ngày 4: An Giang - Cần Thơ",
+          "content": "Buổi sáng: Di chuyển đến Cần Thơ.\nBuổi chiều: Tham quan chợ nổi Cái Răng."
+        },
+        {
+          "title": "Ngày 5: Cần Thơ - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour030",
@@ -987,7 +1483,33 @@
         "➡️ Tắm biển Nhật Lệ"
       ],
       "id": "g34h",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Huế - Quảng Bình",
+          "content": "Buổi sáng: Khởi hành từ Huế đến Quảng Bình.\nBuổi chiều: Tắm biển Nhật Lệ."
+        },
+        {
+          "title": "Ngày 2: Quảng Bình",
+          "content": "Buổi sáng: Tham quan động Thiên Đường.\nBuổi chiều: Khám phá động Phong Nha."
+        },
+        {
+          "title": "Ngày 3: Quảng Bình",
+          "content": "Buổi sáng: Khám phá sông Chày - hang Tối.\nBuổi chiều: Tham quan suối nước Moọc."
+        },
+        {
+          "title": "Ngày 4: Quảng Bình - Huế",
+          "content": "Buổi sáng: Di chuyển đến Huế.\nBuổi chiều: Tham quan Đại Nội."
+        },
+        {
+          "title": "Ngày 5: Huế - Đà Nẵng",
+          "content": "Buổi sáng: Di chuyển đến Đà Nẵng.\nBuổi chiều: Tham quan cầu Vàng."
+        },
+        {
+          "title": "Ngày 6: Đà Nẵng - Kết thúc",
+          "content": "Buổi sáng: Tự do mua sắm tại chợ Hàn.\nBuổi chiều: Kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour031",
@@ -1008,7 +1530,21 @@
         "➡️ Thưởng thức bánh bông lan trứng muối"
       ],
       "id": "h56i",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Bà Rịa Vũng Tàu",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Vũng Tàu.\nBuổi chiều: Tắm biển Hồ Tràm."
+        },
+        {
+          "title": "Ngày 2: Bà Rịa Vũng Tàu",
+          "content": "Buổi sáng: Tham quan suối nước nóng Bình Châu.\nBuổi chiều: Tham quan khu du lịch Hồ Mây."
+        },
+        {
+          "title": "Ngày 3: Bà Rịa Vũng Tàu - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Thưởng thức bánh bông lan trứng muối.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour032",
@@ -1029,7 +1565,25 @@
         "➡️ Thưởng thức chè Tuyên Quang"
       ],
       "id": "i78j",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Tuyên Quang",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Tuyên Quang.\nBuổi chiều: Tham quan khu di tích Tân Trào."
+        },
+        {
+          "title": "Ngày 2: Tuyên Quang",
+          "content": "Buổi sáng: Khám phá thác Bản Ba.\nBuổi chiều: Tham quan hồ Na Hang."
+        },
+        {
+          "title": "Ngày 3: Tuyên Quang",
+          "content": "Buổi sáng: Thưởng thức chè Tuyên Quang.\nBuổi chiều: Tham quan đền Hạ."
+        },
+        {
+          "title": "Ngày 4: Tuyên Quang - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour033",
@@ -1050,7 +1604,29 @@
         "➡️ Thưởng thức gỏi cá trích"
       ],
       "id": "j90k",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Rạch Giá",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Rạch Giá.\nBuổi chiều: Tham quan chợ Rạch Giá."
+        },
+        {
+          "title": "Ngày 2: Rạch Giá - Nam Du",
+          "content": "Buổi sáng: Lên tàu đi đảo Nam Du.\nBuổi chiều: Tắm biển tại bãi Cây Mến."
+        },
+        {
+          "title": "Ngày 3: Nam Du - Hà Tiên",
+          "content": "Buổi sáng: Di chuyển đến Hà Tiên.\nBuổi chiều: Tắm biển Hà Tiên."
+        },
+        {
+          "title": "Ngày 4: Hà Tiên",
+          "content": "Buổi sáng: Tham quan núi Đá Dựng.\nBuổi chiều: Thưởng thức gỏi cá trích."
+        },
+        {
+          "title": "Ngày 5: Hà Tiên - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour034",
@@ -1071,7 +1647,33 @@
         "➡️ Ngắm cảnh hồ Thang Hen"
       ],
       "id": "k12l",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Cao Bằng",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Cao Bằng.\nBuổi chiều: Tham quan chợ Cao Bằng."
+        },
+        {
+          "title": "Ngày 2: Cao Bằng",
+          "content": "Buổi sáng: Tham quan thác Bản Giốc.\nBuổi chiều: Khám phá động Ngườm Ngao."
+        },
+        {
+          "title": "Ngày 3: Cao Bằng",
+          "content": "Buổi sáng: Ngắm cảnh hồ Thang Hen.\nBuổi chiều: Tham quan bản Pác Bó."
+        },
+        {
+          "title": "Ngày 4: Cao Bằng - Lạng Sơn",
+          "content": "Buổi sáng: Di chuyển đến Lạng Sơn.\nBuổi chiều: Tham quan động Tam Thanh."
+        },
+        {
+          "title": "Ngày 5: Lạng Sơn",
+          "content": "Buổi sáng: Tham quan chợ Đông Kinh.\nBuổi chiều: Ngắm cảnh núi Tô Thị."
+        },
+        {
+          "title": "Ngày 6: Lạng Sơn - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour035",
@@ -1092,7 +1694,25 @@
         "➡️ Thưởng thức mì Quảng"
       ],
       "id": "l34m",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Đà Nẵng",
+          "content": "Buổi sáng: Đón khách tại Đà Nẵng.\nBuổi chiều: Tắm biển Mỹ Khê."
+        },
+        {
+          "title": "Ngày 2: Đà Nẵng",
+          "content": "Buổi sáng: Tham quan cầu Vàng Bà Nà Hills.\nBuổi chiều: Tham quan Ngũ Hành Sơn."
+        },
+        {
+          "title": "Ngày 3: Đà Nẵng - Hội An",
+          "content": "Buổi sáng: Di chuyển đến Hội An.\nBuổi chiều: Dạo phố cổ Hội An."
+        },
+        {
+          "title": "Ngày 4: Đà Nẵng - Kết thúc",
+          "content": "Buổi sáng: Thưởng thức mì Quảng.\nBuổi chiều: Tự do mua sắm, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour036",
@@ -1113,7 +1733,29 @@
         "➡️ Ngắm hoa đỗ quyên"
       ],
       "id": "m56n",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Lai Châu",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Lai Châu.\nBuổi chiều: Tham quan đèo Ô Quy Hồ."
+        },
+        {
+          "title": "Ngày 2: Lai Châu",
+          "content": "Buổi sáng: Khám phá bản Sin Suối Hồ.\nBuổi chiều: Tham quan chợ đêm Lai Châu."
+        },
+        {
+          "title": "Ngày 3: Lai Châu - Sa Pa",
+          "content": "Buổi sáng: Di chuyển đến Sa Pa.\nBuổi chiều: Ngắm hoa đỗ quyên."
+        },
+        {
+          "title": "Ngày 4: Sa Pa",
+          "content": "Buổi sáng: Tham quan bản Cát Cát.\nBuổi chiều: Tham quan đỉnh Fansipan."
+        },
+        {
+          "title": "Ngày 5: Sa Pa - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour037",
@@ -1134,7 +1776,21 @@
         "➡️ Thưởng thức bánh pía"
       ],
       "id": "n78o",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Bạc Liêu",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Bạc Liêu.\nBuổi chiều: Tham quan nhà Công Tử Bạc Liêu."
+        },
+        {
+          "title": "Ngày 2: Bạc Liêu",
+          "content": "Buổi sáng: Khám phá vườn chim Bạc Liêu.\nBuổi chiều: Tham quan chùa Xiêm Cán."
+        },
+        {
+          "title": "Ngày 3: Bạc Liêu - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Thưởng thức bánh pía.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour038",
@@ -1155,7 +1811,25 @@
         "➡️ Ngắm cầu Hiền Lương"
       ],
       "id": "o90p",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Huế - Quảng Trị",
+          "content": "Buổi sáng: Khởi hành từ Huế đến Quảng Trị.\nBuổi chiều: Tham quan Thành cổ Quảng Trị."
+        },
+        {
+          "title": "Ngày 2: Quảng Trị",
+          "content": "Buổi sáng: Khám phá địa đạo Vĩnh Nghiêm.\nBuổi chiều: Ngắm cầu Hiền Lương."
+        },
+        {
+          "title": "Ngày 3: Quảng Trị - Quảng Bình",
+          "content": "Buổi sáng: Di chuyển đến Quảng Bình.\nBuổi chiều: Tham quan động Phong Nha."
+        },
+        {
+          "title": "Ngày 4: Quảng Bình - Huế",
+          "content": "Buổi sáng: Tự do khám phá biển Nhật Lệ.\nBuổi chiều: Trở về Huế, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour039",
@@ -1176,7 +1850,21 @@
         "➡️ Thưởng thức hải sản tươi sống"
       ],
       "id": "p12q",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Cát Bà",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Cát Bà.\nBuổi chiều: Tắm biển Cát Cò."
+        },
+        {
+          "title": "Ngày 2: Cát Bà",
+          "content": "Buổi sáng: Khám phá Vườn Quốc gia Cát Bà.\nBuổi chiều: Tham quan vịnh Lan Hạ."
+        },
+        {
+          "title": "Ngày 3: Cát Bà - Hà Nội",
+          "content": "Buổi sáng: Thưởng thức hải sản tươi sống.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour040",
@@ -1197,7 +1885,29 @@
         "➡️ Thưởng thức rượu cần"
       ],
       "id": "q34r",
-      "region": "Tây Nguyên"
+      "region": "Tây Nguyên",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Kon Tum",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Kon Tum.\nBuổi chiều: Tham quan nhà rông Kon Tum."
+        },
+        {
+          "title": "Ngày 2: Kon Tum",
+          "content": "Buổi sáng: Khám phá thác Yaly.\nBuổi chiều: Tham quan cầu treo Kon Klor."
+        },
+        {
+          "title": "Ngày 3: Kon Tum",
+          "content": "Buổi sáng: Tham quan nhà thờ gỗ Kon Tum.\nBuổi chiều: Thưởng thức rượu cần cùng người dân bản địa."
+        },
+        {
+          "title": "Ngày 4: Kon Tum - Pleiku",
+          "content": "Buổi sáng: Di chuyển đến Pleiku.\nBuổi chiều: Tham quan biển hồ T’Nưng."
+        },
+        {
+          "title": "Ngày 5: Pleiku - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour041",
@@ -1218,7 +1928,21 @@
         "➡️ Thưởng thức chè Thái Nguyên"
       ],
       "id": "r56s",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Thái Nguyên",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Thái Nguyên.\nBuổi chiều: Tham quan đồi chè Tân Cương."
+        },
+        {
+          "title": "Ngày 2: Thái Nguyên",
+          "content": "Buổi sáng: Khám phá hồ Núi Cốc.\nBuổi chiều: Tham quan bảo tàng Văn hóa các Dân tộc Việt Nam."
+        },
+        {
+          "title": "Ngày 3: Thái Nguyên - Hà Nội",
+          "content": "Buổi sáng: Thưởng thức chè Thái Nguyên.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour042",
@@ -1239,7 +1963,25 @@
         "➡️ Thưởng thức hải sản Hạ Long"
       ],
       "id": "s78t",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Hạ Long",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Hạ Long.\nBuổi chiều: Du thuyền trên Vịnh Hạ Long."
+        },
+        {
+          "title": "Ngày 2: Hạ Long",
+          "content": "Buổi sáng: Tham quan làng chài Cửa Vạn.\nBuổi chiều: Tham quan đảo Ti Tốp."
+        },
+        {
+          "title": "Ngày 3: Hạ Long",
+          "content": "Buổi sáng: Thưởng thức hải sản Hạ Long.\nBuổi chiều: Tham quan hang Sửng Sốt."
+        },
+        {
+          "title": "Ngày 4: Hạ Long - Hà Nội",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour043",
@@ -1260,7 +2002,29 @@
         "➡️ Thưởng thức phở khô Gia Lai"
       ],
       "id": "t90u",
-      "region": "Tây Nguyên"
+      "region": "Tây Nguyên",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Gia Lai",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Gia Lai.\nBuổi chiều: Tham quan biển hồ Pleiku."
+        },
+        {
+          "title": "Ngày 2: Gia Lai",
+          "content": "Buổi sáng: Khám phá núi lửa Chư Đăng Ya.\nBuổi chiều: Tham quan công viên Đồng Xanh."
+        },
+        {
+          "title": "Ngày 3: Gia Lai",
+          "content": "Buổi sáng: Thưởng thức phở khô Gia Lai.\nBuổi chiều: Tham quan nhà mồ Ba Na."
+        },
+        {
+          "title": "Ngày 4: Gia Lai - Kon Tum",
+          "content": "Buổi sáng: Di chuyển đến Kon Tum.\nBuổi chiều: Tham quan nhà rông Kon Tum."
+        },
+        {
+          "title": "Ngày 5: Kon Tum - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour044",
@@ -1281,7 +2045,21 @@
         "➡️ Thưởng thức cơm lam"
       ],
       "id": "u12v",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Hòa Bình",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Hòa Bình.\nBuổi chiều: Tham quan nhà máy thủy điện Hòa Bình."
+        },
+        {
+          "title": "Ngày 2: Hòa Bình - Mai Châu",
+          "content": "Buổi sáng: Di chuyển đến Mai Châu.\nBuổi chiều: Khám phá thung lũng Mai Châu."
+        },
+        {
+          "title": "Ngày 3: Mai Châu - Hà Nội",
+          "content": "Buổi sáng: Thưởng thức cơm lam.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour045",
@@ -1302,7 +2080,17 @@
         "🏞️ Thăm hang Sửng Sốt"
       ],
       "id": "v01",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Vịnh Hạ Long",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Hạ Long.\nBuổi chiều: Du thuyền ngủ đêm trên Vịnh, thăm hang Sửng Sốt."
+        },
+        {
+          "title": "Ngày 2: Vịnh Hạ Long - Hà Nội",
+          "content": "Buổi sáng: Ngắm bình minh trên biển.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour046",
@@ -1323,7 +2111,21 @@
         "🔥 Đốt lửa trại đêm"
       ],
       "id": "v02",
-      "region": "Miền Bắc"
+      "region": "Miền Bắc",
+      "timeline": [
+        {
+          "title": "Ngày 1: Hà Nội - Sa Pa",
+          "content": "Buổi sáng: Khởi hành từ Hà Nội đến Sa Pa.\nBuổi chiều: Tham quan bản Cát Cát."
+        },
+        {
+          "title": "Ngày 2: Sa Pa",
+          "content": "Buổi sáng: Đi cáp treo Fansipan Legend, ngắm toàn cảnh từ đỉnh núi.\nBuổi chiều: Đốt lửa trại đêm."
+        },
+        {
+          "title": "Ngày 3: Sa Pa - Hà Nội",
+          "content": "Buổi sáng: Tự do khám phá chợ Sa Pa.\nBuổi chiều: Trở về Hà Nội, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour047",
@@ -1344,7 +2146,17 @@
         "🚲 Đạp xe ven sông Thu Bồn"
       ],
       "id": "v03",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Đà Nẵng - Hội An",
+          "content": "Buổi sáng: Khởi hành từ Đà Nẵng đến Hội An.\nBuổi chiều: Đạp xe ven sông Thu Bồn."
+        },
+        {
+          "title": "Ngày 2: Hội An - Đà Nẵng",
+          "content": "Buổi sáng: Thưởng thức cao lầu.\nBuổi chiều: Dạo phố cổ về đêm, trở về Đà Nẵng."
+        }
+      ]
     },
     {
       "tourId": "tour048",
@@ -1365,7 +2177,25 @@
         "🛥️ Tham quan đảo Yến"
       ],
       "id": "v04",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Nha Trang",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Nha Trang.\nBuổi chiều: Tắm biển tại Bãi Dài."
+        },
+        {
+          "title": "Ngày 2: Nha Trang",
+          "content": "Buổi sáng: Lặn ngắm san hô.\nBuổi chiều: Tham quan tháp Bà Ponagar."
+        },
+        {
+          "title": "Ngày 3: Nha Trang",
+          "content": "Buổi sáng: Tham quan đảo Yến.\nBuổi chiều: Tham quan Vinpearl Land."
+        },
+        {
+          "title": "Ngày 4: Nha Trang - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm đặc sản.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour049",
@@ -1386,7 +2216,21 @@
         "🍓 Hái dâu tại vườn"
       ],
       "id": "v05",
-      "region": "Tây Nguyên"
+      "region": "Tây Nguyên",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Đà Lạt",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Đà Lạt.\nBuổi chiều: Tham quan hồ Xuân Hương."
+        },
+        {
+          "title": "Ngày 2: Đà Lạt",
+          "content": "Buổi sáng: Tham quan Thung lũng Tình Yêu.\nBuổi chiều: Đi cáp treo đến đồi chè Cầu Đất."
+        },
+        {
+          "title": "Ngày 3: Đà Lạt - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Hái dâu tại vườn.\nBuổi chiều: Trở về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour050",
@@ -1407,7 +2251,17 @@
         "🎶 Đờn ca tài tử"
       ],
       "id": "v06",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Cần Thơ",
+          "content": "Buổi sáng: Khởi hành từ TP. Hồ Chí Minh đến Cần Thơ.\nBuổi chiều: Tham quan chợ nổi Cái Răng."
+        },
+        {
+          "title": "Ngày 2: Cần Thơ - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Thưởng thức trái cây miệt vườn và nghe đờn ca tài tử.\nBuổi chiều: Trở về TP. Hồ Chí Minh."
+        }
+      ]
     },
     {
       "tourId": "tour051",
@@ -1428,7 +2282,21 @@
         "🏝️ VinWonders Phú Quốc"
       ],
       "id": "v07",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Phú Quốc",
+          "content": "Buổi sáng: Bay từ TP. Hồ Chí Minh đến Phú Quốc.\nBuổi chiều: Tắm biển Bãi Sao."
+        },
+        {
+          "title": "Ngày 2: Phú Quốc",
+          "content": "Buổi sáng: Lặn ngắm san hô tại Công viên san hô Seaworld.\nBuổi chiều: Tham quan VinWonders Phú Quốc."
+        },
+        {
+          "title": "Ngày 3: Phú Quốc - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do mua sắm nước mắm Phú Quốc.\nBuổi chiều: Bay về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour052",
@@ -1449,7 +2317,21 @@
         "⛱️ Bãi Đầm Trầu"
       ],
       "id": "v08",
-      "region": "Miền Nam"
+      "region": "Miền Nam",
+      "timeline": [
+        {
+          "title": "Ngày 1: TP. Hồ Chí Minh - Côn Đảo",
+          "content": "Buổi sáng: Bay từ TP. Hồ Chí Minh đến Côn Đảo.\nBuổi chiều: Tham quan nhà tù Côn Đảo."
+        },
+        {
+          "title": "Ngày 2: Côn Đảo",
+          "content": "Buổi sáng: Viếng mộ chị Võ Thị Sáu tại nghĩa trang Hàng Dương.\nBuổi chiều: Tắm biển Bãi Đầm Trầu."
+        },
+        {
+          "title": "Ngày 3: Côn Đảo - TP. Hồ Chí Minh",
+          "content": "Buổi sáng: Tự do khám phá đảo.\nBuổi chiều: Bay về TP. Hồ Chí Minh, kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour053",
@@ -1470,7 +2352,17 @@
         "🕌 Lăng Khải Định"
       ],
       "id": "v09",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Tham Quan Đại Nội Huế",
+          "content": "Buổi sáng: Đón khách tại khách sạn, tham quan Đại Nội Huế - nơi ở và làm việc của vua chúa triều Nguyễn.\nBuổi chiều: Tham quan Chùa Thiên Mụ, dạo chơi quanh sông Hương."
+        },
+        {
+          "title": "Ngày 2: Ca Huế & Lăng Khải Định",
+          "content": "Buổi sáng: Tham quan Lăng Khải Định với kiến trúc độc đáo.\nBuổi chiều: Trải nghiệm Ca Huế trên sông Hương trước khi kết thúc tour."
+        }
+      ]
     },
     {
       "tourId": "tour054",
@@ -1491,7 +2383,29 @@
         "🧗‍♂️ Leo vách đá tự nhiên"
       ],
       "id": "v10",
-      "region": "Miền Trung"
+      "region": "Miền Trung",
+      "timeline": [
+        {
+          "title": "Ngày 1: Huế - Quảng Bình",
+          "content": "Buổi sáng: Khởi hành từ Huế đến Quảng Bình.\nBuổi chiều: Chuẩn bị cho hành trình khám phá hang Sơn Đoòng."
+        },
+        {
+          "title": "Ngày 2: Khám phá Sơn Đoòng",
+          "content": "Buổi sáng: Bắt đầu hành trình vào hang Sơn Đoòng.\nBuổi chiều: Khám phá địa chất kỳ vĩ."
+        },
+        {
+          "title": "Ngày 3: Cắm trại trong hang",
+          "content": "Buổi sáng: Leo vách đá tự nhiên.\nBuổi chiều: Cắm trại bên trong hang, ăn tối cùng nhau."
+        },
+        {
+          "title": "Ngày 4: Tiếp tục khám phá",
+          "content": "Buổi sáng: Khám phá thêm các kỳ quan trong hang.\nBuổi chiều: Trở ra cửa hang."
+        },
+        {
+          "title": "Ngày 5: Quảng Bình - Huế",
+          "content": "Buổi sáng: Di chuyển về lại Quảng Bình.\nBuổi chiều: Trở về Huế, kết thúc tour."
+        }
+      ]
     }
   ],
   "regions": [
