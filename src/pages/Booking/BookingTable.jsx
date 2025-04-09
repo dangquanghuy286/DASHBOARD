@@ -1,14 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import icons from "../../util/icon";
+import { edit } from "../../util/request";
 const { IoIosArrowDropdownCircle } = icons;
 
 function BookingTourTable({ currentEntries }) {
     const [dropdownOpen, setDropdownOpen] = useState(null);
+    const [bookingData, setBookingData] = useState([]); // State để lưu thông tin booking
+    useEffect(() => {
+        setBookingData(currentEntries);
+    }, [currentEntries]);
 
-    const handleConfirmBooking = (bookingId) => {
-        // Gọi API hoặc xử lý xác nhận ở đây
-        console.log("Xác nhận booking: ", bookingId);
-        setDropdownOpen(null); // Đóng dropdown sau khi xác nhận
+    const handleConfirmBooking = async (bookingId) => {
+        try {
+            // Tìm đúng booking theo bookingId để lấy ra id thật
+            const booking = bookingData.find((b) => b.bookingId === bookingId);
+
+            // Gửi request cập nhật trạng thái bằng id thật
+            await edit(`bookingManagement/${booking.id}`, {
+                ...booking,
+                bookingStatus: "Đã xác nhận",
+            });
+
+            // Cập nhật lại state
+            const updateBookingdata = bookingData.map((b) => (b.bookingId === bookingId ? { ...b, bookingStatus: "Đã xác nhận" } : b));
+
+            setBookingData(updateBookingdata);
+            setDropdownOpen(null);
+        } catch (error) {
+            console.error("Error confirming booking:", error);
+        }
     };
 
     const handleViewDetails = (bookingId) => {
@@ -37,7 +57,7 @@ function BookingTourTable({ currentEntries }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {currentEntries.map((item, index) => {
+                    {bookingData.map((item, index) => {
                         const badgeClass = "inline-block min-w-[120px] text-center px-2 py-1 text-xs text-white rounded font-semibold";
 
                         return (
@@ -108,7 +128,7 @@ function BookingTourTable({ currentEntries }) {
                                         </button>
 
                                         {dropdownOpen === item.bookingId && (
-                                            <div className="absolute top-full z-10 mt-2 min-w-[140px] rounded border bg-white text-left shadow-md right-0">
+                                            <div className="absolute top-full right-0 z-10 mt-2 min-w-[140px] rounded border bg-white text-left shadow-md">
                                                 {/* Nếu trạng thái là "Chưa xác nhận" thì hiển thị tùy chọn xác nhận */}
                                                 {item.bookingStatus === "Chưa xác nhận" && (
                                                     <button
