@@ -19,10 +19,13 @@ function BookingTourTable({ currentEntries }) {
             await edit(`bookingManagement/${booking.id}`, {
                 ...booking,
                 bookingStatus: "Đã xác nhận",
+                paymentStatus: "Đã thanh toán",
             });
 
             // Cập nhật lại state
-            const updateBookingdata = bookingData.map((b) => (b.bookingId === bookingId ? { ...b, bookingStatus: "Đã xác nhận" } : b));
+            const updateBookingdata = bookingData.map((b) =>
+                b.bookingId === bookingId ? { ...b, bookingStatus: "Đã xác nhận", paymentStatus: "Đã thanh toán" } : b,
+            );
 
             setBookingData(updateBookingdata);
             setDropdownOpen(null);

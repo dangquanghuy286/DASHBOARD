@@ -19,7 +19,7 @@ function ShowBookingTour() {
         const fetchApi = async () => {
             try {
                 const res = await getDataBookingTour();
-                const dataArray = res || [];
+                const dataArray = res.reverse() || [];
                 setData(dataArray);
                 setOriginalData(dataArray);
             } catch (error) {
