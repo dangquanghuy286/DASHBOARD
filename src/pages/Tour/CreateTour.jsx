@@ -11,11 +11,11 @@ const { IoIosAdd } = icons;
 function CreateTour() {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
-
     const [reload, setReload] = useState(false);
-
     const [dataRegion, setDataRegion] = useState([]);
     const [files, setFiles] = useState([]);
+    const [timeline, setTimeline] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await getDataRegion(); // Lấy danh sách khu vực
@@ -62,7 +62,7 @@ function CreateTour() {
 
     const handleCreate = async (e) => {
         e.preventDefault();
-        const ketqua = await createDataTour(data);
+        const ketqua = await createDataTour({ ...data, timeline });
 
         if (ketqua) {
             setShowModal(false);
@@ -89,8 +89,10 @@ function CreateTour() {
                 const diffTime = Math.abs(end - start);
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
                 updatedData.duration = `${diffDays} ngày`;
+                setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" }))); // Tạo mảng rỗng với độ dài là số ngày
             } else {
                 updatedData.duration = "";
+                setTimeline([]);
             }
         }
 
@@ -106,7 +108,6 @@ function CreateTour() {
         setData((prev) => ({ ...prev, images: imageUrls }));
     };
     //Ham in anh ra
-
     const renderAnh = () => {
         return [...files].map((anh, index) => (
             <div
@@ -121,6 +122,11 @@ function CreateTour() {
                 />
             </div>
         ));
+    };
+    const handleTimelineChange = (index, field, value) => {
+        const newTimeline = [...timeline];
+        newTimeline[index][field] = value;
+        setTimeline(newTimeline);
     };
 
     return (
@@ -310,6 +316,37 @@ function CreateTour() {
 
                         {renderAnh()}
                     </div>
+                    {timeline.length > 0 && (
+                        <div>
+                            <label className="block font-semibold">Lịch trình</label>
+                            {timeline.map((day, index) => (
+                                <div
+                                    key={index}
+                                    className="mb-4 rounded border bg-gray-50 p-3 shadow-sm"
+                                >
+                                    <p className="font-bold text-blue-600">Ngày {index + 1}</p>
+                                    <div className="mb-2">
+                                        <label className="block">Tiêu đề</label>
+                                        <input
+                                            type="text"
+                                            className="w-full border p-2"
+                                            value={day.title}
+                                            onChange={(e) => handleTimelineChange(index, "title", e.target.value)}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block">Nội dung</label>
+                                        <textarea
+                                            className="w-full border p-2"
+                                            value={day.content}
+                                            onChange={(e) => handleTimelineChange(index, "content", e.target.value)}
+                                            rows="3"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
 
                     <div className="flex justify-end space-x-4">
                         <button
