@@ -1,6 +1,7 @@
 import { useState } from "react";
 import photo from "@/assets/Img/admin-1.jpg"; // Ảnh mặc định
 import icons from "../../util/icon";
+import GoBack from "../../components/GoBack/Goback";
 const { FaEye, FaEyeSlash, MdOutlineAttachFile } = icons;
 
 function Admin() {
@@ -137,7 +138,8 @@ function Admin() {
                                 className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
                             />
                         </div>
-                        <div className="flex items-center">
+                        <div className="mt-4 flex items-center gap-3">
+                            {/* Nút cập nhật */}
                             <button
                                 type="submit"
                                 className="rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
@@ -147,7 +149,10 @@ function Admin() {
                         </div>
                     </form>
                 </div>
+                {/* Nút trở lại */}
             </div>
+            {/* Nút trở lại */}
+            <GoBack />
         </div>
     );
 }

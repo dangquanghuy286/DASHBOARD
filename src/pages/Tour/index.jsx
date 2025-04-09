@@ -1,3 +1,4 @@
+import GoBack from "../../components/GoBack/Goback";
 import ShowTour from "./ShowTour";
 
 function Tour() {
@@ -6,6 +7,9 @@ function Tour() {
             <div className="flex flex-col gap-y-4">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-8">
                     <ShowTour />
+                </div>
+                <div className="mb-4">
+                    <GoBack />
                 </div>
             </div>
         </>

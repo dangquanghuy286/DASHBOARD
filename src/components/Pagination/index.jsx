@@ -56,13 +56,15 @@ function EntriesFilter({ data, children }) {
 
             {children(currentEntries)}
 
-            <div className="mt-4 flex justify-center space-x-2">
+            <div className="mt-6 mb-6 flex justify-center gap-2">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
                     <button
                         key={number}
                         onClick={() => handlePageChange(number)}
-                        className={`rounded px-3 py-1 ${
-                            currentPage === number ? "bg-blue-600 text-white" : "bg-gray-200 text-black dark:bg-slate-600 dark:text-white"
+                        className={`h-9 w-9 rounded-full text-sm font-medium transition duration-200 ${
+                            currentPage === number
+                                ? "bg-gradient-to-tr from-blue-600 to-purple-600 text-white shadow-md dark:from-blue-500 dark:to-purple-500"
+                                : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
                         }`}
                     >
                         {number}

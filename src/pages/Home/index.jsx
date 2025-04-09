@@ -1,3 +1,4 @@
+import GoBack from "../../components/GoBack/Goback";
 import DataChartMonth from "./dataChartsMonth";
 import PaymentTours from "./paymentTour";
 import TopbookedTour from "./topbookedTour";
@@ -16,6 +17,7 @@ function Home() {
                 <TopbookedTour />
                 <TourRecent />
                 <DataChartMonth />
+                <GoBack />
             </div>
         </div>
     );

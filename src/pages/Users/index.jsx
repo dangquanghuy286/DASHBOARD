@@ -4,70 +4,57 @@ import CreateUser from "./CreateUsers";
 import { useForm } from "react-hook-form";
 import UserPr from "./UserPr";
 import icons from "../../util/icon";
+import GoBack from "../../components/GoBack/Goback";
+
 const { FaSearch } = icons;
 
 function Customer() {
-    // State để lưu dữ liệu hiển thị
     const [data, setData] = useState([]);
-    // State để lưu dữ liệu gốc, dùng để reset sau khi search
     const [originalData, setOriginalData] = useState([]);
-    // Hook form để quản lý form search
     const { register, handleSubmit } = useForm();
 
-    // useEffect để fetch dữ liệu khi component mount
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const res = await getDataCustomer(); // Gọi API lấy dữ liệu
-                const dataArray = res.reverse() || []; // Đảo ngược mảng dữ liệu, đảm bảo là mảng
-                setData(dataArray); // Cập nhật dữ liệu hiển thị
-                setOriginalData(dataArray); // Lưu dữ liệu gốc
+                const res = await getDataCustomer();
+                const dataArray = res.reverse() || [];
+                setData(dataArray);
+                setOriginalData(dataArray);
             } catch (error) {
                 console.error("Lỗi khi tải dữ liệu:", error);
-                setData([]); // Đặt mảng rỗng nếu lỗi
-                setOriginalData([]); // Đặt mảng rỗng cho dữ liệu gốc nếu lỗi
+                setData([]);
+                setOriginalData([]);
             }
         };
         fetchApi();
-    }, []); // Dependency array rỗng để chỉ chạy 1 lần khi mount
-    // Hàm loại bỏ dấu tiếng Việt
-    const removeDiacritics = (str) => {
-        // Kiểm tra nếu không có chuỗi đầu vào hoặc không phải chuỗi thì trả về chuỗi rỗng
-        if (!str || typeof str !== "string") return "";
+    }, []);
 
+    const removeDiacritics = (str) => {
+        if (!str || typeof str !== "string") return "";
         return str
-            .normalize("NFD") // Chuẩn hóa Unicode: tách ký tự và dấu ra riêng (ví dụ: "ắ" -> "a" + "́")
-            .replace(/[\u0300-\u036f]/g, "") // Xóa các ký tự dấu (các mã Unicode từ 0300 đến 036F)
-            .replace(/đ/g, "d") // Thay "đ" thường bằng "d"
-            .replace(/Đ/g, "D"); // Thay "Đ" hoa bằng "D"
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .replace(/Đ/g, "D");
     };
 
-    // Hàm xử lý khi submit form search
     const onSearch = (formData) => {
-        // Lấy giá trị search từ form, chuyển thành lowercase và xóa khoảng trắng thừa
         const searchTerm = formData.name?.toLowerCase().trim() || "";
-
-        // Nếu không nhập gì (search rỗng), reset về dữ liệu gốc
         if (searchTerm === "") {
             setData(originalData);
             return;
         }
 
-        // Chuyển searchTerm thành không dấu
         const searchTermNoDiacritics = removeDiacritics(searchTerm);
-
-        // Lọc dữ liệu gốc dựa trên từ khóa tìm kiếm
         const filteredData = originalData.filter((user) => {
-            // Kiểm tra xem name tồn tại và là chuỗi trước khi lọc
             const userName = user.name && typeof user.name === "string" ? user.name.toLowerCase() : "";
             const userNameNoDiacritics = removeDiacritics(userName);
-
-            // So sánh cả chuỗi có dấu và không dấu
             return userName.includes(searchTerm) || userNameNoDiacritics.includes(searchTermNoDiacritics);
         });
 
-        setData(filteredData); // Cập nhật state với dữ liệu đã lọc
+        setData(filteredData);
     };
+
     return (
         <div className="min-h-screen bg-white px-4 font-sans dark:bg-slate-900 dark:text-white">
             {/* Header */}
@@ -75,14 +62,13 @@ function Customer() {
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Quản lý người dùng</h1>
             </div>
 
-            {/* Phần search và nút thêm user */}
+            {/* Search + Add User */}
             <div className="my-6 ml-6 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                    <CreateUser /> {/* Component để tạo user mới */}
-                    {/* Form search */}
+                    <CreateUser />
                     <form
                         className="inline"
-                        onSubmit={handleSubmit(onSearch)} // Gọi onSearch khi submit
+                        onSubmit={handleSubmit(onSearch)}
                     >
                         <div className="input">
                             <button type="submit">
@@ -92,7 +78,7 @@ function Customer() {
                                 />
                             </button>
                             <input
-                                {...register("name")} // Đăng ký input với react-hook-form
+                                {...register("name")}
                                 type="text"
                                 placeholder="Tìm kiếm"
                                 className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
@@ -102,18 +88,22 @@ function Customer() {
                 </div>
             </div>
 
-            {/* Hiển thị danh sách user */}
+            {/* User List */}
             <div className="mt-0 grid grid-cols-1 gap-4 p-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                 {data.length > 0 ? (
                     data.map((user, index) => (
                         <UserPr
-                            key={index} // Key cho mỗi item trong list
-                            user={user} // Truyền dữ liệu user cho component con
+                            key={index}
+                            user={user}
                         />
                     ))
                 ) : (
                     <p className="text-center text-gray-700 dark:text-gray-300">Không có dữ liệu</p>
                 )}
+            </div>
+            {/* Nút trở lại */}
+            <div className="mt-20 mb-10">
+                <GoBack />
             </div>
         </div>
     );
