@@ -1497,19 +1497,23 @@
   "regions": [
     {
       "regionId": "north",
-      "regionName": "Miền Bắc"
+      "regionName": "Miền Bắc",
+      "id": "4696"
     },
     {
       "regionId": "central",
-      "regionName": "Miền Trung"
+      "regionName": "Miền Trung",
+      "id": "9356"
     },
     {
       "regionId": "south",
-      "regionName": "Miền Nam"
+      "regionName": "Miền Nam",
+      "id": "88a0"
     },
     {
       "regionId": "highland",
-      "regionName": "Tây Nguyên"
+      "regionName": "Tây Nguyên",
+      "id": "7688"
     }
   ],
   "bookingManagement": {

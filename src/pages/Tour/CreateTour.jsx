@@ -15,7 +15,7 @@ function CreateTour() {
     const [reload, setReload] = useState(false);
 
     const [dataRegion, setDataRegion] = useState([]);
-
+    const [files, setFiles] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const result = await getDataRegion(); // Lấy danh sách khu vực
@@ -96,21 +96,32 @@ function CreateTour() {
 
         setData(updatedData);
     };
-    // Hàm xử lý khi người dùng chọn ảnh từ thư mục
-    // const handleImageChange = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         // Tạo URL cho ảnh và cập nhật preview
-    //         const fileURL = URL.createObjectURL(file);
-    //         setAvatarPreview(fileURL);
+    //Ham xu ly chon anh tu file
+    const handleImageChange = (e) => {
+        const uploadfile = e.target.files;
+        setFiles(uploadfile);
 
-    //         // Lưu ảnh vào trường avatar trong state (nếu cần thiết)
-    //         setData({
-    //             ...data,
-    //             avatarFile: file,
-    //         });
-    //     }
-    // };
+        //Luu anh vao json
+        const imageUrls = [...uploadfile].map((file) => URL.createObjectURL(file));
+        setData((prev) => ({ ...prev, images: imageUrls }));
+    };
+    //Ham in anh ra
+
+    const renderAnh = () => {
+        return [...files].map((anh, index) => (
+            <div
+                key={index}
+                className="m-2"
+            >
+                <img
+                    src={URL.createObjectURL(anh)}
+                    alt={`Ảnh ${index + 1}`}
+                    width="100"
+                    className="rounded shadow"
+                />
+            </div>
+        ));
+    };
 
     return (
         <>
@@ -274,6 +285,32 @@ function CreateTour() {
                             rows="5"
                         />
                     </div>
+                    <div className="my-4">
+                        <label>Ảnh</label>
+
+                        <div className="flex items-center gap-4">
+                            <label
+                                htmlFor="file"
+                                className="inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600"
+                            >
+                                Chọn ảnh
+                            </label>
+                            <span className="text-sm text-gray-500">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh nào"}</span>
+                        </div>
+
+                        <input
+                            type="file"
+                            id="file"
+                            name="images"
+                            accept="image/*"
+                            multiple
+                            onChange={handleImageChange}
+                            className="hidden"
+                        />
+
+                        {renderAnh()}
+                    </div>
+
                     <div className="flex justify-end space-x-4">
                         <button
                             type="button"

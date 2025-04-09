@@ -42,7 +42,25 @@ function CopyPrintComponent(props) {
         printWindow.document.write("<html><head><title>CÔNG TY MTV </title></head><body>"); // Tiêu đề
         printWindow.document.write("<h1 style='text-align: center;'>DANH SÁCH TOUR</h1>"); // Thêm tiêu đề
         printWindow.document.write(document.querySelector("table").outerHTML); // Lấy và chèn toàn bộ nội dung bảng vào cửa sổ in
-        printWindow.document.write("<style>body { font-family: Arial, sans-serif; }</style>");
+        printWindow.document.write(`
+            <style>
+            body
+            {
+                font-family: Arial, sans-serif;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                }
+            th, td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+                }
+            th {
+                background-color: #f2f2f2;}
+              </style>
+            `);
         printWindow.document.close(); // Đóng cửa sổ tài liệu
         printWindow.print(); // Gọi lệnh in trên cửa sổ mới
 

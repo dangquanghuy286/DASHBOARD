@@ -1,11 +1,12 @@
-// src/pages/Tour/TourTable.jsx
 import icons from "../../util/icon";
 import DeleteTour from "./DeleteTour";
 import EditTour from "./EditTour";
+import { Link } from "react-router-dom";
 
 const { MdBlock } = icons;
+
 function TourTable({ currentEntries }) {
-    return currentEntries.length > 0 ? (
+    return currentEntries?.length > 0 ? (
         <div className="overflow-x-auto">
             <table className="mb-5 min-w-full border text-sm text-black dark:text-white">
                 <thead className="bg-gray-100 text-left dark:bg-slate-800">
@@ -27,18 +28,16 @@ function TourTable({ currentEntries }) {
                 <tbody>
                     {currentEntries.map((item, index) => (
                         <tr key={index}>
-                            <td className="border px-4 py-2">{item.tourName}</td>
+                            <td className="border px-4 py-2">
+                                <Link>{item.tourName}</Link>
+                            </td>
                             <td className="border px-4 py-2">{item.duration}</td>
                             <td className="border px-4 py-2">{item.description}</td>
                             <td className="border px-4 py-2">{item.quantity}</td>
                             <td className="border px-4 py-2">{item.priceAdult}</td>
                             <td className="border px-4 py-2">{item.priceChild}</td>
                             <td className="items-center border px-4 py-2">
-                                <ul>
-                                    {item.highlights.map((highlight, idx) => (
-                                        <li key={idx}>{highlight}</li>
-                                    ))}
-                                </ul>
+                                <ul>{Array.isArray(item.highlights) && item.highlights.map((highlight, idx) => <li key={idx}>{highlight}</li>)}</ul>
                             </td>
                             <td className="items-center border px-4 py-2">{item.available ? "1" : <MdBlock />}</td>
                             <td className="border px-4 py-2">{item.startDate}</td>

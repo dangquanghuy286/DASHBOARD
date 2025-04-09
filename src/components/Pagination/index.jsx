@@ -45,7 +45,7 @@ function EntriesFilter({ data, children }) {
                     onChange={handleEntriesPerPageChange}
                     className="rounded border border-gray-300 p-1 text-sm dark:bg-slate-800 dark:text-white"
                 >
-                    <option value={50}></option>
+                    <option value={50}>0</option>
                     <option value={5}>5</option>
                     <option value={15}>15</option>
                     <option value={20}>20</option>

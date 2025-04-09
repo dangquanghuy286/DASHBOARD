@@ -1,13 +1,11 @@
 import Admin from "../pages/Admin";
-import Analytics from "../pages/Analytics";
 
-import Report from "../pages/Report";
-import Tour from "../pages/Tour";
 import Booking from "../pages/Booking";
 
 import Home from "../pages/Home";
 import LayoutDefault from "../layout/LayoutDefaut";
 import Customer from "../pages/Users";
+import Tour from "../pages/Tour";
 
 export const routes = [
     {
