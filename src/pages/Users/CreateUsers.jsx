@@ -5,7 +5,7 @@ import { getRoles } from "../../services/rolesService";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-import { createDataCustomer } from "../../services/customerSevice";
+import { createDataCustomer } from "../../services/userSevice";
 const { IoIosAdd } = icons;
 
 function CreateUser() {

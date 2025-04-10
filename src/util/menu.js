@@ -1,17 +1,6 @@
 import icons from "./icon";
-const {
-    MdDashboard,
-    IoMdAnalytics,
-    HiDocumentReport,
-    GrUserAdmin,
-    FaUserAlt,
-    MdTour,
-    IoIosCreate,
-    FaClipboardList,
-    TbBrandBooking,
-    MdContactPhone,
-    IoIosSettings,
-} = icons;
+const { MdDashboard, GrUserAdmin, FaUserAlt, MdTour, TbBrandBooking, FiLogOut } = icons; // Đảm bảo có icon cho Logout
+
 export const menu = [
     {
         link: [
@@ -23,24 +12,6 @@ export const menu = [
             },
         ],
     },
-    // {
-    //     link: [
-    //         {
-    //             path: "/analytics",
-    //             text: "Dữ liệu phân tích",
-    //             icon: IoMdAnalytics,
-    //         },
-    //     ],
-    // },
-    //  {
-    //     link: [
-    //         {
-    //             path: "/report",
-    //             text: "Báo cáo",
-    //             icon: HiDocumentReport,
-    //         },
-    //     ],
-    // },
     {
         link: [
             {
@@ -68,13 +39,21 @@ export const menu = [
             },
         ],
     },
-
     {
         link: [
             {
                 path: "/booking",
                 text: "Quản lý booking",
                 icon: TbBrandBooking,
+            },
+        ],
+    },
+    {
+        link: [
+            {
+                path: "/logout",
+                text: "Đăng xuất",
+                icon: FiLogOut,
             },
         ],
     },

@@ -5,7 +5,7 @@ import { getRoles } from "../../services/rolesService";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-import { editUser } from "../../services/customerSevice";
+import { editUser } from "../../services/userSevice";
 const { IoMdCreate } = icons;
 
 function EditUser(props) {
@@ -52,8 +52,6 @@ function EditUser(props) {
     };
 
     const openModal = () => {
-        console.log(user);
-
         setShowModal(true);
     };
 

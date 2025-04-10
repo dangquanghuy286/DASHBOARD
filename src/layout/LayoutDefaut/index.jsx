@@ -1,28 +1,41 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { cn } from "../../util/cn";
 import Header from "./Header";
 import SideBarLeft from "./SideBarLeft";
 import { useClickOutside } from "../../hooks/use_Click_outSize";
+import { getCookie } from "../../helpers/cookie";
+import { useSelector } from "react-redux";
 
 function LayoutDefault() {
     const isDesktopDevice = useMediaQuery("(min-width:768px)");
     const [collapsed, setCollapsed] = useState(!isDesktopDevice);
     const sidebarRef = useRef(null);
+    const token = getCookie("token");
+    const isLogin = useSelector((state) => state.loginReducer);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setCollapsed(!isDesktopDevice);
     }, [isDesktopDevice]);
 
-    // Gộp logic click outside
+    // Tự động chuyển hướng nếu không có token
+    useEffect(() => {
+        if (!token) {
+            navigate("/login");
+        }
+    }, [token, navigate]);
+
     useClickOutside([sidebarRef], () => {
         if (!isDesktopDevice && !collapsed) {
             setCollapsed(true); // Đóng Sidebar trên mobile
         }
     });
 
-    return (
+    return token ? (
         <div className="min-h-screen bg-slate-100 transition-colors dark:bg-slate-950">
             <div
                 className={cn(
@@ -46,7 +59,7 @@ function LayoutDefault() {
                 </div>
             </div>
         </div>
-    );
+    ) : null;
 }
 
 export default LayoutDefault;

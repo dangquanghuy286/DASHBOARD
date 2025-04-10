@@ -16,3 +16,7 @@ export const deleteUser = async (id) => {
     const result = await del(`userManagement/${id}`);
     return result;
 };
+export const login = async (user, password) => {
+    const result = await get(`userManagement?username=${user}&password=${password}`);
+    return result;
+};

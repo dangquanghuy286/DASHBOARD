@@ -12,6 +12,7 @@ import {
 } from "react-icons/md";
 import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon, IoMdCreate, IoIosAdd, IoIosArrowDropdownCircle } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
+import { FiLogOut } from "react-icons/fi";
 import { GrUserAdmin } from "react-icons/gr";
 import {
     FaUserAlt,
@@ -35,10 +36,11 @@ import {
     FaPrint,
     FaFileCsv,
 } from "react-icons/fa";
-
+import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidChevronsRight } from "react-icons/bi";
 import { TbBrandBooking } from "react-icons/tb";
 import { GoPackage } from "react-icons/go";
+
 const icons = {
     MdDashboard,
     IoMdAnalytics,
@@ -83,5 +85,7 @@ const icons = {
     FaPrint,
     FaFileCsv,
     IoIosArrowDropdownCircle,
+    RiLockPasswordFill,
+    FiLogOut,
 };
 export default icons;

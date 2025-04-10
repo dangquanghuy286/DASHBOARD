@@ -1,7 +1,7 @@
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import icons from "../../util/icon";
-import { deleteUser } from "../../services/customerSevice";
+import { deleteUser } from "../../services/userSevice";
 import { useState } from "react";
 const { MdDelete } = icons;
 function DeleteUser(props) {

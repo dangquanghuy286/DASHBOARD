@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDataCustomer } from "../../services/customerSevice";
+import { getDataCustomer } from "../../services/userSevice";
 import CreateUser from "./CreateUsers";
 import { useForm } from "react-hook-form";
 import UserPr from "./UserPr";
