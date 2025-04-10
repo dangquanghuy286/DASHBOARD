@@ -65,7 +65,10 @@ function ShowBookingTour() {
             </div>
 
             <div className="mb-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
-                <CopyPrintComponent data={data} />
+                <CopyPrintComponent
+                    data={data}
+                    type="booking"
+                />
             </div>
 
             <div className="my-6 flex items-center gap-2.5">

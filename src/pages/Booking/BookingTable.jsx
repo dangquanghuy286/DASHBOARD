@@ -50,7 +50,7 @@ function BookingTourTable({ currentEntries }) {
                         <th className="border px-4 py-2">Trẻ em</th>
                         <th className="border px-4 py-2">Tổng tiền</th>
                         <th className="border px-4 py-2">Trạng thái booking</th>
-                        <th className="border px-4 py-2">Thanh toán</th>
+                        <th className="payment-column border px-4 py-2">Thanh toán</th>
                         <th className="border px-4 py-2">Trạng thái</th>
                         <th className="action-column border px-4 py-2 text-center">Chi tiết</th>
                     </tr>
@@ -90,7 +90,7 @@ function BookingTourTable({ currentEntries }) {
                                 </td>
 
                                 {/* Thanh toán */}
-                                <td className="border px-4 py-2 text-center">
+                                <td className="payment-column border px-4 py-2 text-center">
                                     {item.paymentMethod ? (
                                         <img
                                             src={item.paymentMethod}
