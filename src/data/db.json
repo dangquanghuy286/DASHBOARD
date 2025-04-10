@@ -2444,14 +2444,24 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 75000000,
+      "unitPriceAdult": 30000000,
+      "unitPriceChild": 15000000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "7ca0"
+      "transactionCode": "TXN001234",
+      "paymentDate": "2025-01-03",
+      "account": "1234567890 - Vietcombank",
+      "tax": 7500000,
+      "discount": 5000000,
+      "id": "7ca0",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking002",
@@ -2466,14 +2476,24 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 68750000,
+      "unitPriceAdult": 27500000,
+      "unitPriceChild": 13750000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "e6e6"
+      "transactionCode": "TXN002345",
+      "paymentDate": "2024-12-26",
+      "account": "9876543210 - Techcombank",
+      "tax": 0,
+      "discount": 2500000,
+      "id": "e6e6",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking003",
@@ -2488,14 +2508,24 @@
       "adults": 1,
       "children": 1,
       "totalPrice": 22500000,
+      "unitPriceAdult": 15000000,
+      "unitPriceChild": 7500000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
       "paymentMethodName": "Thanh toán tại văn phòng",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "6102"
+      "transactionCode": "TXN003456",
+      "paymentDate": "2024-12-24",
+      "account": "4567891230 - BIDV",
+      "tax": 2250000,
+      "discount": 0,
+      "id": "6102",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking004",
@@ -2510,14 +2540,24 @@
       "adults": 3,
       "children": 0,
       "totalPrice": 75000000,
+      "unitPriceAdult": 25000000,
+      "unitPriceChild": 12500000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "1b11"
+      "transactionCode": "TXN004567",
+      "paymentDate": "2025-04-26",
+      "account": "3216549870 - Sacombank",
+      "tax": 7500000,
+      "discount": 5000000,
+      "id": "1b11",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking005",
@@ -2532,14 +2572,24 @@
       "adults": 2,
       "children": 2,
       "totalPrice": 71250000,
+      "unitPriceAdult": 23750000,
+      "unitPriceChild": 11875000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "8217"
+      "transactionCode": "TXN005678",
+      "paymentDate": "2025-07-29",
+      "account": "1472583690 - Vietinbank",
+      "tax": 0,
+      "discount": 0,
+      "id": "8217",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking006",
@@ -2554,14 +2604,24 @@
       "adults": 1,
       "children": 0,
       "totalPrice": 30000000,
+      "unitPriceAdult": 30000000,
+      "unitPriceChild": 15000000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "33ef"
+      "transactionCode": "TXN006789",
+      "paymentDate": "2025-10-29",
+      "account": "2583691470 - MB Bank",
+      "tax": 3000000,
+      "discount": 0,
+      "id": "33ef",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking007",
@@ -2576,14 +2636,24 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 60000000,
+      "unitPriceAdult": 24000000,
+      "unitPriceChild": 12000000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "fa3f"
+      "transactionCode": "TXN007890",
+      "paymentDate": "2025-04-11",
+      "account": "3692581470 - Agribank",
+      "tax": 6000000,
+      "discount": 3000000,
+      "id": "fa3f",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking011",
@@ -2598,14 +2668,21 @@
       "adults": 3,
       "children": 2,
       "totalPrice": 85000000,
+      "unitPriceAdult": 21250000,
+      "unitPriceChild": 10625000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Chưa thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "3df1"
+      "tax": 0,
+      "discount": 0,
+      "id": "3df1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking012",
@@ -2620,14 +2697,24 @@
       "adults": 1,
       "children": 1,
       "totalPrice": 55000000,
+      "unitPriceAdult": 36666666,
+      "unitPriceChild": 18333333,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "4ea2"
+      "transactionCode": "TXN012345",
+      "paymentDate": "2025-02-16",
+      "account": "6543219870 - VPBank",
+      "tax": 5500000,
+      "discount": 0,
+      "id": "4ea2",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking013",
@@ -2642,14 +2729,24 @@
       "adults": 4,
       "children": 0,
       "totalPrice": 60000000,
+      "unitPriceAdult": 15000000,
+      "unitPriceChild": 7500000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "5fb3"
+      "transactionCode": "TXN013456",
+      "paymentDate": "2025-02-23",
+      "account": "7891234560 - ACB",
+      "tax": 0,
+      "discount": 4000000,
+      "id": "5fb3",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking014",
@@ -2664,14 +2761,24 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 65000000,
+      "unitPriceAdult": 26000000,
+      "unitPriceChild": 13000000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "6gc4"
+      "transactionCode": "TXN014567",
+      "paymentDate": "2025-03-06",
+      "account": "8521479630 - TPBank",
+      "tax": 6500000,
+      "discount": 0,
+      "id": "6gc4",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking015",
@@ -2686,14 +2793,21 @@
       "adults": 5,
       "children": 2,
       "totalPrice": 95000000,
+      "unitPriceAdult": 15833333,
+      "unitPriceChild": 7916666,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Chưa thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "7hd5"
+      "tax": 0,
+      "discount": 0,
+      "id": "7hd5",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking008",
@@ -2708,14 +2822,24 @@
       "adults": 2,
       "children": 2,
       "totalPrice": 70000000,
+      "unitPriceAdult": 23333333,
+      "unitPriceChild": 11666666,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "8ie6"
+      "transactionCode": "TXN008901",
+      "paymentDate": "2025-02-02",
+      "account": "7418529630 - Vietcombank",
+      "tax": 7000000,
+      "discount": 5000000,
+      "id": "8ie6",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking009",
@@ -2730,14 +2854,24 @@
       "adults": 1,
       "children": 1,
       "totalPrice": 45000000,
+      "unitPriceAdult": 30000000,
+      "unitPriceChild": 15000000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "9jf7"
+      "transactionCode": "TXN009012",
+      "paymentDate": "2025-01-23",
+      "account": "9632587410 - Techcombank",
+      "tax": 0,
+      "discount": 0,
+      "id": "9jf7",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking010",
@@ -2752,14 +2886,24 @@
       "adults": 4,
       "children": 3,
       "totalPrice": 89000000,
+      "unitPriceAdult": 17800000,
+      "unitPriceChild": 8900000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "10kg8"
+      "transactionCode": "TXN010123",
+      "paymentDate": "2025-04-11",
+      "account": "1597534860 - BIDV",
+      "tax": 8900000,
+      "discount": 0,
+      "id": "10kg8",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking016",
@@ -2774,14 +2918,24 @@
       "adults": 2,
       "children": 0,
       "totalPrice": 48000000,
+      "unitPriceAdult": 24000000,
+      "unitPriceChild": 12000000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "11lh9"
+      "transactionCode": "TXN016234",
+      "paymentDate": "2025-05-16",
+      "account": "3579514680 - Sacombank",
+      "tax": 0,
+      "discount": 2000000,
+      "id": "11lh9",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking017",
@@ -2796,14 +2950,24 @@
       "adults": 3,
       "children": 1,
       "totalPrice": 67000000,
+      "unitPriceAdult": 19142857,
+      "unitPriceChild": 9571428,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "12mi0"
+      "transactionCode": "TXN017345",
+      "paymentDate": "2025-06-21",
+      "account": "9513574860 - Vietinbank",
+      "tax": 6700000,
+      "discount": 0,
+      "id": "12mi0",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking018",
@@ -2818,14 +2982,24 @@
       "adults": 1,
       "children": 2,
       "totalPrice": 52000000,
+      "unitPriceAdult": 26000000,
+      "unitPriceChild": 13000000,
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "13nj1"
+      "transactionCode": "TXN018456",
+      "paymentDate": "2025-03-11",
+      "account": "7539514860 - MB Bank",
+      "tax": 0,
+      "discount": 3000000,
+      "id": "13nj1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking019",
@@ -2840,14 +3014,24 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 58000000,
+      "unitPriceAdult": 23200000,
+      "unitPriceChild": 11600000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
       "paymentMethodName": "Thanh toán tại công ty",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "14ok2"
+      "transactionCode": "TXN019567",
+      "paymentDate": "2025-05-21",
+      "account": "1593574860 - Agribank",
+      "tax": 5800000,
+      "discount": 0,
+      "id": "14ok2",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking020",
@@ -2862,14 +3046,24 @@
       "adults": 3,
       "children": 1,
       "totalPrice": 62000000,
+      "unitPriceAdult": 17714285,
+      "unitPriceChild": 8857142,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "15pl3"
+      "transactionCode": "TXN020678",
+      "paymentDate": "2025-06-11",
+      "account": "3571594860 - VPBank",
+      "tax": 0,
+      "discount": 0,
+      "id": "15pl3",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking021",
@@ -2884,14 +3078,24 @@
       "adults": 2,
       "children": 0,
       "totalPrice": 45000000,
+      "unitPriceAdult": 22500000,
+      "unitPriceChild": 11250000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "16qm4"
+      "transactionCode": "TXN021789",
+      "paymentDate": "2025-07-16",
+      "account": "9517534860 - ACB",
+      "tax": 4500000,
+      "discount": 0,
+      "id": "16qm4",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking022",
@@ -2906,14 +3110,24 @@
       "adults": 4,
       "children": 2,
       "totalPrice": 98000000,
+      "unitPriceAdult": 19600000,
+      "unitPriceChild": 9800000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
       "paymentMethodName": "Thanh toán tại công ty",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "17rn5"
+      "transactionCode": "TXN022890",
+      "paymentDate": "2025-08-21",
+      "account": "7531594860 - TPBank",
+      "tax": 0,
+      "discount": 5000000,
+      "id": "17rn5",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking023",
@@ -2928,14 +3142,24 @@
       "adults": 1,
       "children": 1,
       "totalPrice": 38000000,
+      "unitPriceAdult": 25333333,
+      "unitPriceChild": 12666666,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "18so6"
+      "transactionCode": "TXN023901",
+      "paymentDate": "2025-09-06",
+      "account": "1597534860 - Vietcombank",
+      "tax": 3800000,
+      "discount": 0,
+      "id": "18so6",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking024",
@@ -2950,14 +3174,24 @@
       "adults": 3,
       "children": 0,
       "totalPrice": 72000000,
+      "unitPriceAdult": 24000000,
+      "unitPriceChild": 12000000,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Đã thanh toán",
-      "actions": [
-        "Xem chi tiết"
-      ],
-      "id": "19tp7"
+      "transactionCode": "TXN024012",
+      "paymentDate": "2025-10-16",
+      "account": "3579514860 - Techcombank",
+      "tax": 0,
+      "discount": 0,
+      "id": "19tp7",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking025",
@@ -2972,15 +3206,25 @@
       "adults": 2,
       "children": 1,
       "totalPrice": 56000000,
+      "unitPriceAdult": 22400000,
+      "unitPriceChild": 11200000,
       "bookingStatus": "Chưa xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
       "actions": [
         "Xác nhận",
         "Xem chi tiết"
       ],
-      "id": "20uq8"
+      "id": "20uq8",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking026",
@@ -2995,15 +3239,25 @@
       "adults": 3,
       "children": 0,
       "totalPrice": 45000000,
+      "unitPriceAdult": 15000000,
+      "unitPriceChild": 7500000,
       "bookingStatus": "Chưa xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
       "paymentMethodName": "MoMo",
       "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
       "actions": [
         "Xác nhận",
         "Xem chi tiết"
       ],
-      "id": "21vr9"
+      "id": "21vr9",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking027",
@@ -3018,15 +3272,25 @@
       "adults": 1,
       "children": 2,
       "totalPrice": 39000000,
+      "unitPriceAdult": 19500000,
+      "unitPriceChild": 9750000,
       "bookingStatus": "Chưa xác nhận",
       "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
       "paymentMethodName": "Thanh toán tại công ty",
       "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
       "actions": [
         "Xác nhận",
         "Xem chi tiết"
       ],
-      "id": "22ws0"
+      "id": "22ws0",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     },
     {
       "bookingId": "booking028",
@@ -3041,15 +3305,28 @@
       "adults": 4,
       "children": 1,
       "totalPrice": 82000000,
+      "unitPriceAdult": 18222222,
+      "unitPriceChild": 9111111,
       "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
       "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN028123",
+      "paymentDate": "2025-08-11",
+      "account": "4561237890 - Vietcombank",
+      "tax": 8200000,
+      "discount": 0,
       "actions": [
         "Xác nhận",
         "Xem chi tiết"
       ],
-      "id": "23xt1"
+      "id": "23xt1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
     }
   ],
   "contactManagement": {

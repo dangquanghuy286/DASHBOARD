@@ -8,7 +8,7 @@ const { MdBlock } = icons;
 function TourTable({ currentEntries }) {
     return currentEntries?.length > 0 ? (
         <div className="overflow-x-auto">
-            <table className="mb-5 min-w-full border text-sm text-black dark:text-white">
+            <table className="mb-5 w-full border text-sm text-black dark:text-white">
                 <thead className="bg-gray-100 text-left dark:bg-slate-800">
                     <tr>
                         <th className="border px-4 py-2">Tên</th>

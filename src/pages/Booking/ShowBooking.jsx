@@ -7,6 +7,7 @@ import EntriesFilter from "../../components/Pagination";
 
 import { getDataBookingTour } from "../../services/bookingService";
 import BookingTourTable from "./BookingTable";
+import GoBack from "../../components/GoBack/Goback";
 
 const { FaSearch } = icons;
 
@@ -93,6 +94,9 @@ function ShowBookingTour() {
             </div>
 
             <EntriesFilter data={data}>{(currentEntries) => <BookingTourTable currentEntries={currentEntries} />}</EntriesFilter>
+            <div className="mb-4">
+                <GoBack />
+            </div>
         </div>
     );
 }

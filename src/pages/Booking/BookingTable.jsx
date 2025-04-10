@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import { edit } from "../../util/request";
+import { Link } from "react-router-dom";
 const { IoIosArrowDropdownCircle } = icons;
 
 function BookingTourTable({ currentEntries }) {
@@ -32,11 +33,6 @@ function BookingTourTable({ currentEntries }) {
         } catch (error) {
             console.error("Error confirming booking:", error);
         }
-    };
-
-    const handleViewDetails = (bookingId) => {
-        // Xử lý xem chi tiết booking
-        console.log("Xem chi tiết booking: ", bookingId);
     };
 
     return currentEntries?.length > 0 ? (
@@ -143,12 +139,11 @@ function BookingTourTable({ currentEntries }) {
                                                 )}
 
                                                 {/* Xem chi tiết luôn có */}
-                                                <button
-                                                    className="w-full px-4 py-2 text-left text-sm text-blue-600 hover:bg-blue-50"
-                                                    onClick={() => handleViewDetails(item.bookingId)}
-                                                >
-                                                    📄 Xem chi tiết
-                                                </button>
+                                                <Link to={`/booking/${item.id}`}>
+                                                    <button className="w-full px-4 py-2 text-left text-sm text-blue-600 hover:bg-blue-50">
+                                                        📄 Xem chi tiết
+                                                    </button>
+                                                </Link>
                                             </div>
                                         )}
                                     </div>
