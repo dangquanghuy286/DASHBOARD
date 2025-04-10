@@ -1,5 +1,6 @@
 import React from "react";
 import photo from "../../assets/Img/touricons.png";
+import ToolReport from "../../components/ToolReport";
 function Invoice({ item }) {
     const totalAdult = item.adults * item.unitPriceAdult;
     const totalChild = item.children * item.unitPriceChild;
@@ -151,7 +152,7 @@ function Invoice({ item }) {
 
                 <hr className="mb-6 border-gray-300 dark:border-gray-600" />
 
-                <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+                <p className="mb-6 text-center text-sm text-gray-600 dark:text-gray-400">
                     <strong className="text-blue-700 dark:text-blue-300">Ghi chú:</strong> Vui lòng kiểm tra thông tin kỹ lưỡng. Nếu có sai sót, hãy
                     liên hệ bộ phận hỗ trợ qua email{" "}
                     <a
@@ -165,10 +166,16 @@ function Invoice({ item }) {
                         href={`tel:${item.provider.phone}`}
                         className="text-blue-600 hover:underline dark:text-blue-400"
                     >
-                        {item.provider.phone}
+                        {item.provider.phone} .
                     </a>
-                    .
                 </p>
+                <hr className="mb-6 border-gray-300 dark:border-gray-600" />
+                <div className="mb-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <ToolReport
+                        item={item}
+                        type="invoice"
+                    />
+                </div>
             </div>
         </div>
     );

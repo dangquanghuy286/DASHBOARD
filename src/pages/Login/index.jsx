@@ -26,6 +26,7 @@ function Login() {
                 confirmButtonColor: "#4caf50",
                 icon: "success",
                 draggable: true,
+                position: "top-end",
             });
             setCookie("userId", res[0].userId, 1);
             setCookie("name", res[0].name, 1);
@@ -48,6 +49,7 @@ function Login() {
                 customClass: {
                     popup: "custom-swal-popup",
                 },
+                position: "top-end",
             });
         }
     };

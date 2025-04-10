@@ -43,6 +43,7 @@ export const handlePrint = (type) => {
         paymentColumns.forEach((col) => (col.style.display = "none"));
         action.forEach((col) => (col.style.display = "none"));
     }
+    // Nếu là invoice, in thêm thông tin công ty hoặc hóa đơn
 
     //Tao cua so in
     const printWindow = window.open("", "", "width=800,height=600");
@@ -271,4 +272,138 @@ export const handleToPdf = (data, type) => {
     });
 
     doc.save(`${type}.pdf`); // Lưu file PDF
+};
+export const handlePrintReport = (item, type) => {
+    const printWindow = window.open("", "", "width=900,height=700");
+    const currentDate = new Date().toLocaleString("vi-VN");
+
+    const totalAdult = (item?.adults || 0) * (item?.unitPriceAdult || 0);
+    const totalChild = (item?.children || 0) * (item?.unitPriceChild || 0);
+    const originalPrice = totalAdult + totalChild;
+    const tax = item?.tax || 0;
+    const discount = item?.discount || 0;
+    const finalPrice = originalPrice + tax - discount;
+
+    if (type === "invoice") {
+        const html = `
+        <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Công ty MTV</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-size: 12px; line-height: 1.2; }
+        .compact { margin-bottom: 0.5rem; }
+        table { font-size: 11px; }
+        .text-smaller { font-size: 10px; }
+    </style>
+</head>
+<body class="font-sans p-4 min-h-screen bg-gray-50 text-gray-800">
+    <div class="max-w-full mx-auto bg-white p-6 rounded-lg shadow border border-gray-300 flex flex-col justify-between h-[257mm]">
+        <!-- Header -->
+        <header class="compact">
+            <h2 class="text-2xl font-bold text-center text-blue-700">Hóa đơn thanh toán</h2>
+            <p class="text-center"><strong>Thời gian lập hóa đơn:</strong> ${currentDate}</p>
+        </header>
+        <hr class="my-2 border-black" />
+
+        <!-- Customer & Provider Info (2 columns) -->
+        <div class="flex flex-col sm:flex-row gap-4 compact">
+            <section class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-700">Thông tin khách hàng</h3>
+                <div class="space-y-0.5">
+                    <p><strong>Người đặt:</strong> ${item.customerName}</p>
+                    <p><strong>Địa chỉ:</strong> ${item.address}</p>
+                    <p><strong>SĐT:</strong> ${item.phone}</p>
+                    <p><strong>Email:</strong> ${item.email}</p>
+                </div>
+            </section>
+            <section class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-700">Thông tin đơn vị cung cấp</h3>
+                <div class="space-y-0.5">
+                    <p><strong>Đơn vị:</strong> ${item.provider.companyName}</p>
+                    <p><strong>Địa chỉ:</strong> ${item.provider.address}</p>
+                    <p><strong>SĐT:</strong> ${item.provider.phone}</p>
+                    <p><strong>Email:</strong> ${item.provider.email}</p>
+                </div>
+            </section>
+        </div>
+        <hr class="my-2 border-black" />
+
+        <!-- Tour Details -->
+        <section class="compact">
+            <h3 class="text-lg font-semibold text-gray-700">Chi tiết đặt tour</h3>
+            <div class="grid grid-cols-2 gap-2">
+                <p><strong>Mã đơn đặt:</strong> ${item.bookingId}</p>
+                <p><strong>Ngày đặt:</strong> ${item.bookingDate}</p>
+                <p><strong>Trạng thái:</strong> ${item.bookingStatus}</p>
+                <p><strong>Mã giao dịch:</strong> ${item.transactionCode}</p>
+                <p><strong>Ngày thanh toán:</strong> ${item.paymentDate}</p>
+                <p><strong>Tài khoản:</strong> ${item.account}</p>
+            </div>
+        </section>
+        <hr class="my-2 border-black" />
+
+        <!-- Pricing Table -->
+        <table class="w-full border border-black border-collapse mt-2">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="border border-black p-1">Hạng mục</th>
+                    <th class="border border-black p-1">Số lượng</th>
+                    <th class="border border-black p-1">Điểm đến</th>
+                    <th class="border border-black p-1">Đơn giá</th>
+                    <th class="border border-black p-1">Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-black p-1">Người lớn</td>
+                    <td class="border border-black p-1">${item.adults}</td>
+                    <td class="border border-black p-1">${item.tourName}</td>
+                    <td class="border border-black p-1">${item.unitPriceAdult.toLocaleString("vi-VN")} VND</td>
+                    <td class="border border-black p-1">${totalAdult.toLocaleString("vi-VN")} VND</td>
+                </tr>
+                <tr>
+                    <td class="border border-black p-1">Trẻ em</td>
+                    <td class="border border-black p-1">${item.children}</td>
+                    <td class="border border-black p-1">${item.tourName}</td>
+                    <td class="border border-black p-1">${item.unitPriceChild.toLocaleString("vi-VN")} VND</td>
+                    <td class="border border-black p-1">${totalChild.toLocaleString("vi-VN")} VND</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Summary -->
+        <div class="text-right mt-2 space-y-0.5">
+            <p><strong>Giá gốc:</strong> ${originalPrice.toLocaleString("vi-VN")} VND</p>
+            <p><strong>Thuế:</strong> ${tax.toLocaleString("vi-VN")} VND</p>
+            <p><strong>Giảm giá:</strong> ${discount.toLocaleString("vi-VN")} VND</p>
+            <p><strong class="text-lg text-blue-700">Tổng cộng:</strong> <span class="text-lg font-bold">${finalPrice.toLocaleString("vi-VN")} VND</span></p>
+        </div>
+        <hr class="my-2 border-black" />
+
+        <!-- Payment Information -->
+        <div class="flex justify-between compact">
+            <p><strong>Phương thức thanh toán:</strong> ${item.paymentMethodName}</p>
+            <p><strong>Trạng thái thanh toán:</strong> ${item.paymentStatus}</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-smaller border-t border-black pt-2 mt-auto">
+            Nếu có sai sót, vui lòng liên hệ: 
+            <a href="mailto:${item.provider.email}" class="text-blue-600 underline">${item.provider.email}</a> | 
+            <a href="tel:${item.provider.phone}" class="text-blue-600 underline">${item.provider.phone}</a>
+        </footer>
+    </div>
+</body>
+</html>
+        `;
+
+        printWindow.document.write(html);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+    }
 };

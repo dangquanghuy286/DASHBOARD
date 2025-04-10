@@ -2673,8 +2673,11 @@
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
-      "paymentStatus": "Chưa thanh toán",
-      "tax": 0,
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN011234",
+      "paymentDate": "2025-03-02",
+      "account": "1472583690 - Vietinbank",
+      "tax": 8500000,
       "discount": 0,
       "id": "3df1",
       "provider": {

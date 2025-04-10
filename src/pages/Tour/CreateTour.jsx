@@ -210,7 +210,7 @@ function CreateTour() {
                         <input
                             type="number"
                             name="quantity"
-                            value={data.quantity || 0}
+                            value={data.quantity ?? ""}
                             onChange={handleChange}
                             className="w-full border p-2"
                             min="0"
@@ -221,7 +221,7 @@ function CreateTour() {
                         <input
                             type="number"
                             name="priceAdult"
-                            value={data.priceAdult || 0}
+                            value={data.priceAdult ?? ""}
                             onChange={handleChange}
                             className="w-full border p-2"
                             min="0"
@@ -232,7 +232,7 @@ function CreateTour() {
                         <input
                             type="number"
                             name="priceChild"
-                            value={data.priceChild || 0}
+                            value={data.priceChild ?? ""}
                             onChange={handleChange}
                             className="w-full border p-2"
                             min="0"
@@ -269,6 +269,7 @@ function CreateTour() {
                             value={data.endDate || ""}
                             onChange={handleChange}
                             className="w-full border p-2"
+                            min={new Date().toISOString().split("T")[0]}
                         />
                     </div>
                     <div>
