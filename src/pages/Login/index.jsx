@@ -8,9 +8,11 @@ import { useDispatch } from "react-redux";
 import { checkLogin } from "../../actions/login";
 
 const { FaUserAlt, RiLockPasswordFill } = icons;
+
 function Login() {
     const nav = useNavigate();
     const dispatch = useDispatch();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const email = e.target[0].value;
@@ -53,9 +55,10 @@ function Login() {
             });
         }
     };
+
     return (
-        <div className="flex h-screen items-center justify-center bg-slate-900 bg-cover bg-no-repeat">
-            <div className="bg-opacity-50 w-[400px] rounded-lg bg-slate-950 p-5 shadow-lg">
+        <div className="relative flex min-h-screen items-center justify-center bg-slate-900 bg-cover bg-center bg-no-repeat p-4">
+            <div className="w-full max-w-[400px] rounded-lg bg-slate-950 p-6 shadow-2xl backdrop-blur-md">
                 <form
                     className="space-y-6"
                     onSubmit={handleSubmit}
@@ -84,7 +87,7 @@ function Login() {
 
                     <button
                         type="submit"
-                        className="h-[50px] w-full rounded-full bg-[#0061ff] font-bold text-blue-50 transition duration-300 hover:bg-[#60efff] hover:text-white"
+                        className="h-[50px] w-full cursor-pointer rounded-full bg-[#0061ff] font-bold text-blue-50 transition duration-300 hover:bg-[#60efff] hover:text-white"
                     >
                         Login
                     </button>

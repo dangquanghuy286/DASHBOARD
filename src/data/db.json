@@ -310,43 +310,9 @@
     ],
     "international": []
   },
-  "adminManagement": {
-    "admins": [
-      {
-        "adminId": "admin001",
-        "name": "Admin One",
-        "email": "admin1@example.com",
-        "role": "Super Admin"
-      },
-      {
-        "adminId": "admin002",
-        "name": "Admin Two",
-        "email": "admin2@example.com",
-        "role": "Tour Manager"
-      },
-      {
-        "adminId": "admin003",
-        "name": "Admin Three",
-        "email": "admin3@example.com",
-        "role": "Booking Manager"
-      },
-      {
-        "adminId": "admin004",
-        "name": "Admin Four",
-        "email": "admin4@example.com",
-        "role": "Customer Support"
-      },
-      {
-        "adminId": "admin005",
-        "name": "Admin Five",
-        "email": "admin5@example.com",
-        "role": "Marketing Manager"
-      }
-    ]
-  },
   "userManagement": [
     {
-      "userId": "user001",
+      "userId": "admin001",
       "name": "NGUYỄN SỶ KHẢI",
       "email": "nguyensykhai@email.com",
       "phone": "+84987654321",
@@ -359,7 +325,7 @@
       "id": "3f6f"
     },
     {
-      "userId": "user002",
+      "userId": "admin002",
       "name": "PHAN VĂN THANH",
       "email": "phanvanthanh@email.com",
       "phone": "+84987654321",
@@ -372,7 +338,7 @@
       "id": "da6d"
     },
     {
-      "userId": "user003",
+      "userId": "admin003",
       "name": "NGUYỄN MINH TIỀN PHONG",
       "email": "nguyenminhtienphong@email.com",
       "phone": "+84987654322",
@@ -385,7 +351,7 @@
       "id": "56c0"
     },
     {
-      "userId": "user004",
+      "userId": "admin004",
       "name": "PHẠM THỊ THANH THÚY",
       "email": "phamthithanhthuy@email.com",
       "phone": "+84987654323",
@@ -398,7 +364,7 @@
       "id": "40d9"
     },
     {
-      "userId": "user005",
+      "userId": "admin005",
       "name": "ĐẶNG HỮU QUANG HUY",
       "email": "danghuuquanghuy@email.com",
       "phone": "+84987654324",
@@ -409,6 +375,56 @@
       "password": "1212",
       "token": "yZ2cW5jB8kN4xL6pM7qR3tV9",
       "id": "b8dc"
+    },
+    {
+      "userId": "user001",
+      "name": "TRẦN VĂN HÙNG",
+      "email": "tranvanhung@email.com",
+      "phone": "+84912345678",
+      "avatar": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSiSu7EufnnErvcuWZmzpjx1Mix499y2yAbyDQQAjKdNnW_opkt",
+      "address": "123 Đường Lê Duẩn, Quận Hải Châu, Đà Nẵng",
+      "role": "User",
+      "id": "e7f8"
+    },
+    {
+      "userId": "user002",
+      "name": "LÊ THỊ MAI",
+      "email": "lethimai@email.com",
+      "phone": "+84987651234",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC6-xvMLkrQjbkxGYm71v3fmo9PV94szGdyFNzTMPgCmMtX_DS",
+      "address": "56 Đường Nguyễn Văn Linh, Quận Thanh Khê, Đà Nẵng",
+      "role": "User",
+      "id": "a9b1"
+    },
+    {
+      "userId": "user003",
+      "name": "HOÀNG VĂN NAM",
+      "email": "hoangvannam@email.com",
+      "phone": "+84912349876",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ-SmaVRkgyx02dXhDArfk7MQkzqKgYHzGDNkyX3CTrEAha4Oj",
+      "address": "78 Đường Ông Ích Khiêm, Quận Sơn Trà, Đà Nẵng",
+      "role": "User",
+      "id": "c2d3"
+    },
+    {
+      "userId": "user004",
+      "name": "NGUYỄN THỊ LAN",
+      "email": "nguyenthilan@email.com",
+      "phone": "+84987654325",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTYQcOmz3TUZQPtXRLs8-8flwV7Hnm8Jym6_lMVEpphlBNSu16Q",
+      "address": "34 Đường Hùng Vương, Quận Liên Chiểu, Đà Nẵng",
+      "role": "User",
+      "id": "f4g5"
+    },
+    {
+      "userId": "user005",
+      "name": "VÕ MINH TUẤN",
+      "email": "vominhtuan@email.com",
+      "phone": "+84912345679",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQR-Yq3tNRvWXjGanP7WN2E1YzqzoszUQl575nX0jZE6bsxRH1y",
+      "address": "90 Đường Tôn Đức Thắng, Quận Cẩm Lệ, Đà Nẵng",
+      "role": "User",
+      "id": "h6i7"
     }
   ],
   "roles": [
@@ -2801,8 +2817,11 @@
       "bookingStatus": "Đã hoàn thành",
       "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
       "paymentMethodName": "ZaloPay",
-      "paymentStatus": "Chưa thanh toán",
-      "tax": 0,
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN015678",
+      "paymentDate": "2025-04-02",
+      "account": "9638527410 - Vietcombank",
+      "tax": 8900000,
       "discount": 0,
       "id": "7hd5",
       "provider": {
