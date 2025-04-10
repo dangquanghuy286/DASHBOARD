@@ -24,7 +24,7 @@ function Invoice({ item }) {
                     <div className="flex items-center space-x-4">
                         <img
                             src={photo}
-                            className="h-20 w-20 transform rounded-full border-1 bg-slate-950 object-cover shadow-lg"
+                            className="h-20 w-20 transform rounded-full bg-gray-50 object-cover dark:bg-slate-950"
                         />
 
                         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{item.tourName}</h2>
