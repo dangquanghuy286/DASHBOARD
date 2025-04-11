@@ -1,42 +1,64 @@
-import { useState } from "react";
-import photo from "@/assets/Img/admin-1.jpg"; // Ảnh mặc định
+import { useEffect, useState } from "react";
+import photo from "@/assets/Img/admin-1.jpg";
 import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
+import { getCookie } from "../../helpers/cookie";
+import { getDataCustomer } from "../../services/userSevice";
+
 const { FaEye, FaEyeSlash, MdOutlineAttachFile } = icons;
 
 function Admin() {
-    // State lưu ảnh tạm (khi chọn nhưng chưa cập nhật)
     const [tempImage, setTempImage] = useState(null);
-
-    // State lưu ảnh chính thức (chỉ thay đổi khi nhấn "Cập nhật")
     const [selectedImage, setSelectedImage] = useState(photo);
     const [showPassword, setShowPassword] = useState(false);
-
-    // State lưu thông tin admin
     const [formData, setFormData] = useState({
-        name: "QuangHuy",
-        email: "huydang2806@gmail.com",
-        address: "Điện Bàn, Quảng Nam",
-        password: "1234",
+        name: "",
+        email: "",
+        address: "",
+        password: "",
     });
 
-    // Khi chọn ảnh mới
+    useEffect(() => {
+        const token = getCookie("token");
+        const fetchApi = async () => {
+            try {
+                const res = await getDataCustomer();
+                const currentUser = res.find((user) => user.token === token);
+                if (currentUser) {
+                    setFormData({
+                        name: currentUser.name,
+                        email: currentUser.email,
+                        address: currentUser.address,
+                        password: currentUser.password,
+                        avatar: currentUser.avatar || "",
+                    });
+                    if (currentUser.avatar && currentUser.avatar.startsWith("http")) {
+                        setTempImage(currentUser.avatar);
+                    }
+                } else {
+                    alert("Người dùng không tồn tại");
+                }
+            } catch (error) {
+                console.error("Lỗi khi gọi API:", error);
+            }
+        };
+        fetchApi();
+    }, []);
+
     const handleImageChange = (event) => {
         if (event.target.files && event.target.files[0]) {
-            setTempImage(URL.createObjectURL(event.target.files[0])); // Hiển thị ảnh mới nhưng chưa lưu
+            setTempImage(URL.createObjectURL(event.target.files[0]));
         }
     };
 
-    // Khi nhập dữ liệu vào form
     const handleInputChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
-    // Khi nhấn "Cập nhật"
     const handleSubmit = (event) => {
-        event.preventDefault(); // Ngăn form reload trang
-        setSelectedImage(tempImage || selectedImage); // Lưu ảnh mới nếu có
-        alert("Thông tin đã được cập nhật!"); // Thông báo thành công
+        event.preventDefault();
+        setSelectedImage(tempImage || selectedImage);
+        alert("Thông tin đã được cập nhật!");
     };
 
     return (
@@ -50,12 +72,14 @@ function Admin() {
             <div className="flex flex-col items-center md:flex-row md:items-start">
                 {/* Cột trái với ảnh đại diện */}
                 <div className="flex w-full flex-col items-center justify-center p-8 md:w-1/2">
-                    <div
-                        className="mb-5 h-48 w-48 rounded-full border border-amber-300 bg-cover bg-center md:h-60 md:w-60"
-                        style={{ backgroundImage: `url(${tempImage || selectedImage})` }}
-                    ></div>
+                    <div className="mb-5 h-40 w-40 overflow-hidden rounded-full border border-amber-300 md:h-60 md:w-60">
+                        <img
+                            src={tempImage || formData.avatar || "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png"}
+                            alt={formData.name}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
 
-                    {/* Input file ẩn */}
                     <input
                         type="file"
                         accept="image/*"
@@ -64,7 +88,6 @@ function Admin() {
                         id="fileInput"
                     />
 
-                    {/* Button để mở chọn ảnh */}
                     <label
                         htmlFor="fileInput"
                         className="mb-4 flex cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-5 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
@@ -88,36 +111,33 @@ function Admin() {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
                                 required
-                                onInvalid={(e) => e.target.setCustomValidity("Vui lòng nhập tên của bạn!")}
-                                onInput={(e) => e.target.setCustomValidity("")}
                             />
                         </div>
+
                         <div>
                             <label className="lbl_title block">
                                 Mật khẩu <span className="text-red-500">*</span>
                             </label>
                             <div className="relative">
                                 <input
-                                    type={showPassword ? "text" : "password"} // Thay đổi kiểu input khi ẩn/hiện mật khẩu
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     value={formData.password}
                                     onChange={handleInputChange}
-                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:ring-2 focus:ring-green-500"
                                     required
-                                    onInvalid={(e) => e.target.setCustomValidity("Vui lòng nhập mật khẩu!")}
-                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
-
                                 <span
                                     className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
-                                    onClick={() => setShowPassword(!showPassword)} // Thay đổi trạng thái ẩn/hiện mật khẩu
+                                    onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </span>
                             </div>
                         </div>
+
                         <div>
                             <label className="lbl_title block">Email</label>
                             <input
@@ -125,9 +145,10 @@ function Admin() {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
                             />
                         </div>
+
                         <div>
                             <label className="lbl_title block">Địa chỉ</label>
                             <input
@@ -135,11 +156,11 @@ function Admin() {
                                 name="address"
                                 value={formData.address}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
                             />
                         </div>
+
                         <div className="mt-4 flex items-center gap-3">
-                            {/* Nút cập nhật */}
                             <button
                                 type="submit"
                                 className="rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
@@ -149,9 +170,7 @@ function Admin() {
                         </div>
                     </form>
                 </div>
-                {/* Nút trở lại */}
             </div>
-            {/* Nút trở lại */}
             <GoBack />
         </div>
     );

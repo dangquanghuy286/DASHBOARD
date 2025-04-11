@@ -17,6 +17,11 @@ export const deleteUser = async (id) => {
     return result;
 };
 export const login = async (user, password) => {
-    const result = await get(`userManagement?username=${user}&password=${password}`);
-    return result;
+    try {
+        const result = await get(`userManagement?username=${user}&password=${password}`);
+        return result;
+    } catch (error) {
+        console.error("Login error:", error);
+        return [];
+    }
 };

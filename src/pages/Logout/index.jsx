@@ -24,11 +24,6 @@ function Logout() {
             nav("/login");
         }, 2000);
     }, []);
-    return (
-        <div className="logout">
-            <h1>Đăng xuất thành công</h1>
-            <p>Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!</p>
-        </div>
-    );
+    return <></>;
 }
 export default Logout;

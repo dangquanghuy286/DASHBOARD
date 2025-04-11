@@ -15,12 +15,12 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const email = e.target[0].value;
+        const username = e.target[0].value;
         const password = e.target[1].value;
 
-        const res = await login(email, password);
+        const res = await login(username, password);
 
-        if (res.length > 0) {
+        if (res && res.length > 0 && res[0].token) {
             Swal.fire({
                 title: "Thành công!",
                 background: "#fff9c4",
@@ -43,7 +43,7 @@ function Login() {
             nav("/");
         } else {
             Swal.fire({
-                title: "Đăng nhập thất bại, hãy thử lại sau!",
+                title: "Sai mật khẩu hoặc tài khoản!",
                 icon: "error",
                 background: "#fff9c4",
                 color: "#990000",

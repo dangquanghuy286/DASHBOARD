@@ -2,14 +2,36 @@ import PropTypes from "prop-types";
 import icons from "../../util/icon";
 import { useTheme } from "../../hooks/use_theme";
 
-import pFImg from "@/assets/Img/admin-1.jpg";
 import { useEffect, useRef, useState } from "react";
-const { BiSolidChevronsRight, IoIosSunny, IoIosMoon, FaBell } = icons;
 import { Link } from "react-router-dom";
+
+import { getCookie } from "../../helpers/cookie";
+import { getDataCustomer } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
+
+const { BiSolidChevronsRight, IoIosSunny, IoIosMoon, FaBell } = icons;
+
 function Header({ collapsed, setCollapsed }) {
     const { theme, setTheme } = useTheme();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef();
+
+    const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png");
+
+    useEffect(() => {
+        const token = getCookie("token");
+        const fetchUser = async () => {
+            try {
+                const res = await getDataCustomer();
+                const currentUser = res.find((user) => user.token === token);
+                if (currentUser && currentUser.avatar) {
+                    setUserAvatar(currentUser.avatar);
+                }
+            } catch (error) {
+                console.error("Lỗi khi lấy dữ liệu người dùng:", error);
+            }
+        };
+        fetchUser();
+    }, []);
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -59,8 +81,9 @@ function Header({ collapsed, setCollapsed }) {
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                         <img
-                            src={pFImg}
+                            src={userAvatar}
                             alt="Ảnh đại diện người dùng"
+                            className="h-full w-full object-cover"
                         />
                     </button>
 
@@ -73,6 +96,14 @@ function Header({ collapsed, setCollapsed }) {
                                         className="block w-full rounded-md px-3 py-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
                                     >
                                         Hồ sơ cá nhân
+                                    </Link>
+                                </li>
+                                <li className="flex items-center gap-2 border-b-2 border-slate-200 px-3 py-2 hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-700">
+                                    <Link
+                                        to="/admin"
+                                        className="block w-full rounded-md px-3 py-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
+                                    >
+                                        Thay đổi mật khẩu
                                     </Link>
                                 </li>
 
