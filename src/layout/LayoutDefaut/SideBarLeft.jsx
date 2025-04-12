@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../util/cn";
 import logoDark from "../../assets/Img/dashboard_Dark.svg";
 import logoLight from "../../assets/Img/dashboard_Light.svg";
@@ -24,7 +24,10 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                 collapsed && "max-md:hidden",
             )}
         >
-            <div className="flex h-[50px] w-[50px] gap-x-3 p-3">
+            <Link
+                to="/"
+                className="flex h-[50px] w-[50px] gap-x-3 p-3"
+            >
                 <img
                     src={logoLight}
                     alt="LogoLight"
@@ -36,7 +39,8 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                     className="hidden dark:block"
                 />
                 {!collapsed && window.innerWidth >= 1024 && <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>}
-            </div>
+            </Link>
+
             <div className="flex w-full flex-col gap-y-4 overflow-y-auto p-3">
                 <div className="flex flex-col py-3 text-left font-medium">
                     {menu.map((group, groupIndex) =>

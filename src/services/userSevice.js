@@ -4,6 +4,10 @@ export const getDataCustomer = async () => {
     const result = await get("userManagement");
     return result;
 };
+export const getDataCustomerById = async (id) => {
+    const result = await get(`userManagement/${id}`);
+    return result;
+};
 export const createDataCustomer = async (data) => {
     const result = await post("userManagement", data);
     return result;

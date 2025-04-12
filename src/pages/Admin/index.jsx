@@ -4,6 +4,7 @@ import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
 import { getCookie } from "../../helpers/cookie";
 import { getDataCustomer } from "../../services/userSevice";
+import { Link, NavLink } from "react-router-dom";
 
 const { FaEye, FaEyeSlash, MdOutlineAttachFile } = icons;
 
@@ -16,6 +17,7 @@ function Admin() {
         email: "",
         address: "",
         password: "",
+        avatar: "",
     });
 
     useEffect(() => {
@@ -26,6 +28,7 @@ function Admin() {
                 const currentUser = res.find((user) => user.token === token);
                 if (currentUser) {
                     setFormData({
+                        id: currentUser.id,
                         name: currentUser.name,
                         email: currentUser.email,
                         address: currentUser.address,
@@ -84,7 +87,7 @@ function Admin() {
                         type="file"
                         accept="image/*"
                         onChange={handleImageChange}
-                        className="hidden border"
+                        className="hidden border focus:ring-0 focus:outline-none"
                         id="fileInput"
                     />
 
@@ -111,7 +114,7 @@ function Admin() {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
                             />
                         </div>
@@ -126,8 +129,9 @@ function Admin() {
                                     name="password"
                                     value={formData.password}
                                     onChange={handleInputChange}
-                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:ring-2 focus:ring-green-500"
+                                    className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 pr-10 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                     required
+                                    readOnly
                                 />
                                 <span
                                     className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
@@ -135,6 +139,14 @@ function Admin() {
                                 >
                                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </span>
+                            </div>
+                            <div className="mt-2 text-right">
+                                <NavLink
+                                    to="/admin/change-password"
+                                    className="text-green-500 hover:underline"
+                                >
+                                    Thay đổi mật khẩu
+                                </NavLink>
                             </div>
                         </div>
 
@@ -145,7 +157,7 @@ function Admin() {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                             />
                         </div>
 
@@ -156,7 +168,7 @@ function Admin() {
                                 name="address"
                                 value={formData.address}
                                 onChange={handleInputChange}
-                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500"
+                                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                             />
                         </div>
 

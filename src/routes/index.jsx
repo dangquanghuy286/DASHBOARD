@@ -9,6 +9,7 @@ import ShowBookingTour from "../pages/Booking/ShowBooking";
 import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import PrivateRoutes from "../components/PrivateRoutes";
+import ChangePass from "../pages/Admin/ChangePass";
 
 export const routes = [
     {
@@ -29,7 +30,16 @@ export const routes = [
             },
             {
                 path: "admin",
-                element: <Admin />,
+                children: [
+                    {
+                        index: true,
+                        element: <Admin />,
+                    },
+                    {
+                        path: "change-password",
+                        element: <ChangePass />,
+                    },
+                ],
             },
             {
                 path: "user",
