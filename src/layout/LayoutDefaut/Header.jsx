@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import icons from "../../util/icon";
-import { useTheme } from "../../hooks/use_theme";
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { getCookie } from "../../helpers/cookie";
 import { getDataCustomer } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
+import DarkMode from "../../components/DarkMode";
+import Bell from "../../components/Bell";
 
-const { BiSolidChevronsRight, IoIosSunny, IoIosMoon, FaBell } = icons;
+const { BiSolidChevronsRight } = icons;
 
 function Header({ collapsed, setCollapsed }) {
-    const { theme, setTheme } = useTheme();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef();
 
@@ -56,22 +56,8 @@ function Header({ collapsed, setCollapsed }) {
                 </button>
             </div>
             <div className="flex items-center gap-x-3">
-                <button
-                    className="btn-ghost size-12 rounded-full border border-amber-400"
-                    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                >
-                    <IoIosSunny
-                        size={20}
-                        className={theme === "dark" ? "hidden" : "text-yellow-400"}
-                    />
-                    <IoIosMoon
-                        size={20}
-                        className={theme === "dark" ? "text-yellow-400" : "hidden"}
-                    />
-                </button>
-                <button className="btn-announcement size-12 rounded-full border border-blue-600">
-                    <FaBell size={20} />
-                </button>
+                <DarkMode />
+                <Bell />
                 <div
                     className="relative"
                     ref={dropdownRef}
