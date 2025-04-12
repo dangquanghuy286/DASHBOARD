@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import Modal from "react-modal";
 import { getRoles } from "../../services/rolesService";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-
 import { createDataCustomer } from "../../services/userSevice";
+import { generateToken } from "../../helpers/generateTonken";
+
 const { IoIosAdd } = icons;
 
 function CreateUser() {
@@ -21,32 +23,33 @@ function CreateUser() {
         };
         fetchAPI();
     }, []);
+
     const handleReload = () => {
         setReload(!reload);
     };
-    // const [avatarPreview, setAvatarPreview] = useState(null); // Trạng thái lưu ảnh preview
+
     const customStyles = {
         content: {
-            top: "50%", // Đặt modal ở vị trí 50% chiều cao của màn hình
-            left: "50%", // Đặt modal ở vị trí 50% chiều rộng của màn hình
-            right: "auto", // Không điều chỉnh vị trí bên phải
-            bottom: "auto", // Không điều chỉnh vị trí phía dưới
-            marginRight: "-50%", // Giữ việc căn giữa theo chiều ngang
-            transform: "translate(-50%, -50%)", // Căn giữa modal
-            width: "90%", // Chiều rộng modal linh hoạt theo kích thước màn hình
-            maxWidth: "600px", // Giới hạn chiều rộng của modal trên các màn hình lớn
-            maxHeight: "80vh", // Giới hạn chiều cao của modal không vượt quá 80% chiều cao viewport
-            padding: "24px", // Thêm không gian bên trong modal để tạo cảm giác thoải mái
-            background: "#ffffff", // Nền trắng sạch sẽ
-            borderRadius: "12px", // Góc mềm mại, hiện đại
-            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)", // Áp dụng bóng đổ nhẹ cho modal để tạo chiều sâu
-            border: "none", // Loại bỏ đường viền mặc định của modal để tạo phong cách sạch sẽ
-            overflowY: "auto", // Cho phép cuộn dọc nếu nội dung vượt quá chiều cao modal
-            fontFamily: "'Inter', sans-serif", // Font chữ hiện đại, dễ đọc (tuỳ chọn, đảm bảo font được tải)
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            width: "90%",
+            maxWidth: "600px",
+            maxHeight: "80vh",
+            padding: "24px",
+            background: "#ffffff",
+            borderRadius: "12px",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+            border: "none",
+            overflowY: "auto",
+            fontFamily: "'Inter', sans-serif",
         },
         overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Màu nền tối, bán trong suốt cho lớp phủ
-            zIndex: 1000, // Đảm bảo modal luôn hiển thị trên các nội dung khác
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 1000,
         },
     };
 
@@ -56,11 +59,27 @@ function CreateUser() {
 
     const closeModal = () => {
         setShowModal(false);
+        setData({}); // Reset data khi đóng modal
     };
 
     const handleCreate = async (e) => {
         e.preventDefault();
-        const ketqua = await createDataCustomer(data);
+
+        // Chuẩn bị dữ liệu gửi đi
+        let finalData = { ...data };
+
+        // Nếu là admin, bổ sung userId, username, password, và token
+        if (data.role === "Admin") {
+            finalData = {
+                ...finalData,
+                userId: data.userId || `admin${Date.now().toString().slice(-3)}`, // Tạo userId như "admin005"
+                username: data.username || data.email, // Nếu không có username, lấy email
+                password: data.password || "1234", // Mặc định password là 1234 nếu không nhập
+                token: generateToken(), // Tạo token ngẫu nhiên
+            };
+        }
+
+        const ketqua = await createDataCustomer(finalData);
 
         if (ketqua) {
             setShowModal(false);
@@ -79,29 +98,28 @@ function CreateUser() {
         const name = e.target.name;
         const value = e.target.value;
 
-        setData({
+        let updatedData = {
             ...data,
             [name]: value,
-        });
-        // if (name === "avatar" && value) {
-        //     setAvatarPreview(value); // Lưu URL ảnh để hiển thị preview
-        // }
-    };
-    // Hàm xử lý khi người dùng chọn ảnh từ thư mục
-    // const handleImageChange = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         // Tạo URL cho ảnh và cập nhật preview
-    //         const fileURL = URL.createObjectURL(file);
-    //         setAvatarPreview(fileURL);
+        };
 
-    //         // Lưu ảnh vào trường avatar trong state (nếu cần thiết)
-    //         setData({
-    //             ...data,
-    //             avatarFile: file,
-    //         });
-    //     }
-    // };
+        // Nếu vai trò là Admin, thêm các trường mặc định
+        if (name === "role" && value === "Admin") {
+            updatedData = {
+                ...updatedData,
+                userId: `admin${Date.now().toString().slice(-3)}`, // Tạo userId mặc định
+                username: data.email || "", // Gán email làm username mặc định
+                password: "1234", // Mặc định password
+                token: generateToken(), // Tạo token ngay khi chọn Admin
+            };
+        } else if (name === "role" && value !== "Admin") {
+            // Nếu chuyển từ Admin sang vai trò khác, xóa các trường không cần thiết
+            const { userId, username, password, token, ...rest } = updatedData;
+            updatedData = rest;
+        }
+
+        setData(updatedData);
+    };
 
     return (
         <>
@@ -124,6 +142,19 @@ function CreateUser() {
                     <table className="w-full table-auto border-collapse">
                         <tbody>
                             <tr className="flex items-center py-3">
+                                <td className="w-1/4 py-2 font-semibold text-gray-700">ID Người dùng</td>
+                                <td className="w-3/4">
+                                    <input
+                                        type="text"
+                                        name="userId"
+                                        placeholder="ID Người dùng (adminXXX)"
+                                        value={data.userId || ""}
+                                        className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                        onChange={handleChange}
+                                    />
+                                </td>
+                            </tr>
+                            <tr className="flex items-center py-3">
                                 <td className="w-1/4 py-2 font-semibold text-gray-700">Tên</td>
                                 <td className="w-3/4">
                                     <input
@@ -136,7 +167,6 @@ function CreateUser() {
                                     />
                                 </td>
                             </tr>
-
                             <tr className="flex items-center py-3">
                                 <td className="w-1/4 py-2 font-semibold text-gray-700">Địa chỉ</td>
                                 <td className="w-3/4">
@@ -172,7 +202,36 @@ function CreateUser() {
                                     </td>
                                 </tr>
                             )}
-
+                            {data.role === "Admin" && (
+                                <>
+                                    <tr className="flex items-center py-3">
+                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Tên đăng nhập</td>
+                                        <td className="w-3/4">
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                placeholder="Tên đăng nhập"
+                                                value={data.username || ""}
+                                                className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                                onChange={handleChange}
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr className="flex items-center py-3">
+                                        <td className="w-1/4 py-2 font-semibold text-gray-700">Mật khẩu</td>
+                                        <td className="w-3/4">
+                                            <input
+                                                type="text"
+                                                name="password"
+                                                placeholder="Mật khẩu"
+                                                value={data.password || "1234"}
+                                                className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                                onChange={handleChange}
+                                            />
+                                        </td>
+                                    </tr>
+                                </>
+                            )}
                             <tr className="flex items-start py-3">
                                 <td className="w-1/4 py-2 font-semibold text-gray-700">Mô tả</td>
                                 <td className="w-3/4">
@@ -225,32 +284,12 @@ function CreateUser() {
                                         <input
                                             type="file"
                                             name="avatarFile"
-                                            // accept="image/*"
                                             className="hidden"
-                                            onChange={handleChange} // Gọi hàm khi chọn ảnh
+                                            onChange={handleChange}
                                         />
-                                        {/* <span className="focus:ring-opacity-50 inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2.5 font-medium text-white transition duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                                                    Chọn ảnh
-                                                </span> */}
                                     </label>
                                 </td>
                             </tr>
-
-                            {/* Hiển thị ảnh preview
-                                    {avatarPreview && (
-                                        <tr>
-                                            <td
-                                                colSpan="2"
-                                                className="py-4 text-center"
-                                            >
-                                                <img
-                                                    src={avatarPreview}
-                                                    alt="Preview"
-                                                    className="h-[50px] max-w-full rounded-md"
-                                                />
-                                            </td>
-                                        </tr>
-                                    )} */}
                         </tbody>
                     </table>
                     <div className="flex justify-end space-x-4 py-4">
