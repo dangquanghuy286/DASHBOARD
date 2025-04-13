@@ -3296,10 +3296,10 @@
       "totalPrice": 39000000,
       "unitPriceAdult": 19500000,
       "unitPriceChild": 9750000,
-      "bookingStatus": "Chưa xác nhận",
+      "bookingStatus": "Đã xác nhận",
       "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
       "paymentMethodName": "Thanh toán tại công ty",
-      "paymentStatus": "Chưa thanh toán",
+      "paymentStatus": "Đã thanh toán",
       "tax": 0,
       "discount": 0,
       "actions": [
