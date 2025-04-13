@@ -1,10 +1,5 @@
-import GoBack from "../../components/GoBack/Goback";
-import DataChartMonth from "./dataChartsMonth";
-import PaymentTours from "./paymentTour";
-import TopbookedTour from "./topbookedTour";
-import TotalAll from "./totalAll";
-import TourRecent from "./tour_recent";
-import TourStatistics from "./tourStatistics";
+import Chart from "../../components/Chart";
+import TotalAll from "../../components/Total";
 
 function Home() {
     return (
@@ -13,14 +8,7 @@ function Home() {
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Trang chủ</h1>
             </div>
             <TotalAll />
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
-                <TourStatistics />
-                <PaymentTours />
-                <TopbookedTour />
-                <TourRecent />
-                <DataChartMonth />
-                <GoBack />
-            </div>
+            <Chart />
         </div>
     );
 }

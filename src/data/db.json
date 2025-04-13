@@ -2,27 +2,27 @@
   "dashboard_summary": {
     "total_active_tours": {
       "previous": 15,
-      "current": 54,
-      "change": 3,
-      "percentage_change": 20
+      "current": 47,
+      "change": 32,
+      "percentage_change": 213.33
     },
     "total_bookings": {
       "previous": 50,
-      "current": 29,
-      "change": -21,
-      "percentage_change": -42
+      "current": 48,
+      "change": -2,
+      "percentage_change": -4
     },
     "total_users": {
       "previous": 4800,
-      "current": 5024,
-      "change": 224,
-      "percentage_change": 4.67
+      "current": 43,
+      "change": -4757,
+      "percentage_change": -99.1
     },
     "total_revenue": {
       "previous": 1350000000,
-      "current": 1624750000,
-      "change": 274750000,
-      "percentage_change": 20.35
+      "current": 2167250000,
+      "change": 817250000,
+      "percentage_change": 60.54
     },
     "total_cancellations": {
       "previous": 2,
@@ -41,17 +41,17 @@
     "domestic": [
       {
         "name": "Miền Bắc",
-        "value": 6,
+        "value": 10,
         "color": "#FF8A80"
       },
       {
         "name": "Miền Trung",
-        "value": 10,
+        "value": 25,
         "color": "#81C784"
       },
       {
         "name": "Miền Nam",
-        "value": 9,
+        "value": 11,
         "color": "#64B5F6"
       },
       {
@@ -66,7 +66,7 @@
     "data": [
       {
         "name": "Trong nước",
-        "value": 29,
+        "value": 48,
         "color": "#4CAF50"
       },
       {
@@ -93,18 +93,18 @@
   "booking_payments": [
     {
       "method": "Zalo Pay",
-      "percentage": 48,
+      "percentage": 50,
       "color": "#33A8FF",
       "id": "2e10"
     },
     {
       "method": "Momo",
-      "percentage": 38,
+      "percentage": 37.5,
       "color": "#FF33E3"
     },
     {
       "method": "Thanh toán tại văn phòng",
-      "percentage": 14,
+      "percentage": 12.5,
       "color": "#FFC300",
       "id": "72a1"
     }
@@ -114,29 +114,11 @@
       {
         "id": "tour005",
         "name": "Thoát Khỏi Miền Nam Việt Nam",
-        "seats_booked": 8,
+        "seats_booked": 6,
         "seats_available": 20,
         "price": 25000000,
         "rating": 4.6,
         "duration": "4 ngày"
-      },
-      {
-        "id": "tour012",
-        "name": "Lãng Du Trên Sóng Biển Vũng Tàu",
-        "seats_booked": 7,
-        "seats_available": 25,
-        "price": 22250000,
-        "rating": 4.7,
-        "duration": "3 ngày"
-      },
-      {
-        "id": "tour009",
-        "name": "Cảnh Đẹp Miền Trung Việt Nam",
-        "seats_booked": 7,
-        "seats_available": 30,
-        "price": 19000000,
-        "rating": 4.8,
-        "duration": "5 ngày"
       },
       {
         "id": "tour010",
@@ -155,6 +137,24 @@
         "price": 30000000,
         "rating": 4.7,
         "duration": "7 ngày"
+      },
+      {
+        "id": "tour012",
+        "name": "Lãng Du Trên Sóng Biển Vũng Tàu",
+        "seats_booked": 7,
+        "seats_available": 25,
+        "price": 17800000,
+        "rating": 4.7,
+        "duration": "3 ngày"
+      },
+      {
+        "id": "tour023",
+        "name": "Khám Phá Văn Hóa Chăm Pa",
+        "seats_booked": 6,
+        "seats_available": 20,
+        "price": 24000000,
+        "rating": 4.5,
+        "duration": "5 ngày"
       }
     ],
     "international": [],
@@ -177,99 +177,99 @@
   },
   "recent_bookings": [
     {
-      "id": "booking025",
-      "customer_name": "Nguyễn Thị Thu Hiền",
-      "tour_name": "Khám Phá Lào Cai Huyền Bí",
-      "total_price": 56000000,
+      "id": "booking048",
+      "customer_name": "Lê Văn C",
+      "tour_name": "Khám Phá Rừng Núi Tây Nguyên",
+      "total_price": 60000000,
       "status": "Chưa xác nhận",
+      "payment_method": "Thanh toán tại văn phòng",
+      "location": "Việt Nam",
+      "booking_date": "2025-03-20",
+      "user_email": "vanc.le@gmail.com",
+      "user_phone": "0923456789"
+    },
+    {
+      "id": "booking047",
+      "customer_name": "Trần Thị B",
+      "tour_name": "Thiên Đường Biển Đảo Phú Quốc",
+      "total_price": 37500000,
+      "status": "Đã hoàn thành",
+      "payment_method": "Momo",
+      "location": "Việt Nam",
+      "booking_date": "2025-02-15",
+      "user_email": "thib.tran@gmail.com",
+      "user_phone": "0912345678"
+    },
+    {
+      "id": "booking046",
+      "customer_name": "Nguyễn Văn A",
+      "tour_name": "Khám Phá Vịnh Hạ Long Kỳ Vĩ",
+      "total_price": 40000000,
+      "status": "Đã xác nhận",
       "payment_method": "Zalo Pay",
       "location": "Việt Nam",
-      "booking_date": "2025-11-01",
-      "user_email": "thuhien.nguyen@gmail.com",
-      "user_phone": "0915678901"
-    },
-    {
-      "id": "booking006",
-      "customer_name": "Đỗ Thị Thu Hà",
-      "tour_name": "Hành Trình Đến Hà Giang Hùng Vĩ",
-      "total_price": 30000000,
-      "status": "Đã xác nhận",
-      "payment_method": "Momo",
-      "location": "Việt Nam",
-      "booking_date": "2025-10-28",
-      "user_email": "thuha.do@gmail.com",
-      "user_phone": "0978123456"
-    },
-    {
-      "id": "booking024",
-      "customer_name": "Trần Quốc Bảo",
-      "tour_name": "Khám Phá Văn Hóa Chăm Pa",
-      "total_price": 72000000,
-      "status": "Đã xác nhận",
-      "payment_method": "Momo",
-      "location": "Việt Nam",
-      "booking_date": "2025-10-15",
-      "user_email": "quocbao.tran@gmail.com",
-      "user_phone": "0925678901"
+      "booking_date": "2025-01-10",
+      "user_email": "vana.nguyen@gmail.com",
+      "user_phone": "0901234567"
     }
   ],
   "dailyPerformance": [
     {
-      "date": "2025-11-01",
-      "revenue": 56000000,
+      "date": "2025-03-20",
+      "revenue": 60000000,
       "bookings": 1,
-      "id": "d001"
+      "id": "d048"
     },
     {
-      "date": "2025-10-28",
-      "revenue": 30000000,
+      "date": "2025-02-15",
+      "revenue": 37500000,
       "bookings": 1,
-      "id": "d002"
+      "id": "d047"
     },
     {
-      "date": "2025-10-15",
-      "revenue": 72000000,
+      "date": "2025-01-10",
+      "revenue": 40000000,
       "bookings": 1,
-      "id": "d003"
+      "id": "d046"
     }
   ],
   "monthlyRevenue": {
     "domestic": [
       {
         "month": "January",
-        "revenue": 120000000
+        "revenue": 165000000
       },
       {
         "month": "February",
-        "revenue": 185000000
+        "revenue": 232500000
       },
       {
         "month": "March",
-        "revenue": 202000000
+        "revenue": 267000000
       },
       {
         "month": "April",
-        "revenue": 364000000
+        "revenue": 319000000
       },
       {
         "month": "May",
-        "revenue": 106000000
+        "revenue": 163000000
       },
       {
         "month": "June",
-        "revenue": 168000000
+        "revenue": 179000000
       },
       {
         "month": "July",
-        "revenue": 116250000
+        "revenue": 156250000
       },
       {
         "month": "August",
-        "revenue": 180000000
+        "revenue": 205000000
       },
       {
         "month": "September",
-        "revenue": 38000000
+        "revenue": 78000000
       },
       {
         "month": "October",
@@ -277,11 +277,11 @@
       },
       {
         "month": "November",
-        "revenue": 56000000
+        "revenue": 96000000
       },
       {
         "month": "December",
-        "revenue": 91250000
+        "revenue": 75000000
       }
     ],
     "international": []
@@ -289,19 +289,19 @@
   "customerFeedback": {
     "domestic": [
       {
-        "userName": "Lê Văn Hùng",
+        "userName": "Trần Minh Hoàng",
         "tourName": "Hành Trình Khám Phá Việt Nam Tuyệt Đẹp",
         "rating": 4.7,
-        "comment": "Trải nghiệm tuyệt vời, rất đáng tiền!"
+        "comment": "Trải nghiệm tuyệt vời, phong cảnh đẹp."
       },
       {
-        "userName": "Phạm Thị Lan",
+        "userName": "Lê Thị Hồng Nhung",
         "tourName": "Phiêu Lưu Miền Bắc Việt Nam",
         "rating": 4.8,
-        "comment": "Phong cảnh đẹp, hướng dẫn viên nhiệt tình."
+        "comment": "Hành trình thú vị, dịch vụ tốt."
       },
       {
-        "userName": "Ngô Đình Bảo",
+        "userName": "Phạm Văn Tuấn",
         "tourName": "Thư Giãn Tại Vũng Tàu",
         "rating": 4.5,
         "comment": "Thư giãn, nhưng thời gian hơi ngắn."
@@ -3235,10 +3235,6 @@
       "paymentStatus": "Chưa thanh toán",
       "tax": 0,
       "discount": 0,
-      "actions": [
-        "Xác nhận",
-        "Xem chi tiết"
-      ],
       "id": "20uq8",
       "provider": {
         "companyName": "Nhóm 31",
@@ -3268,10 +3264,6 @@
       "paymentStatus": "Chưa thanh toán",
       "tax": 0,
       "discount": 0,
-      "actions": [
-        "Xác nhận",
-        "Xem chi tiết"
-      ],
       "id": "21vr9",
       "provider": {
         "companyName": "Nhóm 31",
@@ -3301,10 +3293,6 @@
       "paymentStatus": "Đã thanh toán",
       "tax": 0,
       "discount": 0,
-      "actions": [
-        "Xác nhận",
-        "Xem chi tiết"
-      ],
       "id": "22ws0",
       "provider": {
         "companyName": "Nhóm 31",
@@ -3337,11 +3325,617 @@
       "account": "4561237890 - Vietcombank",
       "tax": 8200000,
       "discount": 0,
-      "actions": [
-        "Xác nhận",
-        "Xem chi tiết"
-      ],
       "id": "23xt1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking029",
+      "userId": "user024",
+      "tourId": "tour028",
+      "tourName": "Khám Phá Đà Nẵng - Hội An",
+      "customerName": "Nguyễn Thị Lan",
+      "email": "lan.nguyen@gmail.com",
+      "phone": "0912345678",
+      "address": "123 Lê Lợi, Đà Nẵng",
+      "bookingDate": "2025-09-15",
+      "adults": 2,
+      "children": 0,
+      "totalPrice": 40000000,
+      "unitPriceAdult": 20000000,
+      "unitPriceChild": 10000000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "24yu2",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking030",
+      "userId": "user025",
+      "tourId": "tour029",
+      "tourName": "Hành Trình Đến Đảo Phú Quốc",
+      "customerName": "Trần Văn Minh",
+      "email": "minh.tran@gmail.com",
+      "phone": "0934567890",
+      "address": "456 Trần Hưng Đạo, Phú Quốc",
+      "bookingDate": "2025-10-20",
+      "adults": 1,
+      "children": 1,
+      "totalPrice": 35000000,
+      "unitPriceAdult": 23333333,
+      "unitPriceChild": 11666666,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN030123",
+      "paymentDate": "2025-10-21",
+      "account": "7894561230 - Vietcombank",
+      "tax": 3500000,
+      "discount": 0,
+      "id": "25zv3",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking031",
+      "userId": "user026",
+      "tourId": "tour030",
+      "tourName": "Khám Phá Văn Hóa Chăm Pa",
+      "customerName": "Lê Thị Hương",
+      "email": "huong.le@gmail.com",
+      "phone": "0901234567",
+      "address": "789 Nguyễn Huệ, Quy Nhơn",
+      "bookingDate": "2025-11-25",
+      "adults": 3,
+      "children": 1,
+      "totalPrice": 60000000,
+      "unitPriceAdult": 17142857,
+      "unitPriceChild": 8571428,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "26aw4",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking032",
+      "userId": "user027",
+      "tourId": "tour031",
+      "tourName": "Hành Trình Đến Mũi Né",
+      "customerName": "Nguyễn Văn Khôi",
+      "email": "khoi.nguyen@gmail.com",
+      "phone": "0945678901",
+      "address": "123 Trần Phú, Mũi Né",
+      "bookingDate": "2025-12-15",
+      "adults": 2,
+      "children": 2,
+      "totalPrice": 50000000,
+      "unitPriceAdult": 16666666,
+      "unitPriceChild": 8333333,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN032123",
+      "paymentDate": "2025-12-16",
+      "account": "4567891230 - Vietcombank",
+      "tax": 5000000,
+      "discount": 0,
+      "id": "27bx5",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking033",
+      "userId": "user028",
+      "tourId": "tour032",
+      "tourName": "Khám Phá Đà Lạt Mộng Mơ",
+      "customerName": "Trần Thị Lan",
+      "email": "lan.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "456 Lê Lợi, Đà Lạt",
+      "bookingDate": "2025-01-15",
+      "adults": 1,
+      "children": 0,
+      "totalPrice": 25000000,
+      "unitPriceAdult": 25000000,
+      "unitPriceChild": 12500000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "28cy6",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking034",
+      "userId": "user029",
+      "tourId": "tour033",
+      "tourName": "Hành Trình Đến Cần Thơ",
+      "customerName": "Lê Văn Minh",
+      "email": "minh.le@gmail.com",
+      "phone": "0901234567",
+      "address": "789 Trần Hưng Đạo, Cần Thơ",
+      "bookingDate": "2025-02-20",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 40000000,
+      "unitPriceAdult": 16000000,
+      "unitPriceChild": 8000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN034123",
+      "paymentDate": "2025-02-21",
+      "account": "1234567890 - Vietcombank",
+      "tax": 4000000,
+      "discount": 0,
+      "id": "29dz7",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking035",
+      "userId": "user030",
+      "tourId": "tour034",
+      "tourName": "Khám Phá Vườn Quốc Gia Cát Tiên",
+      "customerName": "Nguyễn Thị Hương",
+      "email": "huong.nguyen@gmail.com",
+      "phone": "0945678901",
+      "address": "123 Lê Lợi, Đồng Nai",
+      "bookingDate": "2025-03-25",
+      "adults": 3,
+      "children": 0,
+      "totalPrice": 45000000,
+      "unitPriceAdult": 15000000,
+      "unitPriceChild": 7500000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "30ea8",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking036",
+      "userId": "user031",
+      "tourId": "tour035",
+      "tourName": "Hành Trình Đến Đảo Nam Du",
+      "customerName": "Trần Văn Khôi",
+      "email": "khoi.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "456 Trần Hưng Đạo, Kiên Giang",
+      "bookingDate": "2025-04-30",
+      "adults": 1,
+      "children": 1,
+      "totalPrice": 30000000,
+      "unitPriceAdult": 20000000,
+      "unitPriceChild": 10000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN036123",
+      "paymentDate": "2025-05-01",
+      "account": "7891234560 - Vietcombank",
+      "tax": 3000000,
+      "discount": 0,
+      "id": "31fb9",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking037",
+      "userId": "user032",
+      "tourId": "tour036",
+      "tourName": "Khám Phá Văn Hóa Đồng Bằng Sông Cửu Long",
+      "customerName": "Lê Thị Lan",
+      "email": "lan.le@gmail.com",
+      "phone": "0901234567",
+      "address": "123 Lê Lợi, Vĩnh Long",
+      "bookingDate": "2025-05-15",
+      "adults": 2,
+      "children": 0,
+      "totalPrice": 35000000,
+      "unitPriceAdult": 17500000,
+      "unitPriceChild": 8750000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "32gc0",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking038",
+      "userId": "user033",
+      "tourId": "tour037",
+      "tourName": "Hành Trình Đến Đảo Bình Ba",
+      "customerName": "Nguyễn Văn Minh",
+      "email": "minh.nguyen@gmail.com",
+      "phone": "0945678901",
+      "address": "456 Trần Hưng Đạo, Khánh Hòa",
+      "bookingDate": "2025-06-20",
+      "adults": 1,
+      "children": 0,
+      "totalPrice": 20000000,
+      "unitPriceAdult": 20000000,
+      "unitPriceChild": 10000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN038123",
+      "paymentDate": "2025-06-21",
+      "account": "1237894560 - Vietcombank",
+      "tax": 2000000,
+      "discount": 0,
+      "id": "33hd1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking039",
+      "userId": "user034",
+      "tourId": "tour038",
+      "tourName": "Khám Phá Văn Hóa Chăm Pa",
+      "customerName": "Trần Thị Hương",
+      "email": "huong.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "789 Lê Lợi, Bình Định",
+      "bookingDate": "2025-07-25",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 40000000,
+      "unitPriceAdult": 16000000,
+      "unitPriceChild": 8000000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "34ie2",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking040",
+      "userId": "user035",
+      "tourId": "tour039",
+      "tourName": "Hành Trình Đến Đảo Cồn Cỏ",
+      "customerName": "Lê Văn Khôi",
+      "email": "khoi.le@gmail.com",
+      "phone": "0901234567",
+      "address": "123 Trần Hưng Đạo, Quảng Trị",
+      "bookingDate": "2025-08-30",
+      "adults": 1,
+      "children": 0,
+      "totalPrice": 25000000,
+      "unitPriceAdult": 25000000,
+      "unitPriceChild": 12500000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN040123",
+      "paymentDate": "2025-08-31",
+      "account": "4561237890 - Vietcombank",
+      "tax": 2500000,
+      "discount": 0,
+      "id": "35jf3",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking041",
+      "userId": "user036",
+      "tourId": "tour040",
+      "tourName": "Khám Phá Văn Hóa Đồng Bằng Sông Hồng",
+      "customerName": "Nguyễn Thị Lan",
+      "email": "lan.nguyen@gmail.com",
+      "phone": "0945678901",
+      "address": "456 Lê Lợi, Hà Nam",
+      "bookingDate": "2025-09-15",
+      "adults": 2,
+      "children": 0,
+      "totalPrice": 35000000,
+      "unitPriceAdult": 17500000,
+      "unitPriceChild": 8750000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "36kg4",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking042",
+      "userId": "user037",
+      "tourId": "tour041",
+      "tourName": "Hành Trình Đến Đảo Cô Tô",
+      "customerName": "Trần Văn Minh",
+      "email": "minh.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "789 Trần Hưng Đạo, Quảng Ninh",
+      "bookingDate": "2025-10-20",
+      "adults": 1,
+      "children": 1,
+      "totalPrice": 30000000,
+      "unitPriceAdult": 20000000,
+      "unitPriceChild": 10000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN042123",
+      "paymentDate": "2025-10-21",
+      "account": "1234567890 - Vietcombank",
+      "tax": 3000000,
+      "discount": 0,
+      "id": "37lh5",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking043",
+      "userId": "user038",
+      "tourId": "tour042",
+      "tourName": "Khám Phá Văn Hóa Tây Bắc",
+      "customerName": "Lê Thị Hương",
+      "email": "huong.le@gmail.com",
+      "phone": "0901234567",
+      "address": "123 Lê Lợi, Lào Cai",
+      "bookingDate": "2025-11-25",
+      "adults": 2,
+      "children": 1,
+      "totalPrice": 40000000,
+      "unitPriceAdult": 16000000,
+      "unitPriceChild": 8000000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "38mi6",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking044",
+      "userId": "user039",
+      "tourId": "tour043",
+      "tourName": "Hành Trình Đến Đảo Bình Hưng",
+      "customerName": "Nguyễn Văn Khôi",
+      "email": "khoi.nguyen@gmail.com",
+      "phone": "0945678901",
+      "address": "456 Trần Hưng Đạo, Khánh Hòa",
+      "bookingDate": "2025-12-15",
+      "adults": 1,
+      "children": 0,
+      "totalPrice": 25000000,
+      "unitPriceAdult": 25000000,
+      "unitPriceChild": 12500000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN044123",
+      "paymentDate": "2025-12-16",
+      "account": "7894561230 - Vietcombank",
+      "tax": 2500000,
+      "discount": 0,
+      "id": "39nj7",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking045",
+      "userId": "user040",
+      "tourId": "tour044",
+      "tourName": "Khám Phá Văn Hóa Đồng Bằng Sông Cửu Long",
+      "customerName": "Trần Thị Lan",
+      "email": "lan.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "123 Lê Lợi, Cần Thơ",
+      "bookingDate": "2026-01-15",
+      "adults": 2,
+      "children": 0,
+      "totalPrice": 35000000,
+      "unitPriceAdult": 17500000,
+      "unitPriceChild": 8750000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "40ok8",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking046",
+      "userId": "user041",
+      "tourId": "tour045",
+      "tourName": "Khám Phá Vịnh Hạ Long Kỳ Vĩ",
+      "customerName": "Nguyễn Văn A",
+      "email": "vana.nguyen@gmail.com",
+      "phone": "0901234567",
+      "address": "123 Đường ABC, Hà Nội",
+      "bookingDate": "2025-01-10",
+      "adults": 2,
+      "children": 0,
+      "totalPrice": 40000000,
+      "unitPriceAdult": 20000000,
+      "unitPriceChild": 10000000,
+      "bookingStatus": "Đã xác nhận",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-ZaloPay-Square.png",
+      "paymentMethodName": "ZaloPay",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN046123",
+      "paymentDate": "2025-01-11",
+      "account": "1234567890 - Vietcombank",
+      "tax": 4000000,
+      "discount": 0,
+      "id": "46a1",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking047",
+      "userId": "user042",
+      "tourId": "tour046",
+      "tourName": "Thiên Đường Biển Đảo Phú Quốc",
+      "customerName": "Trần Thị B",
+      "email": "thib.tran@gmail.com",
+      "phone": "0912345678",
+      "address": "456 Đường XYZ, TP. HCM",
+      "bookingDate": "2025-02-15",
+      "adults": 1,
+      "children": 1,
+      "totalPrice": 37500000,
+      "unitPriceAdult": 25000000,
+      "unitPriceChild": 12500000,
+      "bookingStatus": "Đã hoàn thành",
+      "paymentMethod": "https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png",
+      "paymentMethodName": "MoMo",
+      "paymentStatus": "Đã thanh toán",
+      "transactionCode": "TXN047234",
+      "paymentDate": "2025-02-16",
+      "account": "9876543210 - Techcombank",
+      "tax": 0,
+      "discount": 2500000,
+      "id": "47b2",
+      "provider": {
+        "companyName": "Nhóm 31",
+        "address": "Điện Nam, Điện Bàn, Quảng Nam",
+        "phone": "(028) 3838-4567",
+        "email": "nhom31@gmail.com"
+      }
+    },
+    {
+      "bookingId": "booking048",
+      "userId": "user043",
+      "tourId": "tour047",
+      "tourName": "Khám Phá Rừng Núi Tây Nguyên",
+      "customerName": "Lê Văn C",
+      "email": "vanc.le@gmail.com",
+      "phone": "0923456789",
+      "address": "789 Đường DEF, Đà Lạt",
+      "bookingDate": "2025-03-20",
+      "adults": 3,
+      "children": 2,
+      "totalPrice": 60000000,
+      "unitPriceAdult": 15000000,
+      "unitPriceChild": 7500000,
+      "bookingStatus": "Chưa xác nhận",
+      "paymentMethod": "https://cdn-icons-png.freepik.com/512/8992/8992633.png",
+      "paymentMethodName": "Thanh toán tại văn phòng",
+      "paymentStatus": "Chưa thanh toán",
+      "tax": 0,
+      "discount": 0,
+      "id": "48c3",
       "provider": {
         "companyName": "Nhóm 31",
         "address": "Điện Nam, Điện Bàn, Quảng Nam",
