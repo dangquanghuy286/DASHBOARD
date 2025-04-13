@@ -63,25 +63,28 @@ function Customer() {
             </div>
 
             {/* Search + Add User */}
-            <div className="my-6 ml-6 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
+            <div className="my-6 flex flex-col items-center gap-2 md:flex-row">
+                <div className="mb-4 flex w-full items-center space-x-2 sm:mb-0 sm:w-auto">
                     <CreateUser />
                     <form
-                        className="inline"
+                        className="inline w-full sm:w-auto"
                         onSubmit={handleSubmit(onSearch)}
                     >
-                        <div className="input">
-                            <button type="submit">
+                        <div className="input flex w-full items-center sm:w-auto">
+                            <button
+                                type="submit"
+                                className="cursor-pointer"
+                            >
                                 <FaSearch
                                     size={20}
-                                    className="cursor-pointer text-slate-300"
+                                    className="text-slate-300"
                                 />
                             </button>
                             <input
                                 {...register("name")}
                                 type="text"
                                 placeholder="Tìm kiếm"
-                                className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
+                                className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 sm:w-64 dark:text-slate-50"
                             />
                         </div>
                     </form>
@@ -102,7 +105,7 @@ function Customer() {
                 )}
             </div>
             {/* Nút trở lại */}
-            <div className="mt-20 mb-10">
+            <div className="mt-20 mb-20">
                 <GoBack />
             </div>
         </div>

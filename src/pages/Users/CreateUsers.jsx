@@ -124,7 +124,7 @@ function CreateUser() {
     return (
         <>
             <button
-                className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
+                className="flex min-w-[200px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-4 py-2 text-base text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
                 onClick={openModal}
             >
                 <IoIosAdd className="text-xl" /> Thêm người dùng

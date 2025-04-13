@@ -42,22 +42,22 @@
       {
         "name": "Miền Bắc",
         "value": 6,
-        "color": "#E57373"
+        "color": "#FF8A80"
       },
       {
         "name": "Miền Trung",
         "value": 10,
-        "color": "#4DB6AC"
+        "color": "#81C784"
       },
       {
         "name": "Miền Nam",
         "value": 9,
-        "color": "#BA68C8"
+        "color": "#64B5F6"
       },
       {
         "name": "Tây Nguyên",
         "value": 2,
-        "color": "#FFB74D"
+        "color": "#FFD54F"
       }
     ],
     "international": []
@@ -100,8 +100,7 @@
     {
       "method": "Momo",
       "percentage": 38,
-      "color": "#FF33E3",
-      "id": "7246"
+      "color": "#FF33E3"
     },
     {
       "method": "Thanh toán tại văn phòng",

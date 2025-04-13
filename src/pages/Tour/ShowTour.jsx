@@ -70,30 +70,32 @@ function ShowTour() {
                 />
             </div>
 
-            <div className="my-6 flex items-center gap-2.5">
-                <CreateTour />
-                <form
-                    className="inline"
-                    onSubmit={handleSubmit(onSearch)}
-                >
-                    <div className="input flex items-center">
-                        <button
-                            type="submit"
-                            className="cursor-pointer"
-                        >
-                            <FaSearch
-                                size={20}
-                                className="text-slate-300"
+            <div className="my-6 flex flex-col items-center gap-2.5 md:flex-row">
+                <div className="mb-4 flex w-full items-center space-x-2 sm:mb-0 sm:w-auto">
+                    <CreateTour />
+                    <form
+                        className="inline"
+                        onSubmit={handleSubmit(onSearch)}
+                    >
+                        <div className="input flex items-center">
+                            <button
+                                type="submit"
+                                className="cursor-pointer"
+                            >
+                                <FaSearch
+                                    size={20}
+                                    className="text-slate-300"
+                                />
+                            </button>
+                            <input
+                                {...register("name")}
+                                type="text"
+                                placeholder="Tìm kiếm theo tên tour"
+                                className="*dark:placeholder:text-slate-400 w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
                             />
-                        </button>
-                        <input
-                            {...register("name")}
-                            type="text"
-                            placeholder="Tìm kiếm theo tên tour"
-                            className="*dark:placeholder:text-slate-400 w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
-                        />
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             {/* Hiển thị bảng tour qua EntriesFilter + TourTable */}

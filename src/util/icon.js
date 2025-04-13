@@ -10,6 +10,7 @@ import {
     MdBlock,
     MdDelete,
     MdEmail,
+    MdPayment,
 } from "react-icons/md";
 import { IoMdAnalytics, IoIosCreate, IoIosSettings, IoIosSunny, IoIosMoon, IoMdCreate, IoIosAdd, IoIosArrowDropdownCircle } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
@@ -89,5 +90,6 @@ const icons = {
     RiLockPasswordFill,
     FiLogOut,
     MdEmail,
+    MdPayment,
 };
 export default icons;

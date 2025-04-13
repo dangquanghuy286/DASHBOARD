@@ -110,9 +110,9 @@ function CreateTour() {
 
     const handleImageChange = (e) => {
         const uploadfile = e.target.files;
+        if (!uploadfile) return;
+
         setFiles(uploadfile);
-        const imageUrls = [...uploadfile].map((file) => URL.createObjectURL(file));
-        setData((prev) => ({ ...prev, images: imageUrls }));
     };
 
     const renderAnh = () =>
