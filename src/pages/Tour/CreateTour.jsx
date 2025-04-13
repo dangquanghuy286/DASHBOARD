@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import Modal from "react-modal";
-
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-import { createDataTour, getDataRegion } from "../../services/tourService";
+import { createDataTour, getDataRegion, getDataTour } from "../../services/tourService";
 const { IoIosAdd } = icons;
 
 function CreateTour() {
@@ -15,53 +14,64 @@ function CreateTour() {
     const [dataRegion, setDataRegion] = useState([]);
     const [files, setFiles] = useState([]);
     const [timeline, setTimeline] = useState([]);
+    const [existingTours, setExistingTours] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getDataRegion(); // Lấy danh sách khu vực
-            setDataRegion(result);
+            const regions = await getDataRegion();
+            setDataRegion(regions);
+            const tours = await getDataTour();
+            setExistingTours(tours);
         };
         fetchData();
     }, []);
-    const handleReload = () => {
-        setReload(!reload);
-    };
-    // const [avatarPreview, setAvatarPreview] = useState(null); // Trạng thái lưu ảnh preview
+
+    const handleReload = () => setReload(!reload);
+
     const customStyles = {
         content: {
-            top: "50%", // Đặt modal ở vị trí 50% chiều cao của màn hình
-            left: "50%", // Đặt modal ở vị trí 50% chiều rộng của màn hình
-            right: "auto", // Không điều chỉnh vị trí bên phải
-            bottom: "auto", // Không điều chỉnh vị trí phía dưới
-            marginRight: "-50%", // Giữ việc căn giữa theo chiều ngang
-            transform: "translate(-50%, -50%)", // Căn giữa modal
-            width: "90%", // Chiều rộng modal linh hoạt theo kích thước màn hình
-            maxWidth: "600px", // Giới hạn chiều rộng của modal trên các màn hình lớn
-            maxHeight: "80vh", // Giới hạn chiều cao của modal không vượt quá 80% chiều cao viewport
-            padding: "24px", // Thêm không gian bên trong modal để tạo cảm giác thoải mái
-            background: "#ffffff", // Nền trắng sạch sẽ
-            borderRadius: "12px", // Góc mềm mại, hiện đại
-            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)", // Áp dụng bóng đổ nhẹ cho modal để tạo chiều sâu
-            border: "none", // Loại bỏ đường viền mặc định của modal để tạo phong cách sạch sẽ
-            overflowY: "auto", // Cho phép cuộn dọc nếu nội dung vượt quá chiều cao modal
-            fontFamily: "'Inter', sans-serif", // Font chữ hiện đại, dễ đọc (tuỳ chọn, đảm bảo font được tải)
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            width: "90%",
+            maxWidth: "600px",
+            maxHeight: "80vh",
+            padding: "24px",
+            background: "#ffffff",
+            borderRadius: "12px",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+            border: "none",
+            overflowY: "auto",
+            fontFamily: "'Inter', sans-serif",
         },
         overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Màu nền tối, bán trong suốt cho lớp phủ
-            zIndex: 1000, // Đảm bảo modal luôn hiển thị trên các nội dung khác
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 1000,
         },
     };
 
-    const openModal = () => {
-        setShowModal(true);
-    };
-
-    const closeModal = () => {
-        setShowModal(false);
-    };
+    const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
 
     const handleCreate = async (e) => {
         e.preventDefault();
+
+        // Kiểm tra tên tour đã tồn tại chưa
+        const isDuplicate = existingTours.some((tour) => tour.tourName.toLowerCase().trim() === data.tourName?.toLowerCase().trim());
+
+        if (isDuplicate) {
+            Swal.fire({
+                icon: "error",
+                title: "Tour đã tồn tại",
+                text: "Vui lòng chọn tên tour khác.",
+                confirmButtonColor: "#d33",
+            });
+            return;
+        }
+
         const ketqua = await createDataTour({ ...data, timeline });
 
         if (ketqua) {
@@ -84,12 +94,11 @@ function CreateTour() {
         if (name === "startDate" || name === "endDate") {
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
-
             if (!isNaN(start) && !isNaN(end) && end >= start) {
                 const diffTime = Math.abs(end - start);
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
                 updatedData.duration = `${diffDays} ngày`;
-                setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" }))); // Tạo mảng rỗng với độ dài là số ngày
+                setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" })));
             } else {
                 updatedData.duration = "";
                 setTimeline([]);
@@ -98,18 +107,16 @@ function CreateTour() {
 
         setData(updatedData);
     };
-    //Ham xu ly chon anh tu file
+
     const handleImageChange = (e) => {
         const uploadfile = e.target.files;
         setFiles(uploadfile);
-
-        //Luu anh vao json
         const imageUrls = [...uploadfile].map((file) => URL.createObjectURL(file));
         setData((prev) => ({ ...prev, images: imageUrls }));
     };
-    //Ham in anh ra
-    const renderAnh = () => {
-        return [...files].map((anh, index) => (
+
+    const renderAnh = () =>
+        [...files].map((anh, index) => (
             <div
                 key={index}
                 className="m-2"
@@ -122,7 +129,7 @@ function CreateTour() {
                 />
             </div>
         ));
-    };
+
     const handleTimelineChange = (index, field, value) => {
         const newTimeline = [...timeline];
         newTimeline[index][field] = value;
@@ -132,7 +139,7 @@ function CreateTour() {
     return (
         <>
             <button
-                className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#6EF195] to-[#00E3FD] px-3 py-2 text-lg text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
+                className="flex min-w-[180px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#6EF195] to-[#00E3FD] px-4 py-2 text-base text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
                 onClick={openModal}
             >
                 <IoIosAdd className="text-xl" /> Thêm tour mới
@@ -157,6 +164,7 @@ function CreateTour() {
                             className="w-full border p-2"
                         />
                     </div>
+
                     <div>
                         <label>Điểm đến</label>
                         <input
@@ -294,7 +302,6 @@ function CreateTour() {
                     </div>
                     <div className="my-4">
                         <label>Ảnh</label>
-
                         <div className="flex items-center gap-4">
                             <label
                                 htmlFor="file"
@@ -304,7 +311,6 @@ function CreateTour() {
                             </label>
                             <span className="text-sm text-gray-500">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh nào"}</span>
                         </div>
-
                         <input
                             type="file"
                             id="file"
@@ -314,9 +320,9 @@ function CreateTour() {
                             onChange={handleImageChange}
                             className="hidden"
                         />
-
                         {renderAnh()}
                     </div>
+
                     {timeline.length > 0 && (
                         <div>
                             <label className="block font-semibold">Lịch trình</label>
