@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { getDataCustomer } from "../../services/userSevice";
-import CreateUser from "./CreateUsers";
+
 import { useForm } from "react-hook-form";
 import UserPr from "./UserPr";
 import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
+import CreateUser from "../../components/User/Create";
 
 const { FaSearch } = icons;
 

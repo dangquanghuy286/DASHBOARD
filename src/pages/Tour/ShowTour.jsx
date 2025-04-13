@@ -5,8 +5,9 @@ import CopyPrintComponent from "../../components/Tool";
 import { getDataTour } from "../../services/tourService";
 import EntriesFilter from "../../components/Pagination";
 import TourTable from "./TourTable";
-import CreateTour from "./CreateTour";
+
 import GoBack from "../../components/GoBack/Goback";
+import CreateTour from "../../components/Tour/Create";
 
 const { FaSearch } = icons;
 

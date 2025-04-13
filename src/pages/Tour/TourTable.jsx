@@ -1,6 +1,7 @@
+import DeleteTour from "../../components/Tour/Delete";
+import EditTour from "../../components/Tour/Edit";
 import icons from "../../util/icon";
-import DeleteTour from "./DeleteTour";
-import EditTour from "./EditTour";
+
 import { Link } from "react-router-dom";
 
 const { MdBlock } = icons;

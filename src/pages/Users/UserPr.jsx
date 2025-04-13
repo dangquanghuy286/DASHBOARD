@@ -1,5 +1,5 @@
-import DeleteUser from "./DeleteUser";
-import EditUser from "./EditUser";
+import DeleteUser from "../../components/User/Delete";
+import EditUser from "../../components/User/Edit";
 
 function UserPr(props) {
     const { user } = props;
