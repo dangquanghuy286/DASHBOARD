@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import icons from "../../util/icon";
-import { getDataPayment } from "../../services/paymentSevice";
+import { getDataPayment } from "../../services/bookingService";
+
 const { MdPayment } = icons;
 const PaymentDataCard = () => {
     const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ const PaymentDataCard = () => {
     return (
         <div className="card col-span-1 overflow-hidden rounded-lg bg-white shadow-md md:col-span-2 lg:col-span-3 dark:bg-slate-900">
             <div className="card-header flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
-                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 transition-colors dark:bg-blue-600/20 dark:text-blue-600">
+                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-[#019fb5] transition-colors dark:bg-blue-600/20">
                     <MdPayment size={26} />
                 </div>
                 <p className="card-title">Dữ liệu thanh toán</p>

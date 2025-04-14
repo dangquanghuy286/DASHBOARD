@@ -1,22 +1,27 @@
-import { del, get, post } from "../util/request";
+// src/services/tourService.js
+import { del, edit, get, post } from "../util/request";
 
+// Lấy tất cả tour
 export const getDataTour = async () => {
-    const result = await get("tourManagement");
-    return result;
+    return await get("tourManagement");
 };
+
+// Tạo tour mới
 export const createDataTour = async (data) => {
-    const result = await post("tourManagement", data);
-    return result;
+    return await post("tourManagement", data);
 };
+
+// Xóa tour theo ID
 export const deleteTour = async (id) => {
-    const result = await del(`tourManagement/${id}`);
-    return result;
+    return await del(`tourManagement/${id}`);
 };
+
+// Cập nhật tour
 export const updateTour = async (id, data) => {
-    const result = await post(`tourManagement/${id}`, data);
-    return result;
+    return await edit(`tourManagement/${id}`, data);
 };
+
+// Lấy danh sách khu vực
 export const getDataRegion = async () => {
-    const result = await get("regions");
-    return result;
+    return await get("regions");
 };

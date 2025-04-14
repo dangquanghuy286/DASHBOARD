@@ -21,7 +21,7 @@ function AdminAvatar({ tempImage, avatarUrl, name, handleImageChange }) {
 
             <label
                 htmlFor="fileInput"
-                className="mb-4 flex cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-5 py-2 text-white shadow-md transition duration-300 hover:scale-105"
+                className="mb-4 flex cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-[#019fb5] to-[#00c0d1] px-5 py-2 text-white shadow-md transition duration-300 hover:scale-105"
             >
                 <MdOutlineAttachFile className="mr-2 text-lg" /> Chọn ảnh mới
             </label>

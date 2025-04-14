@@ -89,7 +89,7 @@ const ChangePasswordPage = () => {
                 <h1 className="text-2xl font-bold tracking-wide text-gray-950 dark:text-white">MẬT KHẨU</h1>
             </div>
             <div className="dark: mx-auto mt-10 max-w-md rounded-xl bg-slate-50 p-6 shadow-xl shadow-gray-500/30 dark:bg-slate-900">
-                <h2 className="mb-4 text-center text-2xl font-semibold text-blue-600">Đổi Mật Khẩu</h2>
+                <h2 className="mb-4 text-center text-2xl font-semibold text-[#019fb5] dark:text-slate-50">Đổi Mật Khẩu</h2>
                 <form
                     onSubmit={handleSubmit}
                     className="space-y-4"
@@ -161,7 +161,7 @@ const ChangePasswordPage = () => {
                         <GoBack className="ml-2 text-gray-500 hover:text-gray-700" />
                         <button
                             type="submit"
-                            className="rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-red-600"
+                            className="rounded-md bg-gradient-to-r from-[#019fb5] to-[#00c0d1] px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105 hover:from-[#018a9f] hover:to-[#00a8bb]"
                         >
                             Đổi mật khẩu
                         </button>

@@ -65,7 +65,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                         <div
                                             className={`flex h-[48px] w-full items-center gap-3 px-[20px] ${
                                                 isActiveOrOpen
-                                                    ? "border-l-4 border-[#ff5858] bg-[#ffc8c8] dark:border-[#ff0f7b] dark:bg-[#45caff]"
+                                                    ? "border-l-4 border-[#f82342] bg-[#bbf9ff] dark:border-[#f82342] dark:bg-[#00c0d1]"
                                                     : "hover:bg-[#cad0ff22]"
                                             }`}
                                         >
@@ -73,7 +73,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                                 <item.icon
                                                     size={18}
                                                     className={`${
-                                                        isActiveOrOpen ? "text-[#ff5858] dark:text-[#ff0f7b]" : "text-black dark:text-white"
+                                                        isActiveOrOpen ? "text-[#f82342] dark:text-[#f82342]" : "text-black dark:text-white"
                                                     }`}
                                                 />
                                             </div>

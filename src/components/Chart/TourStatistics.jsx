@@ -27,7 +27,7 @@ function TourStatistics() {
     return (
         <div className="card col-span-1 md:col-span-2 lg:col-span-5">
             <div className="card-header flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
-                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-blue-500 dark:bg-blue-600/20 dark:text-blue-600">
+                <div className="w-fit rounded-lg bg-blue-500/20 p-2 text-[#019fb5] dark:bg-blue-600/20">
                     <FaMap size={26} />
                 </div>
                 <p className="card-title text-lg font-semibold">Điểm đến</p>
@@ -38,7 +38,6 @@ function TourStatistics() {
                 <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:items-start">
                     {/* Biểu đồ */}
                     <div className="flex w-full flex-col items-center justify-center sm:w-1/2">
-                        <p className="mb-2 text-center font-semibold dark:text-amber-50">Trong nước</p>
                         <div className="flex items-center justify-center">
                             <ResponsiveContainer
                                 width={300}

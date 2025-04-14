@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import icons from "../../util/icon";
 import CopyPrintComponent from "../../components/Tool";
-
 import EntriesFilter from "../../components/Pagination";
-
 import { getDataBookingTour } from "../../services/bookingService";
 import BookingTourTable from "./BookingTable";
 import GoBack from "../../components/GoBack/Goback";
@@ -49,10 +47,19 @@ function ShowBookingTour() {
         }
 
         const searchTermNoDiacritics = removeDiacritics(searchTerm);
-        const filteredData = originalData.filter((tour) => {
-            const tourName = tour.tourName?.toLowerCase() || "";
+        const filteredData = originalData.filter((booking) => {
+            const tourName = booking.tourName?.toLowerCase() || "";
+            const userName = booking.customerName?.toLowerCase() || "";
+
             const tourNameNoDiacritics = removeDiacritics(tourName);
-            return tourName.includes(searchTerm) || tourNameNoDiacritics.includes(searchTermNoDiacritics);
+            const userNameNoDiacritics = removeDiacritics(userName);
+
+            return (
+                tourName.includes(searchTerm) ||
+                tourNameNoDiacritics.includes(searchTermNoDiacritics) ||
+                userName.includes(searchTerm) ||
+                userNameNoDiacritics.includes(searchTermNoDiacritics)
+            );
         });
 
         setData(filteredData);
@@ -89,7 +96,7 @@ function ShowBookingTour() {
                         <input
                             {...register("name")}
                             type="text"
-                            placeholder="Tìm kiếm theo tên tour"
+                            placeholder="Tìm kiếm theo tên tour hoặc tên người dùng"
                             className="*dark:placeholder:text-slate-400 w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
                         />
                     </div>
@@ -97,6 +104,7 @@ function ShowBookingTour() {
             </div>
 
             <EntriesFilter data={data}>{(currentEntries) => <BookingTourTable currentEntries={currentEntries} />}</EntriesFilter>
+
             <div className="mb-4">
                 <GoBack />
             </div>

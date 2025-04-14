@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import icons from "../../../util/icon";
 import Swal from "sweetalert2";
 
-import { createDataCustomer } from "../../../services/userSevice";
-import { getRoles } from "../../../services/rolesService";
+import { createDataCustomer, getRoles } from "../../../services/userSevice";
+
 import { generateToken } from "../../../helpers/generateTonken";
 
 import UserModal from "../ModelUser";
+import AddButton from "../../Button/CreateButton";
 const { IoIosAdd } = icons;
 function CreateUser() {
     const [showModal, setShowModal] = useState(false);
@@ -85,12 +86,11 @@ function CreateUser() {
 
     return (
         <>
-            <button
-                className="flex min-w-[200px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 px-4 py-2 text-base text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
+            <AddButton
                 onClick={openModal}
-            >
-                <IoIosAdd className="text-xl" /> Thêm người dùng
-            </button>
+                text="Thêm người dùng"
+            />
+
             <UserModal
                 isOpen={showModal}
                 closeModal={closeModal}

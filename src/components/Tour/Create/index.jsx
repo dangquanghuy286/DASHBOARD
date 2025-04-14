@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 import { createDataTour, getDataRegion, getDataTour } from "../../../services/tourService";
 import TourModal from "../ModelTour";
+import AddButton from "../../Button/CreateButton";
 const { IoIosAdd } = icons;
 function CreateTour() {
     const [showModal, setShowModal] = useState(false);
@@ -110,12 +111,11 @@ function CreateTour() {
 
     return (
         <>
-            <button
-                className="flex min-w-[180px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#6EF195] to-[#00E3FD] px-4 py-2 text-base text-white shadow-md hover:bg-gradient-to-l focus:outline-none"
+            <AddButton
                 onClick={openModal}
-            >
-                <IoIosAdd className="text-xl" /> Thêm tour mới
-            </button>
+                text="Thêm Tour mới"
+            />
+
             <TourModal
                 isOpen={showModal}
                 closeModal={closeModal}

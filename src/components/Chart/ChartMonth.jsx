@@ -1,7 +1,7 @@
-import { getDataMonths } from "../../services/chartMonthSevice";
 import { useEffect, useState } from "react";
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import icons from "../../util/icon";
+import { getDataMonths } from "../../services/tourStatistics";
 const { FaChartBar } = icons;
 function DataChartMonth() {
     const [dataChart, setDatachart] = useState([]);
@@ -17,7 +17,7 @@ function DataChartMonth() {
             <div className="card col-span-1 rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-lg md:col-span-2 lg:col-span-8 dark:bg-slate-800">
                 {/* Card Header */}
                 <div className="card-header flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20 text-blue-500 transition-colors hover:bg-blue-500/30 dark:bg-blue-600/20 dark:text-blue-600 dark:hover:bg-blue-600/30">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20 text-[#019fb5] transition-colors hover:bg-blue-500/30 dark:bg-blue-600/20 dark:text-[#019fb5] dark:hover:bg-blue-600/30">
                         <FaChartBar size={24} />
                     </div>
                     <p className="card-title text-xl font-semibold text-gray-800 dark:text-white">Doanh thu theo tháng</p>
@@ -26,7 +26,6 @@ function DataChartMonth() {
                 {/* Card Body */}
                 <div className="card-body p-6">
                     <div className="card-domestic rounded-lg bg-[#f1f5f9] p-6 dark:bg-slate-950">
-                        <h2 className="card-title mb-6 text-lg font-bold text-gray-900 dark:text-white">🏞️ Trong nước</h2>
                         <ResponsiveContainer
                             width="100%"
                             height={300}

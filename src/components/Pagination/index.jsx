@@ -63,7 +63,7 @@ function EntriesFilter({ data, children }) {
                         onClick={() => handlePageChange(number)}
                         className={`h-9 w-9 rounded-full text-sm font-medium transition duration-200 ${
                             currentPage === number
-                                ? "bg-gradient-to-tr from-blue-600 to-purple-600 text-white shadow-md dark:from-blue-500 dark:to-purple-500"
+                                ? "bg-gradient-to-tr from-[#019fb5] to-[#00c0d1] text-white shadow-md dark:from-[#019fb5] dark:to-[#00c0d1]"
                                 : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
                         }`}
                     >

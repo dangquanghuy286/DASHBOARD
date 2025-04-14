@@ -26,7 +26,7 @@ function PasswordInput({ show, toggleShow, value }) {
             <div className="mt-2 text-right">
                 <NavLink
                     to="/admin/change-password"
-                    className="text-green-500 hover:underline"
+                    className="text-[#019fb5] hover:underline"
                 >
                     Thay đổi mật khẩu
                 </NavLink>

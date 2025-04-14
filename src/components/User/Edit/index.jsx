@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { getRoles } from "../../../services/rolesService";
+
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import { editUser } from "../../../services/userSevice";
+import { editUser, getRoles } from "../../../services/userSevice";
 import { generateToken } from "../../../helpers/generateTonken";
 import icons from "../../../util/icon";
 import UserModal from "../ModelUser";
