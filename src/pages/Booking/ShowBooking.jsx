@@ -4,8 +4,9 @@ import icons from "../../util/icon";
 import CopyPrintComponent from "../../components/Tool";
 import EntriesFilter from "../../components/Pagination";
 import { getDataBookingTour } from "../../services/bookingService";
-import BookingTourTable from "./BookingTable";
+
 import GoBack from "../../components/GoBack/Goback";
+import BookingTourTable from "./BookingTable";
 
 const { FaSearch } = icons;
 

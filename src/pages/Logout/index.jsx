@@ -7,31 +7,49 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 function Logout() {
-    const nav = useNavigate();
-    const dispatch = useDispatch();
-
-    // Xóa token khỏi localStorage khi đăng xuất
-    localStorage.removeItem("token");
+    const nav = useNavigate(); // Hook dùng để điều hướng
+    const dispatch = useDispatch(); // Hook dùng để gọi action Redux
 
     useEffect(() => {
-        // Hiển thị thông báo đăng xuất thành công
+        // Hiển thị hộp thoại xác nhận đăng xuất
         Swal.fire({
-            title: "Logged Out",
-            text: "Bạn đã đăng xuất thành công.",
-            icon: "warning",
-            timer: 2000,
-            showConfirmButton: false,
-            position: "top-end",
-        });
+            title: "Xác nhận đăng xuất",
+            text: "Bạn có chắc muốn đăng xuất khỏi hệ thống?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Đăng xuất",
+            cancelButtonText: "Hủy",
+            reverseButtons: true,
+            position: "center",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Nếu người dùng xác nhận đăng xuất
+                // Xoá token khỏi localStorage
+                localStorage.removeItem("token");
 
-        // Sau 2 giây, dispatch action để cập nhật trạng thái đăng nhập và điều hướng người dùng đến trang đăng nhập
-        setTimeout(() => {
-            dispatch(checkLogin(false));
-            nav("/login");
-        }, 2000);
+                // Hiển thị thông báo đăng xuất thành công
+                Swal.fire({
+                    title: "Đăng xuất",
+                    text: "Bạn đã đăng xuất thành công.",
+                    icon: "success",
+                    timer: 2000,
+                    showConfirmButton: false,
+                    position: "top-end",
+                });
+
+                // Sau 2 giây, cập nhật trạng thái đăng nhập và chuyển hướng đến trang đăng nhập
+                setTimeout(() => {
+                    dispatch(checkLogin(false));
+                    nav("/login");
+                }, 2000);
+            } else {
+                // Nếu người dùng huỷ, quay về trang chủ hoặc trang trước đó
+                nav("/"); // Hoặc sử dụng history.back() hay một đường dẫn cụ thể
+            }
+        });
     }, [dispatch, nav]);
 
-    return null; // Không cần render gì
+    return null; // Không cần hiển thị giao diện
 }
 
 export default Logout;
