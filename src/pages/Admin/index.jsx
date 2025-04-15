@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCookie } from "../../helpers/cookie";
+
 import { getDataCustomer } from "../../services/userSevice";
 import GoBack from "../../components/GoBack/Goback";
 import AdminAvatar from "./Avatar";
@@ -18,7 +18,7 @@ function Admin() {
     });
 
     useEffect(() => {
-        const token = getCookie("token");
+        const token = localStorage.getItem("token");
         const fetchApi = async () => {
             try {
                 const res = await getDataCustomer();

@@ -1,7 +1,6 @@
 import Admin from "../pages/Admin";
 import Booking from "../pages/Booking";
 import Home from "../pages/Home";
-import LayoutDefault from "../layout/LayoutDefaut";
 import Customer from "../pages/Users";
 import Tour from "../pages/Tour";
 import BookingDetail from "../pages/Booking/BookingDetail";
@@ -18,55 +17,27 @@ export const routes = [
     },
     {
         path: "/",
-        element: (
-            <PrivateRoutes>
-                <LayoutDefault />
-            </PrivateRoutes>
-        ),
+        element: <PrivateRoutes />,
         children: [
-            {
-                index: true,
-                element: <Home />,
-            },
+            { index: true, element: <Home /> }, // Trang chủ
             {
                 path: "admin",
                 children: [
-                    {
-                        index: true,
-                        element: <Admin />,
-                    },
-                    {
-                        path: "change-password",
-                        element: <ChangePass />,
-                    },
+                    { index: true, element: <Admin /> }, // Trang quản trị
+                    { path: "change-password", element: <ChangePass /> }, // Trang đổi mật khẩu
                 ],
             },
-            {
-                path: "user",
-                element: <Customer />,
-            },
-            {
-                path: "tour",
-                element: <Tour />,
-            },
+            { path: "user", element: <Customer /> }, // Trang quản lý người dùng
+            { path: "tour", element: <Tour /> }, // Trang quản lý tour
             {
                 path: "booking",
-                element: <Booking />,
+                element: <Booking />, // Trang quản lý đặt tour
                 children: [
-                    {
-                        index: true,
-                        element: <ShowBookingTour />,
-                    },
-                    {
-                        path: ":id",
-                        element: <BookingDetail />,
-                    },
+                    { index: true, element: <ShowBookingTour /> }, // Hiển thị danh sách đặt tour
+                    { path: ":id", element: <BookingDetail /> }, // Chi tiết đặt tour
                 ],
             },
-            {
-                path: "logout",
-                element: <Logout />,
-            },
+            { path: "logout", element: <Logout /> }, // Trang đăng xuất
         ],
     },
 ];

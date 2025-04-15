@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
@@ -6,16 +5,12 @@ import { cn } from "../../util/cn";
 import Header from "./Header";
 import SideBarLeft from "./SideBarLeft";
 import { useClickOutside } from "../../hooks/use_Click_outSize";
-import { getCookie } from "../../helpers/cookie";
-import { useSelector } from "react-redux";
 
 function LayoutDefault() {
     const isDesktopDevice = useMediaQuery("(min-width:768px)");
     const [collapsed, setCollapsed] = useState(!isDesktopDevice);
     const sidebarRef = useRef(null);
-    const token = getCookie("token");
-    const isLogin = useSelector((state) => state.loginReducer);
-
+    const token = localStorage.getItem("token"); // Kiểm tra token từ
     const navigate = useNavigate();
 
     useEffect(() => {
