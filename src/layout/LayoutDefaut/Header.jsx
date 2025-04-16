@@ -1,21 +1,19 @@
 import PropTypes from "prop-types";
 import icons from "../../util/icon";
-
 import { useEffect, useRef, useState } from "react";
-
 import { getCookie } from "../../helpers/cookie";
-import { getDataCustomer } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
+import { getDataCustomer } from "../../services/userSevice";
 import DarkMode from "../../components/DarkMode";
-import Bell from "../../components/Bell";
+
 import Menu from "../../components/Menu";
 
 const { BiSolidChevronsRight } = icons;
 
 function Header({ collapsed, setCollapsed }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const dropdownRef = useRef();
-
     const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png");
+
+    const dropdownRef = useRef();
 
     useEffect(() => {
         const token = getCookie("token");
@@ -57,7 +55,7 @@ function Header({ collapsed, setCollapsed }) {
             </div>
             <div className="flex items-center gap-x-3">
                 <DarkMode />
-                <Bell />
+
                 <div
                     className="relative"
                     ref={dropdownRef}
@@ -72,7 +70,6 @@ function Header({ collapsed, setCollapsed }) {
                             className="h-full w-full object-cover"
                         />
                     </button>
-
                     <Menu dropdownOpen={dropdownOpen} />
                 </div>
             </div>

@@ -23,8 +23,8 @@ function Logout() {
             position: "center",
         }).then((result) => {
             if (result.isConfirmed) {
-                // Nếu người dùng xác nhận đăng xuất
                 // Xoá token khỏi localStorage
+
                 localStorage.removeItem("token");
 
                 // Hiển thị thông báo đăng xuất thành công

@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import icons from "../../util/icon";
 import CopyPrintComponent from "../../components/Tool";
-import { getDataTour } from "../../services/tourService";
+
 import EntriesFilter from "../../components/Pagination";
 import TourTable from "./TourTable";
 
 import GoBack from "../../components/GoBack/Goback";
 import CreateTour from "../../components/Tour/Create";
+import { getDataTour } from "../../services/tourService";
 
 const { FaSearch } = icons;
 

@@ -1,4 +1,5 @@
-import instance from "../util/requestserver";
+// import instance from "../util/requestserver";
+
 import { del, edit, get, post } from "../util/request";
 
 // Lấy danh sách khách hàng
@@ -26,26 +27,17 @@ export const deleteUser = async (id) => {
     return await del(`userManagement/${id}`);
 };
 
-export const loginApi = async (user_name, password) => {
+export const login = async (username, password) => {
     try {
-        // Gửi yêu cầu đăng nhập
-        return await instance.post("users/login", { user_name, password });
+        // Gửi request với params để không phải nối chuỗi thủ công
+        const result = await get("userManagement", { username, password });
+        return result;
     } catch (error) {
-        console.error("Login API error:", error);
-
-        // Xử lý lỗi chi tiết
-        if (error.response) {
-            // Lỗi từ server
-            throw error.response.data;
-        } else if (error.request) {
-            // Không nhận được phản hồi từ server
-            throw { message: "Không nhận được phản hồi từ server" };
-        } else {
-            // Lỗi khác
-            throw { message: error.message || "Đã xảy ra lỗi không xác định" };
-        }
+        console.error("Login error:", error);
+        return [];
     }
 };
+
 // // API đăng nhập
 // export const loginApi = async (user_name, password) => {
 //     try {
