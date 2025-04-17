@@ -1,4 +1,3 @@
-import EditButton from "../../components/Button/EditButton";
 import PasswordInput from "./PassWord";
 
 function AdminForm({ formData, onChange, onSubmit, showPassword, setShowPassword }) {
@@ -51,7 +50,12 @@ function AdminForm({ formData, onChange, onSubmit, showPassword, setShowPassword
                 </div>
 
                 <div className="mt-4 flex items-center gap-3">
-                    <EditButton>Cập nhật</EditButton>
+                    <button
+                        type="submit"
+                        className="rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-2 text-white shadow-md transition duration-300 hover:scale-105"
+                    >
+                        Cập nhật
+                    </button>
                 </div>
             </form>
         </div>
