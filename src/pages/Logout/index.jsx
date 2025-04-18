@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { checkLogin } from "../../actions/login";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
+import { deleteAllCookies } from "../../helpers/cookie";
 
 function Logout() {
     const nav = useNavigate(); // Hook dùng để điều hướng
@@ -25,8 +26,8 @@ function Logout() {
             if (result.isConfirmed) {
                 // Xoá token khỏi localStorage
 
-                localStorage.removeItem("token");
-
+                // localStorage.removeItem("token");
+                deleteAllCookies();
                 // Hiển thị thông báo đăng xuất thành công
                 Swal.fire({
                     title: "Đăng xuất",
