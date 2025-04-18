@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import PrivateRoutes from "../components/PrivateRoutes";
 import ChangePass from "../pages/Admin/ChangePass";
+import NotFound from "../pages/Error404";
 
 export const routes = [
     {
@@ -37,7 +38,9 @@ export const routes = [
                     { path: ":id", element: <BookingDetail /> }, // Chi tiết đặt tour
                 ],
             },
-            { path: "logout", element: <Logout /> }, // Trang đăng xuất
+            { path: "logout", element: <Logout /> },
+            { path: "*", element: <NotFound /> },
         ],
     },
+    { path: "*", element: <NotFound /> },
 ];
