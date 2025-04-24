@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import PrivateRoutes from "../components/PrivateRoutes";
 import ChangePass from "../pages/Admin/ChangePass";
+import NotFound from "../pages/Error";
 
 export const routes = [
     {
@@ -19,25 +20,27 @@ export const routes = [
         path: "/",
         element: <PrivateRoutes />,
         children: [
-            { index: true, element: <Home /> }, // Trang chủ
+            { index: true, element: <Home /> },
             {
                 path: "admin",
                 children: [
-                    { index: true, element: <Admin /> }, // Trang quản trị
-                    { path: "change-password", element: <ChangePass /> }, // Trang đổi mật khẩu
+                    { index: true, element: <Admin /> },
+                    { path: "change-password", element: <ChangePass /> },
                 ],
             },
-            { path: "user", element: <Customer /> }, // Trang quản lý người dùng
-            { path: "tour", element: <Tour /> }, // Trang quản lý tour
+            { path: "user", element: <Customer /> },
+            { path: "tour", element: <Tour /> },
             {
                 path: "booking",
-                element: <Booking />, // Trang quản lý đặt tour
+                element: <Booking />,
                 children: [
-                    { index: true, element: <ShowBookingTour /> }, // Hiển thị danh sách đặt tour
-                    { path: ":id", element: <BookingDetail /> }, // Chi tiết đặt tour
+                    { index: true, element: <ShowBookingTour /> },
+                    { path: ":id", element: <BookingDetail /> },
                 ],
             },
-            { path: "logout", element: <Logout /> }, // Trang đăng xuất
+            { path: "logout", element: <Logout /> },
+            { path: "*", element: <NotFound /> },
         ],
     },
+    { path: "*", element: <NotFound /> },
 ];

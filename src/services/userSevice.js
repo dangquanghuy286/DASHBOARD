@@ -26,25 +26,8 @@ export const deleteUser = async (id) => {
     return await del(`userManagement/${id}`);
 };
 
-export const loginApi = async (user_name, password) => {
-    try {
-        // Gửi yêu cầu đăng nhập
-        return await instance.post("users/login", { user_name, password });
-    } catch (error) {
-        console.error("Login API error:", error);
-
-        // Xử lý lỗi chi tiết
-        if (error.response) {
-            // Lỗi từ server
-            throw error.response.data;
-        } else if (error.request) {
-            // Không nhận được phản hồi từ server
-            throw { message: "Không nhận được phản hồi từ server" };
-        } else {
-            // Lỗi khác
-            throw { message: error.message || "Đã xảy ra lỗi không xác định" };
-        }
-    }
+export const loginApi = (user_name, password) => {
+    return instance.post("users/login", { user_name, password });
 };
 // // API đăng nhập
 // export const loginApi = async (user_name, password) => {

@@ -6,9 +6,9 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // server: {
-  //   port: 3000,
-  // },
+  server: {
+    port: 3000,
+  },
 
   //để rút ngắn đường dẫn khi import file:
   resolve: {
