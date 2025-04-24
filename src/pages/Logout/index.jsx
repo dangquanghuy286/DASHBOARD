@@ -10,28 +10,29 @@ function Logout() {
     const nav = useNavigate();
     const dispatch = useDispatch();
 
-    // Xóa token khỏi localStorage khi đăng xuất
-    localStorage.removeItem("token");
-
     useEffect(() => {
+        // Xóa token và thông tin người dùng khỏi localStorage
+        localStorage.removeItem("token");
+        localStorage.removeItem("user_id");
+
         // Hiển thị thông báo đăng xuất thành công
         Swal.fire({
-            title: "Logged Out",
+            title: "Đăng xuất",
             text: "Bạn đã đăng xuất thành công.",
-            icon: "warning",
+            icon: "success",
             timer: 2000,
             showConfirmButton: false,
             position: "top-end",
         });
 
-        // Sau 2 giây, dispatch action để cập nhật trạng thái đăng nhập và điều hướng người dùng đến trang đăng nhập
+        // Sau 2 giây, cập nhật trạng thái và điều hướng
         setTimeout(() => {
             dispatch(checkLogin(false));
             nav("/login");
         }, 2000);
-    }, [dispatch, nav]);
+    }, []);
 
-    return null; // Không cần render gì
+    return null; // Không render gì cả
 }
 
 export default Logout;
