@@ -9,11 +9,11 @@ function DarkMode() {
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
             <IoIosSunny
-                size={20}
+                size={18}
                 className={theme === "dark" ? "hidden" : "text-yellow-400"}
             />
             <IoIosMoon
-                size={20}
+                size={18}
                 className={theme === "dark" ? "text-yellow-400" : "hidden"}
             />
         </button>

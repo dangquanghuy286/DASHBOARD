@@ -55,7 +55,7 @@ function Header({ collapsed, setCollapsed }) {
                     <BiSolidChevronsRight className={collapsed ? "rotate-180" : ""} />
                 </button>
             </div>
-            <div className="flex items-center gap-x-3">
+            <div className="flex items-center gap-x-3 py-2">
                 <DarkMode />
 
                 <div
@@ -63,7 +63,7 @@ function Header({ collapsed, setCollapsed }) {
                     ref={dropdownRef}
                 >
                     <button
-                        className="size-12 cursor-pointer overflow-hidden rounded-full"
+                        className="flex size-12 items-center justify-center overflow-hidden rounded-full border border-amber-400 bg-slate-50 dark:bg-slate-950"
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                         <img
