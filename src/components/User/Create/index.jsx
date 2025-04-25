@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import icons from "../../../util/icon";
 import Swal from "sweetalert2";
 
-import { createDataCustomer, getRoles } from "../../../services/userSevice";
+import { createDataUser, getRoles } from "../../../services/userSevice";
 
 import { generateToken } from "../../../helpers/generateTonken";
 
@@ -69,7 +69,7 @@ function CreateUser() {
             finalData.token = generateToken();
         }
 
-        const result = await createDataCustomer(finalData);
+        const result = await createDataUser(finalData);
 
         if (result) {
             setShowModal(false);

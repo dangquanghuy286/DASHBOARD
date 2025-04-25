@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { editUser, getDataCustomer } from "../../services/userSevice";
+import { editUser, getDataUser } from "../../services/userSevice";
 import { getCookie } from "../../helpers/cookie";
 import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
@@ -26,7 +26,7 @@ const ChangePasswordPage = () => {
 
         const fetchUser = async () => {
             try {
-                const res = await getDataCustomer();
+                const res = await getDataUser();
                 const currentUser = res.find((u) => u.token === token);
                 if (currentUser) {
                     setUser(currentUser);

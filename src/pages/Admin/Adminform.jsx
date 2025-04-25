@@ -14,8 +14,8 @@ function AdminForm({ formData, onChange, onSubmit, showPassword, setShowPassword
                     </label>
                     <input
                         type="text"
-                        name="name"
-                        value={formData.name}
+                        name="user_name"
+                        value={formData.user_name}
                         onChange={onChange}
                         required
                         className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
@@ -34,17 +34,6 @@ function AdminForm({ formData, onChange, onSubmit, showPassword, setShowPassword
                         type="email"
                         name="email"
                         value={formData.email}
-                        onChange={onChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                    />
-                </div>
-
-                <div>
-                    <label className="lbl_title block">Địa chỉ</label>
-                    <input
-                        type="text"
-                        name="address"
-                        value={formData.address}
                         onChange={onChange}
                         className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                     />

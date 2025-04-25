@@ -12,4 +12,9 @@ instance.interceptors.response.use(
     },
 );
 
+// Các hàm gọi API
+export const get = (path) => instance.get(path);
+export const post = (path, data) => instance.post(path, data);
+export const del = (path) => instance.delete(path);
+export const edit = (path, data) => instance.put(path, data);
 export default instance;

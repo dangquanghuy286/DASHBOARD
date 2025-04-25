@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getDataCustomer } from "../../services/userSevice";
+import { getDataUserById } from "../../services/userSevice";
 import GoBack from "../../components/GoBack/Goback";
 import AdminAvatar from "./Avatar";
 import AdminForm from "./Adminform";
@@ -10,38 +10,45 @@ function Admin() {
     const [selectedImage, setSelectedImage] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
-        name: "",
+        user_name: "",
         email: "",
-        address: "",
         password: "",
+        confirm_password: "",
         avatar: "",
     });
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const userId = localStorage.getItem("user_id");
+
         const fetchApi = async () => {
             try {
-                const res = await getDataCustomer();
-                const currentUser = res.find((user) => user.token === token);
-                if (currentUser) {
+                if (!userId) {
+                    alert("Không tìm thấy ID người dùng.");
+                    return;
+                }
+
+                const res = await getDataUserById(userId);
+
+                if (res) {
                     setFormData({
-                        id: currentUser.id,
-                        name: currentUser.name,
-                        email: currentUser.email,
-                        address: currentUser.address,
-                        password: currentUser.password,
-                        avatar: currentUser.avatar || "",
+                        user_name: res.user_name || "",
+                        email: res.email || "",
+                        password: res.password || "",
+                        confirm_password: res.confirm_password || "",
+                        avatar: res.avatar || "",
                     });
-                    if (currentUser.avatar?.startsWith("http")) {
-                        setTempImage(currentUser.avatar);
+
+                    if (res.avatar?.startsWith("http")) {
+                        setTempImage(res.avatar);
                     }
                 } else {
-                    alert("Người dùng không tồn tại");
+                    alert("Người dùng không tồn tại.");
                 }
             } catch (error) {
                 console.error("Lỗi khi gọi API:", error);
             }
         };
+
         fetchApi();
     }, []);
 
@@ -59,6 +66,7 @@ function Admin() {
         e.preventDefault();
         setSelectedImage(tempImage || selectedImage);
         alert("Thông tin đã được cập nhật!");
+        // TODO: gọi API cập nhật nếu cần
     };
 
     return (
@@ -70,7 +78,7 @@ function Admin() {
                 <AdminAvatar
                     tempImage={tempImage}
                     avatarUrl={formData.avatar}
-                    name={formData.name}
+                    name={formData.user_name}
                     handleImageChange={handleImageChange}
                 />
                 <AdminForm

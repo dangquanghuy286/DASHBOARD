@@ -4,8 +4,9 @@ import icons from "../../util/icon";
 import { useEffect, useRef, useState } from "react";
 
 import { getCookie } from "../../helpers/cookie";
-import { getDataCustomer } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
+import { getDataUser } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
 import DarkMode from "../../components/DarkMode";
+
 import Menu from "../../components/Menu";
 
 const { BiSolidChevronsRight } = icons;
@@ -20,7 +21,7 @@ function Header({ collapsed, setCollapsed }) {
         const token = getCookie("token");
         const fetchUser = async () => {
             try {
-                const res = await getDataCustomer();
+                const res = await getDataUser();
                 const currentUser = res.find((user) => user.token === token);
                 if (currentUser && currentUser.avatar) {
                     setUserAvatar(currentUser.avatar);
@@ -68,7 +69,7 @@ function Header({ collapsed, setCollapsed }) {
                         <img
                             src={userAvatar}
                             alt="Ảnh đại diện người dùng"
-                            className="size-12 h-full w-full object-cover"
+                            className="h-full w-full object-cover"
                         />
                     </button>
 

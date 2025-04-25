@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import icons from "../../util/icon";
-import { loginApi } from "../../services/userSevice";
+
 import InputPassword from "../../components/InputPass";
+import { login } from "../../services/adminService";
 
 const { FaUserAlt } = icons;
 
@@ -64,7 +65,7 @@ function Login() {
         if (Object.keys(newErrors).length === 0) {
             try {
                 setLoading(true);
-                const res = await loginApi(user_name, password);
+                const res = await login(user_name, password);
                 if (res.data?.token) {
                     localStorage.setItem("token", res.data.token);
                     localStorage.setItem("user_id", res.data.user_id);
@@ -98,7 +99,7 @@ function Login() {
 
     return (
         <div className="relative flex min-h-screen items-center justify-center bg-slate-900 p-4">
-            <div className="w-full max-w-md rounded-lg bg-slate-950 p-8 shadow-2xl backdrop-blur-md">
+            <div className="w-full max-w-md rounded-lg bg-slate-950 p-8 shadow-2xl shadow-gray-500/30 backdrop-blur-md">
                 <form
                     onSubmit={handleSubmit}
                     className="space-y-6"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDataCustomer } from "../../services/userSevice";
+import { getDataUser } from "../../services/userSevice";
 
 import { useForm } from "react-hook-form";
 import UserPr from "./UserPr";
@@ -9,7 +9,7 @@ import CreateUser from "../../components/User/Create";
 
 const { FaSearch } = icons;
 
-function Customer() {
+function User() {
     const [data, setData] = useState([]);
     const [originalData, setOriginalData] = useState([]);
     const { register, handleSubmit } = useForm();
@@ -17,7 +17,7 @@ function Customer() {
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const res = await getDataCustomer();
+                const res = await getDataUser();
                 const dataArray = res.reverse() || [];
                 setData(dataArray);
                 setOriginalData(dataArray);
@@ -113,4 +113,4 @@ function Customer() {
     );
 }
 
-export default Customer;
+export default User;
