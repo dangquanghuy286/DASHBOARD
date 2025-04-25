@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import icons from "../../util/icon";
 import { loginApi } from "../../services/userSevice";
+import InputPassword from "../../components/InputPass";
 
-const { FaUserAlt, RiLockPasswordFill } = icons;
+const { FaUserAlt } = icons;
 
 function Login() {
     const [loading, setLoading] = useState(false);
@@ -63,9 +65,7 @@ function Login() {
             try {
                 setLoading(true);
                 const res = await loginApi(user_name, password);
-                console.log("Kết quả token:", res);
-
-                if (res.data && res.data.token) {
+                if (res.data?.token) {
                     localStorage.setItem("token", res.data.token);
                     localStorage.setItem("user_id", res.data.user_id);
                     Swal.fire({
@@ -75,12 +75,9 @@ function Login() {
                         timer: 1500,
                         position: "top-end",
                     });
-                    setTimeout(() => {
-                        navigate("/");
-                    }, 1600);
+                    setTimeout(() => navigate("/"), 1600);
                 }
             } catch (error) {
-                console.error("Login error:", error);
                 Swal.fire({
                     icon: "error",
                     title: "Đăng nhập thất bại",
@@ -96,10 +93,7 @@ function Login() {
     };
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) {
-            navigate("/");
-        }
+        if (localStorage.getItem("token")) navigate("/");
     }, [navigate]);
 
     return (
@@ -109,7 +103,7 @@ function Login() {
                     onSubmit={handleSubmit}
                     className="space-y-6"
                 >
-                    <h1 className="text-center text-3xl font-bold text-[#0061ff]">ĐĂNG NHẬP</h1>
+                    <h1 className="text-center text-3xl font-bold text-[#019fb5]">ĐĂNG NHẬP</h1>
 
                     <div className="relative">
                         <input
@@ -118,30 +112,23 @@ function Login() {
                             onChange={(e) => setUserName(e.target.value)}
                             placeholder="Tên đăng nhập"
                             className={`h-12 w-full rounded-full border-2 ${
-                                errors.user_name ? "border-red-500" : "border-[#0061ff]"
-                            } bg-transparent px-5 pr-12 text-lg text-white placeholder-[#0061ff] focus:outline-none`}
+                                errors.user_name ? "border-red-500" : "border-[#019fb5]"
+                            } bg-transparent px-5 pr-12 text-lg text-white placeholder-[#019fb5] focus:outline-none`}
                         />
-                        <FaUserAlt className="absolute top-1/2 right-4 -translate-y-1/2 text-xl text-[#0061ff]" />
+                        <FaUserAlt className="absolute top-1/2 right-4 -translate-y-1/2 text-xl text-[#019fb5]" />
                     </div>
 
-                    <div className="relative">
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Mật khẩu"
-                            className={`h-12 w-full rounded-full border-2 ${
-                                errors.password ? "border-red-500" : "border-[#0061ff]"
-                            } bg-transparent px-5 pr-12 text-lg text-white placeholder-[#0061ff] focus:outline-none`}
-                        />
-                        <RiLockPasswordFill className="absolute top-1/2 right-4 -translate-y-1/2 text-xl text-[#0061ff]" />
-                    </div>
+                    <InputPassword
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        error={errors.password}
+                    />
 
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`h-12 w-full rounded-full font-semibold text-white transition duration-300 ${
-                            loading ? "bg-gray-600" : "bg-[#0061ff] hover:bg-[#0051d6]"
+                        className={`h-12 w-full cursor-pointer rounded-full font-semibold text-white transition duration-300 ${
+                            loading ? "bg-gray-600" : "bg-[#019fb5] hover:bg-[#01484f]"
                         }`}
                     >
                         {loading ? "Đang xử lý..." : "Đăng nhập"}

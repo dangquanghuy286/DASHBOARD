@@ -33,4 +33,7 @@
     .lbl_title {
         @apply text-sm font-bold dark:text-sm dark:text-amber-50;
     }
+    button {
+        @apply cursor-pointer;
+    }
 }

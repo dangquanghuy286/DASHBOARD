@@ -11,28 +11,41 @@ function Logout() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Xóa token và thông tin người dùng khỏi localStorage
-        localStorage.removeItem("token");
-        localStorage.removeItem("user_id");
-
-        // Hiển thị thông báo đăng xuất thành công
         Swal.fire({
-            title: "Đăng xuất",
-            text: "Bạn đã đăng xuất thành công.",
-            icon: "success",
-            timer: 2000,
-            showConfirmButton: false,
-            position: "top-end",
-        });
+            title: "Xác nhận đăng xuất",
+            text: "Bạn có chắc chắn muốn đăng xuất không?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Đăng xuất",
+            cancelButtonText: "Hủy",
+            position: "top",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user_id");
 
-        // Sau 2 giây, cập nhật trạng thái và điều hướng
-        setTimeout(() => {
-            dispatch(checkLogin(false));
-            nav("/login");
-        }, 2000);
+                Swal.fire({
+                    title: "Đăng xuất",
+                    text: "Bạn đã đăng xuất thành công.",
+                    icon: "success",
+                    timer: 2000,
+                    showConfirmButton: false,
+                    position: "top-end",
+                });
+
+                setTimeout(() => {
+                    dispatch(checkLogin(false));
+                    nav("/login");
+                }, 2000);
+            } else {
+                nav(-1); // Quay lại trang trước nếu hủy
+            }
+        });
     }, []);
 
-    return null; // Không render gì cả
+    return null;
 }
 
 export default Logout;

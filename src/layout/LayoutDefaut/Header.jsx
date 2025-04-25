@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { getCookie } from "../../helpers/cookie";
 import { getDataCustomer } from "../../services/userSevice"; // <-- Đảm bảo đã import hàm này
 import DarkMode from "../../components/DarkMode";
-import Bell from "../../components/Bell";
 import Menu from "../../components/Menu";
 
 const { BiSolidChevronsRight } = icons;
@@ -57,7 +56,7 @@ function Header({ collapsed, setCollapsed }) {
             </div>
             <div className="flex items-center gap-x-3">
                 <DarkMode />
-                <Bell />
+
                 <div
                     className="relative"
                     ref={dropdownRef}
@@ -69,7 +68,7 @@ function Header({ collapsed, setCollapsed }) {
                         <img
                             src={userAvatar}
                             alt="Ảnh đại diện người dùng"
-                            className="h-full w-full object-cover"
+                            className="size-12 h-full w-full object-cover"
                         />
                     </button>
 
