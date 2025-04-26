@@ -18,7 +18,8 @@ function User() {
         const fetchApi = async () => {
             try {
                 const res = await getDataUser();
-                const dataArray = res.reverse() || [];
+                console.log("Dữ liệu người dùng:", res.data);
+                const dataArray = (res.data.users || []).reverse();
                 setData(dataArray);
                 setOriginalData(dataArray);
             } catch (error) {
@@ -105,6 +106,7 @@ function User() {
                     <p className="text-center text-gray-700 dark:text-gray-300">Không có dữ liệu</p>
                 )}
             </div>
+
             {/* Nút trở lại */}
             <div className="mt-20 mb-20">
                 <GoBack />

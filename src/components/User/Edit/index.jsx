@@ -2,23 +2,13 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import { editUser, getRoles } from "../../../services/userSevice";
-import { generateToken } from "../../../helpers/generateTonken";
+import { editUser } from "../../../services/userSevice";
 import UserModal from "../ModelUser";
 import EditButton from "../../Button/EditButton";
 
 function EditUser({ user }) {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState(user);
-    const [dataCategory, setDataCategory] = useState([]);
-
-    useEffect(() => {
-        const fetchAPI = async () => {
-            const res = await getRoles();
-            setDataCategory(res);
-        };
-        fetchAPI();
-    }, []);
 
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
@@ -27,25 +17,11 @@ function EditUser({ user }) {
         const name = e.target.name;
         const value = e.target.value;
 
-        let updatedData = {
+        // Cập nhật dữ liệu khi người dùng nhập
+        setData({
             ...data,
             [name]: value,
-        };
-
-        if (name === "role" && value === "Admin") {
-            updatedData = {
-                ...updatedData,
-                userId: `admin${Date.now().toString().slice(-3)}`,
-                username: data.username || data.email,
-                password: "1234",
-                token: generateToken(),
-            };
-        } else if (name === "role" && value !== "Admin") {
-            const { userId, username, password, token, ...rest } = updatedData;
-            updatedData = rest;
-        }
-
-        setData(updatedData);
+        });
     };
 
     const handleSubmit = async (e) => {
@@ -87,7 +63,6 @@ function EditUser({ user }) {
                 isOpen={showModal}
                 closeModal={closeModal}
                 data={data}
-                dataCategory={dataCategory}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 mode="edit"
