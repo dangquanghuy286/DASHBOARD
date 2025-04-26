@@ -18,27 +18,30 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
         <aside
             ref={ref}
             className={cn(
-                "fixed z-[100] flex h-full flex-col overflow-x-hidden border-r border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900",
-                collapsed ? "md:w-[80px] md:items-center" : "md:w-[250px]",
-                // Hiển thị trên mobile khi không collapsed
+                "fixed z-[100] flex h-full flex-col overflow-x-hidden bg-white dark:bg-slate-900",
+                collapsed
+                    ? "border-b border-slate-300 md:w-[80px] md:items-center dark:border-slate-700"
+                    : "border-r border-slate-300 md:w-[250px] dark:border-slate-700",
                 collapsed && "max-md:hidden",
             )}
         >
             <Link
                 to="/"
-                className="flex h-[50px] w-[50px] gap-x-3 p-3"
+                className="flex h-[80px] w-full items-center justify-center"
             >
-                <img
-                    src={logoLight}
-                    alt="LogoLight"
-                    className="dark:hidden"
-                />
-                <img
-                    src={logoDark}
-                    alt="LogoDark"
-                    className="hidden dark:block"
-                />
-                {!collapsed && window.innerWidth >= 1024 && <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>}
+                <div className="flex items-center gap-x-3">
+                    <img
+                        src={logoLight}
+                        alt="LogoLight"
+                        className="h-[40px] w-auto dark:hidden"
+                    />
+                    <img
+                        src={logoDark}
+                        alt="LogoDark"
+                        className="hidden h-[40px] w-auto dark:block"
+                    />
+                    {!collapsed && window.innerWidth >= 1024 && <p className="text-lg font-medium text-slate-900 dark:text-slate-50">DASHBOARD</p>}
+                </div>
             </Link>
 
             <div className="flex w-full flex-col gap-y-4 overflow-y-auto p-3">
@@ -54,7 +57,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                             return (
                                 <div
                                     key={item.path}
-                                    className={`w-full ${isActiveOrOpen ? "bg-[#f0f0f0] dark:bg-[#2a2a2a]" : "hover:bg-[#453d5511]"}`}
+                                    className={`w-full ${isActiveOrOpen ? "bg-[#a5e6ed] dark:bg-[#064b50]" : "hover:bg-[#453d5511]"}`}
                                 >
                                     <NavLink
                                         to={item.children ? "#" : item.path}
@@ -65,7 +68,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                         <div
                                             className={`flex h-[48px] w-full items-center gap-3 px-[20px] ${
                                                 isActiveOrOpen
-                                                    ? "border-l-4 border-[#f82342] bg-[#bbf9ff] dark:border-[#f82342] dark:bg-[#00c0d1]"
+                                                    ? `${collapsed ? "border-b-4" : "border-l-4"} border-[#01b5c8] bg-[#a5e6ed] dark:border-[#01b5c8] dark:bg-[#064b50]`
                                                     : "hover:bg-[#cad0ff22]"
                                             }`}
                                         >
@@ -73,7 +76,7 @@ const SideBarLeft = forwardRef(({ collapsed }, ref) => {
                                                 <item.icon
                                                     size={18}
                                                     className={`${
-                                                        isActiveOrOpen ? "text-[#f82342] dark:text-[#f82342]" : "text-black dark:text-white"
+                                                        isActiveOrOpen ? "text-[#01b5c8] dark:text-[#01b5c8]" : "text-black dark:text-white"
                                                     }`}
                                                 />
                                             </div>
