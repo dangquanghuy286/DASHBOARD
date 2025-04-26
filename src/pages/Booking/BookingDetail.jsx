@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDataBookingTourById } from "../../services/bookingService";
 import Invoice from "./BookingDetailAll";
+import GoBack from "../../components/GoBack/Goback";
 
 function BookingDetail() {
     const { id } = useParams();

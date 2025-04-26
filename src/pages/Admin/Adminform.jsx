@@ -38,6 +38,16 @@ function AdminForm({ formData, onChange, onSubmit, showPassword, setShowPassword
                         className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                     />
                 </div>
+                <div>
+                    <label className="lbl_title block">Địa chỉ</label>
+                    <input
+                        type="address"
+                        name="address"
+                        value={formData.address}
+                        onChange={onChange}
+                        className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
+                    />
+                </div>
 
                 <div className="mt-4 flex items-center gap-3">
                     <EditButton>Cập nhật</EditButton>

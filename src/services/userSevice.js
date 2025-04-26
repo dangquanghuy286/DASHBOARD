@@ -1,4 +1,4 @@
-import { del, edit, get, post } from "../util/requestserver";
+import { del, edit, get, post } from "../util/request";
 
 // Lấy danh sách khách hàng
 export const getDataUser = async () => {

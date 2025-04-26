@@ -1,9 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
+import UserFormCreate from "../FormUser.jsx/UserFormCreate";
+import UserFormEdit from "../FormUser.jsx/UserFormEdit";
 
-import UserForm from "../FormUser.jsx";
-
-function UserModal({ isOpen, closeModal, data, dataCategory, handleChange, handleSubmit }) {
+function UserModal({ isOpen, closeModal, data, dataCategory, handleChange, handleSubmit, mode }) {
     const customStyles = {
         content: {
             top: "50%",
@@ -34,15 +34,25 @@ function UserModal({ isOpen, closeModal, data, dataCategory, handleChange, handl
             isOpen={isOpen}
             onRequestClose={closeModal}
             style={customStyles}
-            contentLabel="Edit User Modal"
+            contentLabel={mode === "create" ? "Create User Modal" : "Edit User Modal"}
         >
-            <UserForm
-                data={data}
-                dataCategory={dataCategory}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                closeModal={closeModal}
-            />
+            {mode === "create" ? (
+                <UserFormCreate
+                    data={data}
+                    dataCategory={dataCategory}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    closeModal={closeModal}
+                />
+            ) : (
+                <UserFormEdit
+                    data={data}
+                    dataCategory={dataCategory}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    closeModal={closeModal}
+                />
+            )}
         </Modal>
     );
 }

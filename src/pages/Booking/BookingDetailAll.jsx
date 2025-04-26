@@ -1,6 +1,7 @@
 import React from "react";
 import photo from "../../assets/Img/touricons.png";
 import ToolReport from "../../components/ToolReport";
+import GoBack from "../../components/GoBack/Goback";
 function Invoice({ item }) {
     const totalAdult = item.adults * item.unitPriceAdult;
     const totalChild = item.children * item.unitPriceChild;
@@ -171,6 +172,7 @@ function Invoice({ item }) {
                 </p>
                 <hr className="mb-6 border-gray-300 dark:border-gray-600" />
                 <div className="mb-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <GoBack />
                     <ToolReport
                         item={item}
                         type="invoice"

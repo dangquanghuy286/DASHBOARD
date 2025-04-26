@@ -98,6 +98,7 @@ function CreateUser() {
                 dataCategory={dataCategory}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                mode="create"
             />
         </>
     );

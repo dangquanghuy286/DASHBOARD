@@ -1,14 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import { editUser, getRoles } from "../../../services/userSevice";
 import { generateToken } from "../../../helpers/generateTonken";
-import icons from "../../../util/icon";
 import UserModal from "../ModelUser";
 import EditButton from "../../Button/EditButton";
-const { IoMdCreate } = icons;
+
 function EditUser({ user }) {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState(user);
@@ -38,7 +36,7 @@ function EditUser({ user }) {
             updatedData = {
                 ...updatedData,
                 userId: `admin${Date.now().toString().slice(-3)}`,
-                username: data.username,
+                username: data.username || data.email,
                 password: "1234",
                 token: generateToken(),
             };
@@ -92,6 +90,7 @@ function EditUser({ user }) {
                 dataCategory={dataCategory}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                mode="edit"
             />
         </>
     );

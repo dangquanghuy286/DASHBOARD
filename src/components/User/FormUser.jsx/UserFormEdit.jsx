@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }) {
+function UserFormEdit({ data, dataCategory, handleChange, handleSubmit, closeModal }) {
     return (
         <form
             className="mx-auto max-w-4xl space-y-6 rounded-lg bg-white p-6"
@@ -18,7 +18,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 value={data.name || ""}
                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
-                                onChange={handleChange}
+                                readOnly
                             />
                         </td>
                     </tr>
@@ -32,7 +32,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 value={data.address || ""}
                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
-                                onChange={handleChange}
+                                readOnly
                             />
                         </td>
                     </tr>
@@ -70,7 +70,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                         placeholder="Tên đăng nhập"
                                         value={data.username || ""}
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                        onChange={handleChange}
+                                        readOnly
                                     />
                                 </td>
                             </tr>
@@ -78,12 +78,12 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 <td className="w-1/4 py-2 font-semibold text-gray-700">Mật khẩu</td>
                                 <td className="w-3/4">
                                     <input
-                                        type="text"
+                                        type="password"
                                         name="password"
                                         placeholder="Mật khẩu"
                                         value={data.password || ""}
                                         className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                        onChange={handleChange}
+                                        readOnly
                                     />
                                 </td>
                             </tr>
@@ -98,7 +98,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 value={data.about || ""}
                                 className="focus:ring-opacity-50 min-h-[100px] w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
-                                onChange={handleChange}
+                                readOnly
                             />
                         </td>
                     </tr>
@@ -112,7 +112,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 value={data.email || ""}
                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
-                                onChange={handleChange}
+                                readOnly
                             />
                         </td>
                     </tr>
@@ -126,7 +126,7 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 value={data.phone || ""}
                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required
-                                onChange={handleChange}
+                                readOnly
                             />
                         </td>
                     </tr>
@@ -139,9 +139,10 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
                                 placeholder="Ảnh đại diện URL"
                                 value={data.avatar || ""}
                                 className="focus:ring-opacity-50 w-full rounded-md border border-gray-300 p-3 text-gray-600 transition duration-200 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none"
-                                onChange={handleChange}
+                                readOnly
                             />
                             <label className="flex-shrink-0">
+                                <span className="cursor-pointer rounded bg-blue-500 px-3 py-2 text-white">Upload</span>
                                 <input
                                     type="file"
                                     name="avatarFile"
@@ -172,4 +173,4 @@ function UserForm({ data, dataCategory, handleChange, handleSubmit, closeModal }
     );
 }
 
-export default UserForm;
+export default UserFormEdit;
