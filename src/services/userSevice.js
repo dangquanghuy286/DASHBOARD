@@ -14,20 +14,40 @@ export const getDataUser = async () => {
 
 // Lấy thông tin khách hàng theo ID
 export const getDataUserById = async (id) => {
-    return await get(`users/${id}`);
+    try {
+        return await get(`users/${id}`);
+    } catch (error) {
+        console.error(`Lỗi khi lấy thông tin khách hàng với ID ${id}:`, error);
+        throw error;
+    }
 };
 
 // Tạo khách hàng mới
 export const createDataUser = async (data) => {
-    return await post("users", data);
+    try {
+        return await post("users", data);
+    } catch (error) {
+        console.error("Lỗi khi tạo khách hàng:", error);
+        throw error;
+    }
 };
 
 // Cập nhật thông tin khách hàng
 export const editUser = async (id, option) => {
-    return await edit(`users/${id}`, option);
+    try {
+        return await edit(`users/${id}`, option);
+    } catch (error) {
+        console.error(`Lỗi khi cập nhật khách hàng với ID ${id}:`, error);
+        throw error;
+    }
 };
 
 // Xóa khách hàng theo ID
 export const deleteUser = async (id) => {
-    return await del(`users/${id}`);
+    try {
+        return await del(`users/${id}`);
+    } catch (error) {
+        console.error(`Lỗi khi xóa khách hàng với ID ${id}:`, error);
+        throw error;
+    }
 };
