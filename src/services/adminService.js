@@ -12,12 +12,7 @@ export const login = async (user_name, password) => {
 // Lấy thông tin ADMIN
 export const getInfoAdmin = async (id) => {
     try {
-        const token = localStorage.getItem("token");
-        const res = await get(`users/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await get(`users/${id}`);
         return res.data;
     } catch (error) {
         console.error(`Lỗi khi lấy thông tin ADMIN với ID ${id}:`, error);

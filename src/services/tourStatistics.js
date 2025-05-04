@@ -20,3 +20,7 @@ export const getDataMonths = async () => {
     const result = await get("monthlyRevenue");
     return result;
 };
+export const getDataPayment = async () => {
+    const result = await get("booking_payments");
+    return result;
+};

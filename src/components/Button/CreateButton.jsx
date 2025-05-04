@@ -6,7 +6,7 @@ function AddButton({ onClick, text, color }) {
 
     return (
         <button
-            className={`flex min-w-[180px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r ${gradientClass} px-4 py-2 text-base text-white shadow-md hover:bg-gradient-to-l focus:outline-none`}
+            className={`flex min-w-[180px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r ${gradientClass} px-4 py-2 text-base whitespace-nowrap text-white shadow-md hover:bg-gradient-to-l focus:outline-none`}
             onClick={onClick}
         >
             <IoIosAdd className="text-xl" /> {text}

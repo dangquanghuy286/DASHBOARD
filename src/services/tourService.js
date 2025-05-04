@@ -50,3 +50,16 @@ export const getDataRegion = async () => {
         throw error;
     }
 };
+// Upload ảnh cho tour
+export const uploadImageTour = async (formData) => {
+    try {
+        return await post("tours/upload", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+    } catch (error) {
+        console.error("Error uploading tour images:", error);
+        throw error;
+    }
+};

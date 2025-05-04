@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { editUser, getDataUser } from "../../services/userSevice";
-import { getCookie } from "../../helpers/cookie";
+import { editUser } from "../../services/userSevice";
 import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
+import { getInfoAdmin } from "../../services/adminService";
 const { FaEye, FaEyeSlash } = icons;
 const ChangePasswordPage = () => {
     const [formData, setFormData] = useState({
@@ -22,24 +22,27 @@ const ChangePasswordPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = getCookie("token");
+        const token = localStorage.getItem("token");
+        const userIdToCheck = localStorage.getItem("user_id");
 
         const fetchUser = async () => {
             try {
-                const res = await getDataUser();
-                const currentUser = res.find((u) => u.token === token);
-                if (currentUser) {
-                    setUser(currentUser);
+                const res = await getInfoAdmin(userIdToCheck);
+                console.log("Response from getInfoAdmin:", res);
 
+                // Kiểm tra token và user_id (nếu có trong res)
+                if (res && res.user_id === userIdToCheck) {
+                    // Điều chỉnh dựa trên trường thực tế
+                    setUser(res);
                     setFormData((prev) => ({
                         ...prev,
-                        currentPassword: currentUser.password,
+                        currentPassword: res.password || "", // Thay bằng giá trị mặc định nếu không có password
                     }));
                 } else {
                     Swal.fire("Lỗi", "Không tìm thấy người dùng hợp lệ", "error");
                 }
             } catch (error) {
-                console.error("Lỗi khi lấy dữ liệu người dùng:", error);
+                console.error("Lỗi chi tiết:", error.response ? error.response.data : error.message);
                 Swal.fire("Lỗi", "Không thể lấy thông tin người dùng", "error");
             }
         };

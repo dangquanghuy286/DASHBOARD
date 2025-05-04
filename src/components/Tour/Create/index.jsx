@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
-import icons from "../../../util/icon";
 import Swal from "sweetalert2";
-
+import icons from "../../../util/icon";
 import { createDataTour, getDataRegion, getDataTour } from "../../../services/tourService";
 import TourModal from "../ModelTour";
 import AddButton from "../../Button/CreateButton";
+
 const { IoIosAdd } = icons;
+
 function CreateTour() {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
-    const [reload, setReload] = useState(false);
-    const [dataRegion, setDataRegion] = useState([]);
     const [files, setFiles] = useState([]);
     const [timeline, setTimeline] = useState([]);
+    const [dataRegion, setDataRegion] = useState([]);
     const [existingTours, setExistingTours] = useState([]);
+    const [reload, setReload] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             const regions = await getDataRegion();
-            setDataRegion(regions);
             const tours = await getDataTour();
+            setDataRegion(regions);
             setExistingTours(tours);
         };
         fetchData();
@@ -45,7 +46,15 @@ function CreateTour() {
             return;
         }
 
-        const result = await createDataTour({ ...data, timeline });
+        // Gửi dữ liệu bao gồm cả hình ảnh
+        const formData = new FormData();
+        formData.append("data", JSON.stringify({ ...data, timeline }));
+
+        for (let i = 0; i < files.length; i++) {
+            formData.append("images", files[i]);
+        }
+
+        const result = await createDataTour(formData);
 
         if (result) {
             setShowModal(false);
@@ -55,7 +64,7 @@ function CreateTour() {
                 icon: "success",
                 title: "Tạo mới thành công!",
                 showConfirmButton: false,
-                timer: 5000,
+                timer: 2000,
             });
         }
     };
@@ -82,26 +91,28 @@ function CreateTour() {
     };
 
     const handleImageChange = (e) => {
-        const uploadfile = e.target.files;
-        if (!uploadfile) return;
-
-        setFiles(uploadfile);
+        const uploadedFiles = e.target.files;
+        if (uploadedFiles.length > 0) {
+            setFiles(Array.from(uploadedFiles));
+        }
     };
 
-    const renderAnh = () =>
-        [...files].map((anh, index) => (
-            <div
-                key={index}
-                className="m-2"
-            >
-                <img
-                    src={URL.createObjectURL(anh)}
-                    alt={`Ảnh ${index + 1}`}
-                    width="100"
-                    className="rounded shadow"
-                />
-            </div>
-        ));
+    const renderAnh = () => (
+        <div className="mt-2 flex flex-wrap gap-4">
+            {files.map((file, index) => (
+                <div
+                    key={index}
+                    className="h-24 w-24 overflow-hidden rounded shadow"
+                >
+                    <img
+                        src={URL.createObjectURL(file)}
+                        alt={`Ảnh ${index + 1}`}
+                        className="h-full w-full object-cover"
+                    />
+                </div>
+            ))}
+        </div>
+    );
 
     const handleTimelineChange = (index, field, value) => {
         const newTimeline = [...timeline];
@@ -114,6 +125,7 @@ function CreateTour() {
             <AddButton
                 onClick={openModal}
                 text="Thêm Tour mới"
+                icon={<IoIosAdd />}
             />
 
             <TourModal

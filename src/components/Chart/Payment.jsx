@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import icons from "../../util/icon";
-import { getDataPayment } from "../../services/bookingService";
+import { getDataPayment } from "../../services/tourStatistics";
 
 const { MdPayment } = icons;
 const PaymentDataCard = () => {
