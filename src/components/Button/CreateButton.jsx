@@ -1,7 +1,6 @@
 import { IoIosAdd } from "react-icons/io";
 
 function AddButton({ onClick, text, color }) {
-    // Đặt màu sắc mặc định nếu không truyền vào
     const gradientClass = color || "from-[#019fb5] to-[#00c0d1]";
 
     return (
