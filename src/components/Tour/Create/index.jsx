@@ -66,8 +66,8 @@ function CreateTour() {
             quantity: parseInt(data.quantity) || 0,
             price_adult: parseFloat(data.price_adult) || 0,
             price_child: parseFloat(data.price_child) || 0,
-            duration: data.duration ? `${data.duration} ngày - ${data.duration - 1} đêm` : "",
-            destination: data.destination || "",
+            duration: data.date ? `${data.date} ngày - ${data.date - 1} đêm` : "",
+            destination: data.location || "",
             availability: data.availability ?? true,
             itinerary: itinerary.length > 0 ? JSON.stringify(itinerary) : null,
             region: data.region || "NORTH",
@@ -114,10 +114,10 @@ function CreateTour() {
             if (!isNaN(start) && !isNaN(end) && end >= start) {
                 const diffTime = Math.abs(end - start);
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-                updatedData.duration = diffDays;
+                updatedData.date = diffDays;
                 setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" })));
             } else {
-                updatedData.duration = 0;
+                updatedData.date = 0;
                 setTimeline([]);
             }
         }

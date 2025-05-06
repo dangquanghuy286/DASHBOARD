@@ -72,10 +72,10 @@ function EditTour({ item }) {
             if (!isNaN(start) && !isNaN(end) && end >= start) {
                 const diffTime = Math.abs(end - start);
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-                updatedData.duration = `${diffDays} ngày`;
+                updatedData.date = `${diffDays} ngày`;
                 setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" })));
             } else {
-                updatedData.duration = "";
+                updatedData.date = "";
             }
         }
 

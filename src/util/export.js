@@ -210,7 +210,7 @@ export const handleToPdf = (data, type) => {
         type === "tour"
             ? [
                   item.tourName || "N/A",
-                  item.duration || "N/A",
+                  item.date || "N/A",
                   item.description || "N/A",
                   item.quantity || 0,
                   item.priceAdult || 0,

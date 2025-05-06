@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [] }) {
     const dataRegion = [
@@ -6,6 +6,32 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
         { regionName: "CENTRAL", displayName: "Miền Trung" },
         { regionName: "SOUTH", displayName: "Miền Nam" },
     ];
+
+    // State nội bộ để xử lý giá
+    const [formData, setFormData] = useState(data);
+
+    // Hàm loại bỏ định dạng tiền tệ
+    const cleanMoney = (str) => {
+        if (!str) return "";
+        const num = Number(str.toString().replace(/\D/g, ""));
+        return isNaN(num) ? "" : num;
+    };
+
+    // Khi component mount hoặc data thay đổi, làm sạch giá trị tiền
+    useEffect(() => {
+        setFormData({
+            ...data,
+            price: cleanMoney(data.price),
+            priceChild: cleanMoney(data.priceChild),
+        });
+    }, [data]);
+
+    // Wrapper để cập nhật giá trị formData và gọi hàm handleChange gốc
+    const onLocalChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+        handleChange(e); // gọi để cập nhật dữ liệu cha
+    };
 
     return (
         <form
@@ -17,8 +43,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <input
                     type="text"
                     name="title"
-                    value={data.title || ""}
-                    onChange={handleChange}
+                    value={formData.title || ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                 />
             </div>
@@ -27,9 +53,9 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <label>Điểm đến:</label>
                 <input
                     type="text"
-                    name="destination" // Đổi từ location thành destination
-                    value={data.destination || ""}
-                    onChange={handleChange}
+                    name="location"
+                    value={formData.location || ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                 />
             </div>
@@ -38,8 +64,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <label>Thời gian:</label>
                 <input
                     type="text"
-                    name="duration" // Đổi từ date thành duration
-                    value={data.duration && !isNaN(data.duration) && data.duration > 0 ? `${data.duration} ngày - ${data.duration - 1} đêm` : ""}
+                    name="date"
+                    value={formData.date && !isNaN(formData.date) && formData.date > 0 ? `${formData.date} ngày - ${formData.date - 1} đêm` : ""}
                     readOnly
                     className="w-full border bg-gray-100 p-2"
                 />
@@ -50,8 +76,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <select
                     name="region"
                     className="w-full border p-3"
-                    onChange={handleChange}
-                    value={data.region || ""}
+                    onChange={onLocalChange}
+                    value={formData.region || ""}
                 >
                     <option value="">Chọn khu vực</option>
                     {dataRegion.map((item, index) => (
@@ -69,8 +95,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <label>Mô tả:</label>
                 <textarea
                     name="description"
-                    value={data.description || ""}
-                    onChange={handleChange}
+                    value={formData.description || ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                 />
             </div>
@@ -80,8 +106,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <input
                     type="number"
                     name="quantity"
-                    value={data.quantity ?? ""}
-                    onChange={handleChange}
+                    value={formData.quantity ?? ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                     min="0"
                 />
@@ -91,9 +117,9 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <label>Giá người lớn:</label>
                 <input
                     type="number"
-                    name="price_adult" // Đổi từ priceAdult thành price_adult
-                    value={data.price_adult ?? ""}
-                    onChange={handleChange}
+                    name="price"
+                    value={formData.price ?? ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                     min="0"
                 />
@@ -103,9 +129,9 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <label>Giá trẻ em:</label>
                 <input
                     type="number"
-                    name="price_child" // Đổi từ priceChild thành price_child
-                    value={data.price_child ?? ""}
-                    onChange={handleChange}
+                    name="priceChild"
+                    value={formData.priceChild ?? ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                     min="0"
                 />
@@ -114,9 +140,16 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
             <div>
                 <label>Còn trống:</label>
                 <select
-                    name="availability" // Đổi từ available thành availability
-                    value={data.availability ? "true" : "false"}
-                    onChange={(e) => handleChange({ target: { name: "availability", value: e.target.value === "true" } })}
+                    name="availability"
+                    value={formData.availability ? "true" : "false"}
+                    onChange={(e) =>
+                        onLocalChange({
+                            target: {
+                                name: "availability",
+                                value: e.target.value === "true",
+                            },
+                        })
+                    }
                     className="w-full border p-2"
                 >
                     <option value="true">Có</option>
@@ -129,8 +162,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <input
                     type="date"
                     name="startDate"
-                    value={data.startDate || ""}
-                    onChange={handleChange}
+                    value={formData.startDate || ""}
+                    onChange={onLocalChange}
                     min={new Date().toISOString().split("T")[0]}
                     className="w-full border p-2"
                 />
@@ -141,8 +174,8 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 <input
                     type="date"
                     name="endDate"
-                    value={data.endDate || ""}
-                    onChange={handleChange}
+                    value={formData.endDate || ""}
+                    onChange={onLocalChange}
                     className="w-full border p-2"
                     min={new Date().toISOString().split("T")[0]}
                 />
