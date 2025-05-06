@@ -19,7 +19,6 @@ function TourTable({ currentEntries }) {
                         <th className="border px-4 py-2">Giá người lớn</th>
                         <th className="border px-4 py-2">Giá trẻ em</th>
                         <th className="border px-4 py-2">Điểm đến</th>
-                        <th className="border px-4 py-2">Khả dụng</th>
                         <th className="border px-4 py-2">Ngày bắt đầu</th>
                         <th className="border px-4 py-2">Ngày kết thúc</th>
                         <th className="edit-column border px-4 py-2 text-center">Sửa</th>
@@ -33,23 +32,20 @@ function TourTable({ currentEntries }) {
                             className="transition hover:bg-gray-100 dark:hover:bg-slate-700"
                         >
                             <td className="border px-4 py-2">
-                                <Link>{item.tourName}</Link>
+                                <Link>{item.title}</Link>
                             </td>
-                            <td className="border px-4 py-2">{item.duration}</td>
+                            <td className="border px-4 py-2">{item.date}</td>
                             <td className="border px-4 py-2">{item.description}</td>
                             <td className="border px-4 py-2">{item.quantity}</td>
-                            <td className="border px-4 py-2">{item.priceAdult}</td>
+                            <td className="border px-4 py-2">{item.price}</td>
                             <td className="border px-4 py-2">{item.priceChild}</td>
-                            <td className="items-center border px-4 py-2">
-                                <ul>{Array.isArray(item.highlights) && item.highlights.map((highlight, idx) => <li key={idx}>{highlight}</li>)}</ul>
-                            </td>
-                            <td className="items-center border px-4 py-2">{item.available ? "1" : <MdBlock />}</td>
+                            <td className="border px-4 py-2">{item.location}</td>
                             <td className="border px-4 py-2">{item.startDate}</td>
                             <td className="border px-4 py-2">{item.endDate}</td>
-                            <td className="edit-column border px-4 py-2">
+                            <td className="edit-column border px-4 py-2 text-center">
                                 <EditTour item={item} />
                             </td>
-                            <td className="delete-column border px-4 py-2">
+                            <td className="delete-column border px-4 py-2 text-center">
                                 <DeleteTour item={item} />
                             </td>
                         </tr>

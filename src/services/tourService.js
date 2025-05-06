@@ -11,12 +11,15 @@ export const getDataTour = async () => {
     }
 };
 
-// Tạo tour mới
+// Hàm createDataTour với log chi tiết
 export const createDataTour = async (data) => {
     try {
-        return await post("tours", data);
+        console.log("Data being sent to createDataTour:", data);
+        const response = await post("tours", data);
+        console.log("Response from createDataTour:", response);
+        return response;
     } catch (error) {
-        console.error("Error creating tour:", error);
+        console.error("Error creating tour:", error.response ? error.response.data : error.message);
         throw error;
     }
 };
@@ -41,15 +44,6 @@ export const updateTour = async (id, data) => {
     }
 };
 
-// Lấy danh sách khu vực
-export const getDataRegion = async () => {
-    try {
-        return await get("regions");
-    } catch (error) {
-        console.error("Error fetching regions:", error);
-        throw error;
-    }
-};
 // Upload ảnh cho tour
 export const uploadImageTour = async (formData) => {
     try {
