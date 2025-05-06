@@ -24,7 +24,7 @@ function EditTour({ item }) {
         const today = new Date();
         const startDate = new Date(item.startDate + "T00:00:00");
 
-        if (!item.available || startDate <= today) {
+        if (!item.availability || startDate <= today) {
             Swal.fire({
                 position: "CENTER",
                 icon: "warning",

@@ -19,9 +19,8 @@ function ShowTour() {
         const fetchApi = async () => {
             try {
                 const res = await getDataTour();
-                console.log("Response from getDataTour:", res); // Kiểm tra dữ liệu trả về
+                console.log("Response from getDataTour:", res);
 
-                // ✅ Truy cập đúng vào res.data.tours
                 const dataArray = res.data?.tours && Array.isArray(res.data.tours) ? res.data.tours.reverse() : [];
 
                 setData(dataArray);

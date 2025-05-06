@@ -22,7 +22,6 @@ function CreateTour() {
         const fetchData = async () => {
             try {
                 const tours = await getDataTour();
-                console.log("Data from getDataTour:", tours); // Kiểm tra dữ liệu trả về
                 const tourData = tours?.data && Array.isArray(tours.data) ? tours.data : [];
                 setExistingTours(tourData);
             } catch (error) {
