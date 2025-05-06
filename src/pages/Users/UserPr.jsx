@@ -27,7 +27,7 @@ function UserPr(props) {
                 {/* Thông tin người dùng */}
                 <div className="mt-4 flex w-full flex-col sm:mt-0 sm:w-1/2 sm:pr-4">
                     <div className="flex flex-1 flex-col">
-                        <h3 className="mt-0 text-lg font-bold text-gray-900 dark:text-white">{user.name}</h3>
+                        <h3 className="mt-0 text-lg font-bold text-gray-900 dark:text-white">{user.user_name}</h3>
                         <div className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
                             <p>
                                 <span className="font-semibold">About:</span> {user.about || "Chưa có thông tin"}

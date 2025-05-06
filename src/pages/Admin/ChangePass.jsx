@@ -1,19 +1,18 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { editUser } from "../../services/userSevice";
+import { putChangeInfoAdmin, getInfoAdmin } from "../../services/adminService";
 import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
-import { getInfoAdmin } from "../../services/adminService";
+
 const { FaEye, FaEyeSlash } = icons;
+
 const ChangePasswordPage = () => {
     const [formData, setFormData] = useState({
         currentPassword: "",
         newPassword: "",
         confirmPassword: "",
     });
-
     const [user, setUser] = useState(null);
     const [showCurrentPassword, setShowCurrentPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
@@ -22,27 +21,18 @@ const ChangePasswordPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
         const userIdToCheck = localStorage.getItem("user_id");
 
         const fetchUser = async () => {
             try {
                 const res = await getInfoAdmin(userIdToCheck);
-                console.log("Response from getInfoAdmin:", res);
-
-                // Kiểm tra token và user_id (nếu có trong res)
-                if (res && res.user_id === userIdToCheck) {
-                    // Điều chỉnh dựa trên trường thực tế
-                    setUser(res);
-                    setFormData((prev) => ({
-                        ...prev,
-                        currentPassword: res.password || "", // Thay bằng giá trị mặc định nếu không có password
-                    }));
+                if (res.status === 200 && res.data) {
+                    setUser(res.data); // Store user data (id, user_name, etc.)
                 } else {
                     Swal.fire("Lỗi", "Không tìm thấy người dùng hợp lệ", "error");
                 }
             } catch (error) {
-                console.error("Lỗi chi tiết:", error.response ? error.response.data : error.message);
+                console.error("Lỗi khi lấy thông tin admin:", error);
                 Swal.fire("Lỗi", "Không thể lấy thông tin người dùng", "error");
             }
         };
@@ -66,23 +56,23 @@ const ChangePasswordPage = () => {
             return;
         }
 
-        if (user && formData.currentPassword !== user.password) {
-            Swal.fire("Lỗi", "Mật khẩu hiện tại không đúng", "error");
-            return;
-        }
-
-        const updatedUser = {
-            ...user,
-            password: formData.newPassword,
-        };
-
         try {
-            await editUser(user.id, updatedUser);
-            Swal.fire("Thành công", "Mật khẩu đã được thay đổi", "success").then(() => {
-                navigate("/admin");
-            });
+            const updatedData = {
+                current_password: formData.currentPassword, // Backend should validate this
+                password: formData.newPassword, // New password
+            };
+
+            const response = await putChangeInfoAdmin(user.id, updatedData);
+            if (response.status === 200) {
+                Swal.fire("Thành công", "Mật khẩu đã được thay đổi", "success").then(() => {
+                    navigate("/admin");
+                });
+            } else {
+                Swal.fire("Lỗi", response.data || "Không thể thay đổi mật khẩu", "error");
+            }
         } catch (error) {
-            Swal.fire("Lỗi", "Không thể thay đổi mật khẩu", "error");
+            console.error("Lỗi khi thay đổi mật khẩu:", error);
+            Swal.fire("Lỗi", error.response?.data || "Không thể thay đổi mật khẩu", "error");
         }
     };
 
@@ -91,7 +81,7 @@ const ChangePasswordPage = () => {
             <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
                 <h1 className="text-2xl font-bold tracking-wide text-gray-950 dark:text-white">MẬT KHẨU</h1>
             </div>
-            <div className="dark: mx-auto mt-10 max-w-md rounded-xl bg-slate-50 p-6 shadow-xl shadow-gray-500/30 dark:bg-slate-900">
+            <div className="mx-auto mt-10 max-w-md rounded-xl bg-slate-50 p-6 shadow-xl shadow-gray-500/30 dark:bg-slate-900">
                 <h2 className="mb-4 text-center text-2xl font-semibold text-[#019fb5] dark:text-slate-50">Đổi Mật Khẩu</h2>
                 <form
                     onSubmit={handleSubmit}
@@ -107,7 +97,7 @@ const ChangePasswordPage = () => {
                                 className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 pr-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 dark:border-gray-600 dark:bg-slate-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-500"
                                 value={formData.currentPassword}
                                 onChange={handleChange}
-                                readOnly
+                                required
                             />
                             <span
                                 onClick={() => setShowCurrentPassword(!showCurrentPassword)}

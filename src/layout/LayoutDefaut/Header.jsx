@@ -10,38 +10,36 @@ const { BiSolidChevronsRight } = icons;
 function Header({ collapsed, setCollapsed }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef();
-    const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png");
+    const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png"); // Fallback avatar
 
     useEffect(() => {
-        const userIdToCheck = localStorage.getItem("user_id");
+        const userId = localStorage.getItem("user_id");
+        if (!userId) {
+            console.warn("No user_id found in localStorage");
+            return;
+        }
 
         const fetchUser = async () => {
             try {
-                const res = await getInfoAdmin(userIdToCheck);
-                console.log("Response from getInfoAdmin:", res);
-
-                if (res && res.user_id === userIdToCheck) {
-                    if (res.avatar_path) {
-                        setUserAvatar(res.avatar_path);
-                    } else {
-                        console.warn("Không tìm thấy avatar_path, sử dụng ảnh mặc định");
-                    }
+                const res = await getInfoAdmin(userId);
+                if (res.status === 200 && res.data?.avatar_path) {
+                    setUserAvatar(res.data.avatar_path);
                 } else {
-                    console.error("Không tìm thấy người dùng hợp lệ hoặc user_id không khớp");
+                    console.warn("No valid avatar_path found, using default");
                 }
             } catch (error) {
-                console.error("Lỗi khi lấy dữ liệu người dùng:", error.response ? error.response.data : error.message);
+                console.error("Error fetching user data:", error);
             }
         };
         fetchUser();
     }, []);
 
     useEffect(() => {
-        function handleClickOutside(event) {
+        const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setDropdownOpen(false);
             }
-        }
+        };
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
@@ -82,8 +80,8 @@ function Header({ collapsed, setCollapsed }) {
 }
 
 Header.propTypes = {
-    collapsed: PropTypes.bool,
-    setCollapsed: PropTypes.func,
+    collapsed: PropTypes.bool.isRequired,
+    setCollapsed: PropTypes.func.isRequired,
 };
 
 export default Header;
