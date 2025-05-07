@@ -1,7 +1,6 @@
 import DeleteTour from "../../components/Tour/Delete";
 import EditTour from "../../components/Tour/Edit";
 import icons from "../../util/icon";
-import { Link } from "react-router-dom";
 
 const { MdBlock } = icons;
 
@@ -31,16 +30,14 @@ function TourTable({ currentEntries }) {
                             key={index}
                             className="transition hover:bg-gray-100 dark:hover:bg-slate-700"
                         >
-                            <td className="border px-4 py-2">
-                                <Link>{item.title}</Link>
-                            </td>
+                            <td className="border px-4 py-2">{item.title}</td>
                             <td className="border px-4 py-2">{item.date}</td>
                             <td className="border px-4 py-2">{item.description}</td>
                             <td className="border px-4 py-2">{item.quantity}</td>
                             <td className="border px-4 py-2">{item.price}</td>
                             <td className="border px-4 py-2">{item.priceChild}</td>
                             <td className="border px-4 py-2">{item.location}</td>
-                            <td className="border px-4 py-2 text-center">
+                            <td className="available-column border px-4 py-2 text-center">
                                 {item.availability === true ? (
                                     <span className="text-green-500">
                                         <svg

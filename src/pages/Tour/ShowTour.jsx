@@ -52,7 +52,7 @@ function ShowTour() {
 
         const searchTermNoDiacritics = removeDiacritics(searchTerm);
         const filteredData = originalData.filter((tour) => {
-            const tourName = tour.tourName?.toLowerCase() || "";
+            const tourName = tour.title?.toLowerCase() || "";
             const tourNameNoDiacritics = removeDiacritics(tourName);
             return tourName.includes(searchTerm) || tourNameNoDiacritics.includes(searchTermNoDiacritics);
         });

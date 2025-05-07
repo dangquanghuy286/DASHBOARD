@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [] }) {
+function TourForm({ data, itinerary, handleChange, handleitineraryChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [] }) {
     const dataRegion = [
         { regionName: "NORTH", displayName: "Miền Bắc" },
         { regionName: "CENTRAL", displayName: "Miền Trung" },
@@ -205,10 +205,10 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                 {renderAnh()}
             </div>
 
-            {timeline.length > 0 && (
+            {itinerary.length > 0 && (
                 <div>
                     <label className="block font-semibold">Lịch trình</label>
-                    {timeline.map((day, index) => (
+                    {itinerary.map((day, index) => (
                         <div
                             key={index}
                             className="mb-4 rounded border bg-gray-50 p-3 shadow-sm"
@@ -221,7 +221,7 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                                     name="title"
                                     className="w-full border p-2"
                                     value={day.title || ""}
-                                    onChange={(e) => handleTimelineChange(index, "title", e.target.value)}
+                                    onChange={(e) => handleitineraryChange(index, "title", e.target.value)}
                                 />
                             </div>
                             <div>
@@ -230,7 +230,7 @@ function TourForm({ data, timeline, handleChange, handleTimelineChange, handleSu
                                     name="content"
                                     className="w-full border p-2"
                                     value={day.content || ""}
-                                    onChange={(e) => handleTimelineChange(index, "content", e.target.value)}
+                                    onChange={(e) => handleitineraryChange(index, "content", e.target.value)}
                                     rows="3"
                                 />
                             </div>
