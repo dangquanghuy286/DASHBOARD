@@ -34,7 +34,7 @@ function TourTable({ currentEntries }) {
                             <td className="border px-4 py-2">{item.date}</td>
                             <td className="border px-4 py-2">{item.description}</td>
                             <td className="border px-4 py-2">{item.quantity}</td>
-                            <td className="border px-4 py-2">{item.price}</td>
+                            <td className="border px-4 py-2">{item.priceAdult}</td>
                             <td className="border px-4 py-2">{item.priceChild}</td>
                             <td className="border px-4 py-2">{item.location}</td>
                             <td className="available-column border px-4 py-2 text-center">

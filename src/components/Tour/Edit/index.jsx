@@ -1,22 +1,26 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-
 import EditButton from "../../Button/EditButton";
-import { updateTour } from "../../../services/tourService";
+import { updateTour, uploadImageTour } from "../../../services/tourService";
 import TourModal from "../ModelTour";
+
+const dataRegion = [
+    { displayName: "Miền Bắc", value: "NORTH" },
+    { displayName: "Miền Trung", value: "CENTRAL" },
+    { displayName: "Miền Nam", value: "SOUTH" },
+];
 
 function EditTour({ item }) {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState(item || {});
-
-    const [timeline, setTimeline] = useState([]);
+    const [itinerary, setItinerary] = useState(item?.itinerary || []);
     const [files, setFiles] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {};
-        fetchData();
-        if (item?.timeline) {
-            setTimeline(item.timeline);
+        if (item) {
+            setData(item);
+            setItinerary(item.itinerary || []);
         }
     }, [item]);
 
@@ -26,34 +30,20 @@ function EditTour({ item }) {
 
         if (!item.availability || startDate <= today) {
             Swal.fire({
-                position: "CENTER",
+                position: "center",
                 icon: "warning",
-                title: "KHÔNG THỂ SỬA KHI TOUR ĐÃ BẮT ĐẦU HOẶC KHÔNG CÓ SẴN",
+                title: "Không thể chỉnh sửa tour đã bắt đầu hoặc không còn trống",
                 showConfirmButton: true,
                 timer: 5000,
             });
             return;
         }
-        setData(item);
         setShowModal(true);
     };
 
-    const closeModal = () => setShowModal(false);
-
-    const renderAnh = () => {
-        return files.map((file, index) => (
-            <div
-                key={index}
-                className="m-2"
-            >
-                <img
-                    src={URL.createObjectURL(file)}
-                    alt={`Ảnh ${index + 1}`}
-                    width="100"
-                    className="rounded shadow"
-                />
-            </div>
-        ));
+    const closeModal = () => {
+        setShowModal(false);
+        setFiles([]);
     };
 
     const handleImageChange = (e) => {
@@ -63,78 +53,151 @@ function EditTour({ item }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        let updatedData = { ...data, [name]: value };
+        let updatedData = { ...data };
+
+        if (name === "availability") {
+            updatedData[name] = value === "true";
+        } else {
+            updatedData[name] = value;
+        }
 
         if (name === "startDate" || name === "endDate") {
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
-
             if (!isNaN(start) && !isNaN(end) && end >= start) {
                 const diffTime = Math.abs(end - start);
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-                updatedData.date = `${diffDays} ngày`;
-                setTimeline(Array.from({ length: diffDays }, () => ({ title: "", content: "" })));
+                updatedData.duration = `${diffDays} ngày ${diffDays - 1} đêm`;
+                setItinerary(
+                    Array.from({ length: diffDays }, (_, index) => ({
+                        day: index + 1,
+                        title: itinerary[index]?.title || "",
+                        content: itinerary[index]?.content || [],
+                    })),
+                );
             } else {
-                updatedData.date = "";
+                updatedData.duration = "";
+                setItinerary([]);
             }
         }
 
         setData(updatedData);
     };
 
-    const handleTimelineChange = (index, field, value) => {
-        const newTimeline = [...timeline];
-        newTimeline[index][field] = value;
-        setTimeline(newTimeline);
+    const handleItineraryChange = (index, field, value) => {
+        const newItinerary = [...itinerary];
+        if (field === "add") {
+            newItinerary.push({ day: newItinerary.length + 1, title: "", content: [] });
+        } else if (field === "remove") {
+            newItinerary.splice(index, 1);
+            newItinerary.forEach((item, i) => (item.day = i + 1));
+        } else {
+            newItinerary[index] = {
+                ...newItinerary[index],
+                [field]: field === "content" ? value.split("\n").filter(Boolean) : value,
+            };
+        }
+        setItinerary(newItinerary);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const confirmResult = await Swal.fire({
-            title: "BẠN CÓ MUỐN CẬP NHẬT THÔNG TIN TOUR?",
+            title: "Bạn có muốn cập nhật thông tin tour?",
             icon: "question",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "LƯU",
-            denyButtonText: "KHÔNG LƯU",
+            confirmButtonText: "Lưu",
+            denyButtonText: "Không lưu",
+            cancelButtonText: "Hủy",
         });
 
         if (confirmResult.isConfirmed) {
-            const result = await updateTour(data.tourId, data);
-            if (result) {
-                setShowModal(false);
+            const apiData = {
+                ...data,
+                itinerary: itinerary.map((item, index) => ({
+                    day: index + 1,
+                    title: item.title,
+                    content: Array.isArray(item.content) ? item.content : item.content.split("\n").filter(Boolean),
+                })),
+            };
+
+            try {
+                const result = await updateTour(data.tourId, apiData);
+                if (result.status === 200 || result.status === 201) {
+                    if (files.length > 0) {
+                        const formData = new FormData();
+                        files.forEach((file) => formData.append("images", file));
+                        const uploadResult = await uploadImageTour(data.tourId, formData);
+                        if (uploadResult.status !== 200) {
+                            console.warn("Upload ảnh thất bại:", uploadResult.data);
+                        }
+                    }
+
+                    setShowModal(false);
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Cập nhật tour thành công!",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
+                } else {
+                    throw new Error("Cập nhật tour thất bại");
+                }
+            } catch (error) {
                 Swal.fire({
-                    title: "CẬP NHẬT THÀNH CÔNG",
-                    icon: "success",
-                    timer: 5000,
-                });
-            } else {
-                Swal.fire({
-                    title: "CẬP NHẬT THẤT BẠI",
+                    position: "center",
                     icon: "error",
-                    timer: 5000,
+                    title: "Cập nhật tour thất bại",
+                    text: "Vui lòng thử lại.",
+                    confirmButtonColor: "#d33",
                 });
             }
         } else if (confirmResult.isDenied) {
-            Swal.fire("KHÔNG LƯU THAY ĐỔI", "", "info");
+            Swal.fire({
+                position: "center",
+                icon: "info",
+                title: "Không lưu thay đổi",
+                showConfirmButton: false,
+                timer: 2000,
+            });
         }
     };
 
+    const renderAnh = () =>
+        files.length > 0 ? (
+            <div className="mt-2 flex flex-wrap gap-4">
+                {files.map((file, index) => (
+                    <div
+                        key={index}
+                        className="h-24 w-24 overflow-hidden rounded shadow"
+                    >
+                        <img
+                            src={URL.createObjectURL(file)}
+                            alt={`Ảnh ${index + 1}`}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                ))}
+            </div>
+        ) : null;
+
     return (
         <>
-            <EditButton onClick={openModal}></EditButton>
-
+            <EditButton onClick={openModal} />
             <TourModal
                 isOpen={showModal}
                 closeModal={closeModal}
                 data={data}
-                timeline={timeline}
+                dataRegion={dataRegion}
+                itinerary={itinerary}
                 handleChange={handleChange}
-                handleTimelineChange={handleTimelineChange}
+                handleItineraryChange={handleItineraryChange}
                 handleSubmit={handleSubmit}
-                renderAnh={renderAnh} // Truyền hàm renderAnh
-                handleImageChange={handleImageChange} // Truyền hàm handleImageChange
-                files={files} // Truyền danh sách ảnh
+                renderAnh={renderAnh}
+                handleImageChange={handleImageChange}
+                files={files}
             />
         </>
     );
