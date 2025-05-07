@@ -10,7 +10,7 @@ const { BiSolidChevronsRight } = icons;
 function Header({ collapsed, setCollapsed }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef();
-    const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png"); // Fallback avatar
+    const [userAvatar, setUserAvatar] = useState("https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png");
 
     useEffect(() => {
         const userId = localStorage.getItem("user_id");
