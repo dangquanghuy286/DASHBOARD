@@ -17,6 +17,7 @@ function EditTour({ item }) {
     const [itinerary, setItinerary] = useState(item?.itinerary || []);
     const [files, setFiles] = useState([]);
 
+    // Cập nhật lại data và itinerary mỗi khi item (props) thay đổi
     useEffect(() => {
         if (item) {
             setData(item);
@@ -24,10 +25,12 @@ function EditTour({ item }) {
         }
     }, [item]);
 
+    // Hàm mở modal chỉnh sửa tour
     const openModal = () => {
         const today = new Date();
         const startDate = new Date(item.startDate + "T00:00:00");
 
+        // Ngăn không cho sửa nếu tour đã bắt đầu hoặc không còn trống
         if (!item.availability || startDate <= today) {
             Swal.fire({
                 position: "center",
@@ -46,11 +49,13 @@ function EditTour({ item }) {
         setFiles([]);
     };
 
+    // Hàm xử lý khi người dùng chọn ảnh mới
     const handleImageChange = (e) => {
         const uploadedFiles = e.target.files;
         setFiles(uploadedFiles ? Array.from(uploadedFiles) : []);
     };
 
+    // Hàm xử lý thay đổi các input trong form (data tour)
     const handleChange = (e) => {
         const { name, value } = e.target;
         let updatedData = { ...data };
@@ -61,6 +66,7 @@ function EditTour({ item }) {
             updatedData[name] = value;
         }
 
+        // Khi thay đổi ngày bắt đầu/kết thúc -> tính lại duration + itinerary
         if (name === "startDate" || name === "endDate") {
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
@@ -84,14 +90,18 @@ function EditTour({ item }) {
         setData(updatedData);
     };
 
+    // Hàm xử lý khi thay đổi chi tiết từng ngày trong itinerary
     const handleItineraryChange = (index, field, value) => {
         const newItinerary = [...itinerary];
         if (field === "add") {
+            // Thêm ngày mới
             newItinerary.push({ day: newItinerary.length + 1, title: "", content: [] });
         } else if (field === "remove") {
+            // Xóa ngày
             newItinerary.splice(index, 1);
             newItinerary.forEach((item, i) => (item.day = i + 1));
         } else {
+            // Cập nhật title hoặc content
             newItinerary[index] = {
                 ...newItinerary[index],
                 [field]: field === "content" ? value.split("\n").filter(Boolean) : value,
@@ -100,6 +110,7 @@ function EditTour({ item }) {
         setItinerary(newItinerary);
     };
 
+    // Hàm submit cập nhật tour (dữ liệu + ảnh)
     const handleSubmit = async (e) => {
         e.preventDefault();
         const confirmResult = await Swal.fire({
@@ -113,6 +124,7 @@ function EditTour({ item }) {
         });
 
         if (confirmResult.isConfirmed) {
+            // Chuẩn bị dữ liệu để gửi API
             const apiData = {
                 ...data,
                 itinerary: itinerary.map((item, index) => ({
@@ -123,8 +135,10 @@ function EditTour({ item }) {
             };
 
             try {
+                // Gọi API cập nhật tour
                 const result = await updateTour(data.tourId, apiData);
                 if (result.status === 200 || result.status === 201) {
+                    // Nếu có ảnh → tải ảnh lên server
                     if (files.length > 0) {
                         const formData = new FormData();
                         files.forEach((file) => formData.append("images", file));
@@ -165,6 +179,7 @@ function EditTour({ item }) {
         }
     };
 
+    // Hàm hiển thị ảnh preview trước khi upload
     const renderAnh = () =>
         files.length > 0 ? (
             <div className="mt-2 flex flex-wrap gap-4">

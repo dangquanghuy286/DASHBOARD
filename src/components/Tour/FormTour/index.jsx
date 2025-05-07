@@ -1,25 +1,32 @@
 import React from "react";
 
+// Dữ liệu các khu vực tour có thể chọn
 const dataRegion = [
     { displayName: "Miền Bắc", value: "NORTH" },
     { displayName: "Miền Trung", value: "CENTRAL" },
     { displayName: "Miền Nam", value: "SOUTH" },
 ];
 
+/**
+ * Form dùng để tạo hoặc chỉnh sửa thông tin tour du lịch
+ * Các props chính:
+ * - data: object chứa thông tin tour (tên, giá, mô tả, v.v.)
+ * - itinerary: danh sách ngày đi trong lịch trình tour
+ * - handleChange: xử lý thay đổi dữ liệu input (tên tour, điểm đến, giá, v.v.)
+ * - handleItineraryChange: xử lý thay đổi lịch trình từng ngày
+ * - handleSubmit: xử lý submit form
+ * - closeModal: đóng modal form
+ * - renderAnh: render danh sách ảnh đã chọn
+ * - handleImageChange: xử lý khi người dùng chọn ảnh mới
+ * - files: danh sách file ảnh được chọn
+ */
 function TourForm({ data, itinerary, handleChange, handleItineraryChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [] }) {
-    const addItineraryDay = () => {
-        handleItineraryChange(itinerary.length, "add", { day: itinerary.length + 1, title: "", content: [] });
-    };
-
-    const removeItineraryDay = (index) => {
-        handleItineraryChange(index, "remove");
-    };
-
     return (
         <form
             onSubmit={handleSubmit}
             className="space-y-6"
         >
+            {/* Tên tour */}
             <div>
                 <label className="block font-medium">Tên tour:</label>
                 <input
@@ -27,11 +34,12 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="title"
                     value={data.title || ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 />
             </div>
 
+            {/* Điểm đến */}
             <div>
                 <label className="block font-medium">Điểm đến:</label>
                 <input
@@ -39,11 +47,12 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="destination"
                     value={data.destination || ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 />
             </div>
 
+            {/* Thời gian (readonly, tính tự động) */}
             <div>
                 <label className="block font-medium">Thời gian:</label>
                 <input
@@ -58,6 +67,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 />
             </div>
 
+            {/* Khu vực (select) */}
             <div>
                 <label className="block font-medium">Khu vực:</label>
                 <select
@@ -67,7 +77,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                         console.log("Region selected:", e.target.value); // Debug
                         handleChange(e);
                     }}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 >
                     <option value="">Chọn khu vực</option>
@@ -82,18 +92,20 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 </select>
             </div>
 
+            {/* Mô tả tour */}
             <div>
                 <label className="block font-medium">Mô tả:</label>
                 <textarea
                     name="description"
                     value={data.description || ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     rows="4"
                     required
                 />
             </div>
 
+            {/* Số lượng chỗ */}
             <div>
                 <label className="block font-medium">Số lượng chỗ:</label>
                 <input
@@ -101,12 +113,13 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="quantity"
                     value={data.quantity ?? ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"
                     required
                 />
             </div>
 
+            {/* Giá người lớn */}
             <div>
                 <label className="block font-medium">Giá người lớn (VNĐ):</label>
                 <input
@@ -114,12 +127,13 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="price_adult"
                     value={data.price_adult ?? ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"
                     required
                 />
             </div>
 
+            {/* Giá trẻ em */}
             <div>
                 <label className="block font-medium">Giá trẻ em (VNĐ):</label>
                 <input
@@ -127,25 +141,27 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="price_child"
                     value={data.price_child ?? ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"
                     required
                 />
             </div>
 
+            {/* Trạng thái tour */}
             <div>
                 <label className="block font-medium">Trạng thái:</label>
                 <select
                     name="availability"
                     value={data.availability ? "true" : "false"}
                     onChange={(e) => handleChange({ target: { name: "availability", value: e.target.value === "true" } })}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                 >
                     <option value="true">Còn trống</option>
                     <option value="false">Hết chỗ</option>
                 </select>
             </div>
 
+            {/* Ngày bắt đầu */}
             <div>
                 <label className="block font-medium">Ngày bắt đầu:</label>
                 <input
@@ -154,11 +170,12 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     value={data.startDate || ""}
                     onChange={handleChange}
                     min={new Date().toISOString().split("T")[0]}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 />
             </div>
 
+            {/* Ngày kết thúc */}
             <div>
                 <label className="block font-medium">Ngày kết thúc:</label>
                 <input
@@ -167,19 +184,20 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     value={data.endDate || ""}
                     onChange={handleChange}
                     min={data.startDate || new Date().toISOString().split("T")[0]}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 />
             </div>
 
+            {/* Ảnh tour */}
             <div>
                 <label className="block font-medium">
-                    Ảnh: <span className="font-medium text-blue-600">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh"}</span>
+                    Ảnh: <span className="font-medium text-[#00c0d1]">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh"}</span>
                 </label>
                 <div className="mt-2 flex items-center gap-4">
                     <label
                         htmlFor="file"
-                        className="inline-block cursor-pointer rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600"
+                        className="inline-block cursor-pointer rounded-md bg-[#00c0d1] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#009fb0]"
                     >
                         Chọn ảnh
                     </label>
@@ -193,20 +211,13 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     onChange={handleImageChange}
                     className="hidden"
                 />
+                {/* Hiển thị ảnh đã chọn */}
                 {renderAnh()}
             </div>
 
+            {/* Lịch trình tour */}
             <div>
-                <div className="flex items-center justify-between">
-                    <label className="block font-semibold">Lịch trình:</label>
-                    <button
-                        type="button"
-                        onClick={addItineraryDay}
-                        className="rounded-md bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600"
-                    >
-                        Thêm ngày
-                    </button>
-                </div>
+                <label className="block font-semibold">Lịch trình:</label>
                 {itinerary.length > 0 ? (
                     itinerary.map((day, index) => (
                         <div
@@ -214,14 +225,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                             className="mt-4 rounded border bg-gray-50 p-4 shadow-sm"
                         >
                             <div className="flex items-center justify-between">
-                                <p className="font-bold text-blue-600">Ngày {day.day}</p>
-                                <button
-                                    type="button"
-                                    onClick={() => removeItineraryDay(index)}
-                                    className="text-sm text-red-500 hover:text-red-700"
-                                >
-                                    Xóa
-                                </button>
+                                <p className="font-bold text-[#00c0d1]">Ngày {day.day}</p>
                             </div>
                             <div className="mt-2">
                                 <label className="block">Tiêu đề:</label>
@@ -229,18 +233,26 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                                     type="text"
                                     value={day.title || ""}
                                     onChange={(e) => handleItineraryChange(index, "title", e.target.value)}
-                                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                                     required
                                 />
                             </div>
                             <div className="mt-2">
                                 <label className="block">Nội dung:</label>
                                 <textarea
-                                    value={day.content.join("\n") || ""}
-                                    onChange={(e) => handleItineraryChange(index, "content", e.target.value.split("\n").filter(Boolean))}
-                                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500"
+                                    value={day.content.map((line) => `  ${line}`).join("\n") || ""}
+                                    onChange={(e) =>
+                                        handleItineraryChange(
+                                            index,
+                                            "content",
+                                            e.target.value
+                                                .split("\n")
+                                                .map((line) => line.trimStart())
+                                                .filter(Boolean),
+                                        )
+                                    }
+                                    className="mt-1 w-full rounded-md border border-gray-300 p-2 leading-relaxed whitespace-pre-wrap focus:ring-2 focus:ring-[#00c0d1]"
                                     rows="4"
-                                    placeholder="Mỗi dòng là một mục nội dung"
                                     required
                                 />
                             </div>
@@ -251,6 +263,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 )}
             </div>
 
+            {/* Nút hành động */}
             <div className="flex justify-end space-x-4">
                 <button
                     type="button"
