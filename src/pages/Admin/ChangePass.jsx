@@ -42,7 +42,6 @@ const ChangePasswordPage = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -58,11 +57,16 @@ const ChangePasswordPage = () => {
 
         try {
             const updatedData = {
-                current_password: formData.currentPassword, // Backend should validate this
-                password: formData.newPassword, // New password
+                current_password: formData.currentPassword,
+                password: formData.newPassword,
             };
 
+            console.log("Dữ liệu gửi đi:", updatedData);
+
             const response = await putChangeInfoAdmin(user.id, updatedData);
+
+            console.log("Phản hồi từ API:", response);
+
             if (response.status === 200) {
                 Swal.fire("Thành công", "Mật khẩu đã được thay đổi", "success").then(() => {
                     navigate("/admin");
@@ -75,7 +79,6 @@ const ChangePasswordPage = () => {
             Swal.fire("Lỗi", error.response?.data || "Không thể thay đổi mật khẩu", "error");
         }
     };
-
     return (
         <div className="min-h-screen bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
             <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
