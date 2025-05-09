@@ -16,16 +16,16 @@ function InputPassword({ name, value, onChange, error, placeholder = "Mật kh�
                 placeholder={placeholder}
                 className={`h-12 w-full rounded-2xl border-2 ${
                     error ? "border-red-500" : "border-[#019fb5]"
-                } bg-transparent px-5 pr-12 text-lg text-white placeholder-[#019fb5] focus:outline-none dark:border-[#4b5563] dark:bg-slate-950 dark:text-white dark:placeholder-[#9ca3af]`} // Thêm lớp cho dark mode
+                } bg-transparent px-5 pr-12 text-lg text-white placeholder-[#019fb5] focus:outline-none dark:border-[#019fb5] dark:bg-slate-950 dark:text-white dark:placeholder-[#019fb5]`} // Thêm lớp cho dark mode
             />
             <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute top-1/2 right-10 -translate-y-1/2 text-xl text-[#019fb5] focus:outline-none dark:text-[#9ca3af]"
+                className="absolute top-1/2 right-10 -translate-y-1/2 text-xl text-[#019fb5] focus:outline-none dark:text-[#019fb5]"
             >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
-            <RiLockPasswordFill className="absolute top-1/2 right-4 -translate-y-1/2 text-xl text-[#019fb5] dark:text-[#9ca3af]" />
+            <RiLockPasswordFill className="absolute top-1/2 right-4 -translate-y-1/2 text-xl text-[#019fb5] dark:text-[#019fb5]" />
             {error && <p className="mt-1 text-sm text-red-500 dark:text-red-400">{error}</p>} {/* Hiển thị lỗi nếu có */}
         </div>
     );
