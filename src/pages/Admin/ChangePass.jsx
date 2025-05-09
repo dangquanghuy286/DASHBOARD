@@ -87,7 +87,10 @@ const ChangePasswordPage = () => {
                         newPassword: "",
                         confirmPassword: "",
                     });
-                    navigate("/profile");
+                    localStorage.removeItem("user_id");
+                    localStorage.removeItem("user_name");
+                    localStorage.removeItem("token");
+                    navigate("/login");
                 } else {
                     await Swal.fire("Thất bại", "Mật khẩu hiện tại không đúng", "warning");
                 }

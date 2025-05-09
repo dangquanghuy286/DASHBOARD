@@ -3,13 +3,35 @@ import { edit, get, post } from "../util/requestserver";
 // Đăng nhập ADMIN
 export const login = async (user_name, password) => {
     try {
-        return await post("users/login", { user_name, password });
+        // Validate input before making request
+        if (!user_name || !password) {
+            throw new Error("Username and password are required");
+        }
+
+        const response = await post("users/login", { user_name, password });
+
+        // Check if response contains expected data
+        if (!response?.data) {
+            throw new Error("Invalid response from server");
+        }
+
+        return {
+            status: response.status,
+            data: response.data,
+        };
     } catch (error) {
-        console.error("Lỗi khi đăng nhập ADMIN:", error);
-        throw error;
+        // Standardize error response format
+        const errorResponse = {
+            status: error.response?.status || 500,
+            data: error.response?.data || error.message || "Login failed",
+        };
+
+        console.error("Login error:", errorResponse);
+        return errorResponse;
     }
 };
-// Lấy thông tin ADMIN
+
+// Get admin information
 export const getInfoAdmin = async (id) => {
     try {
         const response = await get(`users/${id}`);
@@ -26,13 +48,9 @@ export const getInfoAdmin = async (id) => {
 };
 //Sửa thông tin ADMIN
 export const putChangeInfoAdmin = async (id, data) => {
-    console.log("Gửi PUT request với data:", data);
     try {
         const response = await edit(`users/${id}`, data);
-        console.log("Phản hồi thành công:", response.data);
-        if (response.data && response.data.message === "User updated successfully") {
-            console.log("Mật khẩu đã được cập nhật.");
-        }
+
         return {
             status: response.status,
             data: response.data,

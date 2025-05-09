@@ -19,6 +19,10 @@ function ShowTour() {
         const fetchApi = async () => {
             try {
                 const res = await getDataTour();
+                if (res.status !== 200) {
+                    throw new Error(res.data.error || "Lỗi không xác định");
+                }
+                console.log("res", res);
 
                 const dataArray = res.data?.tours && Array.isArray(res.data.tours) ? res.data.tours : [];
 
