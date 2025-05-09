@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { getDataUser } from "../../services/userSevice";
+import { getAvatar, getDataUser } from "../../services/userSevice";
 import { useForm } from "react-hook-form";
 import UserPr from "./UserPr";
 import icons from "../../util/icon";
@@ -17,7 +17,7 @@ function User() {
         const fetchApi = async () => {
             try {
                 const res = await getDataUser(); // Gọi API để lấy dữ liệu người dùng
-                console.log("Dữ liệu người dùng:", res.data);
+
                 const dataArray = (res.data.users || []).reverse(); // Lấy danh sách người dùng và đảo ngược thứ tự
                 setData(dataArray);
                 setOriginalData(dataArray);

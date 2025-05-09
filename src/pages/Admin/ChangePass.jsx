@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { putChangeInfoAdmin, getInfoAdmin } from "../../services/adminService";
-import icons from "../../util/icon";
 import GoBack from "../../components/GoBack/Goback";
-
-const { FaEye, FaEyeSlash } = icons;
+import InputPassword from "../../components/InputPass";
 
 const ChangePasswordPage = () => {
     const [formData, setFormData] = useState({
@@ -13,72 +11,141 @@ const ChangePasswordPage = () => {
         newPassword: "",
         confirmPassword: "",
     });
-    const [user, setUser] = useState(null);
-    const [showCurrentPassword, setShowCurrentPassword] = useState(false);
-    const [showNewPassword, setShowNewPassword] = useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+    const [errors, setErrors] = useState({
+        currentPassword: "",
+        newPassword: "",
+        confirmPassword: "",
+    });
+    const [userId, setUserId] = useState(null); // Sử dụng userId từ localStorage
+    const [isLoading, setIsLoading] = useState(true); // Trạng thái tải
     const navigate = useNavigate();
 
     useEffect(() => {
         const userIdToCheck = localStorage.getItem("user_id");
+        const token = localStorage.getItem("token");
+
+        // Kiểm tra token và userId
+        if (!token) {
+            Swal.fire("Lỗi", "Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại.", "error").then(() => {
+                navigate("/login");
+            });
+            return;
+        }
+        if (!userIdToCheck) {
+            Swal.fire("Lỗi", "Không tìm thấy ID người dùng. Vui lòng đăng nhập lại.", "error").then(() => {
+                navigate("/login");
+            });
+            return;
+        }
 
         const fetchUser = async () => {
             try {
+                setIsLoading(true);
                 const res = await getInfoAdmin(userIdToCheck);
-                if (res.status === 200 && res.data) {
-                    setUser(res.data); // Store user data (id, user_name, etc.)
+                console.log("Phản hồi từ getInfoAdmin:", res); // Debug API response
+                if (res.status === 200) {
+                    setUserId(userIdToCheck); // Sử dụng userIdToCheck nếu API thành công
                 } else {
                     Swal.fire("Lỗi", "Không tìm thấy người dùng hợp lệ", "error");
                 }
             } catch (error) {
                 console.error("Lỗi khi lấy thông tin admin:", error);
-                Swal.fire("Lỗi", "Không thể lấy thông tin người dùng", "error");
+                const errorMessage =
+                    error.response?.data?.message ||
+                    (error.message === "Network Error" ? "Lỗi kết nối server" : "Không thể lấy thông tin người dùng");
+                Swal.fire("Lỗi", errorMessage, "error");
+            } finally {
+                setIsLoading(false);
             }
         };
         fetchUser();
-    }, []);
+    }, [navigate]);
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        setErrors({ ...errors, [name]: "" }); // Xóa lỗi khi người dùng nhập
     };
+
+    const validateForm = ({ currentPassword, newPassword, confirmPassword }) => {
+        const newErrors = {};
+        if (!currentPassword) newErrors.currentPassword = "Vui lòng nhập mật khẩu hiện tại";
+        else if (currentPassword.length < 6) newErrors.currentPassword = "Mật khẩu phải có ít nhất 6 ký tự";
+        if (!newPassword) newErrors.newPassword = "Vui lòng nhập mật khẩu mới";
+        else if (newPassword.length < 6) newErrors.newPassword = "Mật khẩu mới phải có ít nhất 6 ký tự";
+        if (!confirmPassword) newErrors.confirmPassword = "Vui lòng xác nhận mật khẩu mới";
+        else if (newPassword !== confirmPassword) newErrors.confirmPassword = "Mật khẩu mới và xác nhận không khớp";
+        return newErrors;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const { currentPassword, newPassword, confirmPassword } = formData;
 
-        if (!formData.currentPassword || !formData.newPassword || !formData.confirmPassword) {
-            Swal.fire("Lỗi", "Vui lòng nhập đầy đủ thông tin", "error");
+        // Kiểm tra form
+        const newErrors = validateForm(formData);
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            Swal.fire("Lỗi", Object.values(newErrors)[0], "error");
             return;
         }
 
-        if (formData.newPassword !== formData.confirmPassword) {
-            Swal.fire("Lỗi", "Mật khẩu mới và xác nhận không khớp", "error");
+        // Kiểm tra userId
+        if (!userId) {
+            Swal.fire("Lỗi", "Không tìm thấy thông tin người dùng. Vui lòng thử lại.", "error");
             return;
         }
 
         try {
             const updatedData = {
-                current_password: formData.currentPassword,
-                password: formData.newPassword,
+                current_password: currentPassword,
+                password: newPassword,
             };
 
             console.log("Dữ liệu gửi đi:", updatedData);
+            console.log("User ID gửi đi:", userId);
 
-            const response = await putChangeInfoAdmin(user.id, updatedData);
+            const response = await putChangeInfoAdmin(userId, updatedData);
+            console.log("Phản hồi từ putChangeInfoAdmin:", response);
 
-            console.log("Phản hồi từ API:", response);
-
-            if (response.status === 200) {
+            // Kiểm tra nội dung phản hồi thay vì chỉ dựa vào status
+            if (response.status === 200 && typeof response.data === "string" && response.data.toLowerCase().includes("success")) {
                 Swal.fire("Thành công", "Mật khẩu đã được thay đổi", "success").then(() => {
+                    setFormData({ currentPassword: "", newPassword: "", confirmPassword: "" });
                     navigate("/admin");
                 });
             } else {
-                Swal.fire("Lỗi", response.data || "Không thể thay đổi mật khẩu", "error");
+                // Nếu server trả về lỗi (như "User not found"), hiển thị thông báo lỗi
+                const errorMessage = response.data?.message || response.data || "Không thể thay đổi mật khẩu";
+                Swal.fire("Lỗi", errorMessage, "error");
             }
         } catch (error) {
             console.error("Lỗi khi thay đổi mật khẩu:", error);
-            Swal.fire("Lỗi", error.response?.data || "Không thể thay đổi mật khẩu", "error");
+            const errorMessage =
+                error.response?.data?.message ||
+                (error.message === "Network Error" ? "Lỗi kết nối server. Vui lòng kiểm tra lại mạng hoặc server." : "Không thể thay đổi mật khẩu");
+            Swal.fire("Lỗi", errorMessage, "error");
         }
     };
+
+    // Hiển thị giao diện tải
+    if (isLoading) {
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
+                <p>Đang tải thông tin...</p>
+            </div>
+        );
+    }
+
+    // Hiển thị lỗi nếu không có userId
+    if (!userId) {
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
+                <p>Không thể tải thông tin người dùng. Vui lòng thử lại sau.</p>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
             <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
@@ -90,69 +157,39 @@ const ChangePasswordPage = () => {
                     onSubmit={handleSubmit}
                     className="space-y-4"
                 >
-                    {/* Mật khẩu hiện tại */}
                     <div>
-                        <label className="mb-1 block text-sm font-medium">Mật khẩu hiện tại</label>
-                        <div className="relative">
-                            <input
-                                type={showCurrentPassword ? "text" : "password"}
-                                name="currentPassword"
-                                className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 pr-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 dark:border-gray-600 dark:bg-slate-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-500"
-                                value={formData.currentPassword}
-                                onChange={handleChange}
-                                required
-                            />
-                            <span
-                                onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                                className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
-                            >
-                                {showCurrentPassword ? <FaEyeSlash /> : <FaEye />}
-                            </span>
-                        </div>
+                        <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">Mật khẩu hiện tại</label>
+                        <InputPassword
+                            name="currentPassword"
+                            value={formData.currentPassword}
+                            onChange={handleChange}
+                            error={errors.currentPassword}
+                            placeholder="Nhập mật khẩu hiện tại"
+                        />
+                        {errors.currentPassword && <p className="mt-1 text-sm text-red-500">{errors.currentPassword}</p>}
                     </div>
-
-                    {/* Mật khẩu mới */}
                     <div>
-                        <label className="mb-1 block text-sm font-medium">Mật khẩu mới</label>
-                        <div className="relative">
-                            <input
-                                type={showNewPassword ? "text" : "password"}
-                                name="newPassword"
-                                className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 pr-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 dark:border-gray-600 dark:bg-slate-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-500"
-                                value={formData.newPassword}
-                                onChange={handleChange}
-                                required
-                            />
-                            <span
-                                onClick={() => setShowNewPassword(!showNewPassword)}
-                                className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
-                            >
-                                {showNewPassword ? <FaEyeSlash /> : <FaEye />}
-                            </span>
-                        </div>
+                        <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">Mật khẩu mới</label>
+                        <InputPassword
+                            name="newPassword"
+                            value={formData.newPassword}
+                            onChange={handleChange}
+                            error={errors.newPassword}
+                            placeholder="Nhập mật khẩu mới"
+                        />
+                        {errors.newPassword && <p className="mt-1 text-sm text-red-500">{errors.newPassword}</p>}
                     </div>
-
-                    {/* Xác nhận mật khẩu */}
                     <div>
-                        <label className="mb-1 block text-sm font-medium">Xác nhận mật khẩu mới</label>
-                        <div className="relative">
-                            <input
-                                type={showConfirmPassword ? "text" : "password"}
-                                name="confirmPassword"
-                                className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 pr-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 dark:border-gray-600 dark:bg-slate-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-500"
-                                value={formData.confirmPassword}
-                                onChange={handleChange}
-                                required
-                            />
-                            <span
-                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                                className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-gray-500"
-                            >
-                                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-                            </span>
-                        </div>
+                        <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">Xác nhận mật khẩu mới</label>
+                        <InputPassword
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            error={errors.confirmPassword}
+                            placeholder="Xác nhận mật khẩu mới"
+                        />
+                        {errors.confirmPassword && <p className="mt-1 text-sm text-red-500">{errors.confirmPassword}</p>}
                     </div>
-
                     <div className="flex items-center justify-between">
                         <GoBack className="ml-2 text-gray-500 hover:text-gray-700" />
                         <button

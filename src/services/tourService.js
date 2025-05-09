@@ -1,9 +1,12 @@
 import { del, edit, get, post } from "../util/requestserver";
 
 // Lấy tất cả tour
-export const getDataTour = async () => {
+export const getDataTour = async (page, limit = 6) => {
     try {
-        const res = await get("tours");
+        const res = await get("tours", {
+            params: { page, limit },
+        });
+
         return {
             status: res.status,
             data: res.data,
@@ -21,6 +24,7 @@ export const getDataTour = async () => {
 export const deleteTour = async (id) => {
     try {
         const res = await del(`tours/${id}`);
+
         return {
             status: res.status,
             data: res.data,
@@ -38,6 +42,7 @@ export const deleteTour = async (id) => {
 export const updateTour = async (id, data) => {
     try {
         const res = await edit(`tours/${id}`, data);
+
         return {
             status: res.status,
             data: res.data,
@@ -50,10 +55,12 @@ export const updateTour = async (id, data) => {
         };
     }
 };
+
 // Tạo tour mới
 export const createDataTour = async (data) => {
     try {
         const res = await post("tours", data);
+
         return {
             status: res.status,
             data: res.data,
@@ -66,6 +73,7 @@ export const createDataTour = async (data) => {
         };
     }
 };
+
 // Upload ảnh tour
 export const uploadImageTour = async (tourId, formData) => {
     try {
@@ -74,6 +82,7 @@ export const uploadImageTour = async (tourId, formData) => {
                 "Content-Type": "multipart/form-data",
             },
         });
+
         return {
             status: res.status,
             data: res.data,

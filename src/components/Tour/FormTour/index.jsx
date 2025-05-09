@@ -74,7 +74,6 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     name="region"
                     value={data.region || ""}
                     onChange={(e) => {
-                        console.log("Region selected:", e.target.value); // Debug
                         handleChange(e);
                     }}
                     className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-[#00c0d1]"

@@ -23,7 +23,6 @@ function DeleteTour({ item, onReload }) {
 
         try {
             const result = await deleteTour(item.id);
-            console.log("Delete tour response:", result); // Debug
 
             if (result.status === 200 || result.status === 204) {
                 await Swal.fire({

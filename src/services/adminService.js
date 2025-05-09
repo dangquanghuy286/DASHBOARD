@@ -27,15 +27,58 @@ export const getInfoAdmin = async (id) => {
 //Sửa thông tin ADMIN
 export const putChangeInfoAdmin = async (id, data) => {
     try {
+        // Kiểm tra dữ liệu trước khi gửi
+        if (!id || !data.current_password || !data.password) {
+            return {
+                status: 400,
+                data: "Missing required fields: id, current_password, or password",
+            };
+        }
+
         const response = await edit(`users/${id}`, data);
-        return {
-            status: response.status,
-            data: response.data,
-        };
+        console.log("Raw response from server (putChangeInfoAdmin):", response);
+
+        // Kiểm tra nội dung phản hồi
+        if (response.status === 200) {
+            // Đảm bảo server trả về thông báo thành công
+            if (typeof response.data === "string" && response.data.toLowerCase().includes("success")) {
+                return {
+                    status: 200,
+                    data: response.data,
+                };
+            } else {
+                // Nếu server trả về 200 nhưng có lỗi (như "User not found")
+                return {
+                    status: 400,
+                    data: response.data || "Failed to update password",
+                };
+            }
+        } else {
+            // Trả về mã trạng thái và thông báo từ server
+            return {
+                status: response.status,
+                data: response.data || "Unexpected response from server",
+            };
+        }
     } catch (error) {
+        console.error("Lỗi API trong putChangeInfoAdmin:", {
+            message: error.message,
+            response: error.response?.data,
+            status: error.response?.status,
+        });
+
+        // Trả về thông báo lỗi chi tiết từ server nếu có
+        if (error.response) {
+            return {
+                status: error.response.status,
+                data: error.response.data?.message || error.response.data || "Error from server",
+            };
+        }
+
+        // Lỗi mạng hoặc không có phản hồi
         return {
-            status: error.response?.status || 500,
-            data: error.response?.data || "Something went wrong",
+            status: 500,
+            data: error.message === "Network Error" ? "Network error: Unable to connect to server" : "Something went wrong",
         };
     }
 };

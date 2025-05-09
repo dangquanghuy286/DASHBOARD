@@ -17,20 +17,32 @@ function EditTour({ item }) {
     const [itinerary, setItinerary] = useState(item?.itinerary || []);
     const [files, setFiles] = useState([]);
 
-    // Cập nhật lại data và itinerary mỗi khi item (props) thay đổi
     useEffect(() => {
         if (item) {
-            setData(item);
-            setItinerary(item.itinerary || []);
+            setData({
+                ...item,
+                startDate: item.startDate ? item.startDate.split("T")[0] : "",
+                endDate: item.endDate ? item.endDate.split("T")[0] : "",
+                price_adult: item.price_adult ? parseFloat(item.price_adult.replace(" VNĐ", "").replace(/\./g, "")) : 0,
+                price_child: item.price_child ? parseFloat(item.price_child.replace(" VNĐ", "").replace(/\./g, "")) : 0,
+                images: item.img ? [item.img] : [],
+            });
+
+            setItinerary(
+                item.itinerary?.length > 0
+                    ? item.itinerary.map((day, index) => ({
+                          day: index + 1,
+                          title: day.title || "",
+                          content: Array.isArray(day.content) ? day.content : day.content?.split("\n") || [],
+                      }))
+                    : [],
+            );
         }
     }, [item]);
 
-    // Hàm mở modal chỉnh sửa tour
     const openModal = () => {
         const today = new Date();
         const startDate = new Date(item.startDate + "T00:00:00");
-
-        // Ngăn không cho sửa nếu tour đã bắt đầu hoặc không còn trống
         if (!item.availability || startDate <= today) {
             Swal.fire({
                 position: "center",
@@ -49,24 +61,23 @@ function EditTour({ item }) {
         setFiles([]);
     };
 
-    // Hàm xử lý khi người dùng chọn ảnh mới
     const handleImageChange = (e) => {
         const uploadedFiles = e.target.files;
         setFiles(uploadedFiles ? Array.from(uploadedFiles) : []);
     };
 
-    // Hàm xử lý thay đổi các input trong form (data tour)
     const handleChange = (e) => {
         const { name, value } = e.target;
         let updatedData = { ...data };
 
         if (name === "availability") {
             updatedData[name] = value === "true";
+        } else if (["price_adult", "price_child", "quantity"].includes(name)) {
+            updatedData[name] = parseFloat(value) || 0;
         } else {
             updatedData[name] = value;
         }
 
-        // Khi thay đổi ngày bắt đầu/kết thúc -> tính lại duration + itinerary
         if (name === "startDate" || name === "endDate") {
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
@@ -90,18 +101,14 @@ function EditTour({ item }) {
         setData(updatedData);
     };
 
-    // Hàm xử lý khi thay đổi chi tiết từng ngày trong itinerary
     const handleItineraryChange = (index, field, value) => {
         const newItinerary = [...itinerary];
         if (field === "add") {
-            // Thêm ngày mới
             newItinerary.push({ day: newItinerary.length + 1, title: "", content: [] });
         } else if (field === "remove") {
-            // Xóa ngày
             newItinerary.splice(index, 1);
             newItinerary.forEach((item, i) => (item.day = i + 1));
         } else {
-            // Cập nhật title hoặc content
             newItinerary[index] = {
                 ...newItinerary[index],
                 [field]: field === "content" ? value.split("\n").filter(Boolean) : value,
@@ -110,7 +117,6 @@ function EditTour({ item }) {
         setItinerary(newItinerary);
     };
 
-    // Hàm submit cập nhật tour (dữ liệu + ảnh)
     const handleSubmit = async (e) => {
         e.preventDefault();
         const confirmResult = await Swal.fire({
@@ -124,9 +130,10 @@ function EditTour({ item }) {
         });
 
         if (confirmResult.isConfirmed) {
-            // Chuẩn bị dữ liệu để gửi API
             const apiData = {
                 ...data,
+                price_adult: `${data.price_adult.toLocaleString()} VNĐ`,
+                price_child: `${data.price_child.toLocaleString()} VNĐ`,
                 itinerary: itinerary.map((item, index) => ({
                     day: index + 1,
                     title: item.title,
@@ -135,14 +142,12 @@ function EditTour({ item }) {
             };
 
             try {
-                // Gọi API cập nhật tour
-                const result = await updateTour(data.tourId, apiData);
+                const result = await updateTour(data.id, apiData);
                 if (result.status === 200 || result.status === 201) {
-                    // Nếu có ảnh → tải ảnh lên server
                     if (files.length > 0) {
                         const formData = new FormData();
                         files.forEach((file) => formData.append("images", file));
-                        const uploadResult = await uploadImageTour(data.tourId, formData);
+                        const uploadResult = await uploadImageTour(data.id, formData);
                         if (uploadResult.status !== 200) {
                             console.warn("Upload ảnh thất bại:", uploadResult.data);
                         }
@@ -179,7 +184,6 @@ function EditTour({ item }) {
         }
     };
 
-    // Hàm hiển thị ảnh preview trước khi upload
     const renderAnh = () =>
         files.length > 0 ? (
             <div className="mt-2 flex flex-wrap gap-4">
@@ -191,6 +195,21 @@ function EditTour({ item }) {
                         <img
                             src={URL.createObjectURL(file)}
                             alt={`Ảnh ${index + 1}`}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                ))}
+            </div>
+        ) : Array.isArray(data.img) && data.img.length > 0 ? (
+            <div className="mt-2 flex flex-wrap gap-4">
+                {data.img.map((img, index) => (
+                    <div
+                        key={index}
+                        className="h-24 w-24 overflow-hidden rounded shadow"
+                    >
+                        <img
+                            src={img}
+                            alt={`Ảnh hiện tại ${index + 1}`}
                             className="h-full w-full object-cover"
                         />
                     </div>
