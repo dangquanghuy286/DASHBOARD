@@ -1,26 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { centralProvinces, dataRegion, destinations, northProvinces, southProvinces } from "../../../context/TourContext";
 
-// Dữ liệu các khu vực tour có thể chọn
-const dataRegion = [
-    { displayName: "Miền Bắc", value: "NORTH" },
-    { displayName: "Miền Trung", value: "CENTRAL" },
-    { displayName: "Miền Nam", value: "SOUTH" },
-];
+// Hàm lấy khu vực dựa trên điểm đến
+function getRegionFromDestination(destination) {
+    if (northProvinces.includes(destination)) return "NORTH";
+    if (centralProvinces.includes(destination)) return "CENTRAL";
+    if (southProvinces.includes(destination)) return "SOUTH";
+    return "";
+}
 
-/**
- * Form dùng để tạo hoặc chỉnh sửa thông tin tour du lịch
- * Các props chính:
- * - data: object chứa thông tin tour (tên, giá, mô tả, v.v.)
- * - itinerary: danh sách ngày đi trong lịch trình tour
- * - handleChange: xử lý thay đổi dữ liệu input (tên tour, điểm đến, giá, v.v.)
- * - handleItineraryChange: xử lý thay đổi lịch trình từng ngày
- * - handleSubmit: xử lý submit form
- * - closeModal: đóng modal form
- * - renderAnh: render danh sách ảnh đã chọn
- * - handleImageChange: xử lý khi người dùng chọn ảnh mới
- * - files: danh sách file ảnh được chọn
- */
 function TourForm({ data, itinerary, handleChange, handleItineraryChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [] }) {
+    // Tự động cập nhật khu vực khi điểm đến thay đổi
+    useEffect(() => {
+        if (data.destination) {
+            const region = getRegionFromDestination(data.destination);
+            if (region && region !== data.region) {
+                handleChange({ target: { name: "region", value: region } });
+            }
+        }
+    }, [data.destination, data.region, handleChange]);
+
     return (
         <form
             onSubmit={handleSubmit}
@@ -42,14 +41,22 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
             {/* Điểm đến */}
             <div>
                 <label className="block font-medium">Điểm đến:</label>
-                <input
-                    type="text"
+                <select
                     name="destination"
                     value={data.destination || ""}
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
+                    className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-[#00c0d1]"
                     required
-                />
+                >
+                    {destinations.map((item, index) => (
+                        <option
+                            key={index}
+                            value={item.value}
+                        >
+                            {item.label}
+                        </option>
+                    ))}
+                </select>
             </div>
 
             {/* Thời gian (readonly, tính tự động) */}
@@ -67,28 +74,15 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 />
             </div>
 
-            {/* Khu vực (select) */}
+            {/* Khu vực (hiển thị dạng read-only) */}
             <div>
                 <label className="block font-medium">Khu vực:</label>
-                <select
-                    name="region"
-                    value={data.region || ""}
-                    onChange={(e) => {
-                        handleChange(e);
-                    }}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-[#00c0d1]"
-                    required
-                >
-                    <option value="">Chọn khu vực</option>
-                    {dataRegion.map((item, index) => (
-                        <option
-                            key={index}
-                            value={item.value}
-                        >
-                            {item.displayName}
-                        </option>
-                    ))}
-                </select>
+                <input
+                    type="text"
+                    value={data.region ? dataRegion.find((r) => r.value === data.region).displayName : "Chưa chọn"}
+                    className="mt-1 w-full rounded-md border border-gray-300 bg-gray-100 p-2 text-gray-600"
+                    readOnly
+                />
             </div>
 
             {/* Mô tả tour */}

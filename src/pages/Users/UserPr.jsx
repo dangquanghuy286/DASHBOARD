@@ -43,7 +43,7 @@ function UserPr(props) {
     return (
         <div className="mt-0 flex flex-col rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-200 hover:shadow-lg sm:flex-row dark:border-gray-700 dark:bg-slate-800">
             <div className="flex w-full items-center justify-center sm:order-first sm:w-1/2">
-                <div className="h-50 w-50 overflow-hidden rounded-full border border-amber-300">
+                <div className="h-40 w-40 overflow-hidden rounded-full border border-amber-300">
                     <img
                         src={avatarUrl}
                         alt={user.fullname}

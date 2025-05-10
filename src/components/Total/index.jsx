@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
-import { getDashboardData } from "../../services/tourStatistics";
+
 import Card from "../Card";
+import { getDashboardData } from "../../services/dashboardService";
 
 const { GoPackage, MdOnlinePrediction, MdDoNotDisturbOnTotalSilence, FaUsers } = icons;
 

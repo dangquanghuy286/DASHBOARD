@@ -1,12 +1,12 @@
 import { del, edit, get, post } from "../util/requestserver";
 
 // Lấy tất cả tour
-export const getDataTour = async (page, limit = 6) => {
+export const getDataTour = async (page, limit = 1000) => {
     try {
         const res = await get("tours", {
             params: { page, limit },
         });
-
+        console.log("API Response:", res.data);
         return {
             status: res.status,
             data: res.data,

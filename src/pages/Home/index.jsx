@@ -1,4 +1,4 @@
-// import Chart from "../../components/Chart";
+import Chart from "../../components/Chart";
 import TotalAll from "../../components/Total";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Trang chủ</h1>
             </div>
             <TotalAll />
-            {/* <Chart /> */}
+            <Chart />
         </div>
     );
 }
