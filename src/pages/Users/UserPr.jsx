@@ -2,6 +2,7 @@
 import BlockUser from "../../components/User/Block";
 import EnableUser from "../../components/User/Enable";
 import DeleteUser from "../../components/User/Delete";
+import { Swal } from "sweetalert2/dist/sweetalert2";
 
 function UserPr(props) {
     const { user, onReload } = props;
@@ -31,7 +32,7 @@ function UserPr(props) {
         console.error("Failed to load avatar:", e.target.src);
         e.target.src = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
         // Thêm thông báo lỗi (tùy chọn)
-        // Swal.fire("Lỗi", "Không thể tải ảnh avatar", "error");
+        Swal.fire("Lỗi", "Không thể tải ảnh avatar", "error");
     };
 
     // Sử dụng BASE_URL tĩnh

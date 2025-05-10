@@ -21,7 +21,7 @@ function User() {
         const fetchApi = async () => {
             try {
                 const res = await getDataUser();
-                console.log("API Response:", res); // Log toàn bộ phản hồi để debug
+
                 if (res.status === 200) {
                     const users = Array.isArray(res.data.users) ? res.data.users : res.data; // Xử lý nếu data là mảng trực tiếp
                     const dataArray = users.reverse().map((user) => ({
