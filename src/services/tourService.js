@@ -6,7 +6,7 @@ export const getDataTour = async (page, limit = 10) => {
         const res = await get("tours", {
             params: { page, limit },
         });
-        console.log("API Response:", res.data);
+
         return {
             status: res.status,
             data: res.data,
@@ -20,11 +20,27 @@ export const getDataTour = async (page, limit = 10) => {
     }
 };
 
+// Lấy chi tiết tour theo ID
+export const getTourById = async (id) => {
+    try {
+        const res = await get(`tours/${id}`);
+        return {
+            status: res.status,
+            data: res.data,
+        };
+    } catch (error) {
+        console.error(`Error fetching tour with ID ${id}:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi lấy thông tin tour",
+        };
+    }
+};
+
 // Xóa tour theo ID
 export const deleteTour = async (id) => {
     try {
         const res = await del(`tours/${id}`);
-
         return {
             status: res.status,
             data: res.data,
@@ -38,11 +54,10 @@ export const deleteTour = async (id) => {
     }
 };
 
-// Cập nhật tour
+// Cập nhật thông tin tour
 export const updateTour = async (id, data) => {
     try {
         const res = await edit(`tours/${id}`, data);
-
         return {
             status: res.status,
             data: res.data,
@@ -56,11 +71,37 @@ export const updateTour = async (id, data) => {
     }
 };
 
+// Cập nhật ảnh tour
+export const updateTourImages = async (tourId, files) => {
+    try {
+        const formData = new FormData();
+        files.forEach((file) => {
+            formData.append("files", file); // Tên field phải trùng với backend (`@RequestParam("files")`)
+        });
+
+        const res = await edit(`tours/${tourId}/images`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+
+        return {
+            status: res.status,
+            data: res.data,
+        };
+    } catch (error) {
+        console.error(`Error updating images for tour ${tourId}:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi cập nhật ảnh tour",
+        };
+    }
+};
+
 // Tạo tour mới
 export const createDataTour = async (data) => {
     try {
         const res = await post("tours", data);
-
         return {
             status: res.status,
             data: res.data,
@@ -82,7 +123,6 @@ export const uploadImageTour = async (tourId, formData) => {
                 "Content-Type": "multipart/form-data",
             },
         });
-
         return {
             status: res.status,
             data: res.data,

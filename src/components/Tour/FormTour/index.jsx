@@ -9,7 +9,19 @@ function getRegionFromDestination(destination) {
     return "";
 }
 
-function TourForm({ data, itinerary, handleChange, handleItineraryChange, handleSubmit, closeModal, renderAnh, handleImageChange, files = [], loading, uploadProgress }) {
+function TourForm({
+    data,
+    itinerary,
+    handleChange,
+    handleItineraryChange,
+    handleSubmit,
+    closeModal,
+    renderAnh,
+    handleImageChange,
+    files = [],
+    loading,
+    uploadProgress,
+}) {
     // Tự động cập nhật khu vực khi điểm đến thay đổi
     useEffect(() => {
         if (data.destination) {
@@ -48,6 +60,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                     className="mt-1 w-full rounded-md border border-gray-300 p-3 focus:ring-2 focus:ring-[#00c0d1]"
                     required
                 >
+                    <option value="">Chọn điểm đến</option>
                     {destinations.map((item, index) => (
                         <option
                             key={index}
@@ -79,7 +92,7 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 <label className="block font-medium">Khu vực:</label>
                 <input
                     type="text"
-                    value={data.region ? dataRegion.find((r) => r.value === data.region).displayName : "Chưa chọn"}
+                    value={data.region ? dataRegion.find((r) => r.value === data.region)?.displayName : "Chưa chọn"}
                     className="mt-1 w-full rounded-md border border-gray-300 bg-gray-100 p-2 text-gray-600"
                     readOnly
                 />
@@ -117,8 +130,8 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 <label className="block font-medium">Giá người lớn (VNĐ):</label>
                 <input
                     type="number"
-                    name="price_adult"
-                    value={data.price_adult ?? ""}
+                    name="priceAdult"
+                    value={data.priceAdult ?? ""}
                     onChange={handleChange}
                     className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"
@@ -131,8 +144,8 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 <label className="block font-medium">Giá trẻ em (VNĐ):</label>
                 <input
                     type="number"
-                    name="price_child"
-                    value={data.price_child ?? ""}
+                    name="priceChild"
+                    value={data.priceChild ?? ""}
                     onChange={handleChange}
                     className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"
@@ -186,7 +199,8 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
             <div>
                 <div>
                     <label className="block font-medium">
-                        Ảnh: <span className="font-medium text-[#00c0d1]">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh"}</span>
+                        Ảnh:{" "}
+                        <span className="font-medium text-[#00c0d1]">{files.length > 0 ? `${files.length} ảnh đã chọn` : "Chưa chọn ảnh mới"}</span>
                         <span className="ml-2 text-sm text-gray-500">(Tối đa 5 ảnh)</span>
                     </label>
                     <div className="mt-2 flex items-center gap-4">
@@ -206,11 +220,15 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                         onChange={handleImageChange}
                         className="hidden"
                     />
-                    {/* Hiển thị ảnh đã chọn */}
+                    {/* Hiển thị ảnh đã chọn hoặc ảnh hiện tại */}
                     {renderAnh()}
                     {uploadProgress > 0 && uploadProgress < 100 && (
                         <div className="mt-2">
-                            <progress value={uploadProgress} max="100" className="w-full" />
+                            <progress
+                                value={uploadProgress}
+                                max="100"
+                                className="w-full"
+                            />
                             <span className="text-sm">{uploadProgress}%</span>
                         </div>
                     )}
@@ -277,13 +295,13 @@ function TourForm({ data, itinerary, handleChange, handleItineraryChange, handle
                 </button>
                 <button
                     type="submit"
-                    className="rounded-md bg-green-500 px-4 py-2 text-white hover:bg-green-600 flex items-center"
+                    className="flex items-center rounded-md bg-green-500 px-4 py-2 text-white hover:bg-green-600"
                     disabled={loading}
                 >
                     {loading ? (
                         <>
                             <svg
-                                className="animate-spin h-5 w-5 mr-2 text-white"
+                                className="mr-2 h-5 w-5 animate-spin text-white"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
