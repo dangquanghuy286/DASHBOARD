@@ -1,7 +1,7 @@
 import { del, edit, get, post } from "../util/requestserver";
 
 // Lấy tất cả tour
-export const getDataTour = async (page, limit = 1000) => {
+export const getDataTour = async (page, limit = 10) => {
     try {
         const res = await get("tours", {
             params: { page, limit },

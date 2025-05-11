@@ -25,6 +25,7 @@ function UserPr(props) {
     const getRoleName = () => {
         if (!user.role) return "N/A";
         if (user.role.roleId === 2) return "Admin";
+        if (user.role.roleId === 1) return "User";
         return user.role.name || "N/A";
     };
 
