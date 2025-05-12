@@ -14,10 +14,10 @@ function Card({ icon, title, value, percentage, valueClass = "text-slate-900 dar
             </div>
             <div className="card-body bg-slate-100 transition-colors dark:bg-slate-950">
                 <p className={`text-3xl font-bold ${valueClass}`}>{value}</p>
-                <span className="bodr-[#019fb5] flex w-fit items-center gap-x-2 rounded-full border px-2 py-1 font-medium text-[#019fb5] dark:border-[#019fb5] dark:text-[#019fb5]">
+                {/* <span className="border-[#019fb5] flex w-fit items-center gap-x-2 rounded-full border px-2 py-1 font-medium text-[#019fb5] dark:border-[#019fb5] dark:text-[#019fb5]">
                     <TrendIcon size={20} />
                     <span>{percentage}%</span>
-                </span>
+                </span> */}
             </div>
         </div>
     );

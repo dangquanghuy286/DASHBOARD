@@ -11,76 +11,38 @@ const { FaSearch } = icons;
 
 function ShowBookingTour() {
     const [data, setData] = useState([]);
-    const [originalData, setOriginalData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0); // Track current page
-    const [limit] = useState(10); // Limit for pagination (10 per page)
+    const [currentPage, setCurrentPage] = useState(0); // Page index từ 0
+    const [limit] = useState(10); // 10 bản ghi mỗi trang
+    const [totalPages, setTotalPages] = useState(1); // Tổng số trang
+    const [keyword, setKeyword] = useState(""); // Từ khóa tìm kiếm
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const res = await getDataBookingTour();
+                const res = await getDataBookingTour(currentPage + 1, limit, keyword); // API expects 1-based page
+                const dataArray = res.data || [];
 
-                const dataArray = res.reverse() || [];
                 setData(dataArray);
-                setOriginalData(dataArray);
+                setTotalPages(res.totalPages || 1);
             } catch (error) {
                 console.error("Lỗi khi tải dữ liệu:", error);
                 setData([]);
-                setOriginalData([]);
+                setTotalPages(1);
             }
         };
         fetchApi();
-    }, []);
-
-    const removeDiacritics = (str) => {
-        if (!str || typeof str !== "string") return "";
-        return str
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/đ/g, "d")
-            .replace(/Đ/g, "D");
-    };
+    }, [currentPage, limit, keyword]);
 
     const onSearch = (formData) => {
         const searchTerm = formData.name?.toLowerCase().trim() || "";
-        if (!searchTerm) {
-            setData(originalData);
-            return;
-        }
-
-        const searchTermNoDiacritics = removeDiacritics(searchTerm);
-        const filteredData = originalData.filter((booking) => {
-            const tourName = booking.tourName?.toLowerCase() || "";
-            const userName = booking.customerName?.toLowerCase() || "";
-
-            const tourNameNoDiacritics = removeDiacritics(tourName);
-            const userNameNoDiacritics = removeDiacritics(userName);
-
-            return (
-                tourName.includes(searchTerm) ||
-                tourNameNoDiacritics.includes(searchTermNoDiacritics) ||
-                userName.includes(searchTerm) ||
-                userNameNoDiacritics.includes(searchTermNoDiacritics)
-            );
-        });
-
-        setData(filteredData);
+        setKeyword(searchTerm);
+        setCurrentPage(0); // Reset về trang đầu
     };
 
-    // Handle page change
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
-
-    // Paginate the data
-    const paginateData = () => {
-        const startIndex = currentPage * limit;
-        const endIndex = startIndex + limit;
-        return data.slice(startIndex, endIndex);
-    };
-
-    const totalPages = Math.ceil(data.length / limit);
 
     return (
         <div className="min-h-screen bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
@@ -114,20 +76,19 @@ function ShowBookingTour() {
                             {...register("name")}
                             type="text"
                             placeholder="Tìm kiếm theo tên tour hoặc tên người dùng"
-                            className="*dark:placeholder:text-slate-400 w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50"
+                            className="w-full bg-transparent text-slate-900 outline-0 placeholder:text-slate-300 dark:text-slate-50 dark:placeholder:text-slate-400"
                         />
                     </div>
                 </form>
             </div>
 
-            {/* Render the BookingTourTable with paginated data */}
+            {/* Bảng danh sách booking tour */}
+            <BookingTourTable currentEntries={data} />
             <EntriesFilter
                 currentPage={currentPage}
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
-            >
-                {() => <BookingTourTable currentEntries={paginateData()} />}
-            </EntriesFilter>
+            />
 
             <div className="mb-4">
                 <GoBack />

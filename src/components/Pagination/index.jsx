@@ -27,7 +27,7 @@ function EntriesFilter({ currentPage, totalPages, onPageChange }) {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             {/* Nút Prev */}
             <button
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#019fb5] to-[#00c0d1] text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#065863] to-[#00c0d1] text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 0}
             >
@@ -49,7 +49,7 @@ function EntriesFilter({ currentPage, totalPages, onPageChange }) {
                         onClick={() => handlePageChange(number)}
                         className={`flex h-8 w-8 items-center justify-center rounded-full text-sm transition ${
                             currentPage === number
-                                ? "bg-gradient-to-r from-[#019fb5] to-[#00c0d1] text-white"
+                                ? "bg-gradient-to-r from-[#058091] to-[#00c0d1] text-white"
                                 : "bg-gradient-to-r from-[#019fb5]/80 to-[#00c0d1]/80 text-white hover:from-[#019fb5] hover:to-[#00c0d1]"
                         }`}
                     >

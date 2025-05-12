@@ -39,7 +39,6 @@ function UserPr(props) {
     // Sử dụng BASE_URL tĩnh
     const BASE_URL = "http://localhost:8088";
     const avatarUrl = user.avatar || `${BASE_URL}/api/v1/users/avatars/default-avatar.jpg`;
-    console.log("Avatar URL for", user.fullname, ":", avatarUrl); // Log để debug
 
     return (
         <div className="mt-0 flex flex-col rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-200 hover:shadow-lg sm:flex-row dark:border-gray-700 dark:bg-slate-800">
