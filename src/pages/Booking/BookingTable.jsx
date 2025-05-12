@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
-import { edit } from "../../util/request";
+import { confirmPaymentAndBooking } from "../../services/bookingApi"; // Thêm import hàm mới
 import { Link } from "react-router-dom";
 import VNPAY from "../../assets/Img/images.png";
 import PayOffice from "../../assets/Img/companypay.png";
@@ -27,13 +27,16 @@ function BookingTourTable({ currentEntries }) {
             const booking = bookingData.find((b) => b.booking_id === bookingId);
             if (!booking) throw new Error("Không tìm thấy booking");
 
-            await edit(`bookings/${booking.booking_id}`, {
-                booking_status: "CONFIRMED",
-                payment_status: "PAID",
-            });
+            // Gọi API confirm-payment-and-booking
+            const response = await confirmPaymentAndBooking(bookingId);
 
+            if (response.status !== 200) {
+                throw new Error(response.data || "Lỗi khi xác nhận thanh toán và booking");
+            }
+
+            // Cập nhật trạng thái trong giao diện
             const updatedBookingData = bookingData.map((b) =>
-                b.booking_id === bookingId ? { ...b, booking_status: "CONFIRMED", payment_status: "PAID" } : b,
+                b.booking_id === bookingId ? { ...b, booking_status: "CONFIRMED", payment_status: "COMPLETED" } : b,
             );
 
             setBookingData(updatedBookingData);
@@ -64,6 +67,8 @@ function BookingTourTable({ currentEntries }) {
                 case "PENDING":
                     return "Chưa thanh toán";
                 case "PAID":
+                    return "Đã thanh toán";
+                case "COMPLETED":
                     return "Đã thanh toán";
                 default:
                     return status || "Không xác định";
@@ -96,7 +101,8 @@ function BookingTourTable({ currentEntries }) {
                         </thead>
                         <tbody>
                             {bookingData.map((item, index) => {
-                                const badgeClass = "inline-block min-w-[120px] text-center px-2 py-1 text-xs text-white rounded font-semibold";
+                                const badgeClass =
+                                    "inline-block min-w-[120px] text-center px-2 fidefaut py-1 text-xs text-white rounded font-semibold";
 
                                 return (
                                     <tr
@@ -148,11 +154,10 @@ function BookingTourTable({ currentEntries }) {
                                                 "Chưa xác định"
                                             )}
                                         </td>
-
                                         <td className="border px-4 py-2 text-center">
                                             <span
                                                 className={`${badgeClass} ${
-                                                    item.payment_status === "PAID"
+                                                    item.payment_status === "PAID" || item.payment_status === "COMPLETED"
                                                         ? "bg-green-500"
                                                         : item.payment_status === "PENDING" || !item.payment_status
                                                           ? "bg-red-500"
