@@ -1,30 +1,20 @@
 import { get } from "../util/requestserver";
 
-// Booking
-export const getDataBookingTour = async (page, limit = 10, keyword = "") => {
+export const getDataBookingTour = async (page, limit = 10000, keyword = "") => {
     try {
         const res = await get("bookings", {
-            params: { page: page - 1, limit, keyword }, // Backend dùng page từ 0
+            params: { page, limit, keyword },
         });
-
-        if (res.status !== 200) {
-            throw new Error("Lỗi phản hồi từ server");
-        }
 
         return {
             status: res.status,
-            data: res.data.content || [], // Dữ liệu booking nằm trong content
-            totalItems: res.data.totalElements || 0, // Tổng số bản ghi
-            totalPages: res.data.totalPages || 1, // Tổng số trang
+            data: res.data,
         };
     } catch (error) {
         console.error("Error fetching bookings:", error);
         return {
             status: error.response?.status || 500,
-            data: [],
-            totalItems: 0,
-            totalPages: 1,
-            message: error.message || "Lỗi khi lấy danh sách booking",
+            data: error.response?.data || "Lỗi khi lấy danh sách booking",
         };
     }
 };

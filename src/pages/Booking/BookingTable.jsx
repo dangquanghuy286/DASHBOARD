@@ -1,9 +1,9 @@
-// BookingTourTable.js
 import { useEffect, useState } from "react";
 import icons from "../../util/icon";
 import { edit } from "../../util/request";
 import { Link } from "react-router-dom";
-
+import VNPAY from "../../assets/Img/images.png";
+import PayOffice from "../../assets/Img/companypay.png";
 const { IoIosArrowDropdownCircle } = icons;
 
 function BookingTourTable({ currentEntries }) {
@@ -12,7 +12,7 @@ function BookingTourTable({ currentEntries }) {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        console.log("Current entries in BookingTourTable:", currentEntries); // Debug dữ liệu đầu vào
+        console.log("Current entries in BookingTourTable:", currentEntries);
         if (currentEntries && Array.isArray(currentEntries)) {
             setBookingData(currentEntries);
         } else {
@@ -27,7 +27,7 @@ function BookingTourTable({ currentEntries }) {
             const booking = bookingData.find((b) => b.booking_id === bookingId);
             if (!booking) throw new Error("Không tìm thấy booking");
 
-            await edit(`bookings/${booking.id}`, {
+            await edit(`bookings/${booking.booking_id}`, {
                 booking_status: "CONFIRMED",
                 payment_status: "PAID",
             });
@@ -100,7 +100,7 @@ function BookingTourTable({ currentEntries }) {
 
                                 return (
                                     <tr
-                                        key={item.id || index} // Dùng id hoặc index làm key
+                                        key={item.booking_id || index} // Sử dụng booking_id làm key
                                         className="transition hover:bg-gray-100 dark:hover:bg-slate-700"
                                     >
                                         <td className="border px-4 py-2">{item.title || "Chưa cập nhật"}</td>
@@ -128,22 +128,33 @@ function BookingTourTable({ currentEntries }) {
                                             </span>
                                         </td>
                                         <td className="border px-4 py-2 text-center">
-                                            {item.payment_method === "VNPAY" ? (
-                                                <img
-                                                    src="/images/vnpay.png"
-                                                    alt="VNPAY"
-                                                    className="mx-auto h-12 w-12 rounded-full"
-                                                />
+                                            {item.payment_method ? (
+                                                item.payment_method === "VNPAY" ? (
+                                                    <img
+                                                        src={VNPAY}
+                                                        alt="VNPAY"
+                                                        className="mx-auto h-12 w-12 rounded-full"
+                                                    />
+                                                ) : item.payment_method === "Tại văn phòng" ? (
+                                                    <img
+                                                        src={PayOffice}
+                                                        alt="Tại văn phòng"
+                                                        className="mx-auto h-12 w-12 rounded-full"
+                                                    />
+                                                ) : (
+                                                    item.payment_method
+                                                )
                                             ) : (
-                                                item.payment_method || "Chưa xác định"
+                                                "Chưa xác định"
                                             )}
                                         </td>
+
                                         <td className="border px-4 py-2 text-center">
                                             <span
                                                 className={`${badgeClass} ${
                                                     item.payment_status === "PAID"
                                                         ? "bg-green-500"
-                                                        : item.payment_status === "PENDING"
+                                                        : item.payment_status === "PENDING" || !item.payment_status
                                                           ? "bg-red-500"
                                                           : "bg-gray-500"
                                                 }`}
@@ -171,7 +182,7 @@ function BookingTourTable({ currentEntries }) {
                                                                 ✅ Xác nhận
                                                             </button>
                                                         )}
-                                                        <Link to={`/booking/${item.id}`}>
+                                                        <Link to={`/booking/${item.booking_id}`}>
                                                             <button className="w-full px-4 py-2 text-left text-sm text-blue-600 hover:bg-blue-50">
                                                                 📄 Xem chi tiết
                                                             </button>
