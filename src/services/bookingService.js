@@ -18,6 +18,7 @@ export const getDataBookingTour = async (page, limit = 10, keyword = "") => {
         };
     }
 };
+
 // Lấy thông tin booking theo ID
 export const getDataBookingTourById = async (id) => {
     try {
@@ -34,10 +35,11 @@ export const getDataBookingTourById = async (id) => {
         };
     }
 };
+
 // Xác nhận thanh toán và cập nhật trạng thái booking sang CONFIRMED
 export const confirmPaymentAndBooking = async (bookingId) => {
     try {
-        const res = await post(`bookings/${bookingId}/confirm-payment-and-booking`);
+        const res = await post(`/bookings/${bookingId}/confirm-payment-and-booking`);
         return {
             status: res.status,
             data: res.data,

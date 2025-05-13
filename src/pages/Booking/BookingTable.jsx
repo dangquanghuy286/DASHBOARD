@@ -1,17 +1,30 @@
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2"; // Import Swal
 import icons from "../../util/icon";
-import { confirmPaymentAndBooking } from "../../services/bookingApi"; // Thêm import hàm mới
 import { Link } from "react-router-dom";
 import VNPAY from "../../assets/Img/images.png";
 import PayOffice from "../../assets/Img/companypay.png";
+import { confirmPaymentAndBooking } from "../../services/bookingService";
+
 const { IoIosArrowDropdownCircle } = icons;
 
 function BookingTourTable({ currentEntries }) {
     const [dropdownOpen, setDropdownOpen] = useState(null);
     const [bookingData, setBookingData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
+        // Kiểm tra token khi component mount
+        const token = localStorage.getItem("token");
+        if (token) {
+            // Giả sử token chứa vai trò ADMIN nếu tồn tại, vì bạn chỉ lưu cho admin
+            setIsAdmin(true);
+        } else {
+            setIsAdmin(false);
+        }
+
+        // Xử lý currentEntries
         console.log("Current entries in BookingTourTable:", currentEntries);
         if (currentEntries && Array.isArray(currentEntries)) {
             setBookingData(currentEntries);
@@ -22,29 +35,62 @@ function BookingTourTable({ currentEntries }) {
     }, [currentEntries]);
 
     const handleConfirmBooking = async (bookingId) => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            Swal.fire({
+                icon: "error",
+                title: "Vui lòng đăng nhập",
+                text: "Bạn cần đăng nhập với tài khoản admin để thực hiện hành động này.",
+                confirmButtonText: "Đến trang đăng nhập",
+            }).then(() => {
+                window.location.href = "/login";
+            });
+            return;
+        }
+
         setIsLoading(true);
         try {
             const booking = bookingData.find((b) => b.booking_id === bookingId);
             if (!booking) throw new Error("Không tìm thấy booking");
 
-            // Gọi API confirm-payment-and-booking
             const response = await confirmPaymentAndBooking(bookingId);
 
             if (response.status !== 200) {
                 throw new Error(response.data || "Lỗi khi xác nhận thanh toán và booking");
             }
 
-            // Cập nhật trạng thái trong giao diện
             const updatedBookingData = bookingData.map((b) =>
                 b.booking_id === bookingId ? { ...b, booking_status: "CONFIRMED", payment_status: "COMPLETED" } : b,
             );
 
             setBookingData(updatedBookingData);
             setDropdownOpen(null);
-            alert("Xác nhận booking thành công!");
+
+            Swal.fire({
+                icon: "success",
+                title: "Thành công!",
+                text: "Xác nhận thanh toán và booking thành công.",
+                confirmButtonText: "OK",
+            });
         } catch (error) {
             console.error("Error confirming booking:", error);
-            alert("Lỗi khi xác nhận booking: " + error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Lỗi khi xác nhận",
+                text: error.message,
+                confirmButtonText: "Thử lại",
+            });
+            if (error.response?.status === 401) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Phiên đăng nhập hết hạn",
+                    text: "Vui lòng đăng nhập lại.",
+                    confirmButtonText: "Đến trang đăng nhập",
+                }).then(() => {
+                    localStorage.removeItem("token");
+                    window.location.href = "/login";
+                });
+            }
         } finally {
             setIsLoading(false);
         }
@@ -67,7 +113,6 @@ function BookingTourTable({ currentEntries }) {
                 case "PENDING":
                     return "Chưa thanh toán";
                 case "PAID":
-                    return "Đã thanh toán";
                 case "COMPLETED":
                     return "Đã thanh toán";
                 default:
@@ -101,12 +146,11 @@ function BookingTourTable({ currentEntries }) {
                         </thead>
                         <tbody>
                             {bookingData.map((item, index) => {
-                                const badgeClass =
-                                    "inline-block min-w-[120px] text-center px-2 fidefaut py-1 text-xs text-white rounded font-semibold";
+                                const badgeClass = "inline-block min-w-[120px] text-center px-2 py-1 text-xs text-white rounded font-semibold";
 
                                 return (
                                     <tr
-                                        key={item.booking_id || index} // Sử dụng booking_id làm key
+                                        key={item.booking_id || index}
                                         className="transition hover:bg-gray-100 dark:hover:bg-slate-700"
                                     >
                                         <td className="border px-4 py-2">{item.title || "Chưa cập nhật"}</td>
@@ -141,14 +185,12 @@ function BookingTourTable({ currentEntries }) {
                                                         alt="VNPAY"
                                                         className="mx-auto h-12 w-12 rounded-full"
                                                     />
-                                                ) : item.payment_method === "Tại văn phòng" ? (
+                                                ) : (
                                                     <img
                                                         src={PayOffice}
-                                                        alt="Tại văn phòng"
+                                                        alt="Thanh toán tại văn phòng"
                                                         className="mx-auto h-12 w-12 rounded-full"
                                                     />
-                                                ) : (
-                                                    item.payment_method
                                                 )
                                             ) : (
                                                 "Chưa xác định"
@@ -178,7 +220,7 @@ function BookingTourTable({ currentEntries }) {
                                                 </button>
                                                 {dropdownOpen === item.booking_id && (
                                                     <div className="absolute top-full right-0 z-10 mt-2 min-w-[140px] rounded border bg-white text-left shadow-md">
-                                                        {item.booking_status === "PENDING" && (
+                                                        {item.booking_status === "PENDING" && item.payment_status === "PENDING" && isAdmin && (
                                                             <button
                                                                 className="w-full px-4 py-2 text-left text-sm text-green-600 hover:bg-green-50"
                                                                 onClick={() => handleConfirmBooking(item.booking_id)}
