@@ -8,7 +8,6 @@ function Invoice({ item }) {
         console.error("Invoice: item is undefined or null", item);
         return <div className="text-center text-red-600">Lỗi: Dữ liệu hóa đơn không hợp lệ</div>;
     }
-    console.log("Invoice Data:", item);
 
     // Sử dụng trực tiếp item từ BookingDetail
     const bookingData = {

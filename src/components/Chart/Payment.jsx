@@ -15,7 +15,7 @@ const PaymentDataCard = () => {
         const fetchApi = async () => {
             try {
                 const res = await getDashboardData();
-                console.log("API Response:", res); // Debug API response
+                // Debug API response
                 if (res.status === 200 && res.data && res.data.paymentMethods) {
                     // Ánh xạ paymentMethods thành định dạng phù hợp cho PieChart
                     const formattedData = res.data.paymentMethods.map((method, index) => ({

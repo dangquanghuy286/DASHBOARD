@@ -15,7 +15,6 @@ function TourStatistics() {
         const fetchApi = async () => {
             try {
                 const res = await getDashboardData();
-                console.log("res", res);
 
                 if (res.status !== 200) {
                     console.error("Không thể lấy dữ liệu dashboard:", res);

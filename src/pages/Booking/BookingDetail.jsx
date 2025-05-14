@@ -14,7 +14,7 @@ function BookingDetail() {
         const fetchApi = async () => {
             try {
                 const response = await getDataBookingTourById(id);
-                console.log("API Response:", response);
+
                 if (response.status === 200) {
                     const data = response.data;
                     // Ánh xạ dữ liệu từ API sang định dạng Invoice mong đợi
@@ -75,8 +75,6 @@ function BookingDetail() {
         };
         fetchApi();
     }, [id]);
-
-    console.log("Booking Detail:", bookingDetail);
 
     if (loading) {
         return <p>Đang tải...</p>;

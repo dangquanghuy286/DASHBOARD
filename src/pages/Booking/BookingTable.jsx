@@ -3,7 +3,7 @@ import Swal from "sweetalert2"; // Import Swal
 import icons from "../../util/icon";
 import { Link } from "react-router-dom";
 import VNPAY from "../../assets/Img/images.png";
-import PayOffice from "../../assets/Img/companypay.png";
+import PayOffice from "../../assets/Img/payoffice.png";
 import { confirmPaymentAndBooking } from "../../services/bookingService";
 
 const { IoIosArrowDropdownCircle } = icons;
@@ -24,8 +24,6 @@ function BookingTourTable({ currentEntries }) {
             setIsAdmin(false);
         }
 
-        // Xử lý currentEntries
-        console.log("Current entries in BookingTourTable:", currentEntries);
         if (currentEntries && Array.isArray(currentEntries)) {
             setBookingData(currentEntries);
         } else {
@@ -139,9 +137,9 @@ function BookingTourTable({ currentEntries }) {
                                 <th className="border px-4 py-2">Trẻ em</th>
                                 <th className="border px-4 py-2">Tổng tiền</th>
                                 <th className="border px-4 py-2">Trạng thái booking</th>
-                                <th className="border px-4 py-2">Phương thức thanh toán</th>
+                                <th className="payment-column border px-4 py-2">Phương thức thanh toán</th>
                                 <th className="border px-4 py-2">Trạng thái thanh toán</th>
-                                <th className="border px-4 py-2 text-center">Hành động</th>
+                                <th className="action-column border px-4 py-2 text-center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -177,7 +175,7 @@ function BookingTourTable({ currentEntries }) {
                                                 {translateStatus(item.booking_status, "booking")}
                                             </span>
                                         </td>
-                                        <td className="border px-4 py-2 text-center">
+                                        <td className="payment-column border px-4 py-2 text-center">
                                             {item.payment_method ? (
                                                 item.payment_method === "VNPAY" ? (
                                                     <img
@@ -209,7 +207,7 @@ function BookingTourTable({ currentEntries }) {
                                                 {translateStatus(item.payment_status, "payment")}
                                             </span>
                                         </td>
-                                        <td className="border px-4 py-2 text-center">
+                                        <td className="action-column border px-4 py-2 text-center">
                                             <div className="relative flex items-center justify-center">
                                                 <button
                                                     className="text-blue-600 hover:text-blue-800"

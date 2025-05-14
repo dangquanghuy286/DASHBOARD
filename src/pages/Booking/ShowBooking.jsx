@@ -24,7 +24,6 @@ function ShowBookingTour() {
         try {
             setIsLoading(true); // Bắt đầu loading
             const res = await getDataBookingTour(page, limit); // Gửi page và limit=10
-            console.log("API Response:", res.data);
 
             const dataArray = res.data?.content && Array.isArray(res.data.content) ? res.data.content : [];
 
