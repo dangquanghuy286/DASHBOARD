@@ -16,7 +16,6 @@ function TourRecent() {
                 if (!res || !res.data || !res.data.latestBookings || !Array.isArray(res.data.latestBookings)) {
                     throw new Error("Dữ liệu booking không hợp lệ hoặc không tồn tại");
                 }
-                console.log("Latest bookings:", res.data.latestBookings);
 
                 // Ánh xạ latestBookings
                 const formattedData = res.data.latestBookings.map((booking) => ({
@@ -54,7 +53,7 @@ function TourRecent() {
                 <div className="w-full overflow-x-auto">
                     <table className="w-full table-auto border-collapse border border-gray-300 text-sm dark:text-amber-50">
                         <thead>
-                            <tr className="bg-blue-100 text-black">
+                            <tr className="bg-blue-100 text-black dark:bg-slate-800 dark:text-[#019fb5]">
                                 <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">ID</th>
                                 <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">Khách Hàng</th>
                                 <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">Tên Tour</th>
