@@ -4,6 +4,7 @@ import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "../assets/Font/Roboto_Condensed-Bold-normal.js";
+import "../assets/Font/Roboto-Regular-normal.js";
 import photo from "./../assets/Img/logo.png";
 //Hàm Copy dữ liệu
 export const handleCopy = (data, type) => {
@@ -212,7 +213,9 @@ export const handleExcel = (data, type) => {
 // Hàm xuất PDF
 export const handleToPdf = (data, type) => {
     const doc = new jsPDF("landscape", "pt", "a4");
-    doc.setFont("Roboto", "normal");
+
+    // Đặt font mặc định cho toàn bộ PDF
+    doc.setFont("Roboto-Regular", "normal");
 
     const headers =
         type === "tour"
@@ -269,17 +272,18 @@ export const handleToPdf = (data, type) => {
         body: rows,
         theme: "grid",
         styles: {
-            font: "Roboto",
+            font: "Roboto-Regular",
             fontSize: 10,
             textColor: [0, 0, 0],
             cellPadding: 5,
             halign: "left",
         },
         headStyles: {
+            font: "Roboto_Condensed-Bold",
+            fontSize: 12,
+            fontStyle: "normal",
             fillColor: [41, 128, 185],
             textColor: [255, 255, 255],
-            fontSize: 12,
-            fontStyle: "bold",
         },
         startY: 40,
     });

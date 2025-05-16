@@ -50,7 +50,7 @@ const ContactNotifications = () => {
                             <li
                                 key={contact.id}
                                 className={`p-4 transition-colors hover:bg-gray-50 sm:p-6 dark:hover:bg-gray-700 ${
-                                    contact.checked ? "bg-green-50 dark:bg-green-900" : ""
+                                    contact.checked ? "bg-green-50 dark:bg-gray-700" : ""
                                 }`}
                             >
                                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

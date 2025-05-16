@@ -58,7 +58,7 @@ function TopbookedTour() {
                     <div className="overflow-x-auto">
                         <table className="w-full table-auto border-collapse dark:text-amber-50">
                             <thead>
-                                <tr className="bg-blue-100 text-black dark:bg-slate-800 dark:text-[#019fb5]">
+                                <tr className="bg-gray-100 dark:bg-slate-800">
                                     <th className="border border-gray-300 px-4 py-2">ID</th>
                                     <th className="border border-gray-300 px-4 py-2">Tên Tour</th>
                                     <th className="border border-gray-300 px-4 py-2">Chỗ Đã Đặt</th>
