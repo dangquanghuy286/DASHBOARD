@@ -131,8 +131,8 @@ function TourForm({
                 <label className="block font-medium">Số lượng chỗ:</label>
                 <input
                     type="number"
-                    name="quantity"
-                    value={data.quantity ?? ""}
+                    name="availableSlots"
+                    value={data.availableSlots ?? ""}
                     onChange={handleChange}
                     className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
                     min="0"

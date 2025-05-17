@@ -259,60 +259,59 @@ function EditTour({ item }) {
     };
 
     const renderAnh = () => {
-        if (files.length > 0) {
-            return (
-                <div className="mt-2 flex flex-wrap gap-4">
-                    {files.map((file, index) => (
-                        <div
-                            key={index}
-                            className="h-24 w-24 overflow-hidden rounded shadow"
-                        >
-                            <img
-                                src={URL.createObjectURL(file)}
-                                alt={`Ảnh mới ${index + 1}`}
-                                className="h-full w-full object-cover"
-                            />
-                        </div>
-                    ))}
-                </div>
-            );
+        // Tạo danh sách ảnh tổng hợp: ảnh đã lưu (data.images) và ảnh mới (files)
+        const allImages = [
+            ...(Array.isArray(data.images) ? data.images : []),
+            ...(files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : []),
+        ];
+
+        // Xử lý xóa ảnh
+        const handleDeleteImage = (index) => {
+            if (index < data.images.length) {
+                // Xóa ảnh từ data.images
+                const newImages = data.images.filter((_, i) => i !== index);
+                setData((prev) => ({ ...prev, images: newImages, img: newImages }));
+                setAreImagesChanged(true);
+            } else {
+                // Xóa ảnh từ files
+                const fileIndex = index - data.images.length;
+                const newFiles = Array.from(files).filter((_, i) => i !== fileIndex);
+                setFiles(newFiles);
+                setAreImagesChanged(true);
+            }
+        };
+
+        if (allImages.length === 0) {
+            return <p className="text-gray-500">Chưa có ảnh. Vui lòng tải lên ít nhất một ảnh.</p>;
         }
 
-        if (Array.isArray(data.images) && data.images.length > 0) {
-            return (
-                <div className="mt-2 flex flex-wrap gap-4">
-                    {data.images.map((img, index) => (
-                        <div
-                            key={index}
-                            className="relative h-24 w-24 overflow-hidden rounded shadow"
+        return (
+            <div className="mt-2 flex flex-wrap gap-4">
+                {allImages.map((img, index) => (
+                    <div
+                        key={index}
+                        className="relative h-24 w-24 overflow-hidden rounded shadow"
+                    >
+                        <img
+                            src={img}
+                            alt={`Ảnh ${index + 1}`}
+                            className="h-full w-full object-cover"
+                            onError={(e) => {
+                                console.error(`Failed to load image ${img}`);
+                                e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
+                            }}
+                        />
+                        <button
+                            type="button"
+                            className="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs text-white"
+                            onClick={() => handleDeleteImage(index)}
                         >
-                            <img
-                                src={img}
-                                alt={`Ảnh hiện tại ${index + 1}`}
-                                className="h-full w-full object-cover"
-                                onError={(e) => {
-                                    console.error(`Failed to load image ${img}`, e);
-                                    e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
-                                }}
-                            />
-                            <button
-                                type="button"
-                                className="absolute top-0 right-0 h-7 w-7 items-center rounded-full bg-red-500 p-1 text-white"
-                                onClick={() => {
-                                    const newImages = data.images.filter((_, i) => i !== index);
-                                    setData((prev) => ({ ...prev, images: newImages, img: newImages }));
-                                    setAreImagesChanged(true);
-                                }}
-                            >
-                                X
-                            </button>
-                        </div>
-                    ))}
-                </div>
-            );
-        }
-
-        return <p className="text-gray-500">Chưa có ảnh. Vui lòng tải lên ít nhất một ảnh.</p>;
+                            X
+                        </button>
+                    </div>
+                ))}
+            </div>
+        );
     };
 
     return (

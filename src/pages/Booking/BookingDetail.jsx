@@ -20,6 +20,7 @@ function BookingDetail() {
         const fetchApi = async () => {
             try {
                 const response = await getDataBookingTourById(id);
+                console.log(response);
 
                 if (response.status === 200) {
                     const data = response.data;
