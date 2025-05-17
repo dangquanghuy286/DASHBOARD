@@ -13,15 +13,22 @@ function EditTour({ item }) {
     const [files, setFiles] = useState([]);
     const [areImagesChanged, setAreImagesChanged] = useState(false);
 
+    // Hàm chuyển chuỗi tiền tệ thành số
+    const parsePrice = (price) => {
+        if (!price) return 0;
+        if (typeof price === "number") return price;
+        const cleanedPrice = price.replace(/[^0-9]/g, "");
+        return parseFloat(cleanedPrice) || 0;
+    };
+
+    // Hàm chuyển số thành chuỗi định dạng tiền tệ (3.800.000)
+    const formatPrice = (number) => {
+        if (!number && number !== 0) return "";
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     useEffect(() => {
         if (item) {
-            const parsePrice = (price) => {
-                if (!price) return 0;
-                if (typeof price === "number") return price;
-                const cleanedPrice = price.replace(/[^0-9]/g, "");
-                return parseFloat(cleanedPrice) || 0;
-            };
-
             const images = Array.isArray(item.img) ? item.img : typeof item.img === "string" && item.img ? [item.img] : [];
 
             setData({
@@ -29,8 +36,8 @@ function EditTour({ item }) {
                 tourId: item.id,
                 startDate: item.startDate ? item.startDate.split("T")[0] : "",
                 endDate: item.endDate ? item.endDate.split("T")[0] : "",
-                priceAdult: parsePrice(item.price_adult),
-                priceChild: parsePrice(item.price_child),
+                price_adult: parsePrice(item.price_adult), // Lưu số: 3800000
+                price_child: parsePrice(item.price_child), // Lưu số: 1600000
                 images,
                 img: images,
             });
@@ -96,9 +103,10 @@ function EditTour({ item }) {
 
         if (name === "availability") {
             updatedData[name] = value === "true";
-        } else if (["priceAdult", "priceChild", "quantity"].includes(name)) {
+        } else if (["price_adult", "price_child"].includes(name)) {
             const cleanedValue = value.replace(/[^0-9]/g, "");
-            updatedData[name] = parseFloat(cleanedValue) || 0;
+            const numericValue = parseFloat(cleanedValue) || 0;
+            updatedData[name] = numericValue; // Lưu số
         } else if (["include", "notinclude"].includes(name)) {
             updatedData[name] = value.split("\n").filter(Boolean);
         } else {
@@ -201,8 +209,8 @@ function EditTour({ item }) {
                     startDate: data.startDate,
                     endDate: data.endDate,
                     duration: data.duration,
-                    price_adult: parseFloat(data.priceAdult) || 0,
-                    price_child: parseFloat(data.priceChild) || 0,
+                    price_adult: parseFloat(data.price_adult) || 0, // Gửi số: 3800000
+                    price_child: parseFloat(data.price_child) || 0, // Gửi số: 1600000
                     quantity: parseInt(data.quantity) || 0,
                     availability: data.availability,
                     itinerary: itinerary.map((item) => ({
@@ -259,21 +267,17 @@ function EditTour({ item }) {
     };
 
     const renderAnh = () => {
-        // Tạo danh sách ảnh tổng hợp: ảnh đã lưu (data.images) và ảnh mới (files)
         const allImages = [
             ...(Array.isArray(data.images) ? data.images : []),
             ...(files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : []),
         ];
 
-        // Xử lý xóa ảnh
         const handleDeleteImage = (index) => {
             if (index < data.images.length) {
-                // Xóa ảnh từ data.images
                 const newImages = data.images.filter((_, i) => i !== index);
                 setData((prev) => ({ ...prev, images: newImages, img: newImages }));
                 setAreImagesChanged(true);
             } else {
-                // Xóa ảnh từ files
                 const fileIndex = index - data.images.length;
                 const newFiles = Array.from(files).filter((_, i) => i !== fileIndex);
                 setFiles(newFiles);

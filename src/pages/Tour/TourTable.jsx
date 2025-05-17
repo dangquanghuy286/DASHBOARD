@@ -33,7 +33,9 @@ function TourTable({ currentEntries }) {
                             <td className="border px-4 py-2">{item.title || "N/A"}</td>
                             <td className="border px-4 py-2">{item.duration || "N/A"}</td>
                             <td className="border px-4 py-2">{item.description || "N/A"}</td>
-                            <td className="border px-4 py-2">{item.availableSlots || 0}</td>
+                            <td className="border px-4 py-2">
+                                {item.remainQuantity ?? 0}/{item.quantity ?? 0}
+                            </td>
                             <td className="border px-4 py-2">{item.price_adult || "N/A"}</td>
                             <td className="border px-4 py-2">{item.price_child || "N/A"}</td>
                             <td className="border px-4 py-2">{item.destination || "N/A"}</td>

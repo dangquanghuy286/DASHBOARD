@@ -33,8 +33,14 @@ function ShowTour() {
             const updatedData = dataArray.map((tour) => {
                 const startDate = tour.startDate ? new Date(tour.startDate) : null;
                 const today = new Date();
-                const isAvailable = startDate && startDate >= today ? tour.availability : false;
-                return { ...tour, availability: isAvailable };
+                const availableSlots = tour.availableSlots ?? 0;
+                const quantity = tour.quantity ?? 0;
+
+                const remainQuantity = quantity - availableSlots;
+
+                const isAvailable = startDate && startDate >= today && availableSlots > 0;
+
+                return { ...tour, availability: isAvailable, remainQuantity };
             });
 
             setData(updatedData);
