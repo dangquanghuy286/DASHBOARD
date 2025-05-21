@@ -90,11 +90,20 @@ function TourRecent() {
                                                     ? "text-red-500"
                                                     : tour.status === "CONFIRMED"
                                                       ? "text-green-500"
-                                                      : "text-gray-500" // cho các trạng thái khác
+                                                      : tour.status === "CANCELLED"
+                                                        ? "text-red-500"
+                                                        : "text-gray-500"
                                             }`}
                                         >
-                                            {tour.status === "PENDING" ? "Chờ xác nhận" : tour.status === "CONFIRMED" ? "Đã xác nhận" : tour.status}
+                                            {tour.status === "PENDING"
+                                                ? "Chờ xác nhận"
+                                                : tour.status === "CONFIRMED"
+                                                  ? "Đã xác nhận"
+                                                  : tour.status === "CANCELLED"
+                                                    ? "Đã hủy"
+                                                    : tour.status}
                                         </td>
+
                                         <td className="max-w-[100px] truncate border border-gray-300 px-4 py-2">
                                             {tour.payment_method === "OFFICE"
                                                 ? "Văn phòng"
