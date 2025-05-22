@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import EditButton from "../../Button/EditButton";
@@ -13,20 +12,6 @@ function EditTour({ item }) {
     const [files, setFiles] = useState([]);
     const [areImagesChanged, setAreImagesChanged] = useState(false);
 
-    // Hàm chuyển chuỗi tiền tệ thành số
-    const parsePrice = (price) => {
-        if (!price) return 0;
-        if (typeof price === "number") return price;
-        const cleanedPrice = price.replace(/[^0-9]/g, "");
-        return parseFloat(cleanedPrice) || 0;
-    };
-
-    // Hàm chuyển số thành chuỗi định dạng tiền tệ (3.800.000)
-    const formatPrice = (number) => {
-        if (!number && number !== 0) return "";
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    };
-
     useEffect(() => {
         if (item) {
             const images = Array.isArray(item.img) ? item.img : typeof item.img === "string" && item.img ? [item.img] : [];
@@ -36,13 +21,12 @@ function EditTour({ item }) {
                 tourId: item.id,
                 startDate: item.startDate ? item.startDate.split("T")[0] : "",
                 endDate: item.endDate ? item.endDate.split("T")[0] : "",
-                price_adult: parsePrice(item.price_adult), // Lưu số: 3800000
-                price_child: parsePrice(item.price_child), // Lưu số: 1600000
+                price_adult: item.price_adult,
+                price_child: item.price_child,
                 images,
                 img: images,
             });
 
-            // Chuẩn hóa itinerary để đảm bảo content luôn là mảng
             setItinerary(
                 item.itinerary?.length > 0
                     ? item.itinerary.map((day, index) => ({
@@ -93,62 +77,68 @@ function EditTour({ item }) {
             });
             return;
         }
+        setData((prev) => ({ ...prev, images: [], img: [] }));
         setFiles(uploadedFiles ? Array.from(uploadedFiles) : []);
         setAreImagesChanged(true);
     };
 
     const handleChange = (e) => {
+        // Lấy name (tên trường input) và value (giá trị nhập vào) từ sự kiện
         const { name, value } = e.target;
+
+        // Tạo bản sao của đối tượng data hiện tại để tránh sửa trực tiếp trạng thái
         let updatedData = { ...data };
 
+        // Xử lý trường "availability" (trạng thái tour: còn trống/hết chỗ)
         if (name === "availability") {
+            // Chuyển giá trị chuỗi "true"/"false" thành boolean
             updatedData[name] = value === "true";
-        } else if (["price_adult", "price_child"].includes(name)) {
-            const cleanedValue = value.replace(/[^0-9]/g, "");
-            const numericValue = parseFloat(cleanedValue) || 0;
-            updatedData[name] = numericValue; // Lưu số
-        } else if (["include", "notinclude"].includes(name)) {
+        }
+        // Xử lý các trường giá: price_adult (giá người lớn) và price_child (giá trẻ em)
+        else if (["price_adult", "price_child"].includes(name)) {
+            updatedData[name] = value;
+        }
+        // Xử lý các trường "include" và "notinclude" (danh sách bao gồm/không bao gồm)
+        else if (["include", "notinclude"].includes(name)) {
+            // Tách giá trị thành mảng, mỗi dòng là một mục, loại bỏ các dòng rỗng
             updatedData[name] = value.split("\n").filter(Boolean);
-        } else {
+        }
+        // Xử lý các trường khác (title, description, destination, region, startDate, endDate,...)
+        else {
+            // Gán trực tiếp giá trị nhập vào
             updatedData[name] = value;
         }
 
+        // Xử lý đặc biệt khi thay đổi ngày bắt đầu (startDate) hoặc ngày kết thúc (endDate)
         if (name === "startDate" || name === "endDate") {
+            // Chuyển startDate và endDate thành đối tượng Date để tính toán
             const start = new Date(updatedData.startDate);
             const end = new Date(updatedData.endDate);
+
+            // Kiểm tra ngày hợp lệ (không phải NaN) và ngày kết thúc không trước ngày bắt đầu
             if (!isNaN(start) && !isNaN(end) && end >= start) {
+                // Tính khoảng thời gian giữa hai ngày (đơn vị: milliseconds)
                 const diffTime = Math.abs(end - start);
+                // Chuyển milliseconds thành số ngày, +1 để tính cả ngày đầu và cuối
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+                // Cập nhật duration theo định dạng "x ngày y đêm" (y = x - 1)
                 updatedData.duration = `${diffDays} ngày ${diffDays - 1} đêm`;
-                setItinerary(
-                    Array.from({ length: diffDays }, (_, index) => ({
-                        day: index + 1,
-                        title: itinerary[index]?.title || "",
-                        content: itinerary[index]?.content || [],
-                    })),
-                );
             } else {
+                // Nếu ngày không hợp lệ hoặc end < start, xóa giá trị duration
                 updatedData.duration = "";
-                setItinerary([]);
             }
         }
 
+        // Cập nhật trạng thái data với dữ liệu đã xử lý
         setData(updatedData);
     };
 
     const handleItineraryChange = (index, field, value) => {
         const newItinerary = [...itinerary];
-        if (field === "add") {
-            newItinerary.push({ day: newItinerary.length + 1, title: "", content: [] });
-        } else if (field === "remove") {
-            newItinerary.splice(index, 1);
-            newItinerary.forEach((item, i) => (item.day = i + 1));
-        } else {
-            newItinerary[index] = {
-                ...newItinerary[index],
-                [field]: field === "content" ? (Array.isArray(value) ? value : value.split("\n").filter(Boolean)) : value,
-            };
-        }
+        newItinerary[index] = {
+            ...newItinerary[index],
+            [field]: field === "content" ? (Array.isArray(value) ? value : value.split("\n").filter(Boolean)) : value,
+        };
         setItinerary(newItinerary);
     };
 
@@ -209,8 +199,8 @@ function EditTour({ item }) {
                     startDate: data.startDate,
                     endDate: data.endDate,
                     duration: data.duration,
-                    price_adult: parseFloat(data.price_adult) || 0, // Gửi số: 3800000
-                    price_child: parseFloat(data.price_child) || 0, // Gửi số: 1600000
+                    price_adult: parseFloat(data.price_adult) || 0,
+                    price_child: parseFloat(data.price_child) || 0,
                     quantity: parseInt(data.quantity) || 0,
                     availability: data.availability,
                     itinerary: itinerary.map((item) => ({
@@ -267,20 +257,17 @@ function EditTour({ item }) {
     };
 
     const renderAnh = () => {
-        const allImages = [
-            ...(Array.isArray(data.images) ? data.images : []),
-            ...(files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : []),
-        ];
+        const allImages =
+            files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : Array.isArray(data.images) ? data.images : [];
 
         const handleDeleteImage = (index) => {
-            if (index < data.images.length) {
-                const newImages = data.images.filter((_, i) => i !== index);
-                setData((prev) => ({ ...prev, images: newImages, img: newImages }));
+            if (files.length > 0) {
+                const newFiles = Array.from(files).filter((_, i) => i !== index);
+                setFiles(newFiles);
                 setAreImagesChanged(true);
             } else {
-                const fileIndex = index - data.images.length;
-                const newFiles = Array.from(files).filter((_, i) => i !== fileIndex);
-                setFiles(newFiles);
+                const newImages = data.images.filter((_, i) => i !== index);
+                setData((prev) => ({ ...prev, images: newImages, img: newImages }));
                 setAreImagesChanged(true);
             }
         };
