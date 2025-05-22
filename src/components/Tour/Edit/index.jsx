@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import EditButton from "../../Button/EditButton";
-import { updateTour, updateTourImages } from "../../../services/tourService";
+import { updateTour, updateTourImages, getTourImages } from "../../../services/tourService";
 import TourModal from "../ModelTour";
 import { dataRegion } from "../../../context/TourContext";
 
@@ -12,20 +13,60 @@ function EditTour({ item }) {
     const [files, setFiles] = useState([]);
     const [areImagesChanged, setAreImagesChanged] = useState(false);
 
+    // Hàm chuyển chuỗi tiền tệ thành số
+    const parsePrice = (price) => {
+        if (!price) return 0;
+        if (typeof price === "number") return price;
+        const cleanedPrice = price.replace(/[^0-9]/g, "");
+        return parseFloat(cleanedPrice) || 0;
+    };
+
+    // Hàm chuyển số thành chuỗi định dạng tiền tệ (3.800.000)
+    const formatPrice = (number) => {
+        if (!number && number !== 0) return "";
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     useEffect(() => {
         if (item) {
-            const images = Array.isArray(item.img) ? item.img : typeof item.img === "string" && item.img ? [item.img] : [];
+            const fetchImages = async () => {
+                try {
+                    // Gọi hàm getTourImages từ tourService
+                    const response = await getTourImages(item.id);
+                    if (response.status !== 200) {
+                        throw new Error(response.data || "Failed to fetch images");
+                    }
+                    // Đảm bảo response.data là mảng, nếu không thì fallback về item.img
+                    const images = Array.isArray(response.data) ? response.data : typeof item.img === "string" && item.img ? [item.img] : [];
 
-            setData({
-                ...item,
-                tourId: item.id,
-                startDate: item.startDate ? item.startDate.split("T")[0] : "",
-                endDate: item.endDate ? item.endDate.split("T")[0] : "",
-                price_adult: item.price_adult,
-                price_child: item.price_child,
-                images,
-                img: images,
-            });
+                    setData({
+                        ...item,
+                        tourId: item.id,
+                        startDate: item.startDate ? item.startDate.split("T")[0] : "",
+                        endDate: item.endDate ? item.endDate.split("T")[0] : "",
+                        price_adult: parsePrice(item.price_adult), // Chuyển đổi giá thành số
+                        price_child: parsePrice(item.price_child), // Chuyển đổi giá thành số
+                        images, // Lưu danh sách ảnh từ API
+                        img: images, // Đồng bộ img với images
+                    });
+                } catch (error) {
+                    console.error("Failed to fetch images:", error);
+                    // Fallback: Sử dụng item.img nếu API lỗi
+                    const images = typeof item.img === "string" && item.img ? [item.img] : [];
+                    setData({
+                        ...item,
+                        tourId: item.id,
+                        startDate: item.startDate ? item.startDate.split("T")[0] : "",
+                        endDate: item.endDate ? item.endDate.split("T")[0] : "",
+                        price_adult: parsePrice(item.price_adult), // Chuyển đổi giá thành số
+                        price_child: parsePrice(item.price_child), // Chuyển đổi giá thành số
+                        images,
+                        img: images,
+                    });
+                }
+            };
+
+            fetchImages();
 
             setItinerary(
                 item.itinerary?.length > 0
@@ -77,7 +118,7 @@ function EditTour({ item }) {
             });
             return;
         }
-        setData((prev) => ({ ...prev, images: [], img: [] }));
+        // Không reset images, chỉ thêm ảnh mới vào files
         setFiles(uploadedFiles ? Array.from(uploadedFiles) : []);
         setAreImagesChanged(true);
     };
@@ -96,7 +137,9 @@ function EditTour({ item }) {
         }
         // Xử lý các trường giá: price_adult (giá người lớn) và price_child (giá trẻ em)
         else if (["price_adult", "price_child"].includes(name)) {
-            updatedData[name] = value;
+            // Chuyển đổi giá trị nhập vào thành số
+            const numericValue = parsePrice(value);
+            updatedData[name] = numericValue; // Lưu giá trị số
         }
         // Xử lý các trường "include" và "notinclude" (danh sách bao gồm/không bao gồm)
         else if (["include", "notinclude"].includes(name)) {
@@ -257,17 +300,21 @@ function EditTour({ item }) {
     };
 
     const renderAnh = () => {
-        const allImages =
-            files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : Array.isArray(data.images) ? data.images : [];
+        // Kết hợp ảnh từ files (mới tải lên) và data.images (ảnh hiện có)
+        const newImageUrls = files.length > 0 ? Array.from(files).map((file) => URL.createObjectURL(file)) : [];
+        const existingImages = Array.isArray(data.images) ? data.images : typeof data.img === "string" && data.img ? [data.img] : [];
+        const allImages = [...existingImages, ...newImageUrls]; // Hiển thị tất cả ảnh
 
         const handleDeleteImage = (index) => {
-            if (files.length > 0) {
-                const newFiles = Array.from(files).filter((_, i) => i !== index);
-                setFiles(newFiles);
+            if (index < existingImages.length) {
+                // Xóa ảnh từ data.images (ảnh hiện có)
+                const newImages = existingImages.filter((_, i) => i !== index);
+                setData((prev) => ({ ...prev, images: newImages, img: newImages }));
                 setAreImagesChanged(true);
             } else {
-                const newImages = data.images.filter((_, i) => i !== index);
-                setData((prev) => ({ ...prev, images: newImages, img: newImages }));
+                // Xóa ảnh từ files (ảnh mới tải lên)
+                const newFiles = Array.from(files).filter((_, i) => i !== index - existingImages.length);
+                setFiles(newFiles);
                 setAreImagesChanged(true);
             }
         };
