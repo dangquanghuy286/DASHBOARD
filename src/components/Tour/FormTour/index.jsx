@@ -107,6 +107,18 @@ function TourForm({
             </div>
 
             <div>
+                <label className="block font-medium">Điểm xuất phát:</label>
+                <input
+                    type="text"
+                    name="departurePoint"
+                    value={data.departurePoint || ""}
+                    onChange={handleChange}
+                    className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-[#00c0d1]"
+                    placeholder="Nhập điểm xuất phát"
+                    required
+                />
+            </div>
+            <div>
                 <label className="block font-medium">Điểm đến:</label>
                 <input
                     type="text"

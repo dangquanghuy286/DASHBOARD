@@ -8,7 +8,6 @@ const { FaPrint, MdEmail, MdOutlineAttachFile } = icons;
 
 function ToolReport({ item, type }) {
     const [selectedFile, setSelectedFile] = useState(null);
-    console.log(item);
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];

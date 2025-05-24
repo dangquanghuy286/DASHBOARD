@@ -14,7 +14,7 @@ export const handleCopy = (data, type) => {
         content = data
             .map(
                 (item) =>
-                    `Tên:${item.title}\nThời gian:${item.duration}\nMô tả:${item.description}\nSố lượng người còn trống:${item.quantity}\nGiá người lớn:${item.price_adult || "N/A"}\nGiá trẻ em:${item.price_child || "N/A"}\nĐiểm đến:${item.destination || "N/A"}\nKhả dụng:${item.availability ? "Có" : "Không"}\nNgày bắt đầu:${item.startDate}\nNgày kết thúc:${item.endDate}`,
+                    `Tên:${item.title}\nThời gian:${item.duration}\nMô tả:${item.description}\nSố lượng người còn trống:${item.quantity}\nGiá người lớn:${item.price_adult || "N/A"}\nGiá trẻ em:${item.price_child || "N/A"}\nĐiểm xuất phát:${item.departurePoint}\nĐiểm đến:${item.destination || "N/A"}\nKhả dụng:${item.availability ? "Có" : "Không"}\nNgày bắt đầu:${item.startDate}\nNgày kết thúc:${item.endDate}`,
             )
             .join("\n\n");
     } else if (type === "booking") {
@@ -98,6 +98,7 @@ export const renderCSV = (data, type) => {
             "Số lượng người còn trống",
             "Giá người lớn",
             "Giá trẻ em",
+            "Điểm xuất phát",
             "Điểm đến",
             "Khả dụng",
             "Ngày bắt đầu",
@@ -110,6 +111,7 @@ export const renderCSV = (data, type) => {
             t.quantity,
             t.price_adult || "N/A",
             t.price_child || "N/A",
+            t.departurePoint || "N/A",
             t.destination || "N/A",
             t.availability ? "1" : "0",
             t.startDate,
@@ -153,15 +155,29 @@ export const renderCSV = (data, type) => {
 
 // Hàm xuất CSV
 export const handleToCSV = (data, type) => {
+    // Gọi hàm renderCSV để chuyển dữ liệu (data) sang chuỗi CSV theo kiểu (type)
     const csv = renderCSV(data, type);
+
+    // Tạo một đối tượng Blob từ chuỗi CSV, với định dạng MIME là CSV
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+    // Tạo URL tạm từ Blob để có thể tải xuống
     const url = URL.createObjectURL(blob);
 
+    // Tạo phần tử <a> để kích hoạt hành động tải xuống
     const link = document.createElement("a");
     link.href = url;
+
+    // Đặt thuộc tính "download" để chỉ định tên file CSV (ví dụ: users.csv, bookings.csv,...)
     link.setAttribute("download", `${type}.csv`);
+
+    // Thêm thẻ <a> vào DOM để trình duyệt xử lý được sự kiện click
     document.body.appendChild(link);
+
+    // Kích hoạt sự kiện click để bắt đầu tải file
     link.click();
+
+    // Xóa thẻ <a> khỏi DOM sau khi tải xong để dọn dẹp
     document.body.removeChild(link);
 };
 
@@ -219,7 +235,19 @@ export const handleToPdf = (data, type) => {
 
     const headers =
         type === "tour"
-            ? ["Tên", "Thời gian", "Mô tả", "Số lượng", "Giá người lớn", "Giá trẻ em", "Điểm đến", "Khả dụng", "Bắt đầu", "Kết thúc"]
+            ? [
+                  "Tên",
+                  "Thời gian",
+                  "Mô tả",
+                  "Số lượng",
+                  "Giá người lớn",
+                  "Giá trẻ em",
+                  "Điểm xuất phát",
+                  "Điểm đến",
+                  "Khả dụng",
+                  "Bắt đầu",
+                  "Kết thúc",
+              ]
             : [
                   "Mã Booking",
                   "Tên tour",
@@ -245,6 +273,7 @@ export const handleToPdf = (data, type) => {
                   item.quantity || 0,
                   item.price_adult || 0,
                   item.price_child || 0,
+                  item.departurePoint || "N/A",
                   item.destination || "N/A",
                   item.availability ? "Có" : "Không",
                   item.startDate || "N/A",
@@ -474,6 +503,7 @@ export const handlePrintReport = (item, type) => {
                             <tr>
                                 <th>Hạng mục</th>
                                 <th>Số lượng</th>
+                                <th>Điểm xuất phát</th>
                                 <th>Điểm đến</th>
                                 <th>Đơn giá</th>
                                 <th>Thành tiền</th>
@@ -483,6 +513,7 @@ export const handlePrintReport = (item, type) => {
                             <tr>
                                 <td>Người lớn</td>
                                 <td>${item.adults || 0}</td>
+                                <td>${item.departurePoint || 0}</td>
                                 <td>${item.title || "Tour không xác định"}</td>
                                 <td>${(item.unitPriceAdult || 0).toLocaleString("vi-VN")} VND</td>
                                 <td>${totalAdult.toLocaleString("vi-VN")} VND</td>
@@ -490,6 +521,7 @@ export const handlePrintReport = (item, type) => {
                             <tr>
                                 <td>Trẻ em</td>
                                 <td>${item.children || 0}</td>
+                                <td>${item.departurePoint || 0}</td>
                                 <td>${item.title || "Tour không xác định"}</td>
                                 <td>${(item.unitPriceChild || 0).toLocaleString("vi-VN")} VND</td>
                                 <td>${totalChild.toLocaleString("vi-VN")} VND</td>

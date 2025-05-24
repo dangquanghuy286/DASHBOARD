@@ -16,6 +16,7 @@ function TourTable({ currentEntries }) {
                         <th className="border px-4 py-2">Số lượng </th>
                         <th className="border px-4 py-2">Giá người lớn</th>
                         <th className="border px-4 py-2">Giá trẻ em</th>
+                        <th className="border px-4 py-2">Điểm xuất phát</th>
                         <th className="border px-4 py-2">Điểm đến</th>
                         <th className="border px-4 py-2">Trạng Thái</th>
                         <th className="border px-4 py-2">Ngày bắt đầu</th>
@@ -36,6 +37,7 @@ function TourTable({ currentEntries }) {
                             <td className="border px-4 py-2">{item.quantity || "N/A"} </td>
                             <td className="border px-4 py-2">{item.price_adult || "N/A"}</td>
                             <td className="border px-4 py-2">{item.price_child || "N/A"}</td>
+                            <td className="border px-4 py-2">{item.departurePoint || "N/A"}</td>
                             <td className="border px-4 py-2">{item.destination || "N/A"}</td>
                             <td className="available-column border px-4 py-2 text-center">
                                 {item.availability ? (

@@ -31,6 +31,7 @@ function CreateTour({ onTourCreated }) {
         region: "",
         startDate: "",
         endDate: "",
+        departurePoint: "",
     });
     // Trạng thái danh sách file ảnh được chọn
     const [files, setFiles] = useState([]);
@@ -81,6 +82,7 @@ function CreateTour({ onTourCreated }) {
             region: "",
             startDate: "",
             endDate: "",
+            departurePoint: "",
         });
         setFiles([]);
         setItinerary([]);

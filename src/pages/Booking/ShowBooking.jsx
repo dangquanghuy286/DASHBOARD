@@ -24,7 +24,6 @@ function ShowBookingTour() {
         try {
             setIsLoading(true); // Bắt đầu loading
             const res = await getDataBookingTour(page, limit);
-            console.log(res);
 
             const dataArray = res.data?.content && Array.isArray(res.data.content) ? res.data.content : [];
 

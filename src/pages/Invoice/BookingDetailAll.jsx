@@ -24,6 +24,7 @@ function Invoice({ item }) {
         paymentStatus: item.paymentStatus || "Chưa thanh toán",
         transactionCode: item.transactionCode || "TX0000",
         paymentDate: item.paymentDate || "Không có",
+        departurePoint: item.departurePoint || "N/A",
         account: item.account || "N/A",
         totalPrice: Number(item.totalPrice) || 0,
         unitPriceAdult: Number(item.unitPriceAdult) || 0,
@@ -161,6 +162,7 @@ function Invoice({ item }) {
                             <tr className="bg-blue-400 text-white dark:bg-blue-400">
                                 <th className="rounded-tl-md p-3 text-left text-sm font-semibold whitespace-nowrap">Hạng mục</th>
                                 <th className="p-3 text-center text-sm font-semibold whitespace-nowrap">Số lượng</th>
+                                <th className="p-3 text-center text-sm font-semibold whitespace-nowrap">Điểm xuất phát</th>
                                 <th className="p-3 text-center text-sm font-semibold whitespace-nowrap">Điểm đến</th>
                                 <th className="p-3 text-center text-sm font-semibold whitespace-nowrap">Đơn giá</th>
                                 <th className="rounded-tr-md p-3 text-right text-sm font-semibold whitespace-nowrap">Thành tiền</th>
@@ -170,6 +172,7 @@ function Invoice({ item }) {
                             <tr className="border-b border-gray-200 bg-blue-50 dark:border-gray-700 dark:bg-slate-900">
                                 <td className="p-3 whitespace-nowrap text-gray-700 dark:text-stone-50">Người lớn</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.adults}</td>
+                                <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.departurePoint}</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.title}</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">
                                     {(bookingData.unitPriceAdult || 0).toLocaleString("vi-VN")} VND
@@ -179,6 +182,7 @@ function Invoice({ item }) {
                             <tr className="border-b border-gray-200 bg-blue-50 dark:border-gray-700 dark:bg-slate-900">
                                 <td className="p-3 whitespace-nowrap text-gray-700 dark:text-stone-50">Trẻ em</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.children}</td>
+                                <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.departurePoint}</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">{bookingData.title}</td>
                                 <td className="p-3 text-center text-gray-700 dark:text-stone-50">
                                     {(bookingData.unitPriceChild || 0).toLocaleString("vi-VN")} VND

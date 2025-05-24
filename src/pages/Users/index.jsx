@@ -23,7 +23,6 @@ function User() {
         const fetchApi = async () => {
             try {
                 const res = await getDataUser();
-                console.log(res);
 
                 if (res.status === 200) {
                     const users = Array.isArray(res.data.users) ? res.data.users : res.data;
@@ -34,7 +33,7 @@ function User() {
                     setData(dataArray);
                     setOriginalData(dataArray);
                 } else {
-                    Swal.fire("Lỗi", `Lấy dữ liệu thất bại với mã: ${res.status}`, "error");
+                    Swal.fire("Lỗi", `Lấy dữ liệu thất bại hoặc đăng nhập lại`, "error");
                     setData([]);
                     setOriginalData([]);
                 }
@@ -66,7 +65,7 @@ function User() {
 
         const searchTermNoDiacritics = removeDiacritics(searchTerm);
         const filteredData = originalData.filter((user) => {
-            const userName = user.fullname && typeof user.fullname === "string" ? user.fullname.toLowerCase() : "";
+            const userName = user.full_name && typeof user.full_name === "string" ? user.full_name.toLowerCase() : "";
             const userNameNoDiacritics = removeDiacritics(userName);
             return userName.includes(searchTerm) || userNameNoDiacritics.includes(searchTermNoDiacritics);
         });

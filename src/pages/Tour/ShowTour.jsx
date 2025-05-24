@@ -24,7 +24,6 @@ function ShowTour() {
         try {
             setIsLoading(true); // Bắt đầu loading
             const res = await getDataTour(page, limit);
-            console.log(res);
 
             if (res.status !== 200) throw new Error(res.data?.error || "Lỗi không xác định");
 
