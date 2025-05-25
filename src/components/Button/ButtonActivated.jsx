@@ -3,27 +3,33 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import icons from "../../util/icon";
 import "sweetalert2/src/sweetalert2.scss";
-const { IoIosUnlock } = icons;
+const { IoIosCheckmarkCircleOutline } = icons;
 
-function EnableButton({ children, onEnable, disabled, confirmText = "Bạn có chắc muốn mở khóa không?", successText = "Đã mở khóa thành công!" }) {
+function ActivateButton({
+    children,
+    onActivate,
+    disabled,
+    confirmText = "Bạn có chắc muốn kích hoạt không?",
+    successText = "Đã kích hoạt thành công!",
+}) {
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleEnable = async () => {
+    const handleActivate = async () => {
         const result = await Swal.fire({
             title: confirmText,
-            text: "Hành động này sẽ khôi phục quyền truy cập của người dùng!",
+            text: "Hành động này sẽ kích hoạt tài khoản người dùng!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
+            confirmButtonColor: "#28a745",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Mở khóa",
+            confirmButtonText: "Kích hoạt",
             cancelButtonText: "Hủy",
         });
 
         if (result.isConfirmed) {
             setIsLoading(true);
             try {
-                const success = await onEnable();
+                const success = await onActivate();
                 if (success) {
                     Swal.fire({
                         title: successText,
@@ -35,7 +41,7 @@ function EnableButton({ children, onEnable, disabled, confirmText = "Bạn có c
             } catch (error) {
                 Swal.fire({
                     title: "Lỗi",
-                    text: "Không thể mở khóa. Vui lòng thử lại!",
+                    text: "Không thể kích hoạt. Vui lòng thử lại!",
                     icon: "error",
                 });
             } finally {
@@ -46,12 +52,12 @@ function EnableButton({ children, onEnable, disabled, confirmText = "Bạn có c
 
     return (
         <button
-            className={`flex h-9 items-center justify-center gap-1.5 rounded-md bg-gradient-to-r from-green-500 to-teal-500 px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 hover:from-green-600 hover:to-teal-600 focus:ring-2 focus:ring-green-400 focus:outline-none ${
+            className={`flex h-9 items-center justify-center gap-1.5 rounded-md bg-gradient-to-r from-green-500 to-emerald-500 px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 hover:from-green-600 hover:to-emerald-600 focus:ring-2 focus:ring-green-400 focus:outline-none ${
                 disabled || isLoading ? "cursor-not-allowed opacity-50" : ""
             }`}
-            onClick={handleEnable}
+            onClick={handleActivate}
             disabled={disabled || isLoading}
-            aria-label="Mở khóa người dùng"
+            aria-label="Kích hoạt người dùng"
         >
             {isLoading ? (
                 <svg
@@ -73,11 +79,11 @@ function EnableButton({ children, onEnable, disabled, confirmText = "Bạn có c
                     />
                 </svg>
             ) : (
-                <IoIosUnlock className="text-base" />
+                <IoIosCheckmarkCircleOutline className="text-base" />
             )}
-            {children || "Mở khóa"}
+            {children || "Kích hoạt"}
         </button>
     );
 }
 
-export default EnableButton;
+export default ActivateButton;

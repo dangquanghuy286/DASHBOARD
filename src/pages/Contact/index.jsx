@@ -6,12 +6,13 @@ import { getContact, editContact } from "../../services/contact";
 const ContactNotifications = () => {
     const [contacts, setContacts] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState({}); // State để theo dõi loading cho từng contact
 
     useEffect(() => {
         const fetchApi = async () => {
             try {
                 const res = await getContact();
-                setContacts(res.reverse());
+                setContacts(res.data);
             } catch (err) {
                 setError("Không thể tải danh sách liên hệ.");
                 console.error("Lỗi khi tải danh sách:", err);
@@ -21,26 +22,23 @@ const ContactNotifications = () => {
     }, []);
 
     const toggleCheckbox = async (index) => {
-        const updatedContacts = [...contacts];
-        const contact = updatedContacts[index];
-        const newCheckedStatus = !contact.checked;
+        const updatedContact = { ...contacts[index], checked: !contacts[index].checked };
 
-        // Cập nhật cục bộ trước để UI phản ánh ngay lập tức
-        updatedContacts[index].checked = newCheckedStatus;
-        setContacts(updatedContacts);
+        // Cập nhật loading
+        setLoading((prev) => ({ ...prev, [index]: true }));
+
+        // Cập nhật cục bộ
+        setContacts((prev) => prev.map((item, i) => (i === index ? updatedContact : item)));
 
         try {
-            // Gửi yêu cầu cập nhật trạng thái checked lên server
-            await editContact(contact.id, {
-                ...contact, // Gửi toàn bộ thông tin contact để đảm bảo server có đủ dữ liệu
-                checked: newCheckedStatus,
-            });
+            await editContact(updatedContact.contactId, updatedContact);
         } catch (err) {
-            // Nếu lỗi, hoàn tác thay đổi cục bộ
-            updatedContacts[index].checked = !newCheckedStatus;
-            setContacts(updatedContacts);
+            // Hoàn tác nếu lỗi
+            setContacts((prev) => prev.map((item, i) => (i === index ? { ...item, checked: !item.checked } : item)));
             setError("Không thể cập nhật trạng thái. Vui lòng thử lại.");
             console.error("Lỗi khi cập nhật checked:", err);
+        } finally {
+            setLoading((prev) => ({ ...prev, [index]: false }));
         }
     };
 
@@ -57,9 +55,9 @@ const ContactNotifications = () => {
                     <ul className="divide-y divide-gray-200 dark:divide-gray-700">
                         {contacts.map((contact, index) => (
                             <li
-                                key={contact.id}
+                                key={contact.contactId} // Đảm bảo dùng đúng trường id
                                 className={`p-4 transition-colors hover:bg-gray-50 sm:p-6 dark:hover:bg-gray-700 ${
-                                    contact.checked ? "bg-green-50 dark:bg-gray-700" : ""
+                                    contact.checked ? "bg-green-50 opacity-70 dark:bg-gray-700" : ""
                                 }`}
                             >
                                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:items-start sm:justify-between">
@@ -69,9 +67,10 @@ const ContactNotifications = () => {
                                             checked={contact.checked}
                                             onChange={() => toggleCheckbox(index)}
                                             className="mt-1 h-5 w-5 accent-green-600"
+                                            disabled={loading[index]} // Vô hiệu hóa khi đang loading
                                         />
                                         <div>
-                                            <Link>
+                                            <Link to={`/contact/${contact.id}`}>
                                                 <h3
                                                     className={`text-lg font-semibold sm:text-xl ${
                                                         contact.checked
@@ -79,11 +78,12 @@ const ContactNotifications = () => {
                                                             : "text-gray-800 dark:text-[#00c0d1]"
                                                     }`}
                                                 >
-                                                    {contact.customerName}
+                                                    {contact.fullName}
+                                                    {loading[index] && <span className="ml-2 text-sm text-gray-400">Đang cập nhật...</span>}
                                                 </h3>
                                             </Link>
                                             <div className="mt-1 text-base text-gray-500 dark:text-gray-400">
-                                                {contact.phone}
+                                                {contact.phoneNumber}
                                                 {contact.email && <span className="ml-2">| {contact.email}</span>}
                                             </div>
                                             <p className="mt-2 text-base text-gray-600 sm:text-lg dark:text-gray-300">{contact.content}</p>

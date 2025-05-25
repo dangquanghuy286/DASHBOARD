@@ -25,6 +25,8 @@ import {
     IoIosArrowDropdownCircle,
     IoIosUnlock,
     IoIosLock,
+    IoIosCheckmarkCircleOutline,
+    IoMdRepeat,
 } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
@@ -51,6 +53,7 @@ import {
     FaPrint,
     FaFileCsv,
     FaFileUpload,
+    FaChartLine,
 } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidChevronsRight } from "react-icons/bi";
@@ -110,5 +113,8 @@ const icons = {
     IoIosLock,
     MdContactSupport,
     FaFileUpload,
+    IoIosCheckmarkCircleOutline,
+    IoMdRepeat,
+    FaChartLine,
 };
 export default icons;

@@ -1,4 +1,4 @@
-import { edit, get } from "../util/request";
+import { edit, get } from "../util/requestserver";
 
 export const getContact = async () => {
     const result = await get("contact");

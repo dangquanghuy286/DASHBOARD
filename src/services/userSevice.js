@@ -1,4 +1,4 @@
-import { del, get, put } from "../util/requestserver"; // Import put thay vì patch
+import { del, get, post, put } from "../util/requestserver"; // Import put thay vì patch
 
 // Lấy danh sách khách hàng
 export const getDataUser = async () => {
@@ -103,6 +103,22 @@ export const getAvatar = async (id) => {
         return {
             status: error.response?.status || 500,
             data: error.response?.data || "Lỗi khi lấy ảnh đại diện của người dùng",
+        };
+    }
+};
+// Kích hoạt người dùng bởi admin
+export const activateUserByAdmin = async (userId) => {
+    try {
+        const res = await post(`users/activate-by-admin/${userId}`);
+        return {
+            status: res.status,
+            data: res.data,
+        };
+    } catch (error) {
+        console.error(`Lỗi khi kích hoạt người dùng ${userId} bởi admin:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi kích hoạt người dùng",
         };
     }
 };

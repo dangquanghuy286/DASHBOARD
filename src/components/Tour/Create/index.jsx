@@ -183,7 +183,6 @@ function CreateTour({ onTourCreated }) {
             });
 
             if (onTourCreated) onTourCreated(); // callback khi tạo thành công
-            window.location.reload(); // reload trang
         } catch (error) {
             Swal.fire({
                 icon: "error",

@@ -3,6 +3,7 @@ import BlockUser from "../../components/User/Block";
 import EnableUser from "../../components/User/Enable";
 import DeleteUser from "../../components/User/Delete";
 import { Swal } from "sweetalert2/dist/sweetalert2";
+import ActivateUser from "../../components/User/Activated";
 
 function UserPr(props) {
     const { user, onReload } = props;
@@ -21,6 +22,8 @@ function UserPr(props) {
     const isAdmin = role === "ROLE_ADMIN";
 
     const isBlocked = !user.is_active;
+
+    const isActivate = user.is_activated;
 
     const getRoleName = () => {
         if (!user.role) return "N/A";
@@ -85,6 +88,17 @@ function UserPr(props) {
                     <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
                         {user.role?.roleId !== 2 && (
                             <>
+                                <div className="w-fit flex-shrink-0">
+                                    {!isActivate && (
+                                        <div className="w-fit flex-shrink-0">
+                                            <ActivateUser
+                                                user={user}
+                                                onReload={onReload}
+                                            />
+                                        </div>
+                                    )}
+                                </div>
+
                                 <div className="w-fit flex-shrink-0">
                                     {isBlocked ? (
                                         <EnableUser

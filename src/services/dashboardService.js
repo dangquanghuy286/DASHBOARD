@@ -16,3 +16,10 @@ export const getDashboardData = async () => {
         };
     }
 };
+// Lấy dữ liệu theo khoảng ngày
+export const getDashboardDataByDateRange = async (startDate, endDate) => {
+    const response = await get(`dashboard/stats/range`, {
+        params: { startDate, endDate },
+    });
+    return response;
+};

@@ -30,7 +30,6 @@ function BlockButton({ children, onBlock, disabled, confirmText = "Bạn có ch�
                         timer: 2000,
                         showConfirmButton: false,
                     });
-                    window.location.reload();
                 }
             } catch (error) {
                 Swal.fire({
