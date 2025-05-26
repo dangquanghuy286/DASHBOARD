@@ -4,6 +4,8 @@ import Invoice from "./BookingDetailAll";
 import GoBack from "../../components/GoBack/Goback";
 import { getInvoiceById } from "../../services/bookingService";
 import Swal from "sweetalert2";
+import LoadingSpinner from "../../components/LoadingSniper";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const formatTourId = (tourId) => {
     if (!tourId || isNaN(tourId)) return "Không xác định";
@@ -99,18 +101,13 @@ function BookingDetail() {
     }, [id]);
 
     if (loading) {
-        return (
-            <div className="py-10 text-center">
-                <div className="mx-auto h-12 w-12 animate-spin rounded-full border-t-4 border-b-4 border-blue-500"></div>
-                <span className="mt-4 block text-lg text-gray-700 dark:text-gray-200">Đang tải...</span>
-            </div>
-        );
+        return <LoadingSpinner message="Đang tải..." />;
     }
 
     if (!bookingDetail) {
         return (
             <div className="py-10 text-center">
-                <p className="text-lg text-red-600">Không tìm thấy thông tin hóa đơn!</p>
+                <ErrorMessage error="Không tìm thấy thông tin hóa đơn!" />
                 <GoBack />
             </div>
         );
