@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage";
 import ActivateUser from "../../components/User/Activated";

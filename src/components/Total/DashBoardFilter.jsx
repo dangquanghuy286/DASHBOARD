@@ -1,5 +1,5 @@
 import icons from "../../util/icon";
-const { FaChartLine } = icons;
+const { FaChartLine, IoMdRepeat } = icons;
 function DashboardFilters({
     years,
     selectedYear,

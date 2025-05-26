@@ -65,7 +65,7 @@ function TourForm({
         const { name, value } = e.target;
         let newDescription = value;
 
-        const keywords = ["Lưu trú:", "Ẩm thực:", "Hoạt động khác:"];
+        const keywords = ["Lưu trú:", "Ẩm thực:", "Hoạt động khác:", "Ăn uống:"];
 
         keywords.forEach((keyword) => {
             const normalizeRegex = new RegExp(`(?:\\s*\\|\\s*|\\s*\\n+\\s*)(${keyword.replace(":", "\\:")})`, "g");
