@@ -1,12 +1,12 @@
-/* eslint-disable no-unused-vars */
-import BlockUser from "../../components/User/Block";
-import EnableUser from "../../components/User/Enable";
-import DeleteUser from "../../components/User/Delete";
-import { Swal } from "sweetalert2/dist/sweetalert2";
+import React, { useState } from "react";
+import ErrorMessage from "../../components/ErrorMessage";
 import ActivateUser from "../../components/User/Activated";
+import EnableUser from "../../components/User/Enable";
+import BlockUser from "../../components/User/Block";
+import DeleteUser from "../../components/User/Delete";
 
-function UserPr(props) {
-    const { user, onReload } = props;
+function UserPr({ user, onReload }) {
+    const [avatarError, setAvatarError] = useState(null);
 
     const parseJwt = (token) => {
         try {
@@ -22,7 +22,6 @@ function UserPr(props) {
     const isAdmin = role === "ROLE_ADMIN";
 
     const isBlocked = !user.is_active;
-
     const isActivate = user.is_activated;
 
     const getRoleName = () => {
@@ -35,11 +34,9 @@ function UserPr(props) {
     const handleImageError = (e) => {
         console.error("Failed to load avatar:", e.target.src);
         e.target.src = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
-        // Thêm thông báo lỗi (tùy chọn)
-        Swal.fire("Lỗi", "Không thể tải ảnh avatar", "error");
+        setAvatarError("Không thể tải ảnh avatar");
     };
 
-    // Sử dụng BASE_URL tĩnh
     const BASE_URL = "http://localhost:8088";
     const avatarUrl = user.avatar || `${BASE_URL}/api/v1/users/avatars/default-avatar.jpg`;
 
@@ -49,13 +46,14 @@ function UserPr(props) {
                 <div className="h-40 w-40 overflow-hidden rounded-full border border-amber-300">
                     <img
                         src={avatarUrl}
-                        alt={user.fullname}
+                        alt={user.full_name}
                         className="h-full w-full object-cover"
                         onError={handleImageError}
                     />
                 </div>
             </div>
             <div className="mt-4 flex w-full flex-col sm:mt-0 sm:w-1/2 sm:pr-4">
+                {avatarError && <ErrorMessage error={avatarError} />}
                 <div className="flex flex-1 flex-col">
                     <h3 className="mt-0 text-lg font-bold text-gray-900 dark:text-white">{user.full_name}</h3>
                     <div className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -88,17 +86,14 @@ function UserPr(props) {
                     <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
                         {user.role?.roleId !== 2 && (
                             <>
-                                <div className="w-fit flex-shrink-0">
-                                    {!isActivate && (
-                                        <div className="w-fit flex-shrink-0">
-                                            <ActivateUser
-                                                user={user}
-                                                onReload={onReload}
-                                            />
-                                        </div>
-                                    )}
-                                </div>
-
+                                {!isActivate && (
+                                    <div className="w-fit flex-shrink-0">
+                                        <ActivateUser
+                                            user={user}
+                                            onReload={onReload}
+                                        />
+                                    </div>
+                                )}
                                 <div className="w-fit flex-shrink-0">
                                     {isBlocked ? (
                                         <EnableUser
