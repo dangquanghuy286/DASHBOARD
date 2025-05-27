@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LoadingSpinner from "../LoadingSniper";
+import DeleteButton from "../Button/DeleteButton";
 
-function ContactListItem({ contact, index, toggleCheckbox, isLoading }) {
+function ContactListItem({ contact, index, toggleCheckbox, isLoading, deleteContact, isDeleting }) {
     return (
         <li
-            key={contact.contactId}
             className={`p-4 transition-colors hover:bg-gray-50 sm:p-6 dark:hover:bg-gray-700 ${
                 contact.checked ? "bg-green-50 opacity-70 dark:bg-gray-700" : ""
             }`}
@@ -20,20 +19,18 @@ function ContactListItem({ contact, index, toggleCheckbox, isLoading }) {
                         disabled={isLoading}
                     />
                     <div>
-                        <Link to={`/contact/${contact.id}`}>
-                            <h3
-                                className={`text-lg font-semibold sm:text-xl ${
-                                    contact.checked ? "text-gray-500 line-through dark:text-gray-400" : "text-gray-800 dark:text-[#00c0d1]"
-                                }`}
-                            >
-                                {contact.fullName}
-                                {isLoading && (
-                                    <span className="ml-2 inline-flex items-center">
-                                        <LoadingSpinner message="Đang cập nhật..." />
-                                    </span>
-                                )}
-                            </h3>
-                        </Link>
+                        <h3
+                            className={`text-lg font-semibold sm:text-xl ${
+                                contact.checked ? "text-gray-500 line-through dark:text-gray-400" : "text-gray-800 dark:text-[#00c0d1]"
+                            }`}
+                        >
+                            {contact.fullName}
+                            {isLoading && (
+                                <span className="ml-2 inline-flex items-center">
+                                    <LoadingSpinner message="Đang cập nhật..." />
+                                </span>
+                            )}
+                        </h3>
                         <div className="mt-1 text-base text-gray-500 dark:text-gray-400">
                             {contact.phoneNumber}
                             {contact.email && <span className="ml-2">| {contact.email}</span>}
@@ -41,7 +38,20 @@ function ContactListItem({ contact, index, toggleCheckbox, isLoading }) {
                         <p className="mt-2 text-base text-gray-600 sm:text-lg dark:text-gray-300">{contact.content}</p>
                     </div>
                 </div>
-                <div className="text-base text-gray-400 dark:text-gray-500">#{index + 1}</div>
+                <div className="flex items-center gap-4">
+                    <div className="text-base text-gray-400 dark:text-gray-500">#{index + 1}</div>
+                    {contact.checked && (
+                        <DeleteButton
+                            onDelete={async () => {
+                                await deleteContact(contact.contactId);
+                                return true; // Trả về true để hiển thị thông báo thành công
+                            }}
+                            confirmText="Bạn có chắc muốn xóa liên hệ này không?"
+                            successText="Liên hệ đã được xóa thành công!"
+                            disabled={isDeleting}
+                        ></DeleteButton>
+                    )}
+                </div>
             </div>
         </li>
     );

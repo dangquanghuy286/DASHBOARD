@@ -33,9 +33,7 @@ function UserPr({ user, onReload }) {
     };
 
     const handleImageError = (e) => {
-        console.error("Failed to load avatar:", e.target.src);
         e.target.src = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
-        setAvatarError("Không thể tải ảnh avatar");
     };
 
     const BASE_URL = "http://localhost:8088";

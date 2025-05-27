@@ -1,17 +1,16 @@
-import { get } from "../util/requestserver";
+import { edit, get, del } from "../util/requestserver";
 
-export const getDataContact = async () => {
-    try {
-        const res = await get("contact");
-        return {
-            status: res.status,
-            data: res.data,
-        };
-    } catch (error) {
-        console.error("Lỗi :", error);
-        return {
-            status: error.response?.status || 500,
-            data: error.response?.data || "Lỗi khi lấy danh sách Liên hệ",
-        };
-    }
+export const getContact = async () => {
+    const result = await get("contact");
+    return result;
+};
+
+export const editContact = async (id, contactData) => {
+    const result = await edit(`contact/${id}`, contactData);
+    return result;
+};
+
+export const deleteContact = async (id) => {
+    const result = await del(`contact/${id}`);
+    return result;
 };

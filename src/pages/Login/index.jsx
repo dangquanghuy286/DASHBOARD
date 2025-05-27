@@ -67,6 +67,7 @@ function Login() {
                     setLoading(false);
                     localStorage.setItem("token", res.data.token);
                     localStorage.setItem("user_id", res.data.user_id);
+                    localStorage.setItem("role_id", res.data.role_id);
                     Swal.fire({
                         icon: "success",
                         title: "Đăng nhập thành công!",

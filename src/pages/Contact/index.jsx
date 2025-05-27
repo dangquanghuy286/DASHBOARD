@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import GoBack from "../../components/GoBack/Goback";
-import { getContact, editContact } from "../../services/contact";
+
 import ErrorMessage from "../../components/ErrorMessage";
 import ContactList from "../../components/Contact/ContactList";
 import ContactHeader from "../../components/Contact/ContactHeader";
+import { deleteContact, editContact, getContact } from "../../services/contactService";
 
 const ContactNotifications = () => {
     const [contacts, setContacts] = useState([]);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState({}); // State để theo dõi loading cho từng contact
+    const [loading, setLoading] = useState({});
+    const [deleting, setDeleting] = useState({});
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -25,22 +27,29 @@ const ContactNotifications = () => {
 
     const toggleCheckbox = async (index) => {
         const updatedContact = { ...contacts[index], checked: !contacts[index].checked };
-
-        // Cập nhật loading
         setLoading((prev) => ({ ...prev, [index]: true }));
-
-        // Cập nhật cục bộ
         setContacts((prev) => prev.map((item, i) => (i === index ? updatedContact : item)));
-
         try {
             await editContact(updatedContact.contactId, updatedContact);
         } catch (err) {
-            // Hoàn tác nếu lỗi
             setContacts((prev) => prev.map((item, i) => (i === index ? { ...item, checked: !item.checked } : item)));
             setError("Không thể cập nhật trạng thái. Vui lòng thử lại.");
             console.error("Lỗi khi cập nhật checked:", err);
         } finally {
             setLoading((prev) => ({ ...prev, [index]: false }));
+        }
+    };
+
+    const deleteContactHandler = async (id) => {
+        setDeleting((prev) => ({ ...prev, [id]: true }));
+        try {
+            await deleteContact(id);
+            setContacts((prev) => prev.filter((contact) => contact.contactId !== id));
+        } catch (err) {
+            setError("Không thể xóa liên hệ. Vui lòng thử lại.");
+            console.error("Lỗi khi xóa liên hệ:", err);
+        } finally {
+            setDeleting((prev) => ({ ...prev, [id]: false }));
         }
     };
 
@@ -53,6 +62,8 @@ const ContactNotifications = () => {
                     contacts={contacts}
                     toggleCheckbox={toggleCheckbox}
                     loading={loading}
+                    deleteContact={deleteContactHandler}
+                    deleting={deleting}
                 />
                 <div className="mt-6">
                     <GoBack />

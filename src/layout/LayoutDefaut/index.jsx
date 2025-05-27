@@ -10,7 +10,7 @@ function LayoutDefault() {
     const isDesktopDevice = useMediaQuery("(min-width:768px)");
     const [collapsed, setCollapsed] = useState(!isDesktopDevice);
     const sidebarRef = useRef(null);
-    const token = localStorage.getItem("token"); // Kiểm tra token từ
+    const token = localStorage.getItem("token");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function LayoutDefault() {
 
     useClickOutside([sidebarRef], () => {
         if (!isDesktopDevice && !collapsed) {
-            setCollapsed(true); // Đóng Sidebar trên mobile
+            setCollapsed(true);
         }
     });
 
