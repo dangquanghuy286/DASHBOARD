@@ -27,6 +27,7 @@ function BookingDetail() {
         const fetchApi = async () => {
             try {
                 const response = await getInvoiceById(id);
+                console.log(response);
 
                 if (response.status === 200 && response.data) {
                     const data = response.data;
@@ -52,7 +53,7 @@ function BookingDetail() {
                               }[data.booking_status] || "Không xác định"
                             : "Không xác định",
                         paymentMethodName: data.payment_method || "Không xác định",
-                        departurePoint: data.departurePoint || "Không xác định",
+                        departurePoint: data.departure_point || "Không xác định",
                         paymentStatus: data.payment_status
                             ? {
                                   PENDING: "Chưa thanh toán",
@@ -68,8 +69,8 @@ function BookingDetail() {
                         title: data.title || "Tour không xác định",
                         specialRequests: data.special_requests || "Không có",
                         tourId: data.formatted_tour_id || formatTourId(data.tour_id),
-                        userId: data.user_id || "Không xác định",
-                        promotionId: data.promotion_id || "Không có",
+                        userId: data.formatted_user_id || "Không xác định",
+                        promotionId: data.promotion_code || "Không có",
                     };
                     setBookingDetail(mappedData);
                 } else {

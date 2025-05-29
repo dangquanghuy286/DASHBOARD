@@ -42,7 +42,8 @@ function Invoice({ item }) {
     const totalAdult = bookingData.adults * bookingData.unitPriceAdult;
     const totalChild = bookingData.children * bookingData.unitPriceChild;
     const originalPrice = totalAdult + totalChild;
-    const finalPrice = originalPrice + bookingData.tax - bookingData.discount;
+    const discountAmount = originalPrice * (bookingData.discount / 100); // Calculate discount as percentage
+    const finalPrice = originalPrice + bookingData.tax - discountAmount;
 
     // Thời gian hiện tại
     const currentDateTime = new Date().toLocaleString("vi-VN");
@@ -204,10 +205,8 @@ function Invoice({ item }) {
                         )}
                     </p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
-                        <span className="font-medium">Giảm giá:</span> {(bookingData.discount || 0).toLocaleString("vi-VN")} VND{" "}
-                        {bookingData.discount > 0 && (
-                            <span className="text-xs text-gray-500">({((bookingData.discount / originalPrice) * 100).toFixed(2)}%)</span>
-                        )}
+                        <span className="font-medium">Giảm giá:</span> {(discountAmount || 0).toLocaleString("vi-VN")} VND{" "}
+                        {bookingData.discount > 0 && <span className="text-xs text-gray-500">({bookingData.discount}%)</span>}
                     </p>
                     <p className="text-lg font-bold text-gray-900 dark:text-white">Tổng cộng: {(finalPrice || 0).toLocaleString("vi-VN")} VND</p>
                 </div>

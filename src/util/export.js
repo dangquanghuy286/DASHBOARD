@@ -336,8 +336,9 @@ export const handlePrintReport = (item, type) => {
     const totalChild = (item?.children || 0) * (item?.unitPriceChild || 0);
     const originalPrice = totalAdult + totalChild;
     const tax = item?.tax || 0;
-    const discount = item?.discount || 0;
-    const finalPrice = originalPrice + tax - discount;
+    const discountPercent = item?.discount || 0;
+    const discountAmount = originalPrice * (discountPercent / 100);
+    const finalPrice = originalPrice + tax - discountAmount;
 
     // Thông tin nhà cung cấp
     const provider = {
@@ -536,9 +537,7 @@ export const handlePrintReport = (item, type) => {
                     <p><strong>Thuế:</strong> ${tax.toLocaleString("vi-VN")} VND ${
                         tax > 0 ? `(${((tax / originalPrice) * 100).toFixed(2)}%)` : ""
                     }</p>
-                    <p><strong>Giảm giá:</strong> ${discount.toLocaleString("vi-VN")} VND ${
-                        discount > 0 ? `(${((discount / originalPrice) * 100).toFixed(2)}%)` : ""
-                    }</p>
+                    <p><strong>Giảm giá:</strong> ${discountAmount.toLocaleString("vi-VN")} VND (${discountPercent}%)</p>
                     <p class="text-bold"><strong>Tổng cộng:</strong> ${finalPrice.toLocaleString("vi-VN")} VND</p>
                 </div>
                 <hr />
