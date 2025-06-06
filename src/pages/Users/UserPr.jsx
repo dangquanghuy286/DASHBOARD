@@ -32,12 +32,10 @@ function UserPr({ user, onReload }) {
         return user.role.name || "N/A";
     };
 
-    const handleImageError = (e) => {
-        e.target.src = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
-    };
-
-    const BASE_URL = "http://localhost:8088";
-    const avatarUrl = user.avatar || `${BASE_URL}/api/v1/users/avatars/default-avatar.jpg`;
+    // Đường dẫn ảnh mặc định từ nguồn bên ngoài
+    const defaultAvatar = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
+    // Sử dụng user.avatar nếu có, nếu không thì dùng ảnh mặc định
+    const avatarUrl = user.avatar || defaultAvatar;
 
     return (
         <div className="mt-0 flex flex-col rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-200 hover:shadow-lg sm:flex-row dark:border-gray-700 dark:bg-slate-800">
@@ -47,7 +45,9 @@ function UserPr({ user, onReload }) {
                         src={avatarUrl}
                         alt={user.full_name}
                         className="h-full w-full object-cover"
-                        onError={handleImageError}
+                        onError={(e) => {
+                            e.target.src = defaultAvatar; // Hiển thị ảnh mặc định nếu lỗi
+                        }}
                     />
                 </div>
             </div>
@@ -57,7 +57,7 @@ function UserPr({ user, onReload }) {
                     <h3 className="mt-0 text-lg font-bold text-gray-900 dark:text-white">{user.full_name}</h3>
                     <div className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
                         <p>
-                            <span className="font-semibold">About:</span> {user.full_name || "Chưa có thông tin"}
+                            <span className="font-semibold">About:</span> {user.username || "Chưa có thông tin"}
                         </p>
                         <p>
                             <span className="font-semibold">Address:</span> {user.address || "N/A"}

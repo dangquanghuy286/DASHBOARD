@@ -3,14 +3,12 @@ import { edit, get, post } from "../util/requestserver";
 // Đăng nhập ADMIN
 export const login = async (user_name, password) => {
     try {
-        // Validate input before making request
         if (!user_name || !password) {
             throw new Error("Username and password are required");
         }
 
         const response = await post("users/login", { user_name, password });
 
-        // Check if response contains expected data
         if (!response?.data) {
             throw new Error("Invalid response from server");
         }
@@ -20,14 +18,22 @@ export const login = async (user_name, password) => {
             data: response.data,
         };
     } catch (error) {
-        // Standardize error response format
-        const errorResponse = {
-            status: error.response?.status || 500,
-            data: error.response?.data || error.message || "Login failed",
-        };
+        // Nếu có response từ backend, ném nguyên response để phía Login xử lý
+        if (error.response?.data) {
+            throw {
+                status: error.response.status,
+                data: error.response.data,
+            };
+        }
 
-        console.error("Login error:", errorResponse);
-        return errorResponse;
+        // Còn lại thì ném lỗi mặc định
+        throw {
+            status: 500,
+            data: {
+                errorCode: "UNKNOWN_ERROR",
+                message: error.message || "Login failed",
+            },
+        };
     }
 };
 

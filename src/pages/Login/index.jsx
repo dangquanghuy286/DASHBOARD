@@ -18,7 +18,7 @@ function Login() {
 
     const validate = (user_name, password) => {
         const newErrors = {};
-        if (!user_name) newErrors.user_name = "Vui lòng nhập tên của bạn";
+        if (!user_name) newErrors.user_name = "Vui lòng nhập tên đăng nhập";
         else if (!/^[a-zA-Z0-9_]+$/.test(user_name)) {
             newErrors.user_name = "Tên đăng nhập chỉ chứa chữ, số hoặc dấu _";
         }
@@ -68,6 +68,7 @@ function Login() {
                     localStorage.setItem("token", res.data.token);
                     localStorage.setItem("user_id", res.data.user_id);
                     localStorage.setItem("role_id", res.data.role_id);
+
                     Swal.fire({
                         icon: "success",
                         title: "Đăng nhập thành công!",
@@ -82,26 +83,47 @@ function Login() {
             }
         } catch (error) {
             setLoading(false);
-            let errorMessage = "Tên đăng nhập hoặc mật khẩu không đúng";
-            if (error.response?.status === 400) {
-                errorMessage = error.response?.data?.message || "Yêu cầu không hợp lệ. Vui lòng kiểm tra thông tin đăng nhập.";
-                if (error.response?.data?.message?.includes("lock")) {
-                    errorMessage = "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên.";
+            let errorMessage = "Đã xảy ra lỗi không xác định";
+            let errorTitle = "Đăng nhập thất bại";
+
+            if (error.data?.errorCode) {
+                const { errorCode, message } = error.data;
+
+                switch (errorCode) {
+                    case "DATA_NOT_FOUND":
+                        errorMessage = "Tên đăng nhập không tồn tại";
+                        break;
+                    case "INVALID_PASSWORD":
+                        errorMessage = "Mật khẩu không đúng";
+                        break;
+                    case "ACCOUNT_BLOCKED":
+                        errorMessage = "Tài khoản đã bị chặn. Vui lòng liên hệ quản trị viên.";
+                        break;
+                    case "ACCOUNT_NOT_ACTIVATED":
+                        errorMessage = "Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email để kích hoạt.";
+                        break;
+                    case "INVALID_PARAM":
+                        errorMessage = message || "Thông tin đăng nhập không hợp lệ";
+                        break;
+                    case "UNKNOWN_ERROR":
+                    default:
+                        errorMessage = message || "Đã xảy ra lỗi không xác định";
+                        break;
                 }
-            } else if (error.response?.status === 403) {
-                errorMessage = "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên.";
             }
+
             Swal.fire({
                 icon: "error",
-                title: "Đăng nhập thất bại",
+                title: errorTitle,
                 text: errorMessage,
-                timer: 2000,
+                timer: 3000,
                 timerProgressBar: true,
                 showConfirmButton: false,
                 position: "top-end",
             });
         }
     };
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) navigate("/");
