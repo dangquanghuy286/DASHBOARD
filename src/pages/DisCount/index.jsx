@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDataDiscount } from "../../services/discountService";
+import DisCountForm from "../../components/DisCount/DisCount";
 
 const DisCount = () => {
-    return <div>index</div>;
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const fetchApi = async () => {
+            const res = await getDataDiscount();
+            setData(res);
+        };
+        fetchApi();
+    }, []);
+    console.log(data);
+
+    return (
+        <>
+            <DisCountForm data={data} />
+        </>
+    );
 };
 
 export default DisCount;
