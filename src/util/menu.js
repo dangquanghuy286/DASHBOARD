@@ -1,5 +1,5 @@
 import icons from "./icon";
-const { MdDashboard, GrUserAdmin, FaUserAlt, MdTour, TbBrandBooking, FiLogOut, MdContactSupport } = icons; // Đảm bảo có icon cho Logout
+const { MdDashboard, GrUserAdmin, FaUserAlt, MdTour, TbBrandBooking, FiLogOut, MdContactSupport, IoMdPricetag, MdArticle } = icons; // Đảm bảo có icon cho Logout
 
 export const menu = [
     {
@@ -42,9 +42,36 @@ export const menu = [
     {
         link: [
             {
+                path: "/discount",
+                text: "Thẻ giảm giá",
+                icon: IoMdPricetag,
+            },
+        ],
+    },
+    {
+        link: [
+            {
                 path: "/booking",
                 text: "Quản lý booking",
                 icon: TbBrandBooking,
+            },
+        ],
+    },
+    {
+        link: [
+            {
+                path: "/guide",
+                text: "Quản lý hướng dẫn viên",
+                icon: FaUserAlt,
+            },
+        ],
+    },
+    {
+        link: [
+            {
+                path: "/blogs",
+                text: "Quản lý bài viết",
+                icon: MdArticle,
             },
         ],
     },

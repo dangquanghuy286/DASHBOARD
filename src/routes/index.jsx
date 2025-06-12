@@ -1,3 +1,4 @@
+import DisCount from "../components/DissCount/DisCount";
 import PrivateRoutes from "../components/PrivateRoutes";
 import Admin from "../pages/Admin";
 import ChangePasswordPage from "../pages/Admin/ChangePass";
@@ -31,6 +32,7 @@ export const routes = [
             },
             { path: "user", element: <User /> },
             { path: "tour", element: <Tour /> },
+            { path: "/discount", element: <DisCount /> },
             {
                 path: "booking",
                 element: <Booking />,

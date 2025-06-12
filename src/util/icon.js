@@ -13,6 +13,7 @@ import {
     MdPayment,
     MdCheckCircle,
     MdContactSupport,
+    MdArticle,
 } from "react-icons/md";
 import {
     IoMdAnalytics,
@@ -27,6 +28,7 @@ import {
     IoIosLock,
     IoIosCheckmarkCircleOutline,
     IoMdRepeat,
+    IoMdPricetag,
 } from "react-icons/io";
 import { HiDocumentReport } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
@@ -116,5 +118,7 @@ const icons = {
     IoIosCheckmarkCircleOutline,
     IoMdRepeat,
     FaChartLine,
+    IoMdPricetag,
+    MdArticle,
 };
 export default icons;
