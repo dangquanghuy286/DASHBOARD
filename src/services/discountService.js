@@ -1,4 +1,4 @@
-import { del, get } from "../util/requestserver";
+import { del, get, post } from "../util/requestserver";
 
 export const getDataDiscount = async () => {
     try {
@@ -27,6 +27,21 @@ export const deleteDiscount = async (promotionId) => {
         return {
             status: error.response?.status || 500,
             data: error.response?.data || { message: "Lỗi khi xóa mã giảm giá" },
+        };
+    }
+};
+export const createDiscount = async (data) => {
+    try {
+        const response = await post("promotions", data);
+        return {
+            status: response.status,
+            data: response.data,
+        };
+    } catch (error) {
+        console.error("Lỗi", error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi tạo mã giảm giá!",
         };
     }
 };

@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import CreateDiscount from "./CreateDiscount";
 // import DeleteDiscount from "./DeleteDiscount";
 
 const DiscountForm = ({ data }) => {
@@ -10,6 +12,9 @@ const DiscountForm = ({ data }) => {
         <div className="min-h-screen bg-white px-4 font-sans lg:col-span-8 dark:bg-slate-900 dark:text-white">
             <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Quản lý mã giảm giá</h1>
+            </div>
+            <div className="mb-10">
+                <CreateDiscount />
             </div>
 
             <div className="overflow-x-auto">
