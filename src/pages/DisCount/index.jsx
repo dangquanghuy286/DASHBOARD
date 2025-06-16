@@ -11,7 +11,6 @@ const DisCount = () => {
         };
         fetchApi();
     }, []);
-    console.log(data);
 
     return (
         <>
