@@ -4,6 +4,7 @@ import GoBack from "../../components/GoBack/Goback";
 import LoadingSpinner from "../../components/LoadingSniper";
 import { getDataGuide } from "../../services/guideService";
 import ErrorMessage from "../ErrorMessage";
+import DeleteGuide from "./DeleteGuide";
 
 function Guide() {
     const [data, setData] = useState([]);
@@ -58,6 +59,7 @@ function Guide() {
                                         <th className="px-4 py-3 font-medium">Facebook</th>
                                         <th className="px-4 py-3 font-medium">Ảnh</th>
                                         <th className="px-4 py-3 font-medium">Trạng thái</th>
+                                        <th className="px-4 py-3 font-medium"></th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -113,6 +115,9 @@ function Guide() {
                                                 >
                                                     {guide.isActive ? "Hoạt động" : "Không hoạt động"}
                                                 </span>
+                                            </td>
+                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                                <DeleteGuide item={guide} />
                                             </td>
                                         </tr>
                                     ))}
@@ -185,6 +190,10 @@ function Guide() {
                                             >
                                                 Xem trang Facebook
                                             </a>
+                                        </div>
+                                        <div className="sm:col-span-2">
+                                            <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
+                                            <DeleteGuide item={guide} />
                                         </div>
                                     </div>
                                 </div>
