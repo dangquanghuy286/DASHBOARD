@@ -5,6 +5,7 @@ import LoadingSpinner from "../../components/LoadingSniper";
 import { getDataGuide } from "../../services/guideService";
 import ErrorMessage from "../ErrorMessage";
 import DeleteGuide from "./DeleteGuide";
+import CreateGuide from "./Create/CreateGuide";
 
 function Guide() {
     const [data, setData] = useState([]);
@@ -34,7 +35,11 @@ function Guide() {
                 <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
                     <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Quản lý hướng dẫn viên</h1>
                 </div>
-
+                <div className="my-6 flex flex-col items-center gap-2.5 md:flex-row">
+                    <div className="mb-4 flex w-full items-center space-x-2 sm:mb-0 sm:w-auto">
+                        <CreateGuide />
+                    </div>
+                </div>
                 {loading ? (
                     <div className="flex items-center justify-center py-12">
                         <LoadingSpinner />
