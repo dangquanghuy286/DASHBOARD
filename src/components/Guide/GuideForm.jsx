@@ -105,7 +105,7 @@ function GuideForm({ data, handleChange, handleSubmit, closeModal, renderPhoto, 
             </div>
 
             <div>
-                <label className="block font-medium">Link cơ sở dữ liệu:</label>
+                <label className="block font-medium">Link Facebook:</label>
                 <input
                     type="text"
                     name="databaseLink"

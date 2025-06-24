@@ -2,6 +2,7 @@ import Guide from "../components/Guide/Guide";
 import PrivateRoutes from "../components/PrivateRoutes";
 import Admin from "../pages/Admin";
 import ChangePasswordPage from "../pages/Admin/ChangePass";
+import Blogs from "../pages/Blogs";
 import Booking from "../pages/Booking";
 import ShowBookingTour from "../pages/Booking/ShowBooking";
 import ContactNotifications from "../pages/Contact";
@@ -45,6 +46,7 @@ export const routes = [
                 element: <BookingDetail />,
             },
             { path: "contact", element: <ContactNotifications /> },
+            { path: "blogs", element: <Blogs /> },
             { path: "logout", element: <Logout /> },
             { path: "*", element: <NotFound /> },
         ],
