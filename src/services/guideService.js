@@ -10,6 +10,22 @@ export const getDataGuide = async () => {
     }
 };
 
+export const getGuideById = async (id) => {
+    try {
+        const response = await get(`guides/${id}`);
+        return {
+            status: response.status,
+            data: response.data,
+        };
+    } catch (error) {
+        console.error(`Error fetching guide with ID ${id}:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi lấy thông tin hướng dẫn viên",
+        };
+    }
+};
+
 export const createGuide = async (guideData) => {
     try {
         const response = await post("guides", guideData);
@@ -22,6 +38,22 @@ export const createGuide = async (guideData) => {
         return {
             status: error.response?.status || 500,
             data: error.response?.data || "Lỗi khi tạo hướng dẫn viên",
+        };
+    }
+};
+
+export const updateGuide = async (id, guideData) => {
+    try {
+        const response = await put(`guides/${id}`, guideData);
+        return {
+            status: response.status,
+            data: response.data,
+        };
+    } catch (error) {
+        console.error(`Error updating guide with ID ${id}:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Lỗi khi cập nhật hướng dẫn viên",
         };
     }
 };

@@ -6,6 +6,7 @@ import { getDataGuide } from "../../services/guideService";
 import ErrorMessage from "../ErrorMessage";
 import DeleteGuide from "./DeleteGuide";
 import CreateGuide from "./Create/CreateGuide";
+import EditGuide from "./Edit/EditGuide";
 
 function Guide() {
     const [data, setData] = useState([]);
@@ -65,6 +66,7 @@ function Guide() {
                                         <th className="px-4 py-3 font-medium">Ảnh</th>
                                         <th className="px-4 py-3 font-medium">Trạng thái</th>
                                         <th className="px-4 py-3 font-medium"></th>
+                                        <th className="px-4 py-3 font-medium"></th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -120,6 +122,9 @@ function Guide() {
                                                 >
                                                     {guide.isActive ? "Hoạt động" : "Không hoạt động"}
                                                 </span>
+                                            </td>
+                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                                <EditGuide item={guide} />
                                             </td>
                                             <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
                                                 <DeleteGuide item={guide} />

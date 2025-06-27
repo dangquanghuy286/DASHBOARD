@@ -8,7 +8,8 @@ import ShowBookingTour from "../pages/Booking/ShowBooking";
 import ContactNotifications from "../pages/Contact";
 import DisCount from "../pages/DisCount";
 import NotFound from "../pages/Error";
-import Home from "../Pages/Home";
+import Home from "../pages/Home"
+
 import BookingDetail from "../pages/Invoice/BookingDetail";
 import Login from "../pages/Login";
 import Logout from "../pages/Logout";
