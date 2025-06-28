@@ -1,5 +1,6 @@
 import React from "react";
 import CreateBlog from "../../components/Blogs/CreateBlogs";
+import BlogTable from "../../components/Blogs/BlogTable";
 
 const Blogs = () => {
     return (
@@ -12,6 +13,7 @@ const Blogs = () => {
                     <CreateBlog />
                 </div>
             </div>
+            <BlogTable />
         </div>
     );
 };

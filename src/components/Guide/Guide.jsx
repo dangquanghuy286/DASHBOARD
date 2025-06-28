@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 
 import GoBack from "../../components/GoBack/Goback";
@@ -10,12 +11,9 @@ import EditGuide from "./Edit/EditGuide";
 
 function Guide() {
     const [data, setData] = useState([]);
-    // const [originalData, setOriginalData] = useState([]);
-    // const [currentPage, setCurrentPage] = useState(0);
-    // const [limit] = useState(10);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [showAddForm, setShowAddForm] = useState(false);
+
     useEffect(() => {
         const fetchApi = async () => {
             try {
@@ -52,21 +50,21 @@ function Guide() {
                 ) : (
                     <div className="space-y-6">
                         {/* Desktop Table */}
-                        <div className="hidden overflow-x-auto rounded-lg bg-white shadow-md lg:block dark:bg-gray-800">
-                            <table className="w-full text-left text-sm">
-                                <thead className="bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                        <div className="hidden overflow-x-auto lg:block">
+                            <table className="mb-5 w-full border text-sm text-black dark:text-white">
+                                <thead className="bg-gray-100 text-left dark:bg-slate-800">
                                     <tr>
-                                        <th className="px-4 py-3 font-medium">ID</th>
-                                        <th className="px-4 py-3 font-medium">Họ và tên</th>
-                                        <th className="px-4 py-3 font-medium">Tuổi</th>
-                                        <th className="px-4 py-3 font-medium">Giới tính</th>
-                                        <th className="px-4 py-3 font-medium">Số điện thoại</th>
-                                        <th className="px-4 py-3 font-medium">Email</th>
-                                        <th className="px-4 py-3 font-medium">Facebook</th>
-                                        <th className="px-4 py-3 font-medium">Ảnh</th>
-                                        <th className="px-4 py-3 font-medium">Trạng thái</th>
-                                        <th className="px-4 py-3 font-medium"></th>
-                                        <th className="px-4 py-3 font-medium"></th>
+                                        <th className="border px-4 py-2">ID</th>
+                                        <th className="border px-4 py-2">Họ và tên</th>
+                                        <th className="border px-4 py-2">Tuổi</th>
+                                        <th className="border px-4 py-2">Giới tính</th>
+                                        <th className="border px-4 py-2">Số điện thoại</th>
+                                        <th className="border px-4 py-2">Email</th>
+                                        <th className="border px-4 py-2">Facebook</th>
+                                        <th className="border px-4 py-2">Ảnh</th>
+                                        <th className="border px-4 py-2">Trạng thái</th>
+                                        <th className="border px-4 py-2"></th>
+                                        <th className="border px-4 py-2"></th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -75,11 +73,11 @@ function Guide() {
                                             key={guide.guideId}
                                             className="transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
                                         >
-                                            <td className="px-4 py-3 text-gray-900 dark:text-gray-100">{guide.guideId}</td>
-                                            <td className="px-4 py-3 font-medium text-gray-900 dark:text-gray-100">{guide.fullName}</td>
-                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">{guide.age}</td>
-                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">{guide.gender === "MALE" ? "Nam" : "Nữ"}</td>
-                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                            <td className="border px-4 py-2">{guide.guideId}</td>
+                                            <td className="border px-4 py-2">{guide.fullName}</td>
+                                            <td className="border px-4 py-2">{guide.age}</td>
+                                            <td className="border px-4 py-2">{guide.gender === "MALE" ? "Nam" : "Nữ"}</td>
+                                            <td className="border px-4 py-2">
                                                 <a
                                                     href={`tel:${guide.phoneNumber}`}
                                                     className="text-blue-600 hover:underline dark:text-blue-400"
@@ -87,7 +85,7 @@ function Guide() {
                                                     {guide.phoneNumber}
                                                 </a>
                                             </td>
-                                            <td className="px-4 py-3">
+                                            <td className="border px-4 py-2">
                                                 <a
                                                     href={`mailto:${guide.gmailLink}`}
                                                     className="break-all text-blue-600 hover:underline dark:text-blue-400"
@@ -95,7 +93,7 @@ function Guide() {
                                                     {guide.gmailLink}
                                                 </a>
                                             </td>
-                                            <td className="px-4 py-3">
+                                            <td className="border px-4 py-2">
                                                 <a
                                                     href={guide.databaseLink}
                                                     target="_blank"
@@ -105,14 +103,14 @@ function Guide() {
                                                     Facebook
                                                 </a>
                                             </td>
-                                            <td className="px-4 py-3">
+                                            <td className="border px-4 py-2">
                                                 <img
                                                     src={guide.photo}
                                                     alt={guide.fullName}
                                                     className="h-12 w-12 rounded-full border-2 border-gray-200 object-cover dark:border-gray-600"
                                                 />
                                             </td>
-                                            <td className="px-4 py-3">
+                                            <td className="border px-4 py-2">
                                                 <span
                                                     className={`inline-flex rounded-full px-2 py-1 text-xs font-semibold ${
                                                         guide.isActive
@@ -123,10 +121,10 @@ function Guide() {
                                                     {guide.isActive ? "Hoạt động" : "Không hoạt động"}
                                                 </span>
                                             </td>
-                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                            <td className="border px-4 py-2">
                                                 <EditGuide item={guide} />
                                             </td>
-                                            <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                            <td className="border px-4 py-2">
                                                 <DeleteGuide item={guide} />
                                             </td>
                                         </tr>
@@ -201,9 +199,15 @@ function Guide() {
                                                 Xem trang Facebook
                                             </a>
                                         </div>
-                                        <div className="sm:col-span-2">
-                                            <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
-                                            <DeleteGuide item={guide} />
+                                        <div className="flex gap-5">
+                                            <div className="sm:col-span-2">
+                                                <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
+                                                <EditGuide item={guide} />
+                                            </div>
+                                            <div className="sm:col-span-2">
+                                                <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
+                                                <DeleteGuide item={guide} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

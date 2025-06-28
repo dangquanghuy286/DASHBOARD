@@ -1,5 +1,16 @@
-import { post, put } from "../util/requestserver";
-
+import { get, post, put } from "../util/requestserver";
+export const getDataBlog = async () => {
+    try {
+        const response = await get("blogs");
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching blogs data:", error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Đã xảy ra lỗi khi lấy blogs",
+        };
+    }
+};
 export const createBlog = async (data) => {
     try {
         const res = await post("blogs", data);
