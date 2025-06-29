@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDataBlog } from "../../services/blogService";
+import EditBlog from "./EditBlog";
 
 const BlogTable = () => {
     const [data, setData] = useState([]);
@@ -10,7 +11,6 @@ const BlogTable = () => {
         };
         fetchApi();
     }, []);
-    console.log(data);
 
     return (
         <>
@@ -48,6 +48,9 @@ const BlogTable = () => {
                                     />
                                 </td>
                                 <td className="border px-4 py-2">{blogs.author}</td>
+                                <td className="border px-4 py-2">
+                                    <EditBlog item={blogs} />
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -55,92 +58,41 @@ const BlogTable = () => {
             </div>
 
             {/* Mobile Cards */}
-            {/* <div className="space-y-4 lg:hidden">
-                    {data.map((guide) => (
-                        <div
-                            key={guide.guideId}
-                            className="rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800"
-                        >
-                            <div className="mb-4 flex items-start space-x-4">
-                                <img
-                                    src={guide.photo}
-                                    alt={guide.fullName}
-                                    className="h-16 w-16 flex-shrink-0 rounded-full border-2 border-gray-200 object-cover dark:border-gray-600"
-                                />
-                                <div className="min-w-0 flex-1">
-                                    <h3 className="truncate text-lg font-semibold text-gray-900 dark:text-white">{guide.fullName}</h3>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400">ID: {guide.guideId}</p>
-                                    <span
-                                        className={`mt-1 inline-flex rounded-full px-2 py-1 text-xs font-semibold ${
-                                            guide.isActive
-                                                ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                                                : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                                        }`}
-                                    >
-                                        {guide.isActive ? "Hoạt động" : "Không hoạt động"}
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
-                                <div>
-                                    <span className="font-medium text-gray-600 dark:text-gray-400">Tuổi:</span>
-                                    <span className="ml-2 text-gray-900 dark:text-gray-100">{guide.age}</span>
-                                </div>
-                                <div>
-                                    <span className="font-medium text-gray-600 dark:text-gray-400">Giới tính:</span>
-                                    <span className="ml-2 text-gray-900 dark:text-gray-100">{guide.gender === "MALE" ? "Nam" : "Nữ"}</span>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <span className="font-medium text-gray-600 dark:text-gray-400">Điện thoại:</span>
-                                    <a
-                                        href={`tel:${guide.phoneNumber}`}
-                                        className="ml-2 text-blue-600 hover:underline dark:text-blue-400"
-                                    >
-                                        {guide.phoneNumber}
-                                    </a>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <span className="font-medium text-gray-600 dark:text-gray-400">Email:</span>
-                                    <a
-                                        href={`mailto:${guide.gmailLink}`}
-                                        className="ml-2 break-all text-blue-600 hover:underline dark:text-blue-400"
-                                    >
-                                        {guide.gmailLink}
-                                    </a>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <span className="font-medium text-gray-600 dark:text-gray-400">Facebook:</span>
-                                    <a
-                                        href={guide.databaseLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="ml-2 text-blue-600 hover:underline dark:text-blue-400"
-                                    >
-                                        Xem trang Facebook
-                                    </a>
-                                </div>
-                                <div className="flex gap-5">
-                                    <div className="sm:col-span-2">
-                                        <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
-                                        <EditGuide item={guide} />
-                                    </div>
-                                    <div className="sm:col-span-2">
-                                        <span className="font-medium text-gray-600 dark:text-gray-400">Hành động:</span>
-                                        <DeleteGuide item={guide} />
-                                    </div>
-                                </div>
+            <div className="space-y-4 lg:hidden">
+                {data.map((blogs) => (
+                    <div
+                        key={blogs.blogId}
+                        className="rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800"
+                    >
+                        <div className="mb-4 flex items-start space-x-4">
+                            <img
+                                src={blogs.image}
+                                alt={blogs.title}
+                                className="h-16 w-16 flex-shrink-0 rounded-full border-2 border-gray-200 object-cover dark:border-gray-600"
+                            />
+                            <div className="min-w-0 flex-1">
+                                <h3 className="truncate text-lg font-semibold text-gray-900 dark:text-white">{blogs.title}</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">ID: {blogs.blogId}</p>
                             </div>
                         </div>
-                    ))}
-                </div> */}
 
-            {/* Summary */}
-            {/* <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Tổng số hướng dẫn viên: <span className="text-blue-600 dark:text-blue-400">{data.length}</span>
-                    </p>
-                </div> */}
+                        <div className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+                            <div>
+                                <span className="font-medium text-gray-600 dark:text-gray-400">Tác Giả:</span>
+                                <span className="ml-2 text-gray-900 dark:text-gray-100">{blogs.author}</span>
+                            </div>
+                            <div>
+                                <span className="font-medium text-gray-600 dark:text-gray-400">Ngày Đăng:</span>
+                                <span className="ml-2 text-gray-900 dark:text-gray-100">{blogs.createdAt}</span>
+                            </div>
+                            <div>
+                                <span className="font-medium text-gray-600 dark:text-gray-400">Nội dung:</span>
+                                <article className="ml-2 text-gray-900 dark:text-gray-100">{blogs.content}</article>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </>
     );
 };
