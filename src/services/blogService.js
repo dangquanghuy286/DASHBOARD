@@ -1,4 +1,4 @@
-import { get, post, put } from "../util/requestserver";
+import { del, get, post, put } from "../util/requestserver";
 
 export const getDataBlog = async () => {
     try {
@@ -77,6 +77,21 @@ export const uploadBlogImage = async (blogId, photo) => {
         return {
             status: error.response?.status || 500,
             data: error.response?.data || "Lỗi upload ảnh blog",
+        };
+    }
+};
+export const deleteBlog = async (blogId) => {
+    try {
+        const response = await del(`blogs/${blogId}`);
+        return {
+            status: response.status,
+            data: response.data || { message: "Xóa bài viết thành công" },
+        };
+    } catch (error) {
+        console.error(`Error deleting blog ID ${blogId}:`, error);
+        return {
+            status: error.response?.status || 500,
+            data: error.response?.data || "Đã xảy ra lỗi khi xóa bài viết",
         };
     }
 };

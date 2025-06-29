@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDataBlog } from "../../services/blogService";
 import EditBlog from "./EditBlog";
+import DeleteBlog from "./DeleteBlog";
 
 const BlogTable = () => {
     const [data, setData] = useState([]);
@@ -50,6 +51,9 @@ const BlogTable = () => {
                                 <td className="border px-4 py-2">{blogs.author}</td>
                                 <td className="border px-4 py-2">
                                     <EditBlog item={blogs} />
+                                </td>
+                                <td className="border px-4 py-2">
+                                    <DeleteBlog item={blogs} />
                                 </td>
                             </tr>
                         ))}
