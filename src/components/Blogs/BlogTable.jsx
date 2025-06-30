@@ -25,7 +25,7 @@ const BlogTable = () => {
                             <th className="border px-4 py-2">Nội Dung</th>
                             <th className="border px-4 py-2">Ngày Đăng</th>
                             <th className="border px-4 py-2">Ảnh</th>
-                            <th className="border px-4 py-2">Tác Gỉa</th>
+                            <th className="border px-4 py-2">Tác Giả</th>
                             <th className="border px-4 py-2"></th>
                             <th className="border px-4 py-2"></th>
                         </tr>
