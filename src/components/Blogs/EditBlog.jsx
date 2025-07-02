@@ -14,7 +14,6 @@ function EditBlog({ item }) {
     const [isPhotoChanged, setIsPhotoChanged] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
-    console.log(item);
 
     // Fetch blog data when item changes
     useEffect(() => {

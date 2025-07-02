@@ -27,7 +27,6 @@ function BookingDetail() {
         const fetchApi = async () => {
             try {
                 const response = await getInvoiceById(id);
-                console.log(response);
 
                 if (response.status === 200 && response.data) {
                     const data = response.data;

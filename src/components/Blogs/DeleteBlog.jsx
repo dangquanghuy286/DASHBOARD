@@ -5,8 +5,6 @@ import DeleteButton from "../Button/DeleteButton";
 import { deleteBlog } from "../../services/blogService";
 
 const DeleteBlog = ({ item }) => {
-    console.log(item);
-
     const handleDeleteBlog = async () => {
         const confirmResult = await Swal.fire({
             title: "Bạn có chắc muốn xóa bài viết này không?",

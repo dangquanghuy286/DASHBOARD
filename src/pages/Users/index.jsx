@@ -24,7 +24,6 @@ function User() {
                 setLoading(true);
                 setError(null);
                 const res = await getDataUser();
-                console.log(res);
 
                 if (res.status === 200) {
                     const users = Array.isArray(res.data.users) ? res.data.users : res.data;

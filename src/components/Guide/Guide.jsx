@@ -29,7 +29,7 @@ function Guide() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white text-gray-900 transition-colors duration-200 dark:bg-gray-900 dark:text-gray-100">
+        <div className="min-h-screen bg-white px-4 text-gray-900 transition-colors duration-200 dark:bg-gray-900 dark:text-gray-100">
             <div className="mb-4 flex items-center justify-center rounded-2xl bg-gray-200 p-2 shadow-md dark:bg-slate-700">
                 <h1 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">Quản lý hướng dẫn viên</h1>
             </div>
@@ -211,13 +211,6 @@ function Guide() {
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    {/* Summary */}
-                    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800">
-                        <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                            Tổng số hướng dẫn viên: <span className="text-blue-600 dark:text-blue-400">{data.length}</span>
-                        </p>
                     </div>
                 </div>
             )}

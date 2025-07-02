@@ -3,8 +3,6 @@ import DeleteButton from "../Button/DeleteButton";
 import Swal from "sweetalert2";
 import { deleteGuide } from "../../services/guideService";
 const DeleteGuide = ({ item }) => {
-    console.log(item);
-
     const handleDeleteGuide = async () => {
         const confirmResult = await Swal.fire({
             title: "Bạn có chắc muốn xóa guide này không?",

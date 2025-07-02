@@ -24,7 +24,6 @@ function Admin() {
         const fetchApi = async () => {
             try {
                 const res = await getInfoAdmin(userIdToCheck);
-                console.log(res);
 
                 if (res.status === 200 && res.data) {
                     setFormData({

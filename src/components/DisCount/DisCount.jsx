@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import CreateDiscount from "./CreateDiscount";
+import DeleteDiscount from "./DeleteDiscount";
 // import DeleteDiscount from "./DeleteDiscount";
 
 const DiscountForm = ({ data }) => {
-    console.log("data", data);
-
     const [error, setError] = useState(null);
 
     return (
@@ -28,6 +27,7 @@ const DiscountForm = ({ data }) => {
                             <th className="border px-4 py-2 whitespace-nowrap">Số lượng</th>
                             <th className="border px-4 py-2 whitespace-nowrap">Mã</th>
                             <th className="border px-4 py-2 whitespace-nowrap">Trạng thái</th>
+                            <th className="border px-4 py-2 whitespace-nowrap"></th>
 
                             {/* <th className="delete-column border px-4 py-2 text-center">Xóa</th> */}
                         </tr>
@@ -56,9 +56,9 @@ const DiscountForm = ({ data }) => {
                                     <td className="border px-4 py-2 whitespace-nowrap">{item.quantity}</td>
                                     <td className="border px-4 py-2 whitespace-nowrap">{item.code}</td>
                                     <td className="border px-4 py-2 whitespace-nowrap">{item.status === "ACTIVE" ? "Còn trống" : "Tạm ngưng"}</td>
-                                    {/* <td className="delete-column border px-4 py-2 text-center">
-                                        <DeleteDiscount item={data} />
-                                    </td> */}
+                                    <td className="delete-column border px-4 py-2 text-center">
+                                        <DeleteDiscount item={item} />
+                                    </td>
                                 </tr>
                             ))
                         ) : (

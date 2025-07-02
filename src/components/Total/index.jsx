@@ -24,14 +24,12 @@ function TotalAll() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 6 }, (_, i) => currentYear - 5 + i);
 
-    // Fetch dữ liệu ban đầu
     useEffect(() => {
         const fetchInitialData = async () => {
             try {
                 setLoading(true);
                 setError(null);
                 const res = await getDashboardData();
-                console.log(res);
 
                 if (res.status === 200) {
                     setDashboardSummary(res.data);
