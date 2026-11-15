@@ -9,7 +9,6 @@ function Invoice({ item }) {
         return <div className="text-center text-red-600">Lỗi: Dữ liệu hóa đơn không hợp lệ</div>;
     }
 
-    // Sử dụng trực tiếp item từ BookingDetail
     const bookingData = {
         customerName: item.customerName || "Không xác định",
         address: item.address || "Không có",

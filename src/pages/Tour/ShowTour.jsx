@@ -22,7 +22,7 @@ function ShowTour() {
 
     const fetchApi = async (page = 0) => {
         try {
-            setIsLoading(true); // Bắt đầu loading
+            setIsLoading(true);
             const res = await getDataTour(page, limit);
 
             if (res.status !== 200) throw new Error(res.data?.error || "Lỗi không xác định");

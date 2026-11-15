@@ -32,9 +32,8 @@ function UserPr({ user, onReload }) {
         return user.role.name || "N/A";
     };
 
-    // Đường dẫn ảnh mặc định từ nguồn bên ngoài
     const defaultAvatar = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
-    // Sử dụng user.avatar nếu có, nếu không thì dùng ảnh mặc định
+
     const avatarUrl = user.avatar || defaultAvatar;
 
     return (
