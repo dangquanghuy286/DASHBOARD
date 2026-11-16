@@ -3,7 +3,6 @@ import photo from "../../assets/Img/logo.png";
 import ToolReport from "../../components/ToolReport";
 
 function Invoice({ item }) {
-    // Kiểm tra dữ liệu đầu vào
     if (!item) {
         console.error("Invoice: item is undefined or null", item);
         return <div className="text-center text-red-600">Lỗi: Dữ liệu hóa đơn không hợp lệ</div>;
@@ -41,10 +40,8 @@ function Invoice({ item }) {
     const totalAdult = bookingData.adults * bookingData.unitPriceAdult;
     const totalChild = bookingData.children * bookingData.unitPriceChild;
     const originalPrice = totalAdult + totalChild;
-    const discountAmount = originalPrice * (bookingData.discount / 100); // Calculate discount as percentage
+    const discountAmount = originalPrice * (bookingData.discount / 100);
     const finalPrice = originalPrice + bookingData.tax - discountAmount;
-
-    // Thời gian hiện tại
     const currentDateTime = new Date().toLocaleString("vi-VN");
 
     // Thông tin nhà cung cấp

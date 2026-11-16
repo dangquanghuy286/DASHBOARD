@@ -45,7 +45,7 @@ function UserPr({ user, onReload }) {
                         alt={user.full_name}
                         className="h-full w-full object-cover"
                         onError={(e) => {
-                            e.target.src = defaultAvatar; // Hiển thị ảnh mặc định nếu lỗi
+                            e.target.src = defaultAvatar; 
                         }}
                     />
                 </div>
