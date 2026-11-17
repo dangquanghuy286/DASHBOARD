@@ -49,7 +49,6 @@ function Login() {
             setLoading(true);
             const res = await login(user_name, password);
             if (res.data?.token) {
-                // Kiểm tra role_id
                 if (res.data?.role_id === 1) {
                     setLoading(false);
                     Swal.fire({
