@@ -59,7 +59,7 @@ function ShowBookingTour() {
     const onSearch = (formData) => {
         const searchTerm = formData.name?.toLowerCase().trim() || "";
         if (!searchTerm) {
-            setData(originalData); // Khôi phục dữ liệu gốc nếu không có từ khóa
+            setData(originalData);
             return;
         }
 

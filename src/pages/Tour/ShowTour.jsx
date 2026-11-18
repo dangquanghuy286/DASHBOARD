@@ -60,8 +60,8 @@ function ShowTour() {
     const removeDiacritics = (str) => {
         if (!str || typeof str !== "string") return "";
         return str
-            .normalize("NFD") //chuyen khong dau
-            .replace(/[\u0300-\u036f]/g, "") //xoa dau
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
             .replace(/đ/g, "d")
             .replace(/Đ/g, "D");
     };
