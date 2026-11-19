@@ -59,7 +59,7 @@ function Admin() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // ✅ Hàm kiểm tra định dạng số điện thoại Việt Nam
+    // Hàm kiểm tra định dạng số điện thoại
     const isValidPhoneNumber = (phone) => {
         const regex = /^(0[2|3|5|7|8|9])+([0-9]{8})$/;
         return regex.test(phone);
@@ -98,7 +98,7 @@ function Admin() {
                 }
             }
 
-            // ✅ Kiểm tra số điện thoại hợp lệ trước khi gửi
+            //  Kiểm tra số điện thoại hợp lệ trước khi gửi
             if (!isValidPhoneNumber(formData.phone_number)) {
                 Swal.fire("Lỗi", "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng!", "error");
                 setIsLoading(false);

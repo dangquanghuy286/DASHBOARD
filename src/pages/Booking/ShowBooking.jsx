@@ -11,18 +11,18 @@ const { FaSearch } = icons;
 
 function ShowBookingTour() {
     const [data, setData] = useState([]);
-    const [originalData, setOriginalData] = useState([]); // Lưu dữ liệu gốc để tìm kiếm
-    const [currentPage, setCurrentPage] = useState(0); // Trang hiện tại, bắt đầu từ 0 giống ShowTour
-    const [totalPages, setTotalPages] = useState(1); // Tổng số trang
-    const [totalItems, setTotalItems] = useState(0); // Tổng số booking
-    const [isLoading, setIsLoading] = useState(false); // Trạng thái loading
+    const [originalData, setOriginalData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(1);
+    const [totalItems, setTotalItems] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
     const limit = 10;
 
     const { register, handleSubmit } = useForm();
 
     const fetchApi = async (page = 0) => {
         try {
-            setIsLoading(true); // Bắt đầu loading
+            setIsLoading(true);
             const res = await getDataBookingTour(page, limit);
 
             const dataArray = res.data?.content && Array.isArray(res.data.content) ? res.data.content : [];
