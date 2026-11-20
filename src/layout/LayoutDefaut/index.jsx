@@ -17,7 +17,6 @@ function LayoutDefault() {
         setCollapsed(!isDesktopDevice);
     }, [isDesktopDevice]);
 
-    // Tự động chuyển hướng nếu không có token
     useEffect(() => {
         if (!token) {
             navigate("/login");

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export const useClickOutside = (refs, callback) => {
     useEffect(() => {
         const handleOutsideClick = (event) => {
-            // Kiểm tra xem có bất kỳ ref nào chứa event.target hay không
+            // Kiểm tra
             const isInside = refs.some((ref) => ref?.current && ref.current.contains(event.target));
 
             // Nếu không có ref nào chứa event.target và callback là hàm, thì gọi callback
@@ -14,7 +14,6 @@ export const useClickOutside = (refs, callback) => {
 
         window.addEventListener("mousedown", handleOutsideClick);
 
-        // Cleanup: Gỡ sự kiện khi component unmount
         return () => {
             window.removeEventListener("mousedown", handleOutsideClick);
         };
