@@ -13,7 +13,7 @@ export function getCookie(cname) {
     }
     return "";
 }
-// Hết Hàm lấy cookie
+
 
 // Hàm tạo cookie
 export function setCookie(cname, cvalue, exdays) {
@@ -22,13 +22,12 @@ export function setCookie(cname, cvalue, exdays) {
     var expires = "expires=" + d.toUTCString();
     document.cookie = `${cname}=${cvalue}; ${expires}; path=/`;
 }
-// Hết Hàm tạo cookie
 
 // Hàm xóa cookie
 export function deleteCookie(cname) {
     document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
 }
-// Hết Hàm xóa cookie
+
 
 // Hàm xóa hết cookie
 export function deleteAllCookies() {
@@ -40,4 +39,4 @@ export function deleteAllCookies() {
     }
 }
 
-// Hết phần Xóa hết cookie
+
