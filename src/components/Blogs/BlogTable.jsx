@@ -15,7 +15,6 @@ const BlogTable = () => {
 
     return (
         <>
-            {/* Desktop Table */}
             <div className="hidden overflow-x-auto lg:block">
                 <table className="mb-5 w-full border text-sm text-black dark:text-white">
                     <thead className="bg-gray-100 text-left dark:bg-slate-800">
