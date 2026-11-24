@@ -25,7 +25,6 @@ function EntriesFilter({ currentPage, totalPages, onPageChange }) {
     if (totalPages <= 1) return null;
     return (
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            {/* Nút Prev */}
             <button
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#065863] to-[#00c0d1] text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -34,7 +33,6 @@ function EntriesFilter({ currentPage, totalPages, onPageChange }) {
                 ‹
             </button>
 
-            {/* Các nút số trang */}
             {getPageNumbers().map((number, index) =>
                 number === -1 || number === -2 ? (
                     <span
@@ -58,7 +56,6 @@ function EntriesFilter({ currentPage, totalPages, onPageChange }) {
                 ),
             )}
 
-            {/* Nút Next */}
             <button
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#019fb5] to-[#00c0d1] text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
                 onClick={() => handlePageChange(currentPage + 1)}
