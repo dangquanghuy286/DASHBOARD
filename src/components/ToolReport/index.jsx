@@ -46,7 +46,7 @@ function ToolReport({ item, type }) {
         try {
             const response = await sendInvoiceEmail(item.bookingId, selectedFile);
 
-            Swal.close(); // Tắt loading sau khi có phản hồi
+            Swal.close();
 
             if (response.status === 200) {
                 Swal.fire({
