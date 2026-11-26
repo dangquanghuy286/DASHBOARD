@@ -16,7 +16,6 @@ function DashboardFilters({
         <div className="space-y-3">
             <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
                 <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-                    {/* Chọn năm */}
                     <div className="flex max-w-[250px] min-w-[160px] flex-1 flex-col">
                         <label className="mb-1 text-xs font-semibold text-gray-800 sm:text-sm dark:text-gray-200">Chọn năm</label>
                         <select
@@ -38,7 +37,6 @@ function DashboardFilters({
                         </select>
                     </div>
 
-                    {/* Chọn khoảng ngày */}
                     <div className="flex flex-1 flex-col gap-3 sm:flex-row sm:items-end sm:gap-3">
                         <div className="flex max-w-[250px] min-w-[160px] flex-1 flex-col">
                             <label className="mb-1 text-xs font-semibold text-gray-800 sm:text-sm dark:text-gray-200">Từ ngày</label>
@@ -64,7 +62,6 @@ function DashboardFilters({
                     </div>
                 </div>
 
-                {/* Nút reset */}
                 {(selectedYear || startDate || endDate) && (
                     <div className="flex min-w-[120px] justify-end">
                         <button
@@ -79,7 +76,6 @@ function DashboardFilters({
                 )}
             </div>
 
-            {/* Hiển thị trạng thái filter */}
             {(selectedYear || (startDate && endDate)) && (
                 <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-[10px] text-blue-600 sm:text-xs dark:text-blue-400">
                     <span>Đang hiển thị dữ liệu:</span>
