@@ -5,7 +5,6 @@ import DeleteButton from "../../Button/DeleteButton";
 
 function DeleteTour({ item }) {
     const handleDeleteTour = async () => {
-        // Hiển thị xác nhận trước khi xóa
         const confirmResult = await Swal.fire({
             title: "Bạn có chắc muốn xóa tour này không?",
             text: `Tour: ${item.title || "ID " + item.id}`,

@@ -20,7 +20,6 @@ function TotalAll() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // Tạo danh sách năm (5 năm trước đến năm hiện tại)
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 6 }, (_, i) => currentYear - 5 + i);
 
@@ -91,7 +90,6 @@ function TotalAll() {
             setEndDate("");
 
             if (!year) {
-                // Reset về dữ liệu ban đầu
                 if (dashboardSummary) {
                     setCurrentStats({
                         totalUsers: dashboardSummary.totalUsers || 0,
